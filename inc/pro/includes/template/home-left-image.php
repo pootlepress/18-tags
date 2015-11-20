@@ -24,7 +24,7 @@ $i = 0;
 $posts_array = array();
 ?>
 
-<div id="primary" class="content-area sfp-awesome-layout-<?php echo $layout ?>">
+<div id="primary" class="content-area etp-awesome-layout-<?php echo $layout ?>">
 	<main id="main" class="site-main section group" role="main">
 		<?php if ( have_posts() ) :
 			while ( have_posts() ) : the_post();

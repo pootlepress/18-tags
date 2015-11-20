@@ -15,7 +15,7 @@ get_header();
 include 'styles.php';
 ?>
 
-<div id="primary" class="content-area sfp-awesome-layout-1">
+<div id="primary" class="content-area etp-awesome-layout-1">
 	<main id="main" class="site-main" role="main">
 		<?php if ( have_posts() ) :
 			while ( have_posts() ) : the_post();
@@ -26,7 +26,7 @@ include 'styles.php';
 			<header class="entry-header">
 				<?php if (has_post_thumbnail( get_the_ID() ) ) {
 					$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-					<div id="kickass-feat" class="sfp-full-width-image-bg" data-top-bottom="background-position: center 160px;" data-top-top="background-position: center 0px;" style="background-image: url('<?php echo $image[0]; ?>')">
+					<div id="kickass-feat" class="etp-full-width-image-bg" data-top-bottom="background-position: center 160px;" data-top-top="background-position: center 0px;" style="background-image: url('<?php echo $image[0]; ?>')">
 						<div class="col-full">
 							<h1 data-bottom="opacity:1; padding-bottom: 20%;" data--100-center="opacity:1; padding-bottom: 10%;" data-top-bottom="opacity:0.16; padding-bottom: 0%;" class="entry-title" itemprop="name headline">
 								<?php the_title(); ?>

@@ -52,18 +52,6 @@ require_once 'includes/class-footer-styles.php';
 /** Including Content styling class */
 require_once 'includes/class-content-styles.php';
 
-/** Instantiating Pootle_Update_Manager */
-new Pootle_Update_Manager(
-	Pro_18Tags()->token,
-	'Eighteen tags Pro',
-	Pro_18Tags()->version,
-	__FILE__,
-	Pro_18Tags()->token
-);
-
-/** Including admin class */
-//require_once 'includes/';
-
 /**
  * Returns the main instance of Eighteen_Tags_Pro to prevent the need to use globals.
  *

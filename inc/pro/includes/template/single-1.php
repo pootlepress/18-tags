@@ -15,7 +15,7 @@ get_header();
 include 'styles.php';
 ?>
 
-<div id="primary" class="content-area sfp-awesome-layout-1">
+<div id="primary" class="content-area etp-awesome-layout-1">
 	<main id="main" class="site-main" role="main">
 		<?php if ( have_posts() ) :
 			while ( have_posts() ) : the_post();
@@ -27,7 +27,7 @@ include 'styles.php';
 				<?php
 				if (has_post_thumbnail( get_the_ID() ) ) {
 					$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-					echo "<div class='sfp-full-width-image-bg' style='background-image: url(\"{$image[0]}\")'></div>";
+					echo "<div class='etp-full-width-image-bg' style='background-image: url(\"{$image[0]}\")'></div>";
 				} ?>
 				<div class="col-full">
 					<?php

@@ -200,7 +200,7 @@ final class Eighteen_Tags_Footer_Bar {
         $wp_customize->add_section( 'etfb_section' , array(
 		    'title'      	=> __( 'Footer Bar', 'eighteen-tags-extention-boilerplate' ),
 		    'priority'   	=> 55,
-	        'panel'         => 'sf-pro-footer',
+	        'panel'         => 'etp-footer',
 		) );
 
 		$wp_customize->add_setting( 'etp_footer_bar', array(

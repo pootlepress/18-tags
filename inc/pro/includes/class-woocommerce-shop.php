@@ -26,7 +26,7 @@ class Eighteen_Tags_Pro_WooCommerce_Shop extends Eighteen_Tags_Pro_Abstract {
 		if ( $this->get( 'wc-mob-store' ) ) {
 			add_action( 'woocommerce_before_shop_loop', 'eighteen_tags_product_search', 5 );
 			add_action( 'woocommerce_before_shop_loop', array( $this, 'mob_store_view' ), 7 );
-			wp_enqueue_style( 'sfp-mob-store', $this->plugin_url . '/assets/css/mob-store.css' );
+			wp_enqueue_style( 'etp-mob-store', $this->plugin_url . '/assets/css/mob-store.css' );
 		}
 
 		//Shop breadcrumbs

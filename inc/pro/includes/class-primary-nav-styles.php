@@ -59,9 +59,9 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 		$pad = is_numeric( $pad ) ? $pad : 1;
 
 		$button_background_color = eighteen_tags_sanitize_hex_color( get_theme_mod( 'eighteen_tags_button_background_color', apply_filters( 'eighteen_tags_default_button_background_color', '#60646c' ) ) );
-		$css .= '.sfp-nav-search .sfp-nav-search-close{' . 'color:' . $button_background_color . '}';
+		$css .= '.etp-nav-search .etp-nav-search-close{' . 'color:' . $button_background_color . '}';
 
-		$css .= ".main-navigation ul.menu > li > a, .main-navigation .sfp-nav-search a { padding-top: {$pad}em; padding-bottom: {$pad}em; }";
+		$css .= ".main-navigation ul.menu > li > a, .main-navigation .etp-nav-search a { padding-top: {$pad}em; padding-bottom: {$pad}em; }";
 		$css .= ".eighteen-tags-pro-active .main-navigation .site-header-cart li:first-child { padding-top: {$pad}em; }";
 		$css .= ".eighteen-tags-pro-active .main-navigation .site-header-cart .cart-contents { padding-top: 0; padding-bottom: {$pad}em; }";
 
@@ -157,7 +157,7 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 			$html .= $item->asXML();
 
 			if ( $i == $this->num_items && ! $this->get( 'remove-search-icon' ) ) {
-				$html .= '<li class="sf-pro-search"><a><i class="fa fa-search"></i></a>' .
+				$html .= '<li class="etp-search"><a><i class="fa fa-search"></i></a>' .
 				         '<ul><li>' . get_search_form( false ) . '</li></ul></li>';
 			}
 		}

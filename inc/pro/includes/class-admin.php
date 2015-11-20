@@ -72,7 +72,7 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 	public function enqueue() {
 		global $pagenow;
 		if ( 'nav-menus.php' == $pagenow ) {
-			wp_enqueue_script( 'sfp-admin-menu', $this->plugin_url . '/assets/js/admin-menu.js', array( 'jquery' ) );
+			wp_enqueue_script( 'etp-admin-menu', $this->plugin_url . '/assets/js/admin-menu.js', array( 'jquery' ) );
 		}
 	}
 
@@ -84,16 +84,16 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 	 */
 	public function filter_sections ( $args ) {
 		if ( in_array( $args['title'], array( 'Primary Navigation', 'Secondary Navigation', 'Header elements', 'Mobile menu', ) ) ) {
-			$args['panel'] = 'sf-pro-header';
+			$args['panel'] = 'etp-header';
 			if ( 'Mobile menu' == $args['title'] ) {
 				$args['description'] = 'Mobile menu customizations require menu assigned to Handheld Menu location';
 			}
 		} else if ( in_array( $args['title'], array( 'Product Details', 'Shop', 'Checkout', ) ) ) {
-			$args['panel'] = 'sf-pro-wc';
+			$args['panel'] = 'etp-wc';
 		} else if ( 'Widgets' == $args['title'] ) {
-			$args['panel'] = 'sf-pro-footer';
+			$args['panel'] = 'etp-footer';
 		} else {
-			$args['panel'] = 'sf-pro-content';
+			$args['panel'] = 'etp-content';
 		}
 
 		return $args;
@@ -160,53 +160,53 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 
 		$man->add_section( 'eighteen_tags_archive', array(
 			'title' => 'Archive',
-			'panel' => 'sf-pro-blog',
+			'panel' => 'etp-blog',
 			'priority' => 7,
 		) );
 
 		$man->add_section( 'eighteen_tags_single_post', array(
 			'title' => 'Single post',
-			'panel' => 'sf-pro-blog',
+			'panel' => 'etp-blog',
 			'priority' => 7,
 		) );
 
 		$man->add_section( 'eighteen_tags_footer', array(
 			'title' => 'Layout',
-			'panel' => 'sf-pro-footer',
+			'panel' => 'etp-footer',
 			'priority' => 7,
 		) );
 
 		$man->get_section( 'header_image' )->title = 'Header Elements';
-		$man->get_section( 'header_image' )->panel = 'sf-pro-header';
+		$man->get_section( 'header_image' )->panel = 'etp-header';
 		$man->get_section( 'header_image' )->priority = 7;
 
 		$man->get_section( 'background_image' )->priority = 7;
-		$man->get_section( 'background_image' )->panel = 'sf-pro-content';
-		$man->get_section( 'eighteen_tags_typography' )->panel = 'sf-pro-content';
-		$man->get_section( 'eighteen_tags_buttons' )->panel = 'sf-pro-content';
-		$man->get_section( 'eighteen_tags_layout' )->panel = 'sf-pro-content';
+		$man->get_section( 'background_image' )->panel = 'etp-content';
+		$man->get_section( 'eighteen_tags_typography' )->panel = 'etp-content';
+		$man->get_section( 'eighteen_tags_buttons' )->panel = 'etp-content';
+		$man->get_section( 'eighteen_tags_layout' )->panel = 'etp-content';
 
-		$man->add_panel( 'sf-pro-header', array(
+		$man->add_panel( 'etp-header', array(
 			'title' => 'Header and Navigation',
 			'priority' => 23,
 		) );
 
-		$man->add_panel( 'sf-pro-content', array(
+		$man->add_panel( 'etp-content', array(
 			'title' => 'Content',
 			'priority' => 25,
 		) );
 
-		$man->add_panel( 'sf-pro-blog', array(
+		$man->add_panel( 'etp-blog', array(
 			'title' => 'Blog',
 			'priority' => 30,
 		) );
 
-		$man->add_panel( 'sf-pro-wc', array(
+		$man->add_panel( 'etp-wc', array(
 			'title' => 'WooCommerce',
 			'priority' => 32,
 		) );
 
-		$man->add_panel( 'sf-pro-footer', array(
+		$man->add_panel( 'etp-footer', array(
 			'title' => 'Footer',
 			'priority' => 34,
 		) );
@@ -218,7 +218,7 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 	 * @since  1.0.0
 	 */
 	public function etp_customize_preview_js() {
-		wp_enqueue_script( 'sfp-customizer', $this->plugin_url . '/assets/js/customizer.min.js', array( 'customize-preview' ), '1.1', true );
+		wp_enqueue_script( 'etp-customizer', $this->plugin_url . '/assets/js/customizer.min.js', array( 'customize-preview' ), '1.1', true );
 	}
 
 	/**

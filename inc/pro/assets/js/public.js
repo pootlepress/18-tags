@@ -41,18 +41,18 @@ jQuery( document ).ready( function ( $ ) {
 	if ( windowWidth > 767 ) {
 			var $navbar = $( '#site-navigation' );
 		if ( $navbar.children( '.primary-navigation' ).length ) {
-			$navbar.find( '.sf-pro-search ul' ).hide();
+			$navbar.find( '.etp-search ul' ).hide();
 			$navbar.css( 'height', $navbar.innerHeight() );
 
 			toggleSearch = function () {
 				$navbar.toggleClass( 'show-search' );
 				$navbar.children( '.primary-navigation, .site-header-cart' ).slideToggle( { easing : 'linear' } );
-				$navbar.children( '.sfp-nav-search' )
+				$navbar.children( '.etp-nav-search' )
 					.slideToggle( { easing : 'linear' } )
 					.find( '.search-field' ).val( '' );
 			};
 
-			$navbar.find( '.sfp-nav-search-close, .sf-pro-search a' ).click( toggleSearch );
+			$navbar.find( '.etp-nav-search-close, .etp-search a' ).click( toggleSearch );
 		}
 	}
 

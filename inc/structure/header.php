@@ -61,15 +61,15 @@ if ( ! function_exists( 'eighteen_tags_primary_navigation' ) ) {
 		}
 		?>
 		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_html_e( 'Primary Navigation', 'eighteen-tags' ); ?>">
-			<div class="sfp-nav-search" style="display: none;">
+			<div class="etp-nav-search" style="display: none;">
 				<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/'  ) ); ?>">
 					<label class="screen-reader-text" for="s"><?php _e( 'Search for:', 'woocommerce' ); ?></label>
 					<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search&hellip;', 'placeholder', 'woocommerce' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'woocommerce' ); ?>" />
-					<input type="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'woocommerce' ); ?>" />
+					<input type="submit" value="&#xf002;" />
 					<?php echo $post_type_field ?>
 				</form>
-				<a class='sfp-nav-search-close'><i class='fa fa-close'></i></a>
-			</div><!-- .sfp-nav-search -->
+				<a class='etp-nav-search-close'><i class='fa fa-close'></i></a>
+			</div><!-- .etp-nav-search -->
 			<a class="menu-toggle" aria-controls="primary-navigation" aria-expanded="false"><?php echo esc_attr( apply_filters( 'eighteen_tags_menu_toggle_text', __( 'Navigation', 'eighteen-tags' ) ) ); ?></a>
 			<?php
 			wp_nav_menu(

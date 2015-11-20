@@ -13,15 +13,15 @@ $layout = str_replace( '-image', '', get_theme_mod( 'eighteen-tags-pro-blog-layo
 
 }
 
-.sfp-full-width {
+.etp-full-width {
 	width: 100%;
 }
 
-.sfp-awesome-layout-full .wp-post-image.sfp-full-width {
+.etp-awesome-layout-full .wp-post-image.etp-full-width {
 	margin: 0;
 }
 
-.sfp-full-width-image-bg {
+.etp-full-width-image-bg {
 	width: 100%;
 	margin-bottom: 3em;
 	padding-top : 42.85%;

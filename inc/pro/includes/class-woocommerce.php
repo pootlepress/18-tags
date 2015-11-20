@@ -13,7 +13,7 @@ require 'class-woocommerce-shop.php';
 class Eighteen_Tags_Pro_WooCommerce extends Eighteen_Tags_Pro_WooCommerce_Shop {
 
 	public function init() {
-		wp_localize_script( 'sfp-script', 'sfpSettings', array(
+		wp_localize_script( 'etp-script', 'sfpSettings', array(
 			'shopLayout' => false,
 			'mobStore' => false,
 			'infiniteScroll' => false,
@@ -83,7 +83,7 @@ class Eighteen_Tags_Pro_WooCommerce extends Eighteen_Tags_Pro_WooCommerce_Shop {
 			//It's product page!
 			$this->its_product();
 		} else if ( $is_product_archive ) {
-			wp_localize_script( 'sfp-script', 'sfpSettings', array(
+			wp_localize_script( 'etp-script', 'sfpSettings', array(
 				'shopLayout' => $this->get( 'wc-shop-layout' ),
 				'mobStore' => $this->get( 'wc-mob-store' ),
 				'infiniteScroll' => $this->get( 'wc-infinite-scroll' ),

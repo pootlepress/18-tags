@@ -199,7 +199,7 @@ final class Eighteen_Tags_Header_Bar {
         $wp_customize->add_section( 'shb_section' , array(
 		    'title'      	=> __( 'Header Bar', 'eighteen-tags-extention-boilerplate' ),
 		    'priority'   	=> 55,
-		    'panel'         => 'sf-pro-header',
+		    'panel'         => 'etp-header',
 		) );
 
 		$wp_customize->add_setting( 'etp_header_bar', array(
