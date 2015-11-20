@@ -106,18 +106,6 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 	 */
 	public function create_panels ( $man ) {
 
-		$man->add_control( new Eighteen_Tags_Custom_Radio_Image_Control( $man, 'eighteen_tags_layout', array(
-			'settings'		=> 'eighteen_tags_layout',
-			'section'		=> 'eighteen_tags_layout',
-			'label'			=> __( 'General Layout', 'eighteen-tags' ),
-			'priority'		=> 1,
-			'choices'		=> array(
-				'right' 		=> get_template_directory_uri() . '/inc/customizer/controls/img/2cr.png',
-				'left' 			=> get_template_directory_uri() . '/inc/customizer/controls/img/2cl.png',
-				'full' 			=> $this->plugin_url . '/assets/img/admin/full.png',
-			)
-		) ) );
-
 		$man->add_control( 'eighteen_tags_header_background_color', array(
 			'label'	   => __( 'Background color', 'eighteen-tags' ),
 			'section'  => 'nonexistent',

@@ -60,6 +60,7 @@ final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
 		add_filter( 'eighteen_tags_products_per_page', array( $this, 'products_per_page' ), 999 );
 		add_filter( 'pootlepb_render', array( $this, 'page_builder_styles' ) );
 		add_filter( 'siteorigin_panels_render', array( $this, 'page_builder_styles' ) );
+		add_filter( 'siteorigin_panels_render', array( $this, 'page_builder_styles' ) );
 	}
 
 	/**
@@ -247,7 +248,7 @@ final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
 	 * @return string Template path
 	 */
 	function post_layout( $template ) {
-		$layout = get_option( 'etp_post_layout' );
+		$layout = get_option( 'etp_post_layout', 1 );
 		$dir = dirname( __FILE__ );
 
 		if ( ! empty( $layout ) && file_exists( "$dir/template/single-{$layout}.php" ) ) {

@@ -105,6 +105,7 @@ $eighteen_tags_pro_customizer_fields = array(
 		'label'     => 'Drop down menu background color',
 		'section'   => 'Primary Navigation',
 		'type'      => 'alpha-color',
+		'default'   => '#000',
 	),
 	array(
 		'id'        => 'pri-nav-dd-text-color',
@@ -131,7 +132,7 @@ $eighteen_tags_pro_customizer_fields = array(
 		'label'   => 'Menu height',
 		'section' => 'Primary Navigation',
 		'type'    => 'range',
-		'default' => 1,
+		'default' => 1.3,
 		'input_attrs' => array(
 			'min'   => 0,
 			'max'   => 2.5,
@@ -230,6 +231,7 @@ $eighteen_tags_pro_customizer_fields = array(
 		'label'     => 'Logo',
 		'section'   => 'existing_header_image',
 		'type'      => 'image',
+		'default'   => get_template_directory_uri() . '/assets/logo.jpg',
 		'priority'  => 1,
 	),
 	array(
@@ -237,7 +239,7 @@ $eighteen_tags_pro_customizer_fields = array(
 		'label'   => 'Logo max height',
 		'section' => 'existing_header_image',
 		'type'    => 'range',
-		'default' => 75,
+		'default' => 100,
 		'priority'  => 1,
 		'input_attrs' => array(
 			'min'   => 50,
@@ -359,6 +361,7 @@ $eighteen_tags_pro_customizer_fields = array(
 		'label'   => 'Hide accessibility box around active links',
 		'section' => 'Content Elements',
 		'type'    => 'checkbox',
+		'default' => 1,
 	),
 	array(
 		'id'      => 'hide-wc-breadcrumbs-pages',
@@ -504,6 +507,7 @@ $eighteen_tags_pro_customizer_fields = array(
 			'max'   => 25,
 			'step'  => 1,
 		),
+		'default' => 17,
 	),
 	array(
 		'id'      => 'typo-body-line-height',
@@ -1652,55 +1656,6 @@ function eighteen_tags_pro_google_fonts( $value ) {
 
 }
 
-if ( ! function_exists( 'eighteen_tags_site_branding' ) ) {
-	/**
-	 * Display Site Branding
-	 * @since  1.0.0
-	 * @return void
-	 */
-	function eighteen_tags_site_branding() {
-		if ( get_theme_mod( 'eighteen-tags-pro-logo' ) ) {
-			?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo-link" rel="home">
-				<img src="<?php echo get_theme_mod( 'eighteen-tags-pro-logo' ); ?>" alt="<?php echo get_bloginfo( 'name' ); ?>" />
-			</a>
-			<?php
-
-		} else if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
-			jetpack_the_site_logo();
-		} else { ?>
-			<div class="site-branding">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php if ( '' != get_bloginfo( 'description' ) ) { ?>
-					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
-				<?php } ?>
-			</div>
-		<?php }
-	}
-}
-
-if ( ! function_exists( 'eighteen_tags_sanitize_layout' ) ) {
-	/**
-	 * Sanitizes the layout setting
-	 *
-	 * Ensures only array keys matching the original settings specified in add_control() are valid
-	 *
-	 * @since 1.0.3
-	 */
-	function eighteen_tags_sanitize_layout( $input ) {
-		$valid = array(
-			'right',
-			'left',
-			'full',
-		);
-
-		if ( in_array( $input, $valid ) ) {
-			return $input;
-		} else {
-			return '';
-		}
-	}
-}
 if ( ! function_exists( 'woocommerce_template_loop_rating' ) ) {
 
 	/**

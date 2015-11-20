@@ -23,7 +23,7 @@ $layout = str_replace( '-image', '', get_theme_mod( 'eighteen-tags-pro-blog-layo
 
 .etp-full-width-image-bg {
 	width: 100%;
-	margin-bottom: 3em;
+	margin-bottom: 1.2em;
 	padding-top : 42.85%;
 	background-size: cover;
 	position: relative;
@@ -51,6 +51,7 @@ $layout = str_replace( '-image', '', get_theme_mod( 'eighteen-tags-pro-blog-layo
 
 .entry-title {
 	clear: none;
+	text-align: center;
 }
 
 .hentry.type-post .entry-content {

@@ -772,7 +772,7 @@ img {
 a {
   color: #428bca;
   text-decoration: none;
-  font-weight: 700; }
+  font-weight: normal; }
   a:focus {
     outline: 1px solid #428bca; }
 
@@ -885,6 +885,10 @@ a {
   .content-area,
   .widget-area {
     margin-bottom: 2.618em; }
+  .site-header-cart .cart-contents {
+    font-size: 0.88em;
+
+  }
   /**
 	 * Full width & homepage template
 	 */
@@ -1185,6 +1189,7 @@ fieldset {
   display: block; }
 
 .main-navigation ul {
+  font-size: 17px;
   margin-left: 0;
   list-style: none; }
   .main-navigation ul ul {

@@ -300,7 +300,7 @@ if ( ! function_exists( 'eighteen_tags_customize_register' ) ) {
 		) );
 
 		$wp_customize->add_setting( 'eighteen_tags_layout', array(
-			'default'    		=> apply_filters( 'eighteen_tags_default_layout', $layout = is_rtl() ? 'left' : 'right' ),
+			'default'    		=> apply_filters( 'eighteen_tags_default_layout', 'full' ),
 			'sanitize_callback' => 'eighteen_tags_sanitize_layout',
 		) );
 
@@ -310,8 +310,9 @@ if ( ! function_exists( 'eighteen_tags_customize_register' ) ) {
 					'label'			=> __( 'General Layout', 'eighteen-tags' ),
 					'priority'		=> 1,
 					'choices'		=> array(
-						'right' 		=> get_template_directory_uri() . '/inc/customizer/controls/img/2cr.png',
-						'left' 			=> get_template_directory_uri() . '/inc/customizer/controls/img/2cl.png',
+						'right' 		=> get_template_directory_uri() . '/assets/right.png',
+						'left' 			=> get_template_directory_uri() . '/assets/left.png',
+						'full' 			=> get_template_directory_uri() . '/assets/full.png',
 					)
 		) ) );
 

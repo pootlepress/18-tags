@@ -56,16 +56,16 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 	public function heights() {
 		$css = &Eighteen_Tags_Pro_Public::$desktop_css;
 		$pad = $this->get( 'pri-nav-height' );
-		$pad = is_numeric( $pad ) ? $pad : 1;
+		$pad = is_numeric( $pad ) ? $pad : 1.3;
 
 		$button_background_color = eighteen_tags_sanitize_hex_color( get_theme_mod( 'eighteen_tags_button_background_color', apply_filters( 'eighteen_tags_default_button_background_color', '#60646c' ) ) );
 		$css .= '.etp-nav-search .etp-nav-search-close{' . 'color:' . $button_background_color . '}';
 
-		$css .= ".main-navigation ul.menu > li > a, .main-navigation .etp-nav-search a { padding-top: {$pad}em; padding-bottom: {$pad}em; }";
+		$css .= ".main-navigation ul.menu > li > a, .etp-nav-search a { padding-top: {$pad}em; padding-bottom: {$pad}em; }";
 		$css .= ".eighteen-tags-pro-active .main-navigation .site-header-cart li:first-child { padding-top: {$pad}em; }";
 		$css .= ".eighteen-tags-pro-active .main-navigation .site-header-cart .cart-contents { padding-top: 0; padding-bottom: {$pad}em; }";
 
-		$logo_height = $this->get( 'logo-max-height', 70 );
+		$logo_height = $this->get( 'logo-max-height', 100 );
 
 		if ( $logo_height ) {
 			$css .= ".site-header .site-logo-link img, .site-header .logo-in-nav-anchor img { max-height: {$logo_height}px; }";
@@ -97,7 +97,7 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 		        'color:' . $t->get( 'pri-nav-dd-text-color', '#ffffff' ) . ';' .
 		        '}';
 		$css .= '#site-navigation.main-navigation .site-header-cart .widget_shopping_cart, #site-navigation.main-navigation ul.menu ul {' .
-		        'background-color:' . $t->get( 'pri-nav-dd-bg-color' ) . ';' .
+		        'background-color:' . $t->get( 'pri-nav-dd-bg-color', '#000' ) . ';' .
 		        '}';
 	}
 
@@ -123,7 +123,7 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 		$li_class = 'logo-in-nav-text';
 		$logoHTML = '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a>';
 
-		$logo     = $this->get( 'logo' );
+		$logo     = $this->get( 'logo'. get_template_directory_uri() . '/assets/logo.jpg' );
 		if ( $logo ) {
 			$li_class = 'logo-in-nav-image';
 			$logoHTML = ''

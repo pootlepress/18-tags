@@ -30,13 +30,17 @@ if ( ! function_exists( 'eighteen_tags_site_branding' ) ) {
 	 * @return void
 	 */
 	function eighteen_tags_site_branding() {
-		if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
-			jetpack_the_site_logo();
+		if ( get_theme_mod( 'eighteen-tags-pro-logo', get_template_directory_uri() . '/assets/logo.jpg' ) ) {
+			?>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo-link" rel="home">
+				<img src="<?php echo get_theme_mod( 'eighteen-tags-pro-logo', get_template_directory_uri() . '/assets/logo.jpg' ); ?>" alt="<?php echo get_bloginfo( 'name' ); ?>" />
+			</a>
+			<?php
 		} else { ?>
 			<div class="site-branding">
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php if ( '' != get_bloginfo( 'description' ) ) { ?>
-					<p class="site-description"><?php echo bloginfo( 'description' ); ?></p>
+					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 				<?php } ?>
 			</div>
 		<?php }

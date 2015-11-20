@@ -27,13 +27,21 @@ include 'styles.php';
 				<?php
 				if (has_post_thumbnail( get_the_ID() ) ) {
 					$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-					echo "<div class='etp-full-width-image-bg' style='background-image: url(\"{$image[0]}\")'></div>";
-				} ?>
+					echo "<div class='etp-full-width-image-bg' style=\"background-image: url('{$image[0]}')\"></div>";
+				?>
 				<div class="col-full">
 					<?php
 					the_title( '<h1 class="entry-title" itemprop="name headline">', '</h1>' );
 					?>
 				</div><!-- .col-full -->
+					<?php
+					echo '<hr>';
+				} else {
+					echo '<hr>';
+					the_title( '<h1 class="entry-title" itemprop="name headline">', '</h1>' );
+					echo '<hr>';
+				}
+			?>
 			</header><!-- .entry-header -->
 			<div class="col-full">
 				<div class="entry-content" itemprop="articleBody">

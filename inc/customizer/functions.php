@@ -68,11 +68,12 @@ if ( ! function_exists( 'eighteen_tags_sanitize_choices' ) ) {
 if ( ! function_exists( 'eighteen_tags_sanitize_layout' ) ) {
     function eighteen_tags_sanitize_layout( $input ) {
         $valid = array(
-            'right' => 'Right',
-            'left'  => 'Left',
-            );
+            'right',
+            'left',
+            'full',
+        );
 
-        if ( array_key_exists( $input, $valid ) ) {
+        if ( in_array( $input, $valid ) ) {
             return $input;
         } else {
             return '';
@@ -102,7 +103,7 @@ function eighteen_tags_sanitize_checkbox( $checked ) {
  * @since  1.0.0
  */
 function eighteen_tags_layout_class( $classes ) {
-	$left_or_right = get_theme_mod( 'eighteen_tags_layout', apply_filters( 'eighteen_tags_default_layout', $layout = is_rtl() ? 'left' : 'right' ) );
+	$left_or_right = get_theme_mod( 'eighteen_tags_layout', apply_filters( 'eighteen_tags_default_layout', 'full' ) );
 
 	$classes[] = $left_or_right . '-sidebar';
 

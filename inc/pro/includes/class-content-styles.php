@@ -21,7 +21,7 @@ class Eighteen_Tags_Pro_Content_Styles extends Eighteen_Tags_Pro_Abstract {
 		$this->text_typo();
 		$this->hr_styles();
 
-		if ( $this->get( 'hide-link-focus-outline' ) ) {
+		if ( $this->get( 'hide-link-focus-outline', 1 ) ) {
 			$this->css .= '*:focus, .button:focus, .button.alt:focus, .button.added_to_cart:focus, ' .
 			'.button.wc-forward:focus, button:focus, input[type="button"]:focus, input[type="reset"]:focus, ' .
 			'input[type="submit"]:focus { outline: none !important; }';
@@ -115,7 +115,7 @@ class Eighteen_Tags_Pro_Content_Styles extends Eighteen_Tags_Pro_Abstract {
 		        'font-family:' . $t->get( 'typo-body-font' ) . ';' .
 		        'line-height:' . $t->get( 'typo-body-line-height' ) . '}';
 		$css .= '.eighteen-tags-pro-active .panel-grid-cell, #primary, #secondary {' .
-		        'font-size:' . $t->get( 'typo-body-font-size' ) . 'px; }';;
+		        'font-size:' . $t->get( 'typo-body-font-size', 17 ) . 'px; }';;
 	}
 
 	public function content() {
