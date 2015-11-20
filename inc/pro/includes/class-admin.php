@@ -1,0 +1,258 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Shramee Srivastav <shramee.srivastav@gmail.com>
+ * Date: 27/4/15
+ * Time: 5:36 PM
+ */
+
+
+/**
+ * Storefront_Pro_Admin Class
+ *
+ * @class Storefront_Pro_Admin
+ * @version	1.0.0
+ * @since 1.0.0
+ * @package	Storefront_Pro
+ */
+final class Storefront_Pro_Admin extends Storefront_Pro_Abstract {
+
+	/**
+	 * The customizer control render object.
+	 * @var     object
+	 * @access  public
+	 * @since   1.0.0
+	 */
+	public $customizer;
+
+	/**
+	 * Called by parent::__construct
+	 * Do initialization here
+	 * @access  public
+	 * @since   1.0.0
+	 * @return  void
+	 */
+	public function init(){
+
+		//Enqueue scripts and styles
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ), 999 );
+		//Customizer fields renderer
+		$this->customizer = new Storefront_Pro_Customizer_Fields( $this->token, $this->plugin_path, $this->plugin_url );
+		//Customize register
+		add_action( $this->token . '-sections-filter-args', array( $this, 'filter_sections' ) );
+		//Customize register
+		add_action( $this->token . '-customize-register', array( $this, 'create_panels' ) );
+		//Dummy jetpack class
+		add_action( 'customize_register', 'sfp_jetpack_dummy_class', 9 );
+		//Customize register
+		add_action( 'customize_register', array( $this->customizer, 'sfp_customize_register' ), 999 );
+		//Customize preview init script
+		add_action( 'customize_preview_init', array( $this, 'sfp_customize_preview_js' ) );
+		//Admin notices
+		add_action( 'admin_notices', array( $this, 'sfp_customizer_notice' ) );
+		//Reset all Storefront pro options
+		add_action( 'wp_ajax_storefront_pro_reset', array( $this, 'reset_all' ) );
+	}
+
+	/**
+	 * Resets all Storefront Pro options
+	 * @action wp_ajax_storefront_pro_reset
+	 */
+	public function reset_all( $data ){
+		$redirect = filter_input( INPUT_GET, 'redirect' );
+		if ( $redirect ) {
+			global $storefront_pro_customizer_fields;
+			foreach ( $storefront_pro_customizer_fields as $f ) {
+				$id = $f['id'];
+				remove_theme_mod( "{$this->token}-{$id}" );
+			}
+			$this->add_notice( '<p>All Storefront options have been successfully reset.</p>' );
+			header( 'Location:' . $redirect );
+		}
+	}
+
+	public function enqueue() {
+		global $pagenow;
+		if ( 'nav-menus.php' == $pagenow ) {
+			wp_enqueue_script( 'sfp-admin-menu', $this->plugin_url . '/assets/js/admin-menu.js', array( 'jquery' ) );
+		}
+	}
+
+	/**
+	 * Filters the section arguments for making them sit in panels
+	 * @param array $args Section arguments
+	 * @filter storefront-pro-sections-filter-args
+	 * @return array Arguments
+	 */
+	public function filter_sections ( $args ) {
+		if ( in_array( $args['title'], array( 'Primary Navigation', 'Secondary Navigation', 'Header elements', 'Mobile menu', ) ) ) {
+			$args['panel'] = 'sf-pro-header';
+			if ( 'Mobile menu' == $args['title'] ) {
+				$args['description'] = 'Mobile menu customizations require menu assigned to Handheld Menu location';
+			}
+		} else if ( in_array( $args['title'], array( 'Product Details', 'Shop', 'Checkout', ) ) ) {
+			$args['panel'] = 'sf-pro-wc';
+		} else if ( 'Widgets' == $args['title'] ) {
+			$args['panel'] = 'sf-pro-footer';
+		} else {
+			$args['panel'] = 'sf-pro-content';
+		}
+
+		return $args;
+	}
+
+	/**
+	 * Filters the section arguments for making them sit in panels
+	 * @param WP_Customize_Manager $man
+	 * @filter storefront-pro-sections-filter-args
+	 */
+	public function create_panels ( $man ) {
+
+		$man->add_control( new Storefront_Custom_Radio_Image_Control( $man, 'storefront_layout', array(
+			'settings'		=> 'storefront_layout',
+			'section'		=> 'storefront_layout',
+			'label'			=> __( 'General Layout', 'storefront' ),
+			'priority'		=> 1,
+			'choices'		=> array(
+				'right' 		=> get_template_directory_uri() . '/inc/customizer/controls/img/2cr.png',
+				'left' 			=> get_template_directory_uri() . '/inc/customizer/controls/img/2cl.png',
+				'full' 			=> $this->plugin_url . '/assets/img/admin/full.png',
+			)
+		) ) );
+
+		$man->add_control( 'storefront_header_background_color', array(
+			'label'	   => __( 'Background color', 'storefront' ),
+			'section'  => 'nonexistent',
+		) );
+
+		$man->add_control( 'storefront_header_text_color', array(
+			'section'		=> 'nonexistent',
+			'label'			=> __( 'None', 'storefront' ),
+			'type'		=> 'text',
+		) );
+
+		$man->add_control( 'storefront_header_link_color', array(
+			'section'		=> 'nonexistent',
+			'label'			=> __( 'None', 'storefront' ),
+			'type'		=> 'text',
+		) );
+
+		$man->add_setting( 'sfp_post_layout', array(
+			'default'       => '',
+			'type'          => 'option'
+		) );
+
+		$man->add_control( new Storefront_Custom_Radio_Image_Control( $man, 'sfp_post_layout', array(
+			'settings'		=> 'sfp_post_layout',
+			'section'		=> 'storefront_single_post',
+			'label'			=> __( 'Post page Layout', 'storefront' ),
+			'priority'		=> 7,
+			'default'       => '',
+			'choices'		=> array(
+				'' => SFP_URL . '/assets/img/admin/layout-default.png',
+				'1' => SFP_URL . '/assets/img/admin/layout-full-image.png',
+				'2' => SFP_URL . '/assets/img/admin/layout-title-in-image.png',
+			)
+		) ) );
+
+		$man->add_setting( 'sfp_blog_layout', array(
+			'default'       => '',
+			'type'          => 'option'
+		) );
+
+		$man->add_section( 'storefront_archive', array(
+			'title' => 'Archive',
+			'panel' => 'sf-pro-blog',
+			'priority' => 7,
+		) );
+
+		$man->add_section( 'storefront_single_post', array(
+			'title' => 'Single post',
+			'panel' => 'sf-pro-blog',
+			'priority' => 7,
+		) );
+
+		$man->add_section( 'storefront_footer', array(
+			'title' => 'Layout',
+			'panel' => 'sf-pro-footer',
+			'priority' => 7,
+		) );
+
+		$man->get_section( 'header_image' )->title = 'Header Elements';
+		$man->get_section( 'header_image' )->panel = 'sf-pro-header';
+		$man->get_section( 'header_image' )->priority = 7;
+
+		$man->get_section( 'background_image' )->priority = 7;
+		$man->get_section( 'background_image' )->panel = 'sf-pro-content';
+		$man->get_section( 'storefront_typography' )->panel = 'sf-pro-content';
+		$man->get_section( 'storefront_buttons' )->panel = 'sf-pro-content';
+		$man->get_section( 'storefront_layout' )->panel = 'sf-pro-content';
+		$man->get_section( 'sfb_section' )->panel = 'sf-pro-footer';
+		$man->get_section( 'shb_section' )->panel = 'sf-pro-header';
+
+		$man->add_panel( 'sf-pro-header', array(
+			'title' => 'Header and Navigation',
+			'priority' => 23,
+		) );
+
+		$man->add_panel( 'sf-pro-content', array(
+			'title' => 'Content',
+			'priority' => 25,
+		) );
+
+		$man->add_panel( 'sf-pro-blog', array(
+			'title' => 'Blog',
+			'priority' => 30,
+		) );
+
+		$man->add_panel( 'sf-pro-wc', array(
+			'title' => 'WooCommerce',
+			'priority' => 32,
+		) );
+
+		$man->add_panel( 'sf-pro-footer', array(
+			'title' => 'Footer',
+			'priority' => 34,
+		) );
+	}
+
+	/**
+	 * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+	 *
+	 * @since  1.0.0
+	 */
+	public function sfp_customize_preview_js() {
+		wp_enqueue_script( 'sfp-customizer', $this->plugin_url . '/assets/js/customizer.min.js', array( 'customize-preview' ), '1.1', true );
+	}
+
+	/**
+	 * Admin notice
+	 * Checks the notice setup in install(). If it exists display it then delete the option so it's not displayed again.
+	 * @since   1.0.0
+	 * @return  void
+	 */
+	public function sfp_customizer_notice() {
+		if ( $notices = get_option( 'sfp_activation_notice' ) ) {
+
+			foreach ( $notices as $notice ) {
+				echo '<div class="notice is-dismissible updated">' . $notice . '</div>';
+			}
+
+			delete_option( 'sfp_activation_notice' );
+		}
+	}
+
+	/**
+	 * Adds an admin notice
+	 * @since   1.0.0
+	 * @return  void
+	 */
+	public function add_notice( $notice ) {
+		$notices = get_option( 'sfp_activation_notice', array() );
+
+		$notices[] = $notice;
+
+		update_option( 'sfp_activation_notice', $notices );
+	}
+
+} // End class

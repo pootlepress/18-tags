@@ -1,0 +1,42 @@
+*** Storefront Pro Changelog ***
+--------------------
+ 2015-11-19 - 2.0.0
+--------------------
+New - Grid view on mobile store
+New - List view on mobile store
+New - Mobile store masonry
+New - Top header bar
+New - Footer Bar
+New - Product sharing icons
+New - Product image flipping
+New - Pinterest social icon for top nav
+New - Option to hide product count from categories on shop page
+New - Options to set active menu item color for secondary nav
+Tweak - Page builder sticks to the breadcrumbs too.
+Tweak - Can have wide logo in header
+Fix - Header icons out of header when logo hidden
+Fix - Top nav Cart alignment on mobile
+Fix - Masonry images not loaded issue
+Fix - Header background transparency only working in live preview
+Fix - Fix resetting Menu height messes up the menu
+Fix - Shopping cart not inheritting bg color and text color from submenu
+
+--------------------
+ 2015-11-13 - 1.1.0
+--------------------
+Tweak - Contact info now shows on mobile too
+Tweak - Contact info inherits secondary nav font styles
+Fix - Mega menu in multi line menu with lots of menu items
+Fix - Google fonts not working properly
+Fix - Whitespace below footer
+Fix - Scroll freezing in iPad
+Fix - Setting grid columns and rows for blog sets per page products
+Fix - Body bg not applying to pages, page customizer enforces no bg
+Fix - Conflict with update api for PB-WooCommerce addon
+Fix - License errors link to localhost
+Fix - Inconsistent updates availability
+
+--------------------
+ 2015-11-03 - 1.0.0
+--------------------
+Initial release. It's alive!

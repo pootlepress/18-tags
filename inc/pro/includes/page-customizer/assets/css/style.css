@@ -1,0 +1,39 @@
+.ppc-no-show{
+	display: none;
+}
+
+video#page-customizer-bg-video {
+	position: fixed;
+	top: -999px;
+	bottom: -999px;
+	left: -999px;
+	right: -999px;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	overflow: hidden;
+	margin: auto;
+	object-fit: cover;
+	z-index:-1;
+}
+
+@media only screen and (max-width: 727px) {
+	video#page-customizer-bg-video {
+		display: none;
+	}
+}
+
+#wp-admin-bar-page-custo-link .ab-item:before{
+	content: '\f100';
+	top: 2px;
+	position: relative;
+	float: left;
+	font: 400 20px/1 dashicons;
+	speak: none;
+	padding: 4px 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-image: none!important;
+	margin-right: 6px;
+}
