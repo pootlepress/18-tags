@@ -34,8 +34,12 @@ $layout = str_replace( '-image', '', get_theme_mod( 'eighteen-tags-pro-blog-layo
 	padding : 1em;
 }
 
-#masthead, .woocommerce-breadcrumb {
+.site-header, .woocommerce-breadcrumb {
 	margin-bottom: 0;
+}
+
+.home.blog .site-header, .home.blog .woocommerce-breadcrumb {
+	margin-bottom: 2em;
 }
 
 .attachment-thumbnail {

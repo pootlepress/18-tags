@@ -20,6 +20,7 @@ class Eighteen_Tags_Pro_Content_Styles extends Eighteen_Tags_Pro_Abstract {
 		$this->headings_typo();
 		$this->text_typo();
 		$this->hr_styles();
+		$this->breadcrumbs();
 
 		if ( $this->get( 'hide-link-focus-outline', 1 ) ) {
 			$this->css .= '*:focus, .button:focus, .button.alt:focus, .button.added_to_cart:focus, ' .
@@ -175,6 +176,27 @@ class Eighteen_Tags_Pro_Content_Styles extends Eighteen_Tags_Pro_Abstract {
 		}
 		remove_filter( 'excerpt_length', array( $this, 'excerpt_length' ) );
 		remove_filter( 'excerpt_more', array( $this, 'excerpt_more' ) );
+	}
+
+	protected function breadcrumbs() {
+		//Remove breadcrumbs on archives
+		$this->remove_breadcrumbs( is_archive() && $this->get( 'hide-wc-breadcrumbs-archives', true ) );
+		//Remove breadcrumbs on posts
+		$this->remove_breadcrumbs( is_singular( 'post' ) && $this->get( 'hide-wc-breadcrumbs-posts', true ) );
+		//Remove breadcrumbs on pages
+		$this->remove_breadcrumbs( is_page() && $this->get( 'hide-wc-breadcrumbs-pages', true ) );
+	}
+
+	/**
+	 * Removes woocommerce breadcrumbs
+	 * @param bool $remove Whether or not to hide the breadcrumbs
+	 */
+	public function remove_breadcrumbs( $remove = true ) {
+
+		if ( $remove ) {
+			remove_action( 'eighteen_tags_content_top', 'woocommerce_breadcrumb', 10 );
+			$this->css .= '.site-header { margin-bottom: 4.236em; }';
+		}
 	}
 
 } // End class

@@ -91,6 +91,8 @@ if ( ! function_exists( 'eighteen_tags_setup' ) ) :
 
 		// Declare support for title theme feature
 		add_theme_support( 'title-tag' );
+
+		wc_breadcrumb_register();
 	}
 endif; // eighteen_tags_setup
 

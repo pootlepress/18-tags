@@ -115,18 +115,6 @@ class Eighteen_Tags_Pro_WooCommerce_Shop extends Eighteen_Tags_Pro_Abstract {
 	}
 
 	/**
-	 * Removes woocommerce breadcrumbs
-	 * @param bool $remove Whether or not to hide the breadcrumbs
-	 */
-	public function remove_breadcrumbs( $remove = true ) {
-
-		if ( $remove ) {
-			remove_action( 'eighteen_tags_content_top', 'woocommerce_breadcrumb', 10 );
-			$this->css .= '.site-header { margin-bottom: 4.236em; }';
-		}
-	}
-
-	/**
 	 * Product loop wrap
 	 * @return void
 	 */

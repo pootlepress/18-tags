@@ -83,13 +83,14 @@ if ( ! function_exists( 'eighteen_tags_primary_navigation' ) ) {
 				)
 			);
 
+			echo '<div class="handheld-navigation">';
 			wp_nav_menu(
 				array(
 					'theme_location'	=> 'handheld',
-					'container_class'	=> 'handheld-navigation',
+					'container_class'	=> '',
 				)
 			);
-
+			echo '</div>';
 			do_action( 'eighteen_tags_pro_in_nav' );
 			?>
 		</nav><!-- #site-navigation -->
@@ -133,4 +134,4 @@ if ( ! function_exists( 'eighteen_tags_skip_links' ) ) {
 	}
 }
 
-
+add_action( 'eighteen_tags_content_top', 'woocommerce_breadcrumb', 10 );

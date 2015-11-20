@@ -25,14 +25,6 @@ class Eighteen_Tags_Pro_WooCommerce extends Eighteen_Tags_Pro_WooCommerce_Shop {
 
 		add_filter( 'eighteen_tags_loop_columns', array( $this, 'columns' ), 999 );
 
-		//Header cart display
-		$header_cart = $this->get( 'header-wc-cart' );
-		add_action( 'eighteen_tags_pro_in' . $header_cart . '_nav', 'eighteen_tags_header_cart' );
-		if ( ! empty( $header_cart ) ) {
-			add_action( 'eighteen_tags_pro_in_nav', 'eighteen_tags_header_cart' );
-			Eighteen_Tags_Pro_Public::$desktop_css .= '#site-navigation.main-navigation .site-header-cart { display: none !important; }';
-			$this->css .= '.eighteen-tags-pro-active #site-navigation > div { width: 100%; }';
-		}
 		//Header cart color
 		$this->css .= '.eighteen-tags-pro-active .site-header-cart .cart-contents { color: ' . $this->get( 'header-wc-cart-color', '#000000' ) . '; }';
 
@@ -128,15 +120,6 @@ class Eighteen_Tags_Pro_WooCommerce extends Eighteen_Tags_Pro_WooCommerce_Shop {
 		if ( ! $this->get( 'wc-rel-product', true ) ) {
 			remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 		}
-	}
-
-	protected function its_non_woocommerce_page() {
-		//Remove breadcrumbs on archives
-		$this->remove_breadcrumbs( is_archive() && $this->get( 'hide-wc-breadcrumbs-archives' ) );
-		//Remove breadcrumbs on posts
-		$this->remove_breadcrumbs( is_singular( 'post' ) && $this->get( 'hide-wc-breadcrumbs-posts', true ) );
-		//Remove breadcrumbs on pages
-		$this->remove_breadcrumbs( is_page() && $this->get( 'hide-wc-breadcrumbs-pages' ) );
 	}
 
 	private function distraction_free_checkout() {

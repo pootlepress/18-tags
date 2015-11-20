@@ -454,6 +454,13 @@ body {
 .no-wc-breadcrumb.page-template-template-homepage .site-header {
   margin-bottom: 0; }
 
+.woocommerce-breadcrumb {
+  margin-bottom: 4.236em;
+  font-size: .857em;
+  padding: 1em 0;
+  border-bottom: 1px solid rgba(0,0,0,.05);
+}
+
 .header-widget-region {
   position: relative;
   z-index: 99; }
@@ -1178,6 +1185,9 @@ fieldset {
 .nav-menu,
 .main-navigation div.menu > ul:not(.nav-menu) {
   display: none; }
+
+.main-navigation .handheld-navigation div.menu ul {
+  display: block; }
 
 .handheld-navigation {
   margin-bottom: 2.244em; }

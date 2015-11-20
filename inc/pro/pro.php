@@ -43,9 +43,6 @@ require_once 'includes/class-admin.php';
 /** Including header and nav styling class */
 require_once 'includes/class-header-nav-styles.php';
 
-/** Including WooCommerce styling class */
-require_once 'includes/class-woocommerce.php';
-
 /** Including footer styling class */
 require_once 'includes/class-footer-styles.php';
 

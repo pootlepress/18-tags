@@ -29,7 +29,6 @@ remove_action( 'woocommerce_before_shop_loop', 		'woocommerce_catalog_ordering',
 add_action( 'woocommerce_before_main_content', 		'eighteen_tags_before_content', 				10 );
 add_action( 'woocommerce_after_main_content', 		'eighteen_tags_after_content', 				10 );
 add_action( 'eighteen_tags_content_top', 				'eighteen_tags_shop_messages', 				1 );
-add_action( 'eighteen_tags_content_top', 				'woocommerce_breadcrumb', 					10 );
 
 add_action( 'woocommerce_after_shop_loop',			'eighteen_tags_sorting_wrapper',				9 );
 add_action( 'woocommerce_after_shop_loop', 			'woocommerce_catalog_ordering', 			10 );
@@ -80,3 +79,12 @@ if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '2.3', '>=' ) ) {
  */
 add_action( 'wp_enqueue_scripts', 						'eighteen_tags_woocommerce_integrations_scripts' );
 add_action( 'wp_enqueue_scripts', 						'eighteen_tags_add_integrations_customizer_css' );
+
+//Header cart display
+$header_cart = get_theme_mod( 'eighteen-tags-pro-header-wc-cart' );
+add_action( 'eighteen_tags_pro_in' . $header_cart . '_nav', 'eighteen_tags_header_cart' );
+if ( ! empty( $header_cart ) ) {
+	add_action( 'eighteen_tags_pro_in_nav', 'eighteen_tags_header_cart' );
+	Eighteen_Tags_Pro_Public::$desktop_css .= '#site-navigation.main-navigation .site-header-cart { display: none !important; }';
+	$this->css .= '.eighteen-tags-pro-active #site-navigation > div { width: 100%; }';
+}

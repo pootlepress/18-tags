@@ -28,9 +28,6 @@ final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
 	/** @var Eighteen_Tags_Pro_Content_Styles Instance */
 	public $content_styles;
 
-	/** @var Eighteen_Tags_Pro_WooCommerce Instance */
-	public $woocommerce_styles;
-
 	/** @var Eighteen_Tags_Pro_Footer_Styles Instance */
 	public $footer_styles;
 
@@ -79,7 +76,6 @@ final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
 
 		$this->header_nav_styles = new Eighteen_Tags_Pro_Header_Nav( $this->token, $this->plugin_path, $this->plugin_url );
 		$this->content_styles = new Eighteen_Tags_Pro_Content_Styles( $this->token, $this->plugin_path, $this->plugin_url );
-		$this->woocommerce_styles = new Eighteen_Tags_Pro_WooCommerce( $this->token, $this->plugin_path, $this->plugin_url );
 		$this->footer_styles = new Eighteen_Tags_Pro_Footer_Styles( $this->token, $this->plugin_path, $this->plugin_url );
 
 		$this->features();
@@ -89,8 +85,6 @@ final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
 		$css .= $this->header_nav_styles->styles();
 
 		$css .= $this->content_styles->styles();
-
-		$css .= $this->woocommerce_styles->styles();
 
 		$css .= $this->footer_styles->styles();
 

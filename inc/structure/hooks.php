@@ -13,12 +13,12 @@
  * @see  eighteen_tags_header_widget_region()
  * @see  eighteen_tags_get_sidebar()
  */
-add_action( 'after_setup_theme',			'eighteen_tags_setup' );
 add_action( 'widgets_init',					'eighteen_tags_widgets_init' );
+add_action( 'after_setup_theme',			'eighteen_tags_setup',                  12 );
 add_action( 'wp_enqueue_scripts',			'eighteen_tags_scripts',				10 );
 add_action( 'wp_enqueue_scripts',			'eighteen_tags_child_scripts',			30 ); // After WooCommerce
 add_action( 'eighteen_tags_before_content',	'eighteen_tags_header_widget_region',	10 );
-add_action( 'eighteen_tags_sidebar',			'eighteen_tags_get_sidebar',			10 );
+add_action( 'eighteen_tags_sidebar',		'eighteen_tags_get_sidebar',	    	10 );
 
 /**
  * Header
@@ -27,9 +27,9 @@ add_action( 'eighteen_tags_sidebar',			'eighteen_tags_get_sidebar',			10 );
  * @see  eighteen_tags_site_branding()
  * @see  eighteen_tags_primary_navigation()
  */
-add_action( 'eighteen_tags_header', 'eighteen_tags_skip_links', 				0 );
+add_action( 'eighteen_tags_header', 'eighteen_tags_skip_links', 			0 );
 add_action( 'eighteen_tags_header', 'eighteen_tags_site_branding',			20 );
-add_action( 'eighteen_tags_header', 'eighteen_tags_secondary_navigation',		30 );
+add_action( 'eighteen_tags_header', 'eighteen_tags_secondary_navigation',	30 );
 add_action( 'eighteen_tags_header', 'eighteen_tags_primary_navigation',		50 );
 
 /**

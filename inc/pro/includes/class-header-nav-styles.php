@@ -169,10 +169,10 @@ class Eighteen_Tags_Pro_Header_Nav extends Eighteen_Tags_Pro_Primary_Navigation 
 		$css .= 'color: ' . $this->get( 'mob-menu-icon-color' ) . ';';
 		$css .= '}';
 		$css .= '#site-navigation .handheld-navigation{';
-		$css .= 'background-color: ' . $this->get( 'mob-menu-bg-color' ) . ';';
+		$css .= 'background-color: ' . $this->get( 'mob-menu-bg-color', '#000000' ) . ';';
 		$css .= '}';
 		$css .= '#site-navigation .handheld-navigation li a {';
-		$css .= 'color: ' . $this->get( 'mob-menu-font-color' ) . ';';
+		$css .= 'color: ' . $this->get( 'mob-menu-font-color', '#ffffff' ) . ';';
 		$css .= '}';
 	}
 } // End class
