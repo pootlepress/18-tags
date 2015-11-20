@@ -150,7 +150,7 @@ class Eighteen_Tags_Pro_Content_Styles extends Eighteen_Tags_Pro_Abstract {
 	 */
 	function excerpt_more() {
 
-		$set = $this->get( 'blog-excerpt-end', '[...]' );
+		$set = $this->get( 'blog-excerpt-end', '...' );
 		$read_more = $this->get( 'blog-rm-butt-text' );
 		if ( $read_more ) {
 			$set .= '<a class="button read-more alignright" href="' . get_post_permalink() . '">' . $read_more . '</a>';

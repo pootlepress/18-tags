@@ -113,7 +113,7 @@ final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
 		wp_add_inline_style( 'sfp-styles', $css );
 
 		$fonts_options = get_option( 'sf-pro-google-fonts', array() );
-		$load_fonts = array();
+		$load_fonts = array( 'Montserrat' );
 
 		foreach ( $fonts_options as $option ) {
 			$font = get_theme_mod( $option );
@@ -204,9 +204,9 @@ final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
 
 			$post_archive = $query->is_category() || $query->is_tag() || $query->is_home();
 			if ( $post_archive ) {
-				$etp_blog_grid = explode( ',', $this->get( 'blog-grid', '3,4' ) );
+				$etp_blog_grid = explode( ',', $this->get( 'blog-grid', '1,10' ) );
 				$per_page      = array_product( $etp_blog_grid );
-				if ( $this->get( 'blog-layout' ) && $per_page ) {
+				if ( $this->get( 'blog-layout', 'left-image' ) && $per_page ) {
 					$query->set( 'posts_per_page', $per_page );
 				}
 			}
@@ -229,7 +229,7 @@ final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
 	 * @return string Template path
 	 */
 	function blog_layout( $template ) {
-		$layout = $this->get( 'blog-layout' );
+		$layout = $this->get( 'blog-layout', 'left-image' );
 		$dir = dirname( __FILE__ );
 
 		if ( ! empty( $layout ) && file_exists( "$dir/template/home-{$layout}.php" ) ) {

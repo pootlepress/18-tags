@@ -898,8 +898,7 @@ a {
 	 * Footer widgets
 	 */
   .footer-widgets {
-    padding-top: 4.236em;
-    border-bottom: 3px solid rgba(0, 0, 0, 0.05); }
+    padding-top: 4.236em; }
     .footer-widgets::after {
       clear: both;
       content: "";
@@ -1294,7 +1293,7 @@ fieldset {
       font-weight: inherit; }
     .main-navigation ul.menu ul,
     .main-navigation ul.nav-menu ul {
-      background-color: #ffffff;
+      background-color: #000000;
       margin-left: 0; }
         .main-navigation ul.menu ul li a,
         .main-navigation ul.nav-menu ul li a {
@@ -1372,12 +1371,10 @@ fieldset {
 
 .hentry {
   margin: 0 0 4.236em;
-  padding-bottom: 3.631em;
-  border-bottom: 6px solid rgba(0, 0, 0, 0.05); }
+  padding-bottom: 3.631em; }
   .hentry .wp-post-image {
     margin-bottom: 1.618em; }
   .hentry .entry-header {
-    border-bottom: 3px solid #60646c;
     margin-bottom: 3.631em; }
     .hentry .entry-header h1 {
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -1756,7 +1753,6 @@ video {
   .widget h2.widgettitle {
     font-size: 1.387em;
     letter-spacing: 0;
-    border-bottom: 3px solid #60646c;
     padding: 0 0 1em;
     margin-bottom: 1em;
     font-weight: 700; }

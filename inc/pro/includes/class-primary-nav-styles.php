@@ -82,7 +82,7 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 		        'background-color:' . $t->get( 'pri-nav-bg-color' ) . ';' .
 		        '}';
 		$css .= '#site-navigation.main-navigation ul, #site-navigation.main-navigation ul li a {' .
-		        'font-family:' . $t->get( 'pri-nav-font' ) . ';' .
+		        'font-family:' . $t->get( 'pri-nav-font', 'Montserrat' ) . ';' .
 		        'font-size:' . $t->get( 'pri-nav-text-size' ) . 'px;' .
 		        '}';
 		$css .= '#site-navigation.main-navigation .primary-navigation ul li a {' .
@@ -94,7 +94,7 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 		        'color:' . $t->get( 'pri-nav-active-link-color' ) . ';' .
 		        '}';
 		$css .= '#site-navigation.main-navigation .primary-navigation ul ul li a, #site-navigation.main-navigation .site-header-cart .widget_shopping_cart {' .
-		        'color:' . $t->get( 'pri-nav-dd-text-color' ) . ';' .
+		        'color:' . $t->get( 'pri-nav-dd-text-color', '#ffffff' ) . ';' .
 		        '}';
 		$css .= '#site-navigation.main-navigation .site-header-cart .widget_shopping_cart, #site-navigation.main-navigation ul.menu ul {' .
 		        'background-color:' . $t->get( 'pri-nav-dd-bg-color' ) . ';' .

@@ -46,6 +46,7 @@ $eighteen_tags_pro_customizer_fields = array(
 		'label'   => 'Font',
 		'section' => 'Primary Navigation',
 		'type'    => 'font',
+		'default' => 'Montserrat',
 	),
 	array(
 		'id'      => 'pri-nav-text-size',
@@ -110,6 +111,7 @@ $eighteen_tags_pro_customizer_fields = array(
 		'label'     => 'Drop down menu text color',
 		'section'   => 'Primary Navigation',
 		'type'      => 'color',
+		'default'   => '#ffffff',
 	),
 	array(
 		'id'      => 'pri-nav-dd-animation',
@@ -438,6 +440,7 @@ $eighteen_tags_pro_customizer_fields = array(
 		'label'     => 'Layout',
 		'section'   => 'existing_eighteen_tags_archive',
 		'type'      => 'sf-radio-image',
+		'default'   => 'left-image',
 		'choices' => array(
 			'' => PRO18_URL . '/assets/img/admin/layout-default.png',
 			'left-image' => PRO18_URL . '/assets/img/admin/layout-left-image.png',
@@ -451,7 +454,7 @@ $eighteen_tags_pro_customizer_fields = array(
 		'label'     => 'Show posts',
 		'section'   => 'existing_eighteen_tags_archive',
 		'type'      => 'grid',
-		'default'   => '3,4',
+		'default'   => '1,10',
 	),
 	array(
 		'id'        => 'blog-content',
@@ -475,7 +478,7 @@ $eighteen_tags_pro_customizer_fields = array(
 		'label'     => 'Excerpt word end',
 		'section'   => 'existing_eighteen_tags_archive',
 		'type'      => 'text',
-		'default'   => '[...]',
+		'default'   => '...',
 	),
 	array(
 		'id'        => 'blog-rm-butt-text',
@@ -592,6 +595,7 @@ $eighteen_tags_pro_customizer_fields = array(
 		'type' 		=> 'textarea',
 		'description'	=> 'Type here some text to replace footer text.',
 	),
+
 	//Footer - Widgets
 	array(
 		'id'      => 'footer-wid-header-font-size',

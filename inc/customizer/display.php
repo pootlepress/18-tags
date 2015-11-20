@@ -49,9 +49,7 @@ if ( ! function_exists( 'eighteen_tags_add_customizer_css' ) ) {
 		.main-navigation ul ul,
 		.secondary-navigation ul ul,
 		.main-navigation ul.menu > li.menu-item-has-children:after,
-		.secondary-navigation ul.menu ul,
-		.main-navigation ul.menu ul,
-		.main-navigation ul.nav-menu ul {
+		.secondary-navigation ul.menu ul {
 			background-color: ' . $header_background_color . ';
 		}
 
@@ -135,16 +133,8 @@ if ( ! function_exists( 'eighteen_tags_add_customizer_css' ) ) {
 		}
 
 		@media screen and ( min-width: 768px ) {
-			.main-navigation ul.menu > li > ul {
-				border-top-color: ' . $header_background_color . ';
-			}
-
 			.secondary-navigation ul.menu a:hover {
 				color: ' . eighteen_tags_adjust_color_brightness( $header_text_color, $brighten_factor ) . ';
-			}
-
-			.main-navigation ul.menu ul {
-				background-color: ' . $header_background_color . ';
 			}
 
 			.secondary-navigation ul.menu a {

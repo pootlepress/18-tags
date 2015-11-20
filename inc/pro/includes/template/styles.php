@@ -1,5 +1,5 @@
 <?php
-$layout = str_replace( '-image', '', get_theme_mod( 'eighteen-tags-pro-blog-layout' ) );
+$layout = str_replace( '-image', '', get_theme_mod( 'eighteen-tags-pro-blog-layout', 'left-image' ) );
 ?>
 <style>
 .eighteen-tags-pro-active.single #content > .col-full {

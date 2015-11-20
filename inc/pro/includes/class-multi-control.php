@@ -135,9 +135,7 @@ class PRO18_Custom_Customize_Control extends WP_Customize_Control {
 	protected function render_grid() {
 		$options = array();
 
-		for ( $i = 1; $i < 5; $i++ ) {
-			$options[$i] = $i;
-		}
+		for ( $i = 1; $i < 5; $i++ ) { $options[$i] = $i; }
 		?>
 		<select class="across" style="min-width: 16%;">
 			<?php $this->output_select_options( $options, $this->multi_val[0] ); ?>
