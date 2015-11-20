@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package storefront
+ * @package eighteen-tags
  */
 
 get_header(); ?>
@@ -29,5 +29,5 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php do_action( 'storefront_sidebar' ); ?>
+<?php do_action( 'eighteen_tags_sidebar' ); ?>
 <?php get_footer(); ?>

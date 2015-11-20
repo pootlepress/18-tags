@@ -2,16 +2,16 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package storefront
+ * @package eighteen-tags
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 	/**
-	 * @hooked storefront_page_header - 10
-	 * @hooked storefront_page_content - 20
+	 * @hooked eighteen_tags_page_header - 10
+	 * @hooked eighteen_tags_page_content - 20
 	 */
-	do_action( 'storefront_page' );
+	do_action( 'eighteen_tags_page' );
 	?>
 </article><!-- #post-## -->

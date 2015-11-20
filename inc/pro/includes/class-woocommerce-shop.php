@@ -1,13 +1,13 @@
 <?php
 /**
- * Storefront_Pro_WooCommerce_Shop Class
+ * Eighteen_Tags_Pro_WooCommerce_Shop Class
  *
- * @class Storefront_Pro_WooCommerce_Shop
+ * @class Eighteen_Tags_Pro_WooCommerce_Shop
  * @version	1.0.0
  * @since 1.0.0
- * @package	Storefront_Pro
+ * @package	Eighteen_Tags_Pro
  */
-class Storefront_Pro_WooCommerce_Shop extends Storefront_Pro_Abstract {
+class Eighteen_Tags_Pro_WooCommerce_Shop extends Eighteen_Tags_Pro_Abstract {
 
 	protected $css = "\n/* WooCommerce Pages */";
 
@@ -19,12 +19,12 @@ class Storefront_Pro_WooCommerce_Shop extends Storefront_Pro_Abstract {
 
 		//Shop layout
 		if ( in_array( $this->get( 'wc-shop-layout', 'default' ), array( 'full', 'masonry', ) ) ) {
-			remove_action( 'storefront_sidebar', 'storefront_get_sidebar' );
-			$this->css .= '.storefront-pro-active #primary.content-area{ width: 100%; margin: auto; }';
+			remove_action( 'eighteen_tags_sidebar', 'eighteen_tags_get_sidebar' );
+			$this->css .= '.eighteen-tags-pro-active #primary.content-area{ width: 100%; margin: auto; }';
 		}
 
 		if ( $this->get( 'wc-mob-store' ) ) {
-			add_action( 'woocommerce_before_shop_loop', 'storefront_product_search', 5 );
+			add_action( 'woocommerce_before_shop_loop', 'eighteen_tags_product_search', 5 );
 			add_action( 'woocommerce_before_shop_loop', array( $this, 'mob_store_view' ), 7 );
 			wp_enqueue_style( 'sfp-mob-store', $this->plugin_url . '/assets/css/mob-store.css' );
 		}
@@ -55,7 +55,7 @@ class Storefront_Pro_WooCommerce_Shop extends Storefront_Pro_Abstract {
 
 		//Shop alignment
 		$this->css .=
-			'.storefront-pro-active ul.products li.product { ' .
+			'.eighteen-tags-pro-active ul.products li.product { ' .
 			'text-align: ' . $this->get( 'wc-shop-alignment', 'center' ) . '; }';
 
 		//Shop show results count
@@ -121,7 +121,7 @@ class Storefront_Pro_WooCommerce_Shop extends Storefront_Pro_Abstract {
 	public function remove_breadcrumbs( $remove = true ) {
 
 		if ( $remove ) {
-			remove_action( 'storefront_content_top', 'woocommerce_breadcrumb', 10 );
+			remove_action( 'eighteen_tags_content_top', 'woocommerce_breadcrumb', 10 );
 			$this->css .= '.site-header { margin-bottom: 4.236em; }';
 		}
 	}

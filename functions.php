@@ -1,8 +1,8 @@
 <?php
 /**
- * storefront engine room
+ * eighteen-tags engine room
  *
- * @package storefront
+ * @package eighteen-tags
  */
 
 /**
@@ -12,5 +12,5 @@ require get_template_directory() . '/inc/init.php';
 
 /**
  * Note: Do not add any custom code here. Please use a custom plugin so that your customizations aren't lost during updates.
- * https://github.com/woothemes/theme-customisations
+ * https://github.com/pootlepress/customisations
  */

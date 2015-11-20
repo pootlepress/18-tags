@@ -11,7 +11,7 @@
  * @link https://github.com/reduxframework/kirki/
  * @link http://ottopress.com/2012/making-a-custom-control-for-the-theme-customizer/
  */
-class Storefront_Custom_Radio_Image_Control extends WP_Customize_Control {
+class Eighteen_Tags_Custom_Radio_Image_Control extends WP_Customize_Control {
 
 	/**
 	 * Declare the control type.

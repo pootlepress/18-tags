@@ -8,13 +8,13 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package storefront
+ * @package eighteen-tags
  */
-global $sfp_blog_across;
-$sfp_thumb_size = 'medium';
-$sfp_thumb_args = array( 'class' => "sfp-full-width", );
-//if ( 3 > $sfp_blog_across ) {
-//	$sfp_thumb_size = 'large';
+global $etp_blog_across;
+$etp_thumb_size = 'medium';
+$etp_thumb_args = array( 'class' => "sfp-full-width", );
+//if ( 3 > $etp_blog_across ) {
+//	$etp_thumb_size = 'large';
 //}
 
 include 'home-left-image.php';

@@ -5,7 +5,7 @@
  */
 ( function() {
 	$( document ).ready( function() {
-		$( 'div[class^="columns"] + .storefront-sorting' ).hide();
+		$( 'div[class^="columns"] + .eighteen-tags-sorting' ).hide();
 
 		$( '.site-main' ).jscroll({
 		    loadingHtml: '<img src="loading.gif" alt="Loading" /> Loading...',

@@ -2,7 +2,7 @@
 /**
  * General functions used to integrate this theme with WooCommerce.
  *
- * @package storefront
+ * @package eighteen-tags
  */
 
 /**
@@ -11,8 +11,8 @@
  * @since   1.0.0
  * @return  void
  */
-if ( ! function_exists( 'storefront_before_content' ) ) {
-	function storefront_before_content() {
+if ( ! function_exists( 'eighteen_tags_before_content' ) ) {
+	function eighteen_tags_before_content() {
 		?>
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
@@ -26,13 +26,13 @@ if ( ! function_exists( 'storefront_before_content' ) ) {
  * @since   1.0.0
  * @return  void
  */
-if ( ! function_exists( 'storefront_after_content' ) ) {
-	function storefront_after_content() {
+if ( ! function_exists( 'eighteen_tags_after_content' ) ) {
+	function eighteen_tags_after_content() {
 		?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
 
-		<?php do_action( 'storefront_sidebar' );
+		<?php do_action( 'eighteen_tags_sidebar' );
 	}
 }
 
@@ -41,8 +41,8 @@ if ( ! function_exists( 'storefront_after_content' ) ) {
  * @return integer products per row
  * @since  1.0.0
  */
-function storefront_loop_columns() {
-	return apply_filters( 'storefront_loop_columns', 3 ); // 3 products per row
+function eighteen_tags_loop_columns() {
+	return apply_filters( 'eighteen_tags_loop_columns', 3 ); // 3 products per row
 }
 
 /**
@@ -50,7 +50,7 @@ function storefront_loop_columns() {
  * @param  array $classes
  * @return array $classes modified to include 'woocommerce-active' class
  */
-function storefront_woocommerce_body_class( $classes ) {
+function eighteen_tags_woocommerce_body_class( $classes ) {
 	if ( is_woocommerce_activated() ) {
 		$classes[] = 'woocommerce-active';
 	}
@@ -64,13 +64,13 @@ function storefront_woocommerce_body_class( $classes ) {
  * @param  array $fragments Fragments to refresh via AJAX
  * @return array            Fragments to refresh via AJAX
  */
-if ( ! function_exists( 'storefront_cart_link_fragment' ) ) {
-	function storefront_cart_link_fragment( $fragments ) {
+if ( ! function_exists( 'eighteen_tags_cart_link_fragment' ) ) {
+	function eighteen_tags_cart_link_fragment( $fragments ) {
 		global $woocommerce;
 
 		ob_start();
 
-		storefront_cart_link();
+		eighteen_tags_cart_link();
 
 		$fragments['a.cart-contents'] = ob_get_clean();
 
@@ -82,11 +82,11 @@ if ( ! function_exists( 'storefront_cart_link_fragment' ) ) {
  * WooCommerce specific scripts & stylesheets
  * @since 1.0.0
  */
-function storefront_woocommerce_scripts() {
-	global $storefront_version;
+function eighteen_tags_woocommerce_scripts() {
+	global $eighteen_tags_version;
 
-	wp_enqueue_style( 'storefront-woocommerce-style', get_template_directory_uri() . '/inc/woocommerce/css/woocommerce.css', $storefront_version );
-	wp_style_add_data( 'storefront-woocommerce-style', 'rtl', 'replace' );
+	wp_enqueue_style( 'eighteen-tags-woocommerce-style', get_template_directory_uri() . '/inc/woocommerce/css/woocommerce.css', $eighteen_tags_version );
+	wp_style_add_data( 'eighteen-tags-woocommerce-style', 'rtl', 'replace' );
 }
 
 /**
@@ -95,8 +95,8 @@ function storefront_woocommerce_scripts() {
  * @since 1.0.0
  * @return  array $args related products args
  */
-function storefront_related_products_args( $args ) {
-	$args = apply_filters( 'storefront_related_products_args', array(
+function eighteen_tags_related_products_args( $args ) {
+	$args = apply_filters( 'eighteen_tags_related_products_args', array(
 		'posts_per_page' => 3,
 		'columns'        => 3,
 	) );
@@ -109,8 +109,8 @@ function storefront_related_products_args( $args ) {
  * @return integer number of columns
  * @since  1.0.0
  */
-function storefront_thumbnail_columns() {
-	return intval( apply_filters( 'storefront_product_thumbnail_columns', 4 ) );
+function eighteen_tags_thumbnail_columns() {
+	return intval( apply_filters( 'eighteen_tags_product_thumbnail_columns', 4 ) );
 }
 
 /**
@@ -118,8 +118,8 @@ function storefront_thumbnail_columns() {
  * @return integer number of products
  * @since  1.0.0
  */
-function storefront_products_per_page() {
-	return intval( apply_filters( 'storefront_products_per_page', 12 ) );
+function eighteen_tags_products_per_page() {
+	return intval( apply_filters( 'eighteen_tags_products_per_page', 12 ) );
 }
 
 /**

@@ -1,8 +1,8 @@
 <?php
 /**
- * storefront Theme Customizer controls
+ * eighteen-tags Theme Customizer controls
  *
- * @package storefront
+ * @package eighteen-tags
  */
 
 /**
@@ -11,8 +11,8 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  * @since  1.0.0
  */
-if ( ! function_exists( 'storefront_customize_register' ) ) {
-	function storefront_customize_register( $wp_customize ) {
+if ( ! function_exists( 'eighteen_tags_customize_register' ) ) {
+	function eighteen_tags_customize_register( $wp_customize ) {
 		$wp_customize->get_setting( 'blogname' )->transport         	= 'postMessage';
 		$wp_customize->get_setting( 'header_textcolor' )->transport 	= 'postMessage';
 
@@ -21,11 +21,11 @@ if ( ! function_exists( 'storefront_customize_register' ) ) {
 		$wp_customize->get_control( 'background_color' )->priority 	= 20;
 
 		// Change background image section title & priority
-		$wp_customize->get_section( 'background_image' )->title 	= __( 'Background', 'storefront' );
+		$wp_customize->get_section( 'background_image' )->title 	= __( 'Background', 'eighteen-tags' );
 		$wp_customize->get_section( 'background_image' )->priority 	= 30;
 
 		// Change header image section title & priority
-		$wp_customize->get_section( 'header_image' )->title 		= __( 'Header', 'storefront' );
+		$wp_customize->get_section( 'header_image' )->title 		= __( 'Header', 'eighteen-tags' );
 		$wp_customize->get_section( 'header_image' )->priority 		= 35;
 
 		/**
@@ -34,215 +34,190 @@ if ( ! function_exists( 'storefront_customize_register' ) ) {
 		require_once dirname( __FILE__ ) . '/controls/radio-image.php';
 		require_once dirname( __FILE__ ) . '/controls/arbitrary.php';
 
-		if ( apply_filters( 'storefront_customizer_more', true ) ) {
+		if ( apply_filters( 'eighteen_tags_customizer_more', true ) ) {
 			require_once dirname( __FILE__ ) . '/controls/more.php';
 		}
 
 		/**
 		 * Add the typography section
 	     */
-		$wp_customize->add_section( 'storefront_typography' , array(
-			'title'      => __( 'Typography', 'storefront' ),
+		$wp_customize->add_section( 'eighteen_tags_typography' , array(
+			'title'      => __( 'Typography', 'eighteen-tags' ),
 			'priority'   => 45,
 		) );
 
 		/**
 		 * Heading color
 		 */
-		$wp_customize->add_setting( 'storefront_heading_color', array(
-			'default'           => apply_filters( 'storefront_default_heading_color', '#484c51' ),
-			'sanitize_callback' => 'storefront_sanitize_hex_color',
+		$wp_customize->add_setting( 'eighteen_tags_heading_color', array(
+			'default'           => apply_filters( 'eighteen_tags_default_heading_color', '#484c51' ),
+			'sanitize_callback' => 'eighteen_tags_sanitize_hex_color',
 			'transport'			=> 'postMessage',
 		) );
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'storefront_heading_color', array(
-			'label'	   => __( 'Heading color', 'storefront' ),
-			'section'  => 'storefront_typography',
-			'settings' => 'storefront_heading_color',
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'eighteen_tags_heading_color', array(
+			'label'	   => __( 'Heading color', 'eighteen-tags' ),
+			'section'  => 'eighteen_tags_typography',
+			'settings' => 'eighteen_tags_heading_color',
 			'priority' => 20,
 		) ) );
 
 		/**
 		 * Text Color
 		 */
-		$wp_customize->add_setting( 'storefront_text_color', array(
-			'default'           => apply_filters( 'storefront_default_text_color', '#60646c' ),
-			'sanitize_callback' => 'storefront_sanitize_hex_color',
+		$wp_customize->add_setting( 'eighteen_tags_text_color', array(
+			'default'           => apply_filters( 'eighteen_tags_default_text_color', '#60646c' ),
+			'sanitize_callback' => 'eighteen_tags_sanitize_hex_color',
 			'transport'			=> 'postMessage',
 		) );
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'storefront_text_color', array(
-			'label'		=> __( 'Text color', 'storefront' ),
-			'section'	=> 'storefront_typography',
-			'settings'	=> 'storefront_text_color',
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'eighteen_tags_text_color', array(
+			'label'		=> __( 'Text color', 'eighteen-tags' ),
+			'section'	=> 'eighteen_tags_typography',
+			'settings'	=> 'eighteen_tags_text_color',
 			'priority'	=> 30,
 		) ) );
 
 		/**
 		 * Accent Color
 		 */
-		$wp_customize->add_setting( 'storefront_accent_color', array(
-			'default'           => apply_filters( 'storefront_default_accent_color', '#96588a' ),
-			'sanitize_callback' => 'storefront_sanitize_hex_color',
+		$wp_customize->add_setting( 'eighteen_tags_accent_color', array(
+			'default'           => apply_filters( 'eighteen_tags_default_accent_color', '#428bca' ),
+			'sanitize_callback' => 'eighteen_tags_sanitize_hex_color',
 		) );
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'storefront_accent_color', array(
-			'label'	   => __( 'Link / accent color', 'storefront' ),
-			'section'  => 'storefront_typography',
-			'settings' => 'storefront_accent_color',
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'eighteen_tags_accent_color', array(
+			'label'	   => __( 'Link / accent color', 'eighteen-tags' ),
+			'section'  => 'eighteen_tags_typography',
+			'settings' => 'eighteen_tags_accent_color',
 			'priority' => 40,
 		) ) );
 
-		/**
-		 * Logo
-		 */
-		if ( ! class_exists( 'Jetpack' ) ) {
-			$wp_customize->add_control( new Arbitrary_Storefront_Control( $wp_customize, 'storefront_logo_heading', array(
-				'section'  		=> 'header_image',
-				'type' 			=> 'heading',
-				'label'			=> __( 'Logo', 'storefront' ),
-				'priority' 		=> 2,
-			) ) );
-
-			$wp_customize->add_control( new Arbitrary_Storefront_Control( $wp_customize, 'storefront_logo_info', array(
-				'section'  		=> 'header_image',
-				'type' 			=> 'text',
-				'description'	=> sprintf( __( 'Looking to add a logo? Install the %sJetpack%s plugin! %sRead more%s.', 'storefront' ), '<a href="https://wordpress.org/plugins/jetpack/">', '</a>', '<a href="http://docs.woothemes.com/document/storefront-faq/#section-1">', '</a>' ),
-				'priority' 		=> 3,
-			) ) );
-
-			$wp_customize->add_control( new Arbitrary_Storefront_Control( $wp_customize, 'storefront_logo_divider_after', array(
-				'section'  		=> 'header_image',
-				'type' 			=> 'divider',
-				'priority' 		=> 4,
-			) ) );
-		}
-
-		$wp_customize->add_control( new Arbitrary_Storefront_Control( $wp_customize, 'storefront_header_image_heading', array(
+		$wp_customize->add_control( new Arbitrary_Eighteen_Tags_Control( $wp_customize, 'eighteen_tags_header_image_heading', array(
 			'section'  		=> 'header_image',
 			'type' 			=> 'heading',
-			'label'			=> __( 'Header background image', 'storefront' ),
+			'label'			=> __( 'Header background image', 'eighteen-tags' ),
 			'priority' 		=> 6,
 		) ) );
 
 		/**
 		 * Header Background
 		 */
-		$wp_customize->add_setting( 'storefront_header_background_color', array(
-			'default'           => apply_filters( 'storefront_default_header_background_color', '#2c2d33' ),
-			'sanitize_callback' => 'storefront_sanitize_hex_color',
+		$wp_customize->add_setting( 'eighteen_tags_header_background_color', array(
+			'default'           => apply_filters( 'eighteen_tags_default_header_background_color', '#ffffff' ),
+			'sanitize_callback' => 'eighteen_tags_sanitize_hex_color',
 			'transport'			=> 'postMessage',
 		) );
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'storefront_header_background_color', array(
-			'label'	   => __( 'Background color', 'storefront' ),
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'eighteen_tags_header_background_color', array(
+			'label'	   => __( 'Background color', 'eighteen-tags' ),
 			'section'  => 'header_image',
-			'settings' => 'storefront_header_background_color',
+			'settings' => 'eighteen_tags_header_background_color',
 			'priority' => 15,
 		) ) );
 
 		/**
 		 * Header text color
 		 */
-		$wp_customize->add_setting( 'storefront_header_text_color', array(
-			'default'           => apply_filters( 'storefront_default_header_text_color', '#9aa0a7' ),
-			'sanitize_callback' => 'storefront_sanitize_hex_color',
+		$wp_customize->add_setting( 'eighteen_tags_header_text_color', array(
+			'default'           => apply_filters( 'eighteen_tags_default_header_text_color', '#9aa0a7' ),
+			'sanitize_callback' => 'eighteen_tags_sanitize_hex_color',
 			'transport'			=> 'postMessage',
 		) );
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'storefront_header_text_color', array(
-			'label'	   => __( 'Text color', 'storefront' ),
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'eighteen_tags_header_text_color', array(
+			'label'	   => __( 'Text color', 'eighteen-tags' ),
 			'section'  => 'header_image',
-			'settings' => 'storefront_header_text_color',
+			'settings' => 'eighteen_tags_header_text_color',
 			'priority' => 20,
 		) ) );
 
 		/**
 		 * Header link color
 		 */
-		$wp_customize->add_setting( 'storefront_header_link_color', array(
-			'default'           => apply_filters( 'storefront_default_header_link_color', '#ffffff' ),
-			'sanitize_callback' => 'storefront_sanitize_hex_color',
+		$wp_customize->add_setting( 'eighteen_tags_header_link_color', array(
+			'default'           => apply_filters( 'eighteen_tags_default_header_link_color', '#000000' ),
+			'sanitize_callback' => 'eighteen_tags_sanitize_hex_color',
 			'transport'			=> 'postMessage',
 		) );
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'storefront_header_link_color', array(
-			'label'	   => __( 'Link color', 'storefront' ),
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'eighteen_tags_header_link_color', array(
+			'label'	   => __( 'Link color', 'eighteen-tags' ),
 			'section'  => 'header_image',
-			'settings' => 'storefront_header_link_color',
+			'settings' => 'eighteen_tags_header_link_color',
 			'priority' => 30,
 		) ) );
 
 		/**
 		 * Footer section
 		 */
-		$wp_customize->add_section( 'storefront_footer' , array(
-			'title'      	=> __( 'Footer', 'storefront' ),
+		$wp_customize->add_section( 'eighteen_tags_footer' , array(
+			'title'      	=> __( 'Footer', 'eighteen-tags' ),
 			'priority'   	=> 40,
-			'description' 	=> __( 'Customise the look & feel of your web site footer.', 'storefront' ),
+			'description' 	=> __( 'Customise the look & feel of your web site footer.', 'eighteen-tags' ),
 		) );
 
 		/**
 		 * Footer Background
 		 */
-		$wp_customize->add_setting( 'storefront_footer_background_color', array(
-			'default'           => apply_filters( 'storefront_default_footer_background_color', '#f3f3f3' ),
-			'sanitize_callback' => 'storefront_sanitize_hex_color',
+		$wp_customize->add_setting( 'eighteen_tags_footer_background_color', array(
+			'default'           => apply_filters( 'eighteen_tags_default_footer_background_color', '#f3f3f3' ),
+			'sanitize_callback' => 'eighteen_tags_sanitize_hex_color',
 			'transport'			=> 'postMessage',
 		) );
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'storefront_footer_background_color', array(
-			'label'	   	=> __( 'Background color', 'storefront' ),
-			'section'  	=> 'storefront_footer',
-			'settings' 	=> 'storefront_footer_background_color',
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'eighteen_tags_footer_background_color', array(
+			'label'	   	=> __( 'Background color', 'eighteen-tags' ),
+			'section'  	=> 'eighteen_tags_footer',
+			'settings' 	=> 'eighteen_tags_footer_background_color',
 			'priority'	=> 10,
 		) ) );
 
 		/**
 		 * Footer heading color
 		 */
-		$wp_customize->add_setting( 'storefront_footer_heading_color', array(
-			'default'           => apply_filters( 'storefront_default_footer_heading_color', '#494c50' ),
-			'sanitize_callback' => 'storefront_sanitize_hex_color',
+		$wp_customize->add_setting( 'eighteen_tags_footer_heading_color', array(
+			'default'           => apply_filters( 'eighteen_tags_default_footer_heading_color', '#494c50' ),
+			'sanitize_callback' => 'eighteen_tags_sanitize_hex_color',
 			'transport' 		=> 'postMessage',
 		) );
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'storefront_footer_heading_color', array(
-			'label'	   	=> __( 'Heading color', 'storefront' ),
-			'section'  	=> 'storefront_footer',
-			'settings' 	=> 'storefront_footer_heading_color',
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'eighteen_tags_footer_heading_color', array(
+			'label'	   	=> __( 'Heading color', 'eighteen-tags' ),
+			'section'  	=> 'eighteen_tags_footer',
+			'settings' 	=> 'eighteen_tags_footer_heading_color',
 			'priority'	=> 20,
 		) ) );
 
 		/**
 		 * Footer text color
 		 */
-		$wp_customize->add_setting( 'storefront_footer_text_color', array(
-			'default'           => apply_filters( 'storefront_default_footer_text_color', '#61656b' ),
-			'sanitize_callback' => 'storefront_sanitize_hex_color',
+		$wp_customize->add_setting( 'eighteen_tags_footer_text_color', array(
+			'default'           => apply_filters( 'eighteen_tags_default_footer_text_color', '#61656b' ),
+			'sanitize_callback' => 'eighteen_tags_sanitize_hex_color',
 			'transport'			=> 'postMessage',
 		) );
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'storefront_footer_text_color', array(
-			'label'	   	=> __( 'Text color', 'storefront' ),
-			'section'  	=> 'storefront_footer',
-			'settings' 	=> 'storefront_footer_text_color',
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'eighteen_tags_footer_text_color', array(
+			'label'	   	=> __( 'Text color', 'eighteen-tags' ),
+			'section'  	=> 'eighteen_tags_footer',
+			'settings' 	=> 'eighteen_tags_footer_text_color',
 			'priority'	=> 30,
 		) ) );
 
 		/**
 		 * Footer link color
 		 */
-		$wp_customize->add_setting( 'storefront_footer_link_color', array(
-			'default'           => apply_filters( 'storefront_default_footer_link_color', '#96588a' ),
-			'sanitize_callback' => 'storefront_sanitize_hex_color',
+		$wp_customize->add_setting( 'eighteen_tags_footer_link_color', array(
+			'default'           => apply_filters( 'eighteen_tags_default_footer_link_color', '#428bca' ),
+			'sanitize_callback' => 'eighteen_tags_sanitize_hex_color',
 			'transport'			=> 'postMessage',
 		) );
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'storefront_footer_link_color', array(
-			'label'	   	=> __( 'Link color', 'storefront' ),
-			'section'  	=> 'storefront_footer',
-			'settings' 	=> 'storefront_footer_link_color',
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'eighteen_tags_footer_link_color', array(
+			'label'	   	=> __( 'Link color', 'eighteen-tags' ),
+			'section'  	=> 'eighteen_tags_footer',
+			'settings' 	=> 'eighteen_tags_footer_link_color',
 			'priority'	=> 40,
 		) ) );
 
@@ -250,89 +225,89 @@ if ( ! function_exists( 'storefront_customize_register' ) ) {
 		/**
 		 * Buttons section
 		 */
-		$wp_customize->add_section( 'storefront_buttons' , array(
-			'title'      	=> __( 'Buttons', 'storefront' ),
+		$wp_customize->add_section( 'eighteen_tags_buttons' , array(
+			'title'      	=> __( 'Buttons', 'eighteen-tags' ),
 			'priority'   	=> 45,
-			'description' 	=> __( 'Customise the look & feel of your web site buttons.', 'storefront' ),
+			'description' 	=> __( 'Customise the look & feel of your web site buttons.', 'eighteen-tags' ),
 		) );
 
 		/**
 		 * Button background color
 		 */
-		$wp_customize->add_setting( 'storefront_button_background_color', array(
-			'default'           => apply_filters( 'storefront_default_button_background_color', '#60646c' ),
-			'sanitize_callback' => 'storefront_sanitize_hex_color',
+		$wp_customize->add_setting( 'eighteen_tags_button_background_color', array(
+			'default'           => apply_filters( 'eighteen_tags_default_button_background_color', '#60646c' ),
+			'sanitize_callback' => 'eighteen_tags_sanitize_hex_color',
 		) );
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'storefront_button_background_color', array(
-			'label'	   => __( 'Background color', 'storefront' ),
-			'section'  => 'storefront_buttons',
-			'settings' => 'storefront_button_background_color',
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'eighteen_tags_button_background_color', array(
+			'label'	   => __( 'Background color', 'eighteen-tags' ),
+			'section'  => 'eighteen_tags_buttons',
+			'settings' => 'eighteen_tags_button_background_color',
 			'priority' => 10,
 		) ) );
 
 		/**
 		 * Button text color
 		 */
-		$wp_customize->add_setting( 'storefront_button_text_color', array(
-			'default'           => apply_filters( 'storefront_default_button_text_color', '#ffffff' ),
-			'sanitize_callback' => 'storefront_sanitize_hex_color',
+		$wp_customize->add_setting( 'eighteen_tags_button_text_color', array(
+			'default'           => apply_filters( 'eighteen_tags_default_button_text_color', '#ffffff' ),
+			'sanitize_callback' => 'eighteen_tags_sanitize_hex_color',
 		) );
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'storefront_button_text_color', array(
-			'label'	   => __( 'Text color', 'storefront' ),
-			'section'  => 'storefront_buttons',
-			'settings' => 'storefront_button_text_color',
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'eighteen_tags_button_text_color', array(
+			'label'	   => __( 'Text color', 'eighteen-tags' ),
+			'section'  => 'eighteen_tags_buttons',
+			'settings' => 'eighteen_tags_button_text_color',
 			'priority' => 20,
 		) ) );
 
 		/**
 		 * Button alt background color
 		 */
-		$wp_customize->add_setting( 'storefront_button_alt_background_color', array(
-			'default'           => apply_filters( 'storefront_default_button_alt_background_color', '#96588a' ),
-			'sanitize_callback' => 'storefront_sanitize_hex_color',
+		$wp_customize->add_setting( 'eighteen_tags_button_alt_background_color', array(
+			'default'           => apply_filters( 'eighteen_tags_default_button_alt_background_color', '#428bca' ),
+			'sanitize_callback' => 'eighteen_tags_sanitize_hex_color',
 		) );
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'storefront_button_alt_background_color', array(
-			'label'	   => __( 'Alternate button background color', 'storefront' ),
-			'section'  => 'storefront_buttons',
-			'settings' => 'storefront_button_alt_background_color',
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'eighteen_tags_button_alt_background_color', array(
+			'label'	   => __( 'Alternate button background color', 'eighteen-tags' ),
+			'section'  => 'eighteen_tags_buttons',
+			'settings' => 'eighteen_tags_button_alt_background_color',
 			'priority' => 30,
 		) ) );
 
 		/**
 		 * Button alt text color
 		 */
-		$wp_customize->add_setting( 'storefront_button_alt_text_color', array(
-			'default'           => apply_filters( 'storefront_default_button_alt_text_color', '#ffffff' ),
-			'sanitize_callback' => 'storefront_sanitize_hex_color',
+		$wp_customize->add_setting( 'eighteen_tags_button_alt_text_color', array(
+			'default'           => apply_filters( 'eighteen_tags_default_button_alt_text_color', '#ffffff' ),
+			'sanitize_callback' => 'eighteen_tags_sanitize_hex_color',
 		) );
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'storefront_button_alt_text_color', array(
-			'label'	   => __( 'Alternate button text color', 'storefront' ),
-			'section'  => 'storefront_buttons',
-			'settings' => 'storefront_button_alt_text_color',
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'eighteen_tags_button_alt_text_color', array(
+			'label'	   => __( 'Alternate button text color', 'eighteen-tags' ),
+			'section'  => 'eighteen_tags_buttons',
+			'settings' => 'eighteen_tags_button_alt_text_color',
 			'priority' => 40,
 		) ) );
 
 		/**
 		 * Layout
 		 */
-		$wp_customize->add_section( 'storefront_layout' , array(
-			'title'      	=> __( 'Layout', 'storefront' ),
+		$wp_customize->add_section( 'eighteen_tags_layout' , array(
+			'title'      	=> __( 'Layout', 'eighteen-tags' ),
 			'priority'   	=> 50,
 		) );
 
-		$wp_customize->add_setting( 'storefront_layout', array(
-			'default'    		=> apply_filters( 'storefront_default_layout', $layout = is_rtl() ? 'left' : 'right' ),
-			'sanitize_callback' => 'storefront_sanitize_layout',
+		$wp_customize->add_setting( 'eighteen_tags_layout', array(
+			'default'    		=> apply_filters( 'eighteen_tags_default_layout', $layout = is_rtl() ? 'left' : 'right' ),
+			'sanitize_callback' => 'eighteen_tags_sanitize_layout',
 		) );
 
-		$wp_customize->add_control( new Storefront_Custom_Radio_Image_Control( $wp_customize, 'storefront_layout', array(
-					'settings'		=> 'storefront_layout',
-					'section'		=> 'storefront_layout',
-					'label'			=> __( 'General Layout', 'storefront' ),
+		$wp_customize->add_control( new Eighteen_Tags_Custom_Radio_Image_Control( $wp_customize, 'eighteen_tags_layout', array(
+					'settings'		=> 'eighteen_tags_layout',
+					'section'		=> 'eighteen_tags_layout',
+					'label'			=> __( 'General Layout', 'eighteen-tags' ),
 					'priority'		=> 1,
 					'choices'		=> array(
 						'right' 		=> get_template_directory_uri() . '/inc/customizer/controls/img/2cr.png',
@@ -343,21 +318,21 @@ if ( ! function_exists( 'storefront_customize_register' ) ) {
 		/**
 		 * More
 		 */
-		if ( apply_filters( 'storefront_customizer_more', true ) ) {
-			$wp_customize->add_section( 'storefront_more' , array(
-				'title'      	=> __( 'More', 'storefront' ),
+		if ( apply_filters( 'eighteen_tags_customizer_more', true ) ) {
+			$wp_customize->add_section( 'eighteen_tags_more' , array(
+				'title'      	=> __( 'More', 'eighteen-tags' ),
 				'priority'   	=> 999,
 			) );
 
-			$wp_customize->add_setting( 'storefront_more', array(
+			$wp_customize->add_setting( 'eighteen_tags_more', array(
 				'default'    		=> null,
 				'sanitize_callback' => 'sanitize_text_field',
 			) );
 
-			$wp_customize->add_control( new More_Storefront_Control( $wp_customize, 'storefront_more', array(
-				'label'    => __( 'Looking for more options?', 'storefront' ),
-				'section'  => 'storefront_more',
-				'settings' => 'storefront_more',
+			$wp_customize->add_control( new More_Eighteen_Tags_Control( $wp_customize, 'eighteen_tags_more', array(
+				'label'    => __( 'Looking for more options?', 'eighteen-tags' ),
+				'section'  => 'eighteen_tags_more',
+				'settings' => 'eighteen_tags_more',
 				'priority' => 1,
 			) ) );
 		}

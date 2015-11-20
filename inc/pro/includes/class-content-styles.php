@@ -1,13 +1,13 @@
 <?php
 /**
- * Storefront_Pro_Footer_Styles Class
+ * Eighteen_Tags_Pro_Footer_Styles Class
  *
- * @class Storefront_Pro_Footer_Styles
+ * @class Eighteen_Tags_Pro_Footer_Styles
  * @version	1.0.0
  * @since 1.0.0
- * @package	Storefront_Pro
+ * @package	Eighteen_Tags_Pro
  */
-class Storefront_Pro_Content_Styles extends Storefront_Pro_Abstract {
+class Eighteen_Tags_Pro_Content_Styles extends Eighteen_Tags_Pro_Abstract {
 
 	protected $css = "\n/*Main Content Styles*/";
 
@@ -37,16 +37,16 @@ class Storefront_Pro_Content_Styles extends Storefront_Pro_Abstract {
 	public function hr_styles() {
 
 		if ( $this->get( 'hide-hr' ) ) {
-			$this->css .= '.storefront-pro-active .hentry .entry-header, ' .
-			           '.storefront-pro-active .widget h3.widget-title, ' .
+			$this->css .= '.eighteen-tags-pro-active .hentry .entry-header, ' .
+			           '.eighteen-tags-pro-active .widget h3.widget-title, ' .
 			           '.hentry, .hentry .entry-header h1, ' .
-			           '.storefront-pro-active .widget h2.widgettitle { ' .
+			           '.eighteen-tags-pro-active .widget h2.widgettitle { ' .
 			           'border: none; }';
 		}
 
-		$this->css .= '.storefront-pro-active .hentry .entry-header, ' .
-		           '.storefront-pro-active .widget h3.widget-title, ' .
-		           '.storefront-pro-active .widget h2.widgettitle {' .
+		$this->css .= '.eighteen-tags-pro-active .hentry .entry-header, ' .
+		           '.eighteen-tags-pro-active .widget h3.widget-title, ' .
+		           '.eighteen-tags-pro-active .widget h2.widgettitle {' .
 		           'border-color: ' . $this->get( 'content-hr-color' ) . ' }';
 
 	}
@@ -58,9 +58,9 @@ class Storefront_Pro_Content_Styles extends Storefront_Pro_Abstract {
 		$t = &$this;
 		$css = &$this->css;
 
-		$css .= '.storefront-pro-active h1, .storefront-pro-active h2, ' .
-		        '.storefront-pro-active h3, .storefront-pro-active h4, ' .
-		        '.storefront-pro-active h5, .storefront-pro-active h6 {' .
+		$css .= '.eighteen-tags-pro-active h1, .eighteen-tags-pro-active h2, ' .
+		        '.eighteen-tags-pro-active h3, .eighteen-tags-pro-active h4, ' .
+		        '.eighteen-tags-pro-active h5, .eighteen-tags-pro-active h6 {' .
 		        'font-family:' . $t->get( 'typo-header-font' ) . ';' .
 		        'letter-spacing:' . $t->get( 'typo-header-letter-spacing' ) . 'px;' .
 		        'line-height:' . $t->get( 'typo-header-line-height' ) . ';' .
@@ -68,38 +68,38 @@ class Storefront_Pro_Content_Styles extends Storefront_Pro_Abstract {
 		        '}';
 
 		if ( $t->get( 'typo-header-font-size' ) ) {
-			$css .= '.storefront-pro-active h1 {' .
+			$css .= '.eighteen-tags-pro-active h1 {' .
 			        'font-size:' . ( 2 * $t->get( 'typo-header-font-size' ) ) . 'px;}';
 
-			$css .= '.storefront-pro-active h2 {' .
+			$css .= '.eighteen-tags-pro-active h2 {' .
 			        'font-size:' . ( 1.69 * $t->get( 'typo-header-font-size' ) ) . 'px;}';
 
-			$css .= '.storefront-pro-active h3 {' .
+			$css .= '.eighteen-tags-pro-active h3 {' .
 			        'font-size:' . ( 1.384 * $t->get( 'typo-header-font-size' ) ) . 'px;}';
 
-			$css .= '.storefront-pro-active h4 {' .
+			$css .= '.eighteen-tags-pro-active h4 {' .
 			        'font-size:' . $t->get( 'typo-header-font-size' ) . 'px;}';
 
-			$css .= '.storefront-pro-active h5 {' .
+			$css .= '.eighteen-tags-pro-active h5 {' .
 			        'font-size:' . ( 0.88 * $t->get( 'typo-header-font-size' ) ) . 'px;}';
 
-			$css .= '.storefront-pro-active h6 {' .
+			$css .= '.eighteen-tags-pro-active h6 {' .
 			        'font-size:' . ( 0.7 * $t->get( 'typo-header-font-size' ) ) . 'px;}';
 		}
 
 		if ( $t->get( 'blog-header-size' ) ) {
-			$css .= '.blog.storefront-pro-active .entry-title, .archive.storefront-pro-active .entry-title {' .
+			$css .= '.blog.eighteen-tags-pro-active .entry-title, .archive.eighteen-tags-pro-active .entry-title {' .
 			        'font-size:' . ( 2 * $t->get( 'blog-header-size' ) ) . 'px;}';
 		}
 
-		$css .= '.blog.storefront-pro-active .entry-title, .archive.storefront-pro-active .entry-title, ' .
-		        '.blog.storefront-pro-active .entry-title a, .archive.storefront-pro-active .entry-title a {' .
+		$css .= '.blog.eighteen-tags-pro-active .entry-title, .archive.eighteen-tags-pro-active .entry-title, ' .
+		        '.blog.eighteen-tags-pro-active .entry-title a, .archive.eighteen-tags-pro-active .entry-title a {' .
 		        'color:' . $t->get( 'blog-header-color' ) . ';}';
 
-		$css .= '.single-post.storefront-pro-active .entry-title { color:' . $t->get( 'single-header-color' ) . ';}';
+		$css .= '.single-post.eighteen-tags-pro-active .entry-title { color:' . $t->get( 'single-header-color' ) . ';}';
 		if ( $t->get( 'single-header-size' ) ) {
 			$css .= '.single-post #kickass-feat .entry-title { font-size:' . ( 4.3 * $t->get( 'single-header-size' ) ) . 'px;}';
-			$css .= '.single-post.storefront-pro-active .entry-title { font-size:' . ( 2.5 * $t->get( 'single-header-size' ) ) . 'px;}';
+			$css .= '.single-post.eighteen-tags-pro-active .entry-title { font-size:' . ( 2.5 * $t->get( 'single-header-size' ) ) . 'px;}';
 		}
 
 	}
@@ -111,10 +111,10 @@ class Storefront_Pro_Content_Styles extends Storefront_Pro_Abstract {
 		$t = &$this;
 		$css = &$this->css;
 
-		$css .= 'body.storefront-pro-active, .storefront-pro-active .panel-grid-cell { ' .
+		$css .= 'body.eighteen-tags-pro-active, .eighteen-tags-pro-active .panel-grid-cell { ' .
 		        'font-family:' . $t->get( 'typo-body-font' ) . ';' .
 		        'line-height:' . $t->get( 'typo-body-line-height' ) . '}';
-		$css .= '.storefront-pro-active .panel-grid-cell, #primary, #secondary {' .
+		$css .= '.eighteen-tags-pro-active .panel-grid-cell, #primary, #secondary {' .
 		        'font-size:' . $t->get( 'typo-body-font-size' ) . 'px; }';;
 	}
 
@@ -122,10 +122,10 @@ class Storefront_Pro_Content_Styles extends Storefront_Pro_Abstract {
 		?>
 		<div class="entry-content" itemprop="articleBody">
 			<?php
-			storefront_post_thumbnail( 'full' );
+			eighteen_tags_post_thumbnail( 'full' );
 			$this->blog_content();
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'storefront' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'eighteen-tags' ),
 				'after'  => '</div>',
 			) );
 			?>
@@ -166,7 +166,7 @@ class Storefront_Pro_Content_Styles extends Storefront_Pro_Abstract {
 		if ( $show_full ) {
 			the_content(
 				sprintf(
-					__( 'Continue reading %s', 'storefront' ),
+					__( 'Continue reading %s', 'eighteen-tags' ),
 					'<span class="screen-reader-text">' . get_the_title() . '</span>'
 				)
 			);

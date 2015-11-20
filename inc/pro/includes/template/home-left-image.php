@@ -8,16 +8,16 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package storefront
+ * @package eighteen-tags
  */
 
 get_header();
 include 'styles.php';
 
 //Thumbnail args
-if ( empty( $sfp_thumb_size ) ) {
-	$sfp_thumb_size = 'thumbnail';
-	$sfp_thumb_args = array();
+if ( empty( $etp_thumb_size ) ) {
+	$etp_thumb_size = 'thumbnail';
+	$etp_thumb_args = array();
 }
 
 $i = 0;
@@ -36,26 +36,26 @@ $posts_array = array();
 			<header class="entry-header">
 				<?php
 				echo sprintf( '<a href="%s" rel="bookmark">', get_permalink() );
-				storefront_post_thumbnail( $sfp_thumb_size, $sfp_thumb_args );
+				eighteen_tags_post_thumbnail( $etp_thumb_size, $etp_thumb_args );
 				the_title( '<h1 class="entry-title" itemprop="name headline">', '</h1>' );
 				echo '</a>';
 				?>
 			</header><!-- .entry-header -->
 			<div class="entry-content" itemprop="articleBody">
-				<?php Storefront_Pro::instance()->public->content_styles->blog_content(); ?>
+				<?php Eighteen_Tags_Pro::instance()->public->content_styles->blog_content(); ?>
 			</div><!-- .entry-content -->
 			<?php
-			storefront_posted_on();
-			storefront_post_meta();
+			eighteen_tags_posted_on();
+			eighteen_tags_post_meta();
 			?>
 
 		</article><!-- #post-## -->
 
 			<?php
-				$posts_array[ $i % $sfp_blog_across ][] = ob_get_clean();
+				$posts_array[ $i % $etp_blog_across ][] = ob_get_clean();
 			endwhile;
 		foreach ( $posts_array as $posts ) {
-			echo "<div class='col col-1-$sfp_blog_across'>";
+			echo "<div class='col col-1-$etp_blog_across'>";
 			foreach ( $posts as $post ) {
 				echo $post;
 			}
@@ -66,9 +66,9 @@ $posts_array = array();
 		endif;
 
 		/**
-		 * @hooked storefront_paging_nav - 10
+		 * @hooked eighteen_tags_paging_nav - 10
 		 */
-		do_action( 'storefront_loop_after' );
+		do_action( 'eighteen_tags_loop_after' );
 		?>
 
 	</main><!-- #main -->

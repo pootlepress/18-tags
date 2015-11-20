@@ -7,15 +7,15 @@
  */
 
 /**
- * Storefront_Pro_Abstract
+ * Eighteen_Tags_Pro_Abstract
  * All classes except main extend this
  *
- * @class Storefront_Pro_Abstract
+ * @class Eighteen_Tags_Pro_Abstract
  * @version	1.0.0
  * @since 1.0.0
- * @package	Storefront_Pro
+ * @package	Eighteen_Tags_Pro
  */
-abstract class Storefront_Pro_Abstract {
+abstract class Eighteen_Tags_Pro_Abstract {
 
 	/**
 	 * The token.

@@ -4,29 +4,29 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package storefront
+ * @package eighteen-tags
  */
 ?>
 
 		</div><!-- .col-full -->
 	</div><!-- #content -->
 
-	<?php do_action( 'storefront_before_footer' ); ?>
+	<?php do_action( 'eighteen_tags_before_footer' ); ?>
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="col-full">
 
 			<?php
 			/**
-			 * @hooked storefront_footer_widgets - 10
-			 * @hooked storefront_credit - 20
+			 * @hooked eighteen_tags_footer_widgets - 10
+			 * @hooked eighteen_tags_credit - 20
 			 */
-			do_action( 'storefront_footer' ); ?>
+			do_action( 'eighteen_tags_footer' ); ?>
 
 		</div><!-- .col-full -->
 	</footer><!-- #colophon -->
 
-	<?php do_action( 'storefront_after_footer' ); ?>
+	<?php do_action( 'eighteen_tags_after_footer' ); ?>
 
 </div><!-- #page -->
 

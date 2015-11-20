@@ -16,7 +16,7 @@ if ( ! class_exists( 'Lib_Customize_Alpha_Color_Control' ) ) {
 		public function enqueue() {
 			wp_enqueue_script(
 				'lib-alpha-color-picker',
-				plugin_dir_url( __FILE__ ) . '../assets/alpha-color-picker.js',
+				PRO18_URL . '/includes/page-customizer/assets/alpha-color-picker.js',
 				array( 'jquery', 'wp-color-picker' )
 			);
 			wp_enqueue_style( 'wp-color-picker' );

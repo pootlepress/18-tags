@@ -1,4 +1,4 @@
-.storefront-pro-active {
+.eighteen-tags-pro-active {
 	height: auto !important;
 }
 
@@ -100,33 +100,33 @@ nav.secondary-navigation {
 	left:0;
 }
 
-.storefront-pro-active ul.products li.product .star-rating {
+.eighteen-tags-pro-active ul.products li.product .star-rating {
 	display: inline-block;
 }
 
-.storefront-pro-active.full-sidebar .content-area {
+.eighteen-tags-pro-active.full-sidebar .content-area {
 	width: 100%;
 	float: none;
 	margin: auto;
 }
 
-body.storefront-pro-active .site-header .site-header-cart{
+body.eighteen-tags-pro-active .site-header .site-header-cart{
 	padding-top: 0;
 }
 
-body.storefront-pro-active .secondary-navigation .site-header-cart{
+body.eighteen-tags-pro-active .secondary-navigation .site-header-cart{
 	width: 13em;
 	float: right;
 }
 
-body.storefront-pro-active .secondary-navigation .site-header-cart li:first-child,
-body.storefront-pro-active .secondary-navigation .site-header-cart li a{
+body.eighteen-tags-pro-active .secondary-navigation .site-header-cart li:first-child,
+body.eighteen-tags-pro-active .secondary-navigation .site-header-cart li a{
 	display: block;
 }
 
 #site-navigation,
-body.storefront-pro-active .site-header-cart li,
-body.storefront-pro-active .site-header-cart li a{
+body.eighteen-tags-pro-active .site-header-cart li,
+body.eighteen-tags-pro-active .site-header-cart li a{
 	display: block;
 }
 
@@ -155,7 +155,7 @@ body.storefront-pro-active .site-header-cart li a{
 	padding-bottom: 0;
 }
 
-.storefront-pro-active .site-header .main-navigation {
+.eighteen-tags-pro-active .site-header .main-navigation {
 	padding: 0;
 	margin: 0;
 	width: 100%;
@@ -169,7 +169,7 @@ body.storefront-pro-active .site-header-cart li a{
 	margin: 0;
 }
 
-.storefront-pro-active .site-header .col-full {
+.eighteen-tags-pro-active .site-header .col-full {
 	position: relative;
 }
 
@@ -183,13 +183,13 @@ body.storefront-pro-active .site-header-cart li a{
 }
 
 @media screen and (max-width: 768px) {
-	.storefront-pro-active #masthead {
+	.eighteen-tags-pro-active #masthead {
 		min-height: 43px;
 		box-sizing: content-box;
 		-webkit-box-sizing: content-box;
 	}
 
-	body.storefront-pro-active .secondary-navigation .site-header-cart{
+	body.eighteen-tags-pro-active .secondary-navigation .site-header-cart{
 		display: none;
 	}
 
@@ -422,7 +422,7 @@ body.storefront-pro-active .site-header-cart li a{
 		max-width: 200px;
 	}
 
-	.storefront-pro-active nav.secondary-navigation .social-info a {
+	.eighteen-tags-pro-active nav.secondary-navigation .social-info a {
  		font-size: 11px;
 		font-family: arial, sans-serif;
 	}
@@ -434,7 +434,7 @@ body.storefront-pro-active .site-header-cart li a{
 	}
 }
 
-.jscroll-added .storefront-sorting {
+.jscroll-added .eighteen-tags-sorting {
 	display: none;
 }
 

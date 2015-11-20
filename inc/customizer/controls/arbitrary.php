@@ -2,7 +2,7 @@
 /**
  * Class to create a custom arbitrary html control for dividers etc
  */
-class Arbitrary_Storefront_Control extends WP_Customize_Control {
+class Arbitrary_Eighteen_Tags_Control extends WP_Customize_Control {
 	public $settings 	= 'blogname';
 	public $description = '';
 

@@ -1,8 +1,8 @@
 <?php
 /**
- * storefront Theme Customizer functions
+ * eighteen-tags Theme Customizer functions
  *
- * @package storefront
+ * @package eighteen-tags
  */
 
 /**
@@ -10,9 +10,9 @@
  *
  * @since  1.0.0
  */
-if ( ! function_exists( 'storefront_customize_preview_js' ) ) {
-	function storefront_customize_preview_js() {
-		wp_enqueue_script( 'storefront_customizer', get_template_directory_uri() . '/inc/customizer/js/customizer.min.js', array( 'customize-preview' ), '1.15', true );
+if ( ! function_exists( 'eighteen_tags_customize_preview_js' ) ) {
+	function eighteen_tags_customize_preview_js() {
+		wp_enqueue_script( 'eighteen_tags_customizer', get_template_directory_uri() . '/inc/customizer/js/customizer.min.js', array( 'customize-preview' ), '1.15', true );
 	}
 }
 
@@ -24,8 +24,8 @@ if ( ! function_exists( 'storefront_customize_preview_js' ) ) {
  *
  * @since 1.0.0
  */
-if ( ! function_exists( 'storefront_sanitize_hex_color' ) ) {
-	function storefront_sanitize_hex_color( $color ) {
+if ( ! function_exists( 'eighteen_tags_sanitize_hex_color' ) ) {
+	function eighteen_tags_sanitize_hex_color( $color ) {
 		if ( '' === $color ) {
 			return '';
         }
@@ -45,8 +45,8 @@ if ( ! function_exists( 'storefront_sanitize_hex_color' ) ) {
  *
  * @since  1.3.0
  */
-if ( ! function_exists( 'storefront_sanitize_choices' ) ) {
-    function storefront_sanitize_choices( $input, $setting ) {
+if ( ! function_exists( 'eighteen_tags_sanitize_choices' ) ) {
+    function eighteen_tags_sanitize_choices( $input, $setting ) {
         // Ensure input is a slug.
         $input = sanitize_key( $input );
 
@@ -65,8 +65,8 @@ if ( ! function_exists( 'storefront_sanitize_choices' ) ) {
  *
  * @since 1.0.3
  */
-if ( ! function_exists( 'storefront_sanitize_layout' ) ) {
-    function storefront_sanitize_layout( $input ) {
+if ( ! function_exists( 'eighteen_tags_sanitize_layout' ) ) {
+    function eighteen_tags_sanitize_layout( $input ) {
         $valid = array(
             'right' => 'Right',
             'left'  => 'Left',
@@ -90,7 +90,7 @@ if ( ! function_exists( 'storefront_sanitize_layout' ) ) {
  * @return bool Whether the checkbox is checked.
  * @since  1.5.0
  */
-function storefront_sanitize_checkbox( $checked ) {
+function eighteen_tags_sanitize_checkbox( $checked ) {
     return (bool) $checked;
 }
 
@@ -101,8 +101,8 @@ function storefront_sanitize_checkbox( $checked ) {
  * @return string[]          modified body classes
  * @since  1.0.0
  */
-function storefront_layout_class( $classes ) {
-	$left_or_right = get_theme_mod( 'storefront_layout', apply_filters( 'storefront_default_layout', $layout = is_rtl() ? 'left' : 'right' ) );
+function eighteen_tags_layout_class( $classes ) {
+	$left_or_right = get_theme_mod( 'eighteen_tags_layout', apply_filters( 'eighteen_tags_default_layout', $layout = is_rtl() ? 'left' : 'right' ) );
 
 	$classes[] = $left_or_right . '-sidebar';
 
@@ -117,7 +117,7 @@ function storefront_layout_class( $classes ) {
  * @return string        brightened/darkened hex color
  * @since  1.0.0
  */
-function storefront_adjust_color_brightness( $hex, $steps ) {
+function eighteen_tags_adjust_color_brightness( $hex, $steps ) {
     // Steps should be between -255 and 255. Negative = darker, positive = lighter
     $steps  = max( -255, min( 255, $steps ) );
 
@@ -156,7 +156,7 @@ function storefront_adjust_color_brightness( $hex, $steps ) {
  * @link https://github.com/reduxframework/kirki/
  * @since  1.5.0
  */
-function storefront_customizer_custom_control_css() {
+function eighteen_tags_customizer_custom_control_css() {
     ?>
     <style>
     .customize-control-radio-image .image.ui-buttonset input[type=radio] {

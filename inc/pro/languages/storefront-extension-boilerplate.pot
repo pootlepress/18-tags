@@ -1,9 +1,9 @@
-# Copyright (C) 2015 Storefront Pro
-# This file is distributed under the same license as the Storefront Pro package.
+# Copyright (C) 2015 Eighteen tags Pro
+# This file is distributed under the same license as the Eighteen tags Pro package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Storefront Pro 1.0.0\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tag/storefront-pro\n"
+"Project-Id-Version: Eighteen tags Pro 1.0.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/eighteen-tags-pro\n"
 "POT-Creation-Date: 2015-01-27 14:35:53+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -12,66 +12,66 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: storefront-pro.php:139
-#: storefront-pro.php:148
+#: eighteen-tags-pro.php:139
+#: eighteen-tags-pro.php:148
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
-#: storefront-pro.php:168
-msgid "%sThanks for installing the Storefront Pro extension. To get started, visit the %sCustomizer%s.%s %sOpen the Customizer%s"
+#: eighteen-tags-pro.php:168
+msgid "%sThanks for installing the Eighteen tags Pro extension. To get started, visit the %sCustomizer%s.%s %sOpen the Customizer%s"
 msgstr ""
 
-#: storefront-pro.php:247
-msgid "Storefront Pro"
+#: eighteen-tags-pro.php:247
+msgid "Eighteen tags Pro"
 msgstr ""
 
-#: storefront-pro.php:248
+#: eighteen-tags-pro.php:248
 msgid "Add a description, if you want to!"
 msgstr ""
 
-#: storefront-pro.php:262
+#: eighteen-tags-pro.php:262
 msgid "Image selector"
 msgstr ""
 
-#: storefront-pro.php:277
+#: eighteen-tags-pro.php:277
 msgid "Checkbox"
 msgstr ""
 
-#: storefront-pro.php:278
+#: eighteen-tags-pro.php:278
 msgid "Here's a simple boolean checkbox option. In this instance it toggles wrapping the main navigation in a wrapper div."
 msgstr ""
 
-#: storefront-pro.php:295
+#: eighteen-tags-pro.php:295
 msgid "Color picker"
 msgstr ""
 
-#: storefront-pro.php:296
+#: eighteen-tags-pro.php:296
 msgid "Here's an example color picker. In this instance it applies a background color to headings"
 msgstr ""
 
-#: storefront-pro.php:311
+#: eighteen-tags-pro.php:311
 msgid "Select"
 msgstr ""
 
-#: storefront-pro.php:312
+#: eighteen-tags-pro.php:312
 msgid "Make a selection!"
 msgstr ""
 #. Plugin Name of the plugin/theme
-msgid "Storefront Pro"
+msgid "Eighteen tags Pro"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "http://woothemes.com/"
+msgid "http://pootlepress.com/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "A boilerplate plugin for creating Storefront extensions"
+msgid "A boilerplate plugin for creating Eighteen tags extensions"
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "WooThemes"
+msgid "pootlepress"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://woothemes.com/"
+msgid "http://pootlepress.com/"
 msgstr ""

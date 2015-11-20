@@ -1,22 +1,22 @@
 <?php
 /**
- * Storefront_Pro_Footer_Styles Class
+ * Eighteen_Tags_Pro_Footer_Styles Class
  *
- * @class Storefront_Pro_Footer_Styles
+ * @class Eighteen_Tags_Pro_Footer_Styles
  * @version	1.0.0
  * @since 1.0.0
- * @package	Storefront_Pro
+ * @package	Eighteen_Tags_Pro
  */
-class Storefront_Pro_Footer_Styles extends Storefront_Pro_Abstract {
+class Eighteen_Tags_Pro_Footer_Styles extends Eighteen_Tags_Pro_Abstract {
 
 	protected $css = "\n/* Footer Styles */";
 
 	public function init() {
-		add_filter( 'storefront_footer_widget_regions', array( $this, 'widget_areas' ) );
+		add_filter( 'eighteen_tags_footer_widget_regions', array( $this, 'widget_areas' ) );
 
-		remove_action( 'storefront_footer', 'storefront_credit', 20 );
+		remove_action( 'eighteen_tags_footer', 'eighteen_tags_credit', 20 );
 
-		add_action( 'storefront_footer', array( $this, 'credit' ), 20 );
+		add_action( 'eighteen_tags_footer', array( $this, 'credit' ), 20 );
 	}
 
 	/**
@@ -42,23 +42,23 @@ class Storefront_Pro_Footer_Styles extends Storefront_Pro_Abstract {
 		$css = &$this->css;
 		$t->get( 'footer-wid-header-text-size' );
 
-		$css .= '.storefront-pro-active .site-footer aside > *:not(h3) {' .
+		$css .= '.eighteen-tags-pro-active .site-footer aside > *:not(h3) {' .
 		        'font-size:' . $t->get( 'footer-wid-font-size' ) . 'px;' .
 		        $t->font_style( $t->get( 'footer-wid-font-style' ) ) .
 		        'color:' . $t->get( 'footer-wid-color' ) . ';' .
 		        '}';
 
-		$css .= '.storefront-pro-active .site-footer .footer-widgets h3 {' .
+		$css .= '.eighteen-tags-pro-active .site-footer .footer-widgets h3 {' .
 		        'font-size:' . $t->get( 'footer-wid-header-font-size' ) . 'px;' .
 		        $t->font_style( $t->get( 'footer-wid-header-font-style' ) ) .
 		        'color:' . $t->get( 'footer-wid-header-color' ) . ';' .
 		        '}';
 
-		$css .= '.storefront-pro-active .site-footer .footer-widgets a {' .
+		$css .= '.eighteen-tags-pro-active .site-footer .footer-widgets a {' .
 		        'color:' . $t->get( 'footer-wid-link-color' ) . ';' .
 		        '}';
 
-		$css .= '.storefront-pro-active .site-footer .footer-widgets li:before {' .
+		$css .= '.eighteen-tags-pro-active .site-footer .footer-widgets li:before {' .
 		        'color:' . $t->get( 'footer-wid-bullet-color' ) . ';' .
 		        '}';
 	}
@@ -83,10 +83,10 @@ class Storefront_Pro_Footer_Styles extends Storefront_Pro_Abstract {
 
 	protected function layout() {
 		$t = &$this;
-		$css = &Storefront_Pro_Public::$desktop_css;
+		$css = &Eighteen_Tags_Pro_Public::$desktop_css;
 		$layout = $t->get( 'typo-footer-layout' );
 		$class_prefix = '.footer-widget-';
-		$selector_prefix = '.storefront-pro-active .footer-widgets ';
+		$selector_prefix = '.eighteen-tags-pro-active .footer-widgets ';
 		if ( $layout && ! is_numeric( $layout ) ) {
 			$sizes = explode( '-', $layout );
 			$cols = count( $sizes );
@@ -107,9 +107,9 @@ class Storefront_Pro_Footer_Styles extends Storefront_Pro_Abstract {
 		<div class="site-info">
 			<?php
 			if ( empty( $footer_text ) ) {
-				echo esc_html(apply_filters('storefront_copyright_text', $content = '&copy; ' . get_bloginfo('name') . ' ' . date('Y')));
-				if (apply_filters('storefront_credit_link', true)) { ?>
-					<br/> <?php printf(__('%1$s designed by %2$s.', 'storefront'), 'Storefront', '<a href="http://www.woothemes.com" alt="Premium WordPress Themes & Plugins by WooThemes" title="Premium WordPress Themes & Plugins by WooThemes" rel="designer">WooThemes</a>');
+				echo esc_html(apply_filters('eighteen_tags_copyright_text', $content = '&copy; ' . get_bloginfo('name') . ' ' . date('Y')));
+				if (apply_filters('eighteen_tags_credit_link', true)) { ?>
+					<br/> <?php printf(__('%1$s designed by %2$s.', 'eighteen-tags'), 'Eighteen tags', '<a href="http://www.pootlepress.com" alt="Premium WordPress Themes & Plugins by pootlepress" title="Premium WordPress Themes & Plugins by pootlepress" rel="designer">pootlepress</a>');
 				}
 			} else {
 				echo $footer_text;

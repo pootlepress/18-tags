@@ -12,18 +12,18 @@
 	<?php endif; // End header image check. ?>
 
  *
- * @package storefront
+ * @package eighteen-tags
  */
 
 /**
  * Setup the WordPress core custom header feature.
  *
- * @uses storefront_header_style()
- * @uses storefront_admin_header_style()
- * @uses storefront_admin_header_image()
+ * @uses eighteen_tags_header_style()
+ * @uses eighteen_tags_admin_header_style()
+ * @uses eighteen_tags_admin_header_image()
  */
-function storefront_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'storefront_custom_header_args', array(
+function eighteen_tags_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'eighteen_tags_custom_header_args', array(
 		'default-image'          => '',
 		'header-text'     		 => false,
 		'width'                  => 1950,

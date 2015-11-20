@@ -1,9 +1,14 @@
 <?php
 /**
- * storefront engine room
+ * eighteen-tags engine room
  *
- * @package storefront
+ * @package eighteen-tags
  */
+
+/**
+ * Load pro styling
+ */
+require get_template_directory() . '/inc/pro/pro.php';
 
 /**
  * Setup.
@@ -31,7 +36,7 @@ require get_template_directory() . '/inc/functions/extras.php';
 /**
  * Customizer additions.
  */
-if ( is_storefront_customizer_enabled() ) {
+if ( is_eighteen_tags_customizer_enabled() ) {
 	require get_template_directory() . '/inc/customizer/hooks.php';
 	require get_template_directory() . '/inc/customizer/controls.php';
 	require get_template_directory() . '/inc/customizer/display.php';

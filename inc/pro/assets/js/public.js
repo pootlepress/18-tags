@@ -13,7 +13,7 @@
 /**
  * Public end styling
  * @author shramee <shramee.srivastav@gmail.com>
- * @package storefront pro
+ * @package eighteen-tags pro
  */
 jQuery( document ).ready( function ( $ ) {
 	var $window = $( window ),
@@ -115,7 +115,7 @@ jQuery( document ).ready( function ( $ ) {
 
 //Infinite scroll
 	if ( sfpSettings.infiniteScroll && windowWidth > 767 ) {
-		$( 'div[class^="columns"] + .storefront-sorting' ).hide();
+		$( 'div[class^="columns"] + .eighteen-tags-sorting' ).hide();
 
 		$( '.site-main' ).jscroll({
 			loadingHtml: '<img src="loading.gif" alt="Loading" /> Loading...',
@@ -141,7 +141,7 @@ jQuery( document ).ready( function ( $ ) {
 
 /**
  * navigation.js
- * storefront navigation js to add nav-menu class to first ul in site-navigation
+ * eighteen-tags navigation js to add nav-menu class to first ul in site-navigation
  */
 (
 	function () {

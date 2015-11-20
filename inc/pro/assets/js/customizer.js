@@ -5,7 +5,7 @@
  */
 
 ( function( $ ) {
-	wp.customize( 'sfp_color_picker', function( value ) {
+	wp.customize( 'etp_color_picker', function( value ) {
 		value.bind( function( to ) {
 			$( 'h1, h2, h3, h4, h5, h6' ).css( 'background-color', to );
 		} );

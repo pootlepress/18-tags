@@ -20,18 +20,18 @@ h1.page-title,
 		border-radius: 5px;
 	}
 
-	.storefront-pro-active form,
-	.storefront-sorting {
+	.eighteen-tags-pro-active form,
+	.eighteen-tags-sorting {
 		margin-bottom: 1em;
 	}
 
-	.site-main .storefront-sorting ~ .storefront-sorting .woocommerce-pagination,
+	.site-main .eighteen-tags-sorting ~ .eighteen-tags-sorting .woocommerce-pagination,
 	.site-main .widget_product_search {
 		display: block;
 	}
 
-	.site-main .storefront-sorting .woocommerce-pagination,
-	.storefront-pro-active ul.products li.product .star-rating,
+	.site-main .eighteen-tags-sorting .woocommerce-pagination,
+	.eighteen-tags-pro-active ul.products li.product .star-rating,
 	.woocommerce-result-count,
 	.woocommerce-breadcrumb,
 	.onsale {

@@ -1,7 +1,7 @@
-Storefront Pro
+Eighteen tags Pro
 ====================================================
 
-The awesome addon for storefront to unleash its potential!
+The awesome addon for eighteen-tags to unleash its potential!
 
 ## Changelog
 

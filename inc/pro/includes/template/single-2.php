@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package storefront
+ * @package eighteen-tags
  */
 
 get_header();
@@ -42,11 +42,11 @@ include 'styles.php';
 			</header><!-- .entry-header -->
 			<div class="col-full">
 				<div class="entry-content" itemprop="articleBody">
-					<?php the_content( sprintf( __( 'Continue reading %s', 'storefront' ), get_the_title() ) ); ?>
+					<?php the_content( sprintf( __( 'Continue reading %s', 'eighteen-tags' ), get_the_title() ) ); ?>
 				</div><!-- .entry-content -->
 				<?php
-				storefront_posted_on();
-				storefront_post_meta();
+				eighteen_tags_posted_on();
+				eighteen_tags_post_meta();
 				?>
 			</div><!-- .col-full -->
 
@@ -55,9 +55,9 @@ include 'styles.php';
 		<div class="col-full">
 			<?php
 			/**
-			 * @hooked storefront_post_nav - 10
+			 * @hooked eighteen_tags_post_nav - 10
 			 */
-			do_action( 'storefront_single_post_after' );
+			do_action( 'eighteen_tags_single_post_after' );
 			?>
 		</div><!-- .col-full -->
 			<?php

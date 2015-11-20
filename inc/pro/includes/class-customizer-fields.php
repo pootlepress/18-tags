@@ -20,7 +20,7 @@
  * @subpackage Cover_Pages/admin
  * @author     Your Name <email@example.com>
  */
-final class Storefront_Pro_Customizer_Fields extends Storefront_Pro_Abstract {
+final class Eighteen_Tags_Pro_Customizer_Fields extends Eighteen_Tags_Pro_Abstract {
 	/**
 	 * Initialize the class and set its properties.
 	 * @since    1.0.0
@@ -52,13 +52,13 @@ final class Storefront_Pro_Customizer_Fields extends Storefront_Pro_Abstract {
 	/**
 	 * Customizer Controls and settings
 	 * @param object WP_Customize_Manager $wp_customize Theme Customizer object.
-	 * @global array $storefront_pro_customizer_fields
+	 * @global array $eighteen_tags_pro_customizer_fields
 	 */
-	public function sfp_customize_register( $wp_customize ) {
-		global $storefront_pro_customizer_fields;
+	public function etp_customize_register( $wp_customize ) {
+		global $eighteen_tags_pro_customizer_fields;
 
 		$sections = array();
-		foreach ( $storefront_pro_customizer_fields as $f ) {
+		foreach ( $eighteen_tags_pro_customizer_fields as $f ) {
 			$sections[ $f['section'] ][] = $f;
 		}
 
@@ -179,9 +179,9 @@ final class Storefront_Pro_Customizer_Fields extends Storefront_Pro_Abstract {
 	public function cool_fields( WP_Customize_Manager $wp_customize, $type, $id, $args ){
 		$field_class = '';
 		if ( in_array( $type, array( 'multi-checkbox', 'grid', ) ) ) {
-			$field_class = 'SFP_Custom_Customize_Control';
+			$field_class = 'PRO18_Custom_Customize_Control';
 		} elseif ( in_array( $type, array( 'sf-text', 'sf-heading', 'sf-divider', ) ) ) {
-			$field_class = 'Arbitrary_Storefront_Control';
+			$field_class = 'Arbitrary_Eighteen_Tags_Control';
 			$args['type'] = str_replace( 'sf-', '', $type );
 		} elseif ( in_array( $type, array( 'alpha-color', ) ) ) {
 			$field_class = 'Lib_Customize_Alpha_Color_Control';
@@ -220,7 +220,7 @@ final class Storefront_Pro_Customizer_Fields extends Storefront_Pro_Abstract {
 				$field_class = 'WP_Customize_Image_Control';
 				break;
 			case 'sf-radio-image':
-				$field_class = 'Storefront_Custom_Radio_Image_Control';
+				$field_class = 'Eighteen_Tags_Custom_Radio_Image_Control';
 				$args['type'] = str_replace( 'sf-', '', $type );
 		}
 	}

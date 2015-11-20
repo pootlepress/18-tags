@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package storefront
+ * @package eighteen-tags
  *
  */
 
@@ -34,5 +34,5 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php do_action( 'storefront_sidebar' ); ?>
+<?php do_action( 'eighteen_tags_sidebar' ); ?>
 <?php get_footer(); ?>

@@ -1,6 +1,6 @@
 <?php
 /**
- * @package storefront
+ * @package eighteen-tags
  */
 ?>
 
@@ -8,11 +8,11 @@
 
 	<?php
 	/**
- 	 * @hooked storefront_post_header() - 10
- 	 * @hooked storefront_post_meta() - 20
- 	 * @hooked storefront_post_content() - 30
+ 	 * @hooked eighteen_tags_post_header() - 10
+ 	 * @hooked eighteen_tags_post_meta() - 20
+ 	 * @hooked eighteen_tags_post_content() - 30
 	 */
-	do_action( 'storefront_loop_post' );
+	do_action( 'eighteen_tags_loop_post' );
 	?>
 
 </article><!-- #post-## -->

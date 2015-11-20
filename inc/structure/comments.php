@@ -2,15 +2,15 @@
 /**
  * Template functions used for the site comments.
  *
- * @package storefront
+ * @package eighteen-tags
  */
 
-if ( ! function_exists( 'storefront_display_comments' ) ) {
+if ( ! function_exists( 'eighteen_tags_display_comments' ) ) {
 	/**
-	 * Storefront display comments
+	 * Eighteen tags display comments
 	 * @since  1.0.0
 	 */
-	function storefront_display_comments() {
+	function eighteen_tags_display_comments() {
 		// If comments are open or we have at least one comment, load up the comment template
 		if ( comments_open() || '0' != get_comments_number() ) :
 			comments_template();
@@ -18,12 +18,12 @@ if ( ! function_exists( 'storefront_display_comments' ) ) {
 	}
 }
 
-if ( ! function_exists( 'storefront_comment' ) ) {
+if ( ! function_exists( 'eighteen_tags_comment' ) ) {
 	/**
-	 * Storefront comment template
+	 * Eighteen tags comment template
 	 * @since 1.0.0
 	 */
-	function storefront_comment( $comment, $args, $depth ) {
+	function eighteen_tags_comment( $comment, $args, $depth ) {
 		if ( 'div' == $args['style'] ) {
 			$tag = 'div';
 			$add_below = 'comment';
@@ -37,10 +37,10 @@ if ( ! function_exists( 'storefront_comment' ) ) {
 		<div class="comment-meta commentmetadata">
 			<div class="comment-author vcard">
 			<?php echo get_avatar( $comment, 128 ); ?>
-			<?php printf( __( '<cite class="fn">%s</cite>', 'storefront' ), get_comment_author_link() ); ?>
+			<?php printf( __( '<cite class="fn">%s</cite>', 'eighteen-tags' ), get_comment_author_link() ); ?>
 			</div>
 			<?php if ( '0' == $comment->comment_approved ) : ?>
-				<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'storefront' ); ?></em>
+				<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'eighteen-tags' ); ?></em>
 				<br />
 			<?php endif; ?>
 
@@ -56,7 +56,7 @@ if ( ! function_exists( 'storefront_comment' ) ) {
 
 		<div class="reply">
 		<?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-		<?php edit_comment_link( __( 'Edit', 'storefront' ), '  ', '' ); ?>
+		<?php edit_comment_link( __( 'Edit', 'eighteen-tags' ), '  ', '' ); ?>
 		</div>
 		</div>
 		<?php if ( 'div' != $args['style'] ) : ?>

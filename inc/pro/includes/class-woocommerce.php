@@ -3,14 +3,14 @@
 require 'class-woocommerce-shop.php';
 
 /**
- * Storefront_Pro_WooCommerce Class
+ * Eighteen_Tags_Pro_WooCommerce Class
  *
- * @class Storefront_Pro_WooCommerce
+ * @class Eighteen_Tags_Pro_WooCommerce
  * @version	1.0.0
  * @since 1.0.0
- * @package	Storefront_Pro
+ * @package	Eighteen_Tags_Pro
  */
-class Storefront_Pro_WooCommerce extends Storefront_Pro_WooCommerce_Shop {
+class Eighteen_Tags_Pro_WooCommerce extends Eighteen_Tags_Pro_WooCommerce_Shop {
 
 	public function init() {
 		wp_localize_script( 'sfp-script', 'sfpSettings', array(
@@ -18,25 +18,23 @@ class Storefront_Pro_WooCommerce extends Storefront_Pro_WooCommerce_Shop {
 			'mobStore' => false,
 			'infiniteScroll' => false,
 		) );
-		if ( ! class_exists( 'WooCommerce' ) ) {
-			$this->css .= '.storefront-pro-active #site-navigation > div { width: 100%; }';
+		if ( ! is_woocommerce_activated() ) {
+			$this->css .= '.eighteen-tags-pro-active #site-navigation > div { width: 100%; }';
 			return;
 		}
 
-		remove_action( 'storefront_header', 'storefront_product_search', 	40 );
-		remove_action( 'storefront_header', 'storefront_header_cart', 60 );
-		add_filter( 'storefront_loop_columns', array( $this, 'columns' ), 999 );
+		add_filter( 'eighteen_tags_loop_columns', array( $this, 'columns' ), 999 );
 
 		//Header cart display
 		$header_cart = $this->get( 'header-wc-cart' );
-		add_action( 'storefront_pro_in' . $header_cart . '_nav', 'storefront_header_cart' );
+		add_action( 'eighteen_tags_pro_in' . $header_cart . '_nav', 'eighteen_tags_header_cart' );
 		if ( ! empty( $header_cart ) ) {
-			add_action( 'storefront_pro_in_nav', 'storefront_header_cart' );
-			Storefront_Pro_Public::$desktop_css .= '#site-navigation.main-navigation .site-header-cart { display: none !important; }';
-			$this->css .= '.storefront-pro-active #site-navigation > div { width: 100%; }';
+			add_action( 'eighteen_tags_pro_in_nav', 'eighteen_tags_header_cart' );
+			Eighteen_Tags_Pro_Public::$desktop_css .= '#site-navigation.main-navigation .site-header-cart { display: none !important; }';
+			$this->css .= '.eighteen-tags-pro-active #site-navigation > div { width: 100%; }';
 		}
 		//Header cart color
-		$this->css .= '.storefront-pro-active .site-header-cart .cart-contents { color: ' . $this->get( 'header-wc-cart-color', '#ffffff' ) . '; }';
+		$this->css .= '.eighteen-tags-pro-active .site-header-cart .cart-contents { color: ' . $this->get( 'header-wc-cart-color', '#000000' ) . '; }';
 
 		$is_product_archive = is_shop() || is_product_taxonomy();
 		$is_checkout_process = is_cart() || is_checkout();
@@ -48,7 +46,7 @@ class Storefront_Pro_WooCommerce extends Storefront_Pro_WooCommerce_Shop {
 	 * Specifies the number of columns for products on the shop page
 	 * @param int $cols Columns
 	 * @return int Columns
-	 * @filter storefront_loop_columns
+	 * @filter eighteen_tags_loop_columns
 	 * @since 1.0.0
 	 */
 	public function columns( $cols ) {
@@ -115,8 +113,8 @@ class Storefront_Pro_WooCommerce extends Storefront_Pro_WooCommerce_Shop {
 		$this->remove_breadcrumbs( $hide_breadcrumbs );
 
 		if ( 'full' == $this->get( 'wc-product-layout', 'default' ) ) {
-			remove_action( 'storefront_sidebar', 'storefront_get_sidebar' );
-			$this->css .= '.storefront-pro-active.right-sidebar .content-area{ width: auto; margin: auto; }';
+			remove_action( 'eighteen_tags_sidebar', 'eighteen_tags_get_sidebar' );
+			$this->css .= '.eighteen-tags-pro-active.right-sidebar .content-area{ width: auto; margin: auto; }';
 		}
 
 		if ( ! $this->get( 'wc-product-tabs', true ) ) {
@@ -144,10 +142,10 @@ class Storefront_Pro_WooCommerce extends Storefront_Pro_WooCommerce_Shop {
 	private function distraction_free_checkout() {
 		$css = &$this->css;
 		if ( $this->get( 'wc-co-distraction-free' ) ) {
-			remove_all_actions( 'storefront_header' );
-			remove_all_actions( 'storefront_footer' );
-			remove_action( 'storefront_sidebar', 'storefront_get_sidebar' );
-			$css .= '.storefront-pro-active.right-sidebar .content-area{ width: auto; margin: auto; }';
+			remove_all_actions( 'eighteen_tags_header' );
+			remove_all_actions( 'eighteen_tags_footer' );
+			remove_action( 'eighteen_tags_sidebar', 'eighteen_tags_get_sidebar' );
+			$css .= '.eighteen-tags-pro-active.right-sidebar .content-area{ width: auto; margin: auto; }';
 			$css .= '.secondary-navigation, .site-header, .site-footer { display: none; } ';
 		}
 	}
@@ -158,12 +156,12 @@ class Storefront_Pro_WooCommerce extends Storefront_Pro_WooCommerce_Shop {
 	 * @since 1.0.0
 	 */
 	public function messages() {
-		$success_bg_clr  = storefront_sanitize_hex_color( $this->get( 'wc-success-bg-color', '#0f834d' ) );
-		$success_txt_clr = storefront_sanitize_hex_color( $this->get( 'wc-success-text-color', '#ffffff' ) );
-		$message_bg_clr  = storefront_sanitize_hex_color( $this->get( 'wc-info-bg-color', '#3D9CD2' ) );
-		$message_txt_clr = storefront_sanitize_hex_color( $this->get( 'wc-info-text-color', '#ffffff' ) );
-		$error_bg_clr 	 = storefront_sanitize_hex_color( $this->get( 'wc-error-bg-color', '#e2401c' ) );
-		$error_txt_clr 	 = storefront_sanitize_hex_color( $this->get( 'wc-error-text-color', '#ffffff' ) );
+		$success_bg_clr  = eighteen_tags_sanitize_hex_color( $this->get( 'wc-success-bg-color', '#0f834d' ) );
+		$success_txt_clr = eighteen_tags_sanitize_hex_color( $this->get( 'wc-success-text-color', '#ffffff' ) );
+		$message_bg_clr  = eighteen_tags_sanitize_hex_color( $this->get( 'wc-info-bg-color', '#3D9CD2' ) );
+		$message_txt_clr = eighteen_tags_sanitize_hex_color( $this->get( 'wc-info-text-color', '#ffffff' ) );
+		$error_bg_clr 	 = eighteen_tags_sanitize_hex_color( $this->get( 'wc-error-bg-color', '#e2401c' ) );
+		$error_txt_clr 	 = eighteen_tags_sanitize_hex_color( $this->get( 'wc-error-text-color', '#ffffff' ) );
 
 		$this->css .=
 		//Success message colors

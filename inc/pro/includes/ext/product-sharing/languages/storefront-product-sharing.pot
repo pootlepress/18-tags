@@ -1,0 +1,65 @@
+# Copyright (C) 2015 Eighteen tags Product Sharing
+# This file is distributed under the same license as the Eighteen tags Product Sharing package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Eighteen tags Product Sharing 1.0.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/eighteen-tags-product-sharing\n"
+"POT-Creation-Date: 2015-04-22 12:36:47+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: eighteen-tags-product-sharing.php:128 eighteen-tags-product-sharing.php:137
+msgid "Cheatin&#8217; huh?"
+msgstr ""
+
+#: eighteen-tags-product-sharing.php:190
+msgid ""
+"Eighteen tags Product Sharing requires that you use Eighteen tags as your parent "
+"theme."
+msgstr ""
+
+#: eighteen-tags-product-sharing.php:190
+msgid "Install Eighteen tags now"
+msgstr ""
+
+#: eighteen-tags-product-sharing.php:218
+msgid "Share on Twitter"
+msgstr ""
+
+#: eighteen-tags-product-sharing.php:219
+msgid "Share on Facebook"
+msgstr ""
+
+#: eighteen-tags-product-sharing.php:220
+msgid "Pin this product"
+msgstr ""
+
+#: eighteen-tags-product-sharing.php:221
+msgid "Share via Email"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Eighteen tags Product Sharing"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://pootlepress.com/products/eighteen-tags-product-sharing/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Add attractive social sharing icons for Facebook, Twitter, Pinterest and "
+"Email to your product pages."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "pootlepress"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://pootlepress.com/"
+msgstr ""

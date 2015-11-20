@@ -1,19 +1,19 @@
 /*
-Theme Name:   	Storefront
-Theme URI:    	http://www.woothemes.com/storefront
-Author:       	WooThemes
-Author URI:		http://www.woothemes.com
-Description:  	Storefront is the perfect theme for your next WooCommerce project. Designed and developed by WooThemes, it features a deep integration with our market leading WooCommerce plugin, several layout & color options to personalise your shop, multiple widget regions, a responsive design and much more. Developers will love it's lean and extensible codebase making it a joy to customise and extend. Looking for a WooCommerce theme? Look no further!
-Version:      	1.5.3
+Theme Name:   	Eighteen tags
+Theme URI:    	http://www.pootlepress.com/eighteen-tags
+Author:       	pootlepress
+Author URI:		http://www.pootlepress.com
+Description:  	Eighteen tags is the perfect theme for your next WooCommerce project. Designed and developed by pootlepress, it features a deep integration with our market leading WooCommerce plugin, several layout & color options to personalise your shop, multiple widget regions, a responsive design and much more. Developers will love it's lean and extensible codebase making it a joy to customise and extend. Looking for a WooCommerce theme? Look no further!
+Version:      	1.0.0
 License:      	GNU General Public License v2 or later
 License URI:  	http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain:  	storefront
+Text Domain:  	eighteen-tags
 Tags:         	black, white, light, two-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, threaded-comments, accessibility-ready, rtl-language-support
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Storefront is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+Eighteen tags is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
@@ -423,7 +423,7 @@ body {
  * Header
  */
 .site-header {
-  background-color: #2c2d33;
+  background-color: #ffffff;
   padding-top: 2.618em;
   color: #9aa0a7;
   background-position: center center;
@@ -496,7 +496,7 @@ body {
   .site-footer h6 {
     color: #82868e; }
   .site-footer a:not(.button) {
-    color: #96588a; }
+    color: #428bca; }
 
 .site-info {
   padding: 2.618em 0; }
@@ -770,13 +770,13 @@ img {
   display: block; }
 
 a {
-  color: #96588a;
+  color: #428bca;
   text-decoration: none;
   font-weight: 700; }
   a:focus {
-    outline: 1px solid #96588a; }
+    outline: 1px solid #428bca; }
 
-.storefront-cute * {
+.eighteen-tags-cute * {
   font-family: "Comic Sans MS", sans-serif; }
 
 /**
@@ -877,7 +877,7 @@ a {
     width: 21.7391304348%;
     float: right;
     margin-left: 4.347826087%; }
-  .storefront-full-width-content .content-area {
+  .eighteen-tags-full-width-content .content-area {
     width: 100%;
     float: right;
     margin-right: 0;
@@ -991,8 +991,8 @@ input[type="submit"],
   .button.alt,
   .added_to_cart.cta,
   .added_to_cart.alt {
-    background-color: #96588a;
-    border-color: #96588a; }
+    background-color: #428bca;
+    border-color: #428bca; }
     button.cta:hover,
     button.alt:hover,
     input[type="button"].cta:hover,
@@ -1005,7 +1005,7 @@ input[type="submit"],
     .button.alt:hover,
     .added_to_cart.cta:hover,
     .added_to_cart.alt:hover {
-      background-color: #96588a; }
+      background-color: #428bca; }
   button:hover,
   input[type="button"]:hover,
   input[type="reset"]:hover,
@@ -1019,7 +1019,7 @@ input[type="submit"],
   input[type="submit"]:focus,
   .button:focus,
   .added_to_cart:focus {
-    outline: 2px solid #96588a; }
+    outline: 2px solid #428bca; }
   button.added:after,
   input[type="button"].added:after,
   input[type="reset"].added:after,
@@ -1260,7 +1260,7 @@ fieldset {
         position: absolute;
         top: 100%;
         z-index: 99999;
-        background-color: #2c2d33;
+        background-color: #ffffff;
         display: none; }
         .main-navigation ul ul li a,
         .secondary-navigation ul ul li a {
@@ -1294,7 +1294,7 @@ fieldset {
       font-weight: inherit; }
     .main-navigation ul.menu ul,
     .main-navigation ul.nav-menu ul {
-      background-color: #2c2d33;
+      background-color: #ffffff;
       margin-right: 0; }
       .main-navigation ul.menu ul li,
       .main-navigation ul.nav-menu ul li {
@@ -1352,7 +1352,7 @@ fieldset {
       .secondary-navigation .menu > li:first-child a:before {
         display: none; }
       .secondary-navigation .menu ul {
-        background-color: #2c2d33; }
+        background-color: #ffffff; }
         .secondary-navigation .menu ul a {
           padding: 0.326em 0.857em;
           background: rgba(0, 0, 0, 0.05); }
@@ -1555,8 +1555,8 @@ video {
         .pagination .page-numbers li .page-numbers.current,
         .woocommerce-pagination .page-numbers li .page-numbers.current {
           font-weight: 700;
-          background-color: #96588a;
-          border-color: #96588a;
+          background-color: #428bca;
+          border-color: #428bca;
           color: #fff; }
         .pagination .page-numbers li .page-numbers.dots,
         .woocommerce-pagination .page-numbers li .page-numbers.dots {
@@ -1895,7 +1895,7 @@ video {
     color: #60646c;
     font-weight: 400; }
     .widget-area .widget a:hover {
-      color: #96588a; }
+      color: #428bca; }
 
 /**
  * Infinite Scroll

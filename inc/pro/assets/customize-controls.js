@@ -42,7 +42,7 @@
 	} );
 	api.controlConstructor['grid'] = api.lib_grid;
 
-	api.sfp_range = api.Control.extend( {
+	api.etp_range = api.Control.extend( {
 		ready : function () {
 			var control = this,
 				container = control.container;
@@ -60,16 +60,16 @@
 				} );
 		}
 	} );
-	api.controlConstructor['range'] = api.sfp_range;
+	api.controlConstructor['range'] = api.etp_range;
 
 	$( document ).ready( function () {
-		var $blog_layout = $( '#input_storefront-pro-blog-layout' ),
-			$grid = $('#customize-control-storefront-pro-blog-grid' ),
-			$post_content = $( 'select[data-customize-setting-link="storefront-pro-blog-content"]' ),
+		var $blog_layout = $( '#input_eighteen-tags-pro-blog-layout' ),
+			$grid = $('#customize-control-eighteen-tags-pro-blog-grid' ),
+			$post_content = $( 'select[data-customize-setting-link="eighteen-tags-pro-blog-content"]' ),
 			$excert_fields = $(
-				'#customize-control-storefront-pro-blog-excerpt-count,' +
-				'#customize-control-storefront-pro-blog-excerpt-end,' +
-				'#customize-control-storefront-pro-blog-rm-butt-text'
+				'#customize-control-eighteen-tags-pro-blog-excerpt-count,' +
+				'#customize-control-eighteen-tags-pro-blog-excerpt-end,' +
+				'#customize-control-eighteen-tags-pro-blog-rm-butt-text'
 			);
 		show_hide_grid = function () {
 			if ( $blog_layout.find( 'input:checked' ).val() ) {

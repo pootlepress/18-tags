@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Storefront_Pro_Primary_Navigation Class
+ * Eighteen_Tags_Pro_Primary_Navigation Class
  *
- * @class Storefront_Pro_Primary_Navigation
+ * @class Eighteen_Tags_Pro_Primary_Navigation
  * @version    1.0.0
  * @since 1.0.0
- * @package    Storefront_Pro
+ * @package    Eighteen_Tags_Pro
  */
-class Storefront_Pro_Primary_Navigation extends Storefront_Pro_Abstract {
+class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 
 	protected $css = '';
 
@@ -22,12 +22,12 @@ class Storefront_Pro_Primary_Navigation extends Storefront_Pro_Abstract {
 	 * Adds a class based on the extension name and any relevant settings.
 	 */
 	public function primary_nav_style( $style ) {
-		$css = &Storefront_Pro_Public::$desktop_css;
+		$css = &Eighteen_Tags_Pro_Public::$desktop_css;
 		switch ( $style ) {
 			case 'right':
-				remove_action( 'storefront_header', 'storefront_primary_navigation', 50 );
-				add_action( 'storefront_header', 'storefront_primary_navigation', 25 );
-				$css .= '.storefront-pro-active .site-header .main-navigation{ ' .
+				remove_action( 'eighteen_tags_header', 'eighteen_tags_primary_navigation', 50 );
+				add_action( 'eighteen_tags_header', 'eighteen_tags_primary_navigation', 25 );
+				$css .= '.eighteen-tags-pro-active .site-header .main-navigation{ ' .
 				        'width: 73.6%; margin: 0; padding: 0; float: right; clear: none;' .
 				        '}';
 				$css .= '#site-navigation > div { width: 70%; }';
@@ -35,15 +35,15 @@ class Storefront_Pro_Primary_Navigation extends Storefront_Pro_Abstract {
 				break;
 			case 'center-inline':
 				//Get primary menu on the top of header
-				remove_action( 'storefront_header', 'storefront_primary_navigation', 50 );
-				add_action( 'storefront_header', 'storefront_primary_navigation', 25 );
+				remove_action( 'eighteen_tags_header', 'eighteen_tags_primary_navigation', 50 );
+				add_action( 'eighteen_tags_header', 'eighteen_tags_primary_navigation', 25 );
 				$this->logo_in_nav = true;
-				$css .= '.storefront-pro-active .site-branding { display:none }';
+				$css .= '.eighteen-tags-pro-active .site-branding { display:none }';
 			/** @noinspection PhpExpressionResultUnusedInspection */
 			case 'center':
-				$css .= '.storefront-pro-active #site-navigation { width: 100%; text-align: center; }';
-				$css .= '.storefront-pro-active .site-header .site-logo-link, .storefront-pro-active .site-header .site-branding{ width: 100%; text-align: center; }';
-				$css .= '.storefront-pro-active .site-header .site-logo-link img { margin: auto; }';
+				$css .= '.eighteen-tags-pro-active #site-navigation { width: 100%; text-align: center; }';
+				$css .= '.eighteen-tags-pro-active .site-header .site-logo-link, .eighteen-tags-pro-active .site-header .site-branding{ width: 100%; text-align: center; }';
+				$css .= '.eighteen-tags-pro-active .site-header .site-logo-link img { margin: auto; }';
 		}
 
 		$this->heights();
@@ -54,16 +54,16 @@ class Storefront_Pro_Primary_Navigation extends Storefront_Pro_Abstract {
 	 * Adds a class based on the extension name and any relevant settings.
 	 */
 	public function heights() {
-		$css = &Storefront_Pro_Public::$desktop_css;
+		$css = &Eighteen_Tags_Pro_Public::$desktop_css;
 		$pad = $this->get( 'pri-nav-height' );
 		$pad = is_numeric( $pad ) ? $pad : 1;
 
-		$button_background_color = storefront_sanitize_hex_color( get_theme_mod( 'storefront_button_background_color', apply_filters( 'storefront_default_button_background_color', '#60646c' ) ) );
+		$button_background_color = eighteen_tags_sanitize_hex_color( get_theme_mod( 'eighteen_tags_button_background_color', apply_filters( 'eighteen_tags_default_button_background_color', '#60646c' ) ) );
 		$css .= '.sfp-nav-search .sfp-nav-search-close{' . 'color:' . $button_background_color . '}';
 
 		$css .= ".main-navigation ul.menu > li > a, .main-navigation .sfp-nav-search a { padding-top: {$pad}em; padding-bottom: {$pad}em; }";
-		$css .= ".storefront-pro-active .main-navigation .site-header-cart li:first-child { padding-top: {$pad}em; }";
-		$css .= ".storefront-pro-active .main-navigation .site-header-cart .cart-contents { padding-top: 0; padding-bottom: {$pad}em; }";
+		$css .= ".eighteen-tags-pro-active .main-navigation .site-header-cart li:first-child { padding-top: {$pad}em; }";
+		$css .= ".eighteen-tags-pro-active .main-navigation .site-header-cart .cart-contents { padding-top: 0; padding-bottom: {$pad}em; }";
 
 		$logo_height = $this->get( 'logo-max-height', 70 );
 
@@ -77,7 +77,7 @@ class Storefront_Pro_Primary_Navigation extends Storefront_Pro_Abstract {
 	 */
 	public function primary_nav_typo() {
 		$t   = &$this;
-		$css = &Storefront_Pro_Public::$desktop_css;
+		$css = &Eighteen_Tags_Pro_Public::$desktop_css;
 		$css .= '#site-navigation {' .
 		        'background-color:' . $t->get( 'pri-nav-bg-color' ) . ';' .
 		        '}';

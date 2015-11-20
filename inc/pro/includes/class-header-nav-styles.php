@@ -2,14 +2,14 @@
 require_once 'class-primary-nav-styles.php';
 
 /**
- * Storefront_Pro_Header_Nav Class
+ * Eighteen_Tags_Pro_Header_Nav Class
  *
- * @class Storefront_Pro_Header_Nav
+ * @class Eighteen_Tags_Pro_Header_Nav
  * @version	1.0.0
  * @since 1.0.0
- * @package	Storefront_Pro
+ * @package	Eighteen_Tags_Pro
  */
-class Storefront_Pro_Header_Nav extends Storefront_Pro_Primary_Navigation {
+class Eighteen_Tags_Pro_Header_Nav extends Eighteen_Tags_Pro_Primary_Navigation {
 
 	protected $css = '';
 	protected $logo_url;
@@ -32,7 +32,7 @@ class Storefront_Pro_Header_Nav extends Storefront_Pro_Primary_Navigation {
 		//Add search icon and maybe logo in nav
 		add_filter( 'wp_nav_menu_items', array( $this, 'logo_in_nav' ), 10, 2 );
 
-		$t->css .= '.storefront-pro-active #masthead { background-color:' . $t->get( 'header-bg-color' ) . ';}';
+		$t->css .= '.eighteen-tags-pro-active #masthead { background-color:' . $t->get( 'header-bg-color' ) . ';}';
 
 		$t->css .= "\n/*Secondary navigation*/\n";
 		$t->secondary_nav_typo();
@@ -45,30 +45,30 @@ class Storefront_Pro_Header_Nav extends Storefront_Pro_Primary_Navigation {
 	public function secondary_nav_typo() {
 		$t = &$this;
 		$css = &$t->css;
-		$css .= '.storefront-pro-active nav.secondary-navigation {' .
+		$css .= '.eighteen-tags-pro-active nav.secondary-navigation {' .
 		        'background-color:' . $t->get( 'sec-nav-bg-color' ) . ';' .
 		        '}';
-		$css .= '.storefront-pro-active nav.secondary-navigation a {font-family:' . $t->get( 'sec-nav-font' ) . ';}';
+		$css .= '.eighteen-tags-pro-active nav.secondary-navigation a {font-family:' . $t->get( 'sec-nav-font' ) . ';}';
 		$css .=
-			'.storefront-pro-active nav.secondary-navigation ul,' .
-			'.storefront-pro-active nav.secondary-navigation a,' .
-			'.storefront-pro-active nav.secondary-navigation a:hover {' .
+			'.eighteen-tags-pro-active nav.secondary-navigation ul,' .
+			'.eighteen-tags-pro-active nav.secondary-navigation a,' .
+			'.eighteen-tags-pro-active nav.secondary-navigation a:hover {' .
 			'font-size:' . $t->get( 'sec-nav-text-size' ) . 'px;' .
 			'letter-spacing:' . $t->get( 'sec-nav-letter-spacing' ) . 'px;' .
 			'color:' . $t->get( 'sec-nav-text-color' ) . ';' .
 			$t->font_style( $t->get( 'sec-nav-font-style' ) ) .
 			'}';
 
-		$css .= '.storefront-pro-active nav.secondary-navigation ul li.current_page_item a,' .
-		        '.storefront-pro-active nav.secondary-navigation ul li.current_page_item a:hover {' .
+		$css .= '.eighteen-tags-pro-active nav.secondary-navigation ul li.current_page_item a,' .
+		        '.eighteen-tags-pro-active nav.secondary-navigation ul li.current_page_item a:hover {' .
 		        'color:' . $t->get( 'sec-nav-active-link-color' ) . ';' .
 		        '}';
-		$css .= '.storefront-pro-active nav.secondary-navigation ul ul li a,' .
-		        '.storefront-pro-active nav.secondary-navigation ul ul li a:hover {' .
+		$css .= '.eighteen-tags-pro-active nav.secondary-navigation ul ul li a,' .
+		        '.eighteen-tags-pro-active nav.secondary-navigation ul ul li a:hover {' .
 		        'color:' . $t->get( 'sec-nav-dd-text-color' ) . ';' .
 		        '}';
 
-		$css .= '.storefront-pro-active nav.secondary-navigation ul.menu ul {' .
+		$css .= '.eighteen-tags-pro-active nav.secondary-navigation ul.menu ul {' .
 		        'background-color:' . $t->get( 'sec-nav-dd-bg-color' ) . ';' .
 		'}';
 	}
@@ -85,12 +85,12 @@ class Storefront_Pro_Header_Nav extends Storefront_Pro_Primary_Navigation {
 			$container_close = '</div>';
 		}
 		?>
-		<nav class="secondary-navigation " role="navigation" aria-label="<?php _e( 'Secondary Navigation', 'storefront' ); ?>">
+		<nav class="secondary-navigation " role="navigation" aria-label="<?php _e( 'Secondary Navigation', 'eighteen-tags' ); ?>">
 			<?php
 			echo $container;
-			do_action( 'storefront_pro_in_sec_nav' );
+			do_action( 'eighteen_tags_pro_in_sec_nav' );
 			if ( 'right' == $this->get( 'align-social-info' ) ) {
-				?> <style> .storefront-pro-active .secondary-nav-menu { float: left; } </style> <?php
+				?> <style> .eighteen-tags-pro-active .secondary-nav-menu { float: left; } </style> <?php
 				wp_nav_menu( array(
 					'theme_location' => 'secondary', 'fallback_cb' => '', 'container_class' => 'secondary-nav-menu',
 				) );
@@ -161,11 +161,11 @@ class Storefront_Pro_Header_Nav extends Storefront_Pro_Primary_Navigation {
 	}
 
 	public function mobile_nav() {
-		$css = &Storefront_Pro_Public::$mobile_css;
+		$css = &Eighteen_Tags_Pro_Public::$mobile_css;
 		if ( $this->get( 'mob-hide-logo' ) ) {
 			$css .= '.site-header .site-logo-anchor, .site-header .site-logo-link { display: none; }';
 		}
-		$css .= '#site-navigation a.menu-toggle, .storefront-pro-active .site-header-cart .cart-contents {';
+		$css .= '#site-navigation a.menu-toggle, .eighteen-tags-pro-active .site-header-cart .cart-contents {';
 		$css .= 'color: ' . $this->get( 'mob-menu-icon-color' ) . ';';
 		$css .= '}';
 		$css .= '#site-navigation .handheld-navigation{';

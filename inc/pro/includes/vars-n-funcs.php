@@ -20,14 +20,14 @@
  * * sf-heading
  * * sf-divider
  *
- * sf- prefixed controls are arbitrary storefront controls
+ * sf- prefixed controls are arbitrary eighteen-tags controls
  *
  * NOTE : sf-text control doesn't show anything if description is not set but
- * in Storefront_Pro_Customizer_Fields class we assign it to label
+ * in Eighteen_Tags_Pro_Customizer_Fields class we assign it to label
  * if not set ;)
  *
  */
-$storefront_pro_customizer_fields = array(
+$eighteen_tags_pro_customizer_fields = array(
 	//Primary Nav
 	array(
 		'id'      => 'nav-style',
@@ -348,7 +348,7 @@ $storefront_pro_customizer_fields = array(
 		'label'   => 'Header Background Color',
 		'section' => 'existing_header_image',
 		'type'    => 'alpha-color',
-		'default' => apply_filters( 'storefront_default_header_background_color', '#2c2d33' ),
+		'default' => apply_filters( 'eighteen_tags_default_header_background_color', '#ffffff' ),
 	),
 
 	//Content
@@ -400,7 +400,7 @@ $storefront_pro_customizer_fields = array(
 	array(
 		'id'      => 'single-header-size',
 		'label'   => 'Heading size',
-		'section' => 'existing_storefront_single_post',
+		'section' => 'existing_eighteen_tags_single_post',
 		'type'    => 'range',
 		'input_attrs' => array(
 			'min'   => 5,
@@ -411,7 +411,7 @@ $storefront_pro_customizer_fields = array(
 	array(
 		'id'      => 'single-header-color',
 		'label'   => 'Heading color',
-		'section' => 'existing_storefront_single_post',
+		'section' => 'existing_eighteen_tags_single_post',
 		'type'    => 'color',
 	),
 
@@ -419,7 +419,7 @@ $storefront_pro_customizer_fields = array(
 	array(
 		'id'      => 'blog-header-size',
 		'label'   => 'Heading size',
-		'section' => 'existing_storefront_archive',
+		'section' => 'existing_eighteen_tags_archive',
 		'type'    => 'range',
 		'input_attrs' => array(
 			'min'   => 5,
@@ -430,33 +430,33 @@ $storefront_pro_customizer_fields = array(
 	array(
 		'id'      => 'blog-header-color',
 		'label'   => 'Heading color',
-		'section' => 'existing_storefront_archive',
+		'section' => 'existing_eighteen_tags_archive',
 		'type'    => 'color',
 	),
 	array(
 		'id'        => 'blog-layout',
 		'label'     => 'Layout',
-		'section'   => 'existing_storefront_archive',
+		'section'   => 'existing_eighteen_tags_archive',
 		'type'      => 'sf-radio-image',
 		'choices' => array(
-			'' => SFP_URL . '/assets/img/admin/layout-default.png',
-			'left-image' => SFP_URL . '/assets/img/admin/layout-left-image.png',
-			'full-image' => SFP_URL . '/assets/img/admin/layout-full-image.png',
-			'right-image' => SFP_URL . '/assets/img/admin/layout-right-image.png',
+			'' => PRO18_URL . '/assets/img/admin/layout-default.png',
+			'left-image' => PRO18_URL . '/assets/img/admin/layout-left-image.png',
+			'full-image' => PRO18_URL . '/assets/img/admin/layout-full-image.png',
+			'right-image' => PRO18_URL . '/assets/img/admin/layout-right-image.png',
 
 		),
 	),
 	array(
 		'id'        => 'blog-grid',
 		'label'     => 'Show posts',
-		'section'   => 'existing_storefront_archive',
+		'section'   => 'existing_eighteen_tags_archive',
 		'type'      => 'grid',
 		'default'   => '3,4',
 	),
 	array(
 		'id'        => 'blog-content',
 		'label'     => 'Full content or Excerpt',
-		'section'   => 'existing_storefront_archive',
+		'section'   => 'existing_eighteen_tags_archive',
 		'type'      => 'select',
 		'choices' => array(
 			'full'  => 'Full post',
@@ -466,21 +466,21 @@ $storefront_pro_customizer_fields = array(
 	array(
 		'id'        => 'blog-excerpt-count',
 		'label'     => 'Excerpt word count',
-		'section'   => 'existing_storefront_archive',
+		'section'   => 'existing_eighteen_tags_archive',
 		'type'      => 'number',
 		'default'   => 55,
 	),
 	array(
 		'id'        => 'blog-excerpt-end',
 		'label'     => 'Excerpt word end',
-		'section'   => 'existing_storefront_archive',
+		'section'   => 'existing_eighteen_tags_archive',
 		'type'      => 'text',
 		'default'   => '[...]',
 	),
 	array(
 		'id'        => 'blog-rm-butt-text',
 		'label'     => 'Read more button text',
-		'section'   => 'existing_storefront_archive',
+		'section'   => 'existing_eighteen_tags_archive',
 		'type'      => 'text',
 	),
 
@@ -488,13 +488,13 @@ $storefront_pro_customizer_fields = array(
 	array(
 		'id'      => 'typo-body-font',
 		'label'   => 'Body font',
-		'section' => 'existing_storefront_typography',
+		'section' => 'existing_eighteen_tags_typography',
 		'type'    => 'font',
 	),
 	array(
 		'id'      => 'typo-body-font-size',
 		'label'   => 'Body text size',
-		'section' => 'existing_storefront_typography',
+		'section' => 'existing_eighteen_tags_typography',
 		'type'    => 'range',
 		'input_attrs' => array(
 			'min'   => 5,
@@ -505,7 +505,7 @@ $storefront_pro_customizer_fields = array(
 	array(
 		'id'      => 'typo-body-line-height',
 		'label'   => 'Body line height',
-		'section' => 'existing_storefront_typography',
+		'section' => 'existing_eighteen_tags_typography',
 		'type'    => 'range',
 		'input_attrs' => array(
 			'min'   => 0.5,
@@ -516,13 +516,13 @@ $storefront_pro_customizer_fields = array(
 	array(
 		'id'      => 'typo-header-font',
 		'label'   => 'Heading font',
-		'section' => 'existing_storefront_typography',
+		'section' => 'existing_eighteen_tags_typography',
 		'type'    => 'font',
 	),
 	array(
 		'id'      => 'typo-header-font-size',
 		'label'   => 'Heading text size',
-		'section' => 'existing_storefront_typography',
+		'section' => 'existing_eighteen_tags_typography',
 		'type'    => 'range',
 		'input_attrs' => array(
 			'min'   => 5,
@@ -533,7 +533,7 @@ $storefront_pro_customizer_fields = array(
 	array(
 		'id'      => 'typo-header-letter-spacing',
 		'label'   => 'Heading letter spacing',
-		'section' => 'existing_storefront_typography',
+		'section' => 'existing_eighteen_tags_typography',
 		'type'    => 'range',
 		'input_attrs' => array(
 			'min'   => -2,
@@ -544,7 +544,7 @@ $storefront_pro_customizer_fields = array(
 	array(
 		'id'      => 'typo-header-line-height',
 		'label'   => 'Heading line height',
-		'section' => 'existing_storefront_typography',
+		'section' => 'existing_eighteen_tags_typography',
 		'type'    => 'range',
 		'input_attrs' => array(
 			'min'   => 0.5,
@@ -555,7 +555,7 @@ $storefront_pro_customizer_fields = array(
 	array(
 		'id'      => 'typo-header-font-style',
 		'label'   => 'Heading font style',
-		'section' => 'existing_storefront_typography',
+		'section' => 'existing_eighteen_tags_typography',
 		'type'    => 'multi-checkbox',
 		'choices' => array(
 			'bold' => 'Bold',
@@ -569,7 +569,7 @@ $storefront_pro_customizer_fields = array(
 	array(
 		'id'      => 'typo-footer-layout',
 		'label'   => 'Footer layout',
-		'section' => 'existing_storefront_footer',
+		'section' => 'existing_eighteen_tags_footer',
 		'type'    => 'select',
 		'choices' => array(
 			'4' => '4 Columns',
@@ -588,7 +588,7 @@ $storefront_pro_customizer_fields = array(
 	array(
 		'id' 		=> 'footer-custom-text',
 		'label' 	=> 'Custom footer text',
-		'section' 	=> 'existing_storefront_footer',
+		'section' 	=> 'existing_eighteen_tags_footer',
 		'type' 		=> 'textarea',
 		'description'	=> 'Type here some text to replace footer text.',
 	),
@@ -663,6 +663,7 @@ $storefront_pro_customizer_fields = array(
 		'section'   => 'Widgets',
 		'type'      => 'color',
 	),
+
 	//Shop
 	array(
 		'id'        => 'wc-shop-layout',
@@ -1615,7 +1616,7 @@ $sf_pro_fonts = array(
 	'Zeyada'                                                            => 'Zeyada',
 );
 
-function storefront_pro_google_fonts( $value ) {
+function eighteen_tags_pro_google_fonts( $value ) {
 	global $pootlepb_font;
 
 	$font_faces = $pootlepb_font;
@@ -1647,17 +1648,17 @@ function storefront_pro_google_fonts( $value ) {
 
 }
 
-if ( ! function_exists( 'storefront_site_branding' ) ) {
+if ( ! function_exists( 'eighteen_tags_site_branding' ) ) {
 	/**
 	 * Display Site Branding
 	 * @since  1.0.0
 	 * @return void
 	 */
-	function storefront_site_branding() {
-		if ( get_theme_mod( 'storefront-pro-logo' ) ) {
+	function eighteen_tags_site_branding() {
+		if ( get_theme_mod( 'eighteen-tags-pro-logo' ) ) {
 			?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo-link" rel="home">
-				<img src="<?php echo get_theme_mod( 'storefront-pro-logo' ); ?>" alt="<?php echo get_bloginfo( 'name' ); ?>" />
+				<img src="<?php echo get_theme_mod( 'eighteen-tags-pro-logo' ); ?>" alt="<?php echo get_bloginfo( 'name' ); ?>" />
 			</a>
 			<?php
 
@@ -1674,56 +1675,7 @@ if ( ! function_exists( 'storefront_site_branding' ) ) {
 	}
 }
 
-if ( ! function_exists( 'storefront_primary_navigation' ) ) {
-	/**
-	 * Display Primary Navigation
-	 * @since  1.0.0
-	 * @return void
-	 */
-	function storefront_primary_navigation() {
-		$post_type_field = '';
-		$search_pt = explode( ',', get_theme_mod( 'storefront-pro-search-post_type', 'post,page' ) );
-		if ( 1 < count( $search_pt ) ) {
-			foreach( $search_pt as $pt ) {
-				$post_type_field .= "<input type='hidden' name='post_type[]' value='{$pt}' />";
-			}
-		} else {
-			$post_type_field = "<input type='hidden' name='post_type' value='{$search_pt[0]}' />";
-		}
-		?>
-		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_html_e( 'Primary Navigation', 'storefront' ); ?>">
-			<div class="sfp-nav-search" style="display: none;">
-				<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/'  ) ); ?>">
-					<label class="screen-reader-text" for="s"><?php _e( 'Search for:', 'woocommerce' ); ?></label>
-					<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search&hellip;', 'placeholder', 'woocommerce' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'woocommerce' ); ?>" />
-					<input type="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'woocommerce' ); ?>" />
-					<?php echo $post_type_field ?>
-				</form>
-				<a class='sfp-nav-search-close'><i class='fa fa-close'></i></a>
-			</div><!-- .sfp-nav-search -->
-			<a class="menu-toggle" aria-controls="primary-navigation" aria-expanded="false"><?php echo esc_attr( apply_filters( 'storefront_menu_toggle_text', __( 'Navigation', 'storefront' ) ) ); ?></a>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location'	=> 'primary',
-					'container_class'	=> 'primary-navigation',
-				)
-			);
-
-			wp_nav_menu(
-				array(
-					'theme_location'	=> 'handheld',
-					'container_class'	=> 'handheld-navigation',
-				)
-			);
-			do_action( 'storefront_pro_in_nav' );
-			?>
-		</nav><!-- #site-navigation -->
-		<?php
-	}
-}
-
-if ( ! function_exists( 'storefront_sanitize_layout' ) ) {
+if ( ! function_exists( 'eighteen_tags_sanitize_layout' ) ) {
 	/**
 	 * Sanitizes the layout setting
 	 *
@@ -1731,7 +1683,7 @@ if ( ! function_exists( 'storefront_sanitize_layout' ) ) {
 	 *
 	 * @since 1.0.3
 	 */
-	function storefront_sanitize_layout( $input ) {
+	function eighteen_tags_sanitize_layout( $input ) {
 		$valid = array(
 			'right',
 			'left',
@@ -1758,12 +1710,8 @@ if ( ! function_exists( 'woocommerce_template_loop_rating' ) ) {
 		echo '</div>';
 	}
 }
-function sfp_jetpack_dummy_class() {
-	if ( ! class_exists( 'Jetpack' ) ) {
-		class Jetpack {}
-	}
-}
-if ( ! function_exists( 'storefront_post_thumbnail' ) ) {
+
+if ( ! function_exists( 'eighteen_tags_post_thumbnail' ) ) {
 	/**
 	 * Display post thumbnail
 	 * @var $size string Thumbnail size. thumbnail|medium|large|full|$custom
@@ -1772,7 +1720,7 @@ if ( ! function_exists( 'storefront_post_thumbnail' ) ) {
 	 * @param string $size
 	 * @since 1.5.0
 	 */
-	function storefront_post_thumbnail( $size, $args = array( 'itemprop' => 'image' ) ) {
+	function eighteen_tags_post_thumbnail( $size, $args = array( 'itemprop' => 'image' ) ) {
 		if ( has_post_thumbnail() ) {
 			the_post_thumbnail( $size, $args );
 		}

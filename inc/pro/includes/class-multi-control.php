@@ -5,7 +5,7 @@
  * @since  1.0.0
  * @access public
  */
-class SFP_Custom_Customize_Control extends WP_Customize_Control {
+class PRO18_Custom_Customize_Control extends WP_Customize_Control {
 
 	/**
 	 * The type of customize control being rendered.
@@ -62,7 +62,7 @@ class SFP_Custom_Customize_Control extends WP_Customize_Control {
 	 * @return void
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'lib-customize-controls', plugin_dir_url( __FILE__ ) . '../assets/customize-controls.js', array( 'jquery' ), '', true );
+		wp_enqueue_script( 'lib-customize-controls', PRO18_URL . '/assets/customize-controls.js', array( 'jquery' ), '', true );
 	}
 
 	protected function output_select_options( $options, $val_now ) {
