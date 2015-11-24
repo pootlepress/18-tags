@@ -90,30 +90,18 @@ if ( ! function_exists( 'eighteen_tags_primary_navigation' ) ) {
 					'container_class'	=> '',
 				)
 			);
+			?>
+			<div class="etp-nav-search">
+				<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/'  ) ); ?>">
+					<label class="screen-reader-text" for="s"><?php _e( 'Search for:', 'woocommerce' ); ?></label>
+					<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search&hellip;', 'placeholder', 'woocommerce' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'woocommerce' ); ?>" />
+					<input type="submit" value="&#xf002;" />
+					<?php echo $post_type_field ?>
+				</form>
+			</div><!-- .etp-nav-search -->
+			<?php
 			echo '</div>';
 			do_action( 'eighteen_tags_pro_in_nav' );
-			?>
-		</nav><!-- #site-navigation -->
-		<?php
-	}
-}
-
-if ( ! function_exists( 'eighteen_tags_secondary_navigation' ) ) {
-	/**
-	 * Display Secondary Navigation
-	 * @since  1.0.0
-	 * @return void
-	 */
-	function eighteen_tags_secondary_navigation() {
-		?>
-		<nav class="secondary-navigation" role="navigation" aria-label="<?php _e( 'Secondary Navigation', 'eighteen-tags' ); ?>">
-			<?php
-				wp_nav_menu(
-					array(
-						'theme_location'	=> 'secondary',
-						'fallback_cb'		=> '',
-					)
-				);
 			?>
 		</nav><!-- #site-navigation -->
 		<?php

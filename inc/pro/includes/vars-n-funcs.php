@@ -421,6 +421,12 @@ $eighteen_tags_pro_customizer_fields = array(
 		'section' => 'existing_eighteen_tags_single_post',
 		'type'    => 'color',
 	),
+	array(
+		'id'      => 'remove-single-post-meta',
+		'label'   => 'Remove post meta',
+		'section' => 'existing_eighteen_tags_single_post',
+		'type'    => 'checkbox',
+	),
 
 	//Blog
 	array(
@@ -490,6 +496,12 @@ $eighteen_tags_pro_customizer_fields = array(
 		'label'     => 'Read more button text',
 		'section'   => 'existing_eighteen_tags_archive',
 		'type'      => 'text',
+	),
+	array(
+		'id'      => 'remove-archive-post-meta',
+		'label'   => 'Remove post meta',
+		'section' => 'existing_eighteen_tags_archive',
+		'type'    => 'checkbox',
 	),
 
 	//Typography
@@ -686,6 +698,7 @@ $eighteen_tags_pro_customizer_fields = array(
 		'label'     => 'Menu icon color',
 		'section'   => 'Mobile menu',
 		'type'      => 'color',
+		'default'   => '#000000',
 	),
 	array(
 		'id'        => 'mob-menu-bg-color',

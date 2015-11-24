@@ -113,9 +113,9 @@ function eighteen_tags_layout_class( $classes ) {
 /**
  * Adjust a hex color brightness
  * Allows us to create hover styles for custom link colors
- * @param  strong $hex   hex color e.g. #111111
+ * @param  string $hex   hex color e.g. #111111
  * @param  integer $steps factor by which to brighten/darken ranging from -255 (darken) to 255 (brighten)
- * @return string        brightened/darkened hex color
+ * @return string brightened/darkened hex color
  * @since  1.0.0
  */
 function eighteen_tags_adjust_color_brightness( $hex, $steps ) {

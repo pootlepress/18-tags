@@ -30,7 +30,6 @@
 			 * @hooked eighteen_tags_skip_links - 0
 			 * @hooked eighteen_tags_social_icons - 10
 			 * @hooked eighteen_tags_site_branding - 20
-			 * @hooked eighteen_tags_secondary_navigation - 30
 			 * @hooked eighteen_tags_product_search - 40
 			 * @hooked eighteen_tags_primary_navigation - 50
 			 * @hooked eighteen_tags_header_cart - 60

@@ -123,7 +123,7 @@ final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
 
 	public function features() {
 
-		new PRO18_Add_Nav_Icons();
+		new Eighteen_Tags_Add_Nav_Icons();
 
 		remove_action( 'eighteen_tags_loop_post', 'eighteen_tags_post_content', 30 );
 		add_action( 'eighteen_tags_loop_post', array( $this->content_styles, 'content' ), 30 );
@@ -132,7 +132,7 @@ final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
 			wp_enqueue_script( 'etp-sticky-header', $this->plugin_url . '/assets/js/sticky-header.js', array( 'jquery' ) );
 		}
 
-		if ( 'full' == get_theme_mod( 'eighteen_tags_layout' ) ) {
+		if ( 'full' == get_theme_mod( 'eighteen_tags_layout', 'full' ) ) {
 			remove_action( 'eighteen_tags_sidebar', 'eighteen_tags_get_sidebar' );
 		}
 
@@ -242,7 +242,7 @@ final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
 	 * @return string Template path
 	 */
 	function post_layout( $template ) {
-		$layout = get_option( 'etp_post_layout', 1 );
+		$layout = get_option( 'etp_post_layout' );
 		$dir = dirname( __FILE__ );
 
 		if ( ! empty( $layout ) && file_exists( "$dir/template/single-{$layout}.php" ) ) {

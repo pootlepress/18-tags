@@ -310,9 +310,9 @@ if ( ! function_exists( 'eighteen_tags_customize_register' ) ) {
 					'label'			=> __( 'General Layout', 'eighteen-tags' ),
 					'priority'		=> 1,
 					'choices'		=> array(
+						'full' 			=> get_template_directory_uri() . '/assets/full.png',
 						'right' 		=> get_template_directory_uri() . '/assets/right.png',
 						'left' 			=> get_template_directory_uri() . '/assets/left.png',
-						'full' 			=> get_template_directory_uri() . '/assets/full.png',
 					)
 		) ) );
 

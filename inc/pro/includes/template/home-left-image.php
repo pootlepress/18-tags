@@ -12,7 +12,7 @@
  */
 
 get_header();
-include 'styles.php';
+include get_template_directory() . '/inc/styles.php';
 
 //Thumbnail args
 if ( empty( $etp_thumb_size ) ) {
@@ -39,15 +39,21 @@ $posts_array = array();
 				eighteen_tags_post_thumbnail( $etp_thumb_size, $etp_thumb_args );
 				the_title( '<h1 class="entry-title" itemprop="name headline">', '</h1>' );
 				echo '</a>';
+				if ( ! get_theme_mod( 'eighteen-tags-pro-remove-archive-post-meta' ) ) {
+					?>
+					<div class="post-meta-container">
+						<?php
+						eighteen_tags_posted_on();
+						eighteen_tags_post_meta();
+						?>
+					</div>
+					<?php
+				}
 				?>
 			</header><!-- .entry-header -->
 			<div class="entry-content" itemprop="articleBody">
 				<?php Eighteen_Tags_Pro::instance()->public->content_styles->blog_content(); ?>
 			</div><!-- .entry-content -->
-			<?php
-			eighteen_tags_posted_on();
-			eighteen_tags_post_meta();
-			?>
 
 		</article><!-- #post-## -->
 

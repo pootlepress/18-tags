@@ -5,7 +5,7 @@
  * Date: 23/10/15
  * Time: 3:04 PM
  */
-class PRO18_Add_Nav_Icons {
+class Eighteen_Tags_Add_Nav_Icons {
 	protected $ico;
 
 	public function __construct() {

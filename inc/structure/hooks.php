@@ -23,13 +23,11 @@ add_action( 'eighteen_tags_sidebar',		'eighteen_tags_get_sidebar',	    	10 );
 /**
  * Header
  * @see  eighteen_tags_skip_links()
- * @see  eighteen_tags_secondary_navigation()
  * @see  eighteen_tags_site_branding()
  * @see  eighteen_tags_primary_navigation()
  */
 add_action( 'eighteen_tags_header', 'eighteen_tags_skip_links', 			0 );
 add_action( 'eighteen_tags_header', 'eighteen_tags_site_branding',			20 );
-add_action( 'eighteen_tags_header', 'eighteen_tags_secondary_navigation',	30 );
 add_action( 'eighteen_tags_header', 'eighteen_tags_primary_navigation',		50 );
 
 /**

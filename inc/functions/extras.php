@@ -162,8 +162,8 @@ function wc_breadcrumb_register() {
 			global $post;
 			$separator = " / "; // Simply change the separator to what ever you need e.g. / or >
 
-			echo '<div class="woocommerce-breadcrumb">';
 			if ( ! is_front_page() ) {
+				echo '<div class="woocommerce-breadcrumb">';
 				echo '<a href="';
 				echo get_option( 'home' );
 				echo '">Home</a> ' . $separator;
@@ -190,10 +190,8 @@ function wc_breadcrumb_register() {
 				} elseif ( is_404() ) {
 					echo "404";
 				}
-			} else {
-				bloginfo( 'name' );
+				echo '</div>';
 			}
-			echo '</div>';
 		}
 	}
 }
