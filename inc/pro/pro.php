@@ -130,8 +130,6 @@ final class Eighteen_Tags_Pro {
 		add_action( 'after_setup_theme', array( $this, 'include_ext_plugins' ) );
 
 		add_action( 'init', array( $this, 'setup' ) );
-
-		add_action( 'customizer', array( $this, 'setup' ) );
 	}
 
 	/**

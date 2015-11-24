@@ -86,7 +86,6 @@ add_action( 'eighteen_tags_page_after', 	'eighteen_tags_display_comments',	10 );
 
 /**
  * Extras
- * @see  eighteen_tags_setup_author()
  * @see  eighteen_tags_body_classes()
  * @see  eighteen_tags_page_menu_args()
  */

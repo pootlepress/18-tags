@@ -39,15 +39,18 @@ jQuery( document ).ready( function ( $ ) {
 	}
 
 	if ( windowWidth > 767 ) {
-			var $navbar = $( '#site-navigation' );
+			var $navbar = $( '#site-navigation' ),
+				$navSearch = $navbar.children( '.etp-nav-search' );
 		if ( $navbar.children( '.primary-navigation' ).length ) {
+			var navHi = $navbar.innerHeight();
 			$navbar.find( '.etp-search ul' ).hide();
-			$navbar.css( 'height', $navbar.innerHeight() );
+			$navbar.css( 'height', navHi );
 
 			toggleSearch = function () {
 				$navbar.toggleClass( 'show-search' );
 				$navbar.children( '.primary-navigation, .site-header-cart' ).slideToggle( { easing : 'linear' } );
-				$navbar.children( '.etp-nav-search' )
+				$navSearch
+					.css( 'top', ( navHi - $navSearch.innerHeight() ) / 2 )
 					.slideToggle( { easing : 'linear' } )
 					.find( '.search-field' ).val( '' );
 			};

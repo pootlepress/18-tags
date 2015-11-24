@@ -5,6 +5,30 @@
  * @package eighteen-tags
  */
 
+if ( ! function_exists( 'eighteen_tags_post_header' ) ) {
+	/**
+	 * Display the post header with a link to the single post
+	 * @since 1.0.0
+	 */
+	function eighteen_tags_post_header() { ?>
+		<header class="entry-header">
+		<?php
+		if ( is_single() ) {
+			eighteen_tags_posted_on();
+			the_title( '<h1 class="entry-title" itemprop="name headline">', '</h1>' );
+		} else {
+			if ( 'post' == get_post_type() ) {
+				eighteen_tags_posted_on();
+			}
+
+			the_title( sprintf( '<h1 class="entry-title" itemprop="name headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' );
+		}
+		?>
+		</header><!-- .entry-header -->
+		<?php
+	}
+}
+
 if ( ! function_exists( 'eighteen_tags_post_content' ) ) {
 	/**
 	 * Display the post content with a link to the single post

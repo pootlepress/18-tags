@@ -133,6 +133,10 @@ final class Eighteen_Tags_Pro_Customizer_Fields extends Eighteen_Tags_Pro_Abstra
 	 */
 	public function render_customizer_field( WP_Customize_Manager $wp_customize, $f ){
 
+		if ( strpos( $f['id'], 'wc-cart' ) && ! class_exists( 'WooCommerce' ) ) {
+			return;
+		}
+
 		//Add control by type
 		if ( 'post-types' == $f['type'] ) {
 			$f['type'] = 'multi-checkbox';

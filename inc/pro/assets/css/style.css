@@ -456,6 +456,7 @@ body.eighteen-tags-pro-active .site-header-cart li a{
 	border: 1px solid #ccc;
 	box-shadow: none;
 	border-radius: 5px;
+	padding: 5px;
 }
 
 #site-navigation .etp-nav-search {
@@ -477,7 +478,7 @@ body.eighteen-tags-pro-active .site-header-cart li a{
 	border: none;
 	box-shadow: none;
 	position: absolute;
-	top: 2px;
+	top: -2px;
 	right: 2px;
 	padding: 0.3em;
 }
@@ -490,12 +491,6 @@ body.eighteen-tags-pro-active .site-header-cart li a{
 .etp-nav-search .etp-nav-search-close {
 	right: -2em;
 	padding: 0.3em 0.5em;
-}
-
-#site-navigation .etp-nav-search > *, #site-navigation .etp-nav-search:after {
-	content:'';
-	display: inline-block;
-	vertical-align:middle;
 }
 
 /*Nav icons*/
