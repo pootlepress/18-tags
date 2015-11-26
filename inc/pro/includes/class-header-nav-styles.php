@@ -121,11 +121,11 @@ class Eighteen_Tags_Pro_Header_Nav extends Eighteen_Tags_Pro_Primary_Navigation 
 			$return = "<div style='float:left;' class='social-info'>";
 		}
 
-		if ( ! empty( $phone ) ) {
+		if ( $phone ) {
 			$return .= "<a class='contact-info'><i class='fa fa-phone'></i>$phone</a>";
 		}
 
-		if ( ! empty( $email ) ) {
+		if ( $email ) {
 			$return .= "<a class='contact-info' href='mailto:{$email}'><i class='fa fa-envelope'></i>$email</a>";
 		}
 

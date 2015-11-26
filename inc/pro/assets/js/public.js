@@ -55,7 +55,9 @@ jQuery( document ).ready( function ( $ ) {
 					.find( '.search-field' ).val( '' );
 			};
 
-			$navbar.find( '.etp-nav-search-close, .etp-search a' ).click( toggleSearch );
+			if ( ! $('body').hasClass('etp-nav-styleleft-vertical') ) {
+				$navbar.find( '.etp-nav-search-close, .etp-search a' ).click( toggleSearch );
+			}
 		}
 	}
 

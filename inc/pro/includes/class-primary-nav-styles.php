@@ -157,8 +157,32 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 			$html .= $item->asXML();
 
 			if ( $i == $this->num_items && ! $this->get( 'remove-search-icon' ) ) {
-				$html .= '<li class="etp-search"><a><i class="fa fa-search"></i></a>' .
-				         '<ul><li>' . get_search_form( false ) . '</li></ul></li>';
+				if ( 'left-vertical'  == $this->get( 'nav-style' ) ) {
+					$html .= '<li class="etp-search"><a>';
+
+					$post_type_field = '';
+					$search_pt = explode( ',', get_theme_mod( 'eighteen-tags-pro-search-post_type', 'post,page' ) );
+					foreach( $search_pt as $pt ) {
+						$post_type_field .= "<input type='hidden' name='post_type[]' value='{$pt}' />";
+					}
+
+					$html .=
+						'<div class="etp-nav-search">' .
+						'<form role="search" method="get" class="search-form" action="' . esc_url( home_url( '/'  ) ) . '">' .
+						'<label class="screen-reader-text" for="s">' . _e( 'Search for:', 'woocommerce' ) . '</label>' .
+						'<input type="search" class="search-field" placeholder="' .
+						esc_attr_x( 'Search&hellip;', 'placeholder', 'woocommerce' ) .
+						'" value="' . get_search_query() . '" name="s" title="' .
+						esc_attr_x( 'Search for:', 'label', 'woocommerce' ) . '" />' .
+						'<input type="submit" value="&#xf002;" />' .
+						$post_type_field .
+						'</form>' .
+						'</div></a></li>';
+				} else {
+					$html .= '<li class="etp-search"><a>';
+					$html .= '<i class="fa fa-search"></i>';
+					$html .= '</a><ul><li>' . get_search_form( false ) . '</li></ul></li>';
+				}
 			}
 		}
 	}

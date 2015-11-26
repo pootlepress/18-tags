@@ -178,14 +178,15 @@ class Pootle_Page_Customizer_Public {
 			        "display : none !important;\n" .
 			        "}\n";
 		}
+
 		if ( $hideTitle ) {
 			$css .= ".main_title, .entry-title {display : none !important;}\n";
 		}
+
 		if ( $hideSidebar ) {
 			$css .= "aside, #sidebar, .sidebar, .side-bar {display : none !important;}\n";
 			$css .= "#content, .content, .content-area { width : 100% !important;}\n";
 		}
-
 		return $css;
 	}
 
