@@ -189,78 +189,22 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 
 	public function submenu_animation( $animation ) {
 		$css = &$this->css;
-
+		$animation_duration = array(
+			'fade'   => '0.5s',
+			'expand' => '0.5s',
+			'slide'  => '0.7s',
+			'flip'   => '0.34s',
+		);
 		$css .= '#site-navigation .primary-navigation .menu > li > ul { -webkit-transform-origin: 0 0 ; transform-origin: 0 0 ; -webkit-transition: height 500ms, -webkit-transform 0.5s; transition: height 500ms, transform 0.5s; }';
-		switch ( $animation ) {
-			case 'fade':
-				$css .= '#site-navigation .primary-navigation .menu > li > ul {' .
-				        '-webkit-animation-duration: 0.5s;' .
-				        '-webkit-animation-name: sfProSubmenuAnimation;' .
-				        'animation-duration: 0.5s;' .
-				        'animation-name: sfProSubmenuAnimation;' .
-				        '}';
-				$css .= '@-webkit-keyframes sfProSubmenuAnimation {' .
-				        '0% {display:none;opacity: 0;}' .
-				        '1% {display: block ;opacity: 0;}' .
-				        '100% {display: block ;opacity: 1;}' .
-				        '}';
-				$css .= '@keyframes sfProSubmenuAnimation {' .
-				        '0% {display:none;opacity: 0;}' .
-				        '1% {display: block ;opacity: 0;}' .
-				        '100% {display: block ;opacity: 1;}' .
-				        '}';
-				break;
-			case 'expand':
-				$css .= '#site-navigation .primary-navigation .menu > li > ul {' .
-				        '-webkit-animation-duration: 0.5s; -webkit-animation-name: sfProSubmenuAnimation;' .
-				        'animation-duration: 0.5s; animation-name: sfProSubmenuAnimation;' .
-				        '}';
-				$css .= '@-webkit-keyframes sfProSubmenuAnimation {' .
-				        '0% {display:none; -webkit-transform: scale(0, 0);}' .
-				        '1% {display: block ; -webkit-transform: scale(0, 0);}' .
-				        '100% {display: block ; -webkit-transform: scale(1, 1);}' .
-				        '}';
-				$css .= '@keyframes sfProSubmenuAnimation {' .
-				        '0% {display:none; transform: scale(0, 0);}' .
-				        '1% {display: block ; transform: scale(0, 0);}' .
-				        '100% {display: block ; transform: scale(1, 1);}' .
-				        '}';
-				break;
-			case 'slide':
-				$css .= '#site-navigation .primary-navigation .menu > li > ul {' .
-				        '-webkit-animation-duration: 0.7s;' .
-				        '-webkit-animation-name: sfProSubmenuAnimation;' .
-				        'animation-duration: 0.7s;' .
-				        'animation-name: sfProSubmenuAnimation;' .
-				        '}';
-				$css .= '@-webkit-keyframes sfProSubmenuAnimation {' .
-				        '0% {display:none;opacity: 0; -webkit-transform: translate(50px, 0);}' .
-				        '1% {display: block ;opacity: 0; -webkit-transform: translate(50px, 0);}' .
-				        '100% {display: block ;opacity: 1; -webkit-transform: translate(0, 0);}' .
-				        '}';
-				$css .= '@keyframes sfProSubmenuAnimation {' .
-				        '0% {display:none;opacity: 0; transform: translate(50px, 0);}' .
-				        '1% {display: block ;opacity: 0; transform: translate(50px, 0);}' .
-				        '100% {display: block ;opacity: 1; transform: translate(0, 0);}' .
-				        '}';
-				break;
-			case 'flip':
-				$css .= '#site-navigation .primary-navigation .menu > li > ul {' .
-				        '-webkit-animation-duration: 0.34s; -webkit-animation-name: sfProSubmenuAnimation;' .
-				        'animation-duration: 0.34s; animation-name: sfProSubmenuAnimation;' .
-				        '-webkit-transform-origin: 50% 50% ; transform-origin: 50% 50% ;' .
-				        '}';
-				$css .= '@-webkit-keyframes sfProSubmenuAnimation {' .
-				        '0% {display:none; -webkit-transform: rotateY(90deg);}' .
-				        '1% {display: block ; -webkit-transform: rotateY(90deg);}' .
-				        '100% {display: block ; -webkit-transform: rotateY(0deg);}' .
-				        '}';
-				$css .= '@keyframes sfProSubmenuAnimation {' .
-				        '0% {display:none; transform: rotateY(90deg);}' .
-				        '1% {display: block ; transform: rotateY(90deg);}' .
-				        '100% {display: block ; transform: rotateY(0deg);}' .
-				        '}';
-				break;
+
+		if ( array_key_exists( $animation, $animation_duration ) ) {
+			$css .=
+				'#site-navigation .primary-navigation .menu > li > ul {' .
+				"-webkit-animation-duration: {$animation_duration[ $animation ]};" .
+				"-webkit-animation-name: sfProSubmenuAnimation-$animation;" .
+				"animation-duration: {$animation_duration[ $animation ]};" .
+				"animation-name: sfProSubmenuAnimation-$animation;" .
+				'}';
 		}
 	}
 } // End class

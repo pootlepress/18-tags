@@ -585,7 +585,7 @@ body.eighteen-tags-pro-active .site-header-cart li a{
 	padding: 0.3em 0.5em;
 }
 
-/*Nav icons*/
+/* Nav icons */
 .site-header .menu-item i.fa , .secondary-navigation .menu-item a > i.fa, .social-info > a {
 	margin-right: 5px;
 }
@@ -597,4 +597,53 @@ body.eighteen-tags-pro-active .site-header-cart li a{
 .secondary-navigation .site-header-cart .cart-contents:after {
 	display: inline-block;
 	top: 7px;
+}
+
+/* Submenu animations */
+/* Fade */
+@-webkit-keyframes sfProSubmenuAnimation-fade {
+	0% {display:none;opacity: 0;}
+	1% {display: block ;opacity: 0;}
+	100% {display: block ;opacity: 1;}
+}
+@keyframes sfProSubmenuAnimation-fade {
+	0% {display:none;opacity: 0;}
+	1% {display: block ;opacity: 0;}
+	100% {display: block ;opacity: 1;}
+}
+
+/* Expand */
+@-webkit-keyframes sfProSubmenuAnimation-expand {
+	0% {display:none; -webkit-transform: scale(0, 0);}
+	1% {display: block ; -webkit-transform: scale(0, 0);}
+	100% {display: block ; -webkit-transform: scale(1, 1);}
+}
+@keyframes sfProSubmenuAnimation-expand {
+	0% {display:none; transform: scale(0, 0);}
+	1% {display: block ; transform: scale(0, 0);}
+	100% {display: block ; transform: scale(1, 1);}
+}
+
+/* Slide */
+@-webkit-keyframes sfProSubmenuAnimation-slide {
+	0% {display:none;opacity: 0; -webkit-transform: translate(50px, 0);}
+	1% {display: block ;opacity: 0; -webkit-transform: translate(50px, 0);}
+	100% {display: block ;opacity: 1; -webkit-transform: translate(0, 0);}
+}
+@keyframes sfProSubmenuAnimation-slide {
+	0% {display:none;opacity: 0; transform: translate(50px, 0);}
+	1% {display: block ;opacity: 0; transform: translate(50px, 0);}
+	100% {display: block ;opacity: 1; transform: translate(0, 0);}
+}
+
+/* Flip */
+@-webkit-keyframes sfProSubmenuAnimation-flip {
+	0% {display:none; -webkit-transform: rotateY(90deg);}
+	1% {display: block ; -webkit-transform: rotateY(90deg);}
+	100% {display: block ; -webkit-transform: rotateY(0deg);}
+}
+@keyframes sfProSubmenuAnimation-flip {
+	0% {display:none; transform: rotateY(90deg);}
+	1% {display: block ; transform: rotateY(90deg);}
+	100% {display: block ; transform: rotateY(0deg);}
 }

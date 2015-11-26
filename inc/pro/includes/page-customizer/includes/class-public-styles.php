@@ -94,7 +94,7 @@ class Pootle_Page_Customizer_Public {
 
 		//Background styles
 		$css .= 'body.pootle-page-customizer-active {';
-		if ( 'color' == $bodyBgType && $bgColor ) {
+		if ( 'color' == $bodyBgType ) {
 			$css .= "background: {$bgColor} !important;";
 		} else if ( $bgImage ) {
 			$css .= "background : url({$bgImage}){$BgOptions} !important;";
@@ -144,15 +144,16 @@ class Pootle_Page_Customizer_Public {
 		if ( $hideHeader ) {
 			$css .= "display : none !important;";
 		}
-		if ( $headerBgColor ) {
-			$css .= "background-color : {$headerBgColor} !important;";
-		}
+
+		$css .= "background-color : {$headerBgColor} !important;";
+
 		if ( $headerBgImage ) {
 			$css .= "background-image : url({$headerBgImage}) !important;";
 			$css .= "background-size : cover !important;";
 		}
 		//Header styles END
 		$css .= "}\n";
+
 		if ( $hideTopBar ) {
 			$css .= ".shb-header-bar { display : none !important; }";
 		}
@@ -206,9 +207,9 @@ class Pootle_Page_Customizer_Public {
 		if ( $hideFooter ) {
 			$css .= "display : none !important;";
 		}
-		if ( $footerBgColor ) {
-			$css .= "background-color : $footerBgColor !important;";
-		}
+
+		$css .= "background-color : $footerBgColor !important;";
+
 		//Footer styles END
 		$css .= "}\n";
 

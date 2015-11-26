@@ -120,7 +120,9 @@ final class Eighteen_Tags_Pro_Customizer_Fields extends Eighteen_Tags_Pro_Abstra
 					)
 				);
 
-				$this->render_customizer_field( $wp_customize, $f );
+				if ( ! strpos( $f['id'], 'wc-cart' ) || class_exists( 'WooCommerce' ) ) {
+					$this->render_customizer_field( $wp_customize, $f );
+				}
 			}
 		}
 	}
@@ -132,11 +134,6 @@ final class Eighteen_Tags_Pro_Customizer_Fields extends Eighteen_Tags_Pro_Abstra
 	 * @since 1.0.0
 	 */
 	public function render_customizer_field( WP_Customize_Manager $wp_customize, $f ){
-
-		if ( strpos( $f['id'], 'wc-cart' ) && ! class_exists( 'WooCommerce' ) ) {
-			return;
-		}
-
 		//Add control by type
 		if ( 'post-types' == $f['type'] ) {
 			$f['type'] = 'multi-checkbox';
@@ -157,10 +154,6 @@ final class Eighteen_Tags_Pro_Customizer_Fields extends Eighteen_Tags_Pro_Abstra
 			$this->google_font_fields[] = $f['id'];
 			$args['choices'] = $this->get_fonts();
 			$args['type'] = 'select';
-
-		} elseif ( in_array( $f['type'], array( 'radio', 'select', ) ) ) {
-
-			$args['choices'] = empty( $f['choices'] ) ? array( 'Choice 1', 'Choice 2', 'Choice 3' ) : $f['choices'];
 
 		}
 

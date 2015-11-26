@@ -113,17 +113,9 @@ class Eighteen_Tags_Pro_Header_Nav extends Eighteen_Tags_Pro_Primary_Navigation 
 		$pinterest  = $this->get( 'pinterest' );
 		$youtube    = $this->get( 'youtube' );
 
-		if ( 'center' == $float ) {
-			$return = "<div style='float:left;position:relative;left:50%' ><div style='position: relative;left: -50%;' class='social-info'>";
-		} elseif ( 'right' == $float ) {
-			$return = "<div style='float:right;' class='social-info'>";
-		} else {
-			$return = "<div style='float:left;' class='social-info'>";
-		}
+		$return = $this->sec_nav_icons_container( $float );
 
-		if ( $phone ) {
-			$return .= "<a class='contact-info'><i class='fa fa-phone'></i>$phone</a>";
-		}
+		if ( $phone ) { $return .= "<a class='contact-info'><i class='fa fa-phone'></i>$phone</a>"; }
 
 		if ( $email ) {
 			$return .= "<a class='contact-info' href='mailto:{$email}'><i class='fa fa-envelope'></i>$email</a>";
@@ -140,6 +132,16 @@ class Eighteen_Tags_Pro_Header_Nav extends Eighteen_Tags_Pro_Primary_Navigation 
 		}
 
 		return $return . '</div>';
+	}
+
+	public function sec_nav_icons_container( $float ) {
+		if ( 'center' == $float ) {
+			return "<div style='float:left;position:relative;left:50%' ><div style='position: relative;left: -50%;' class='social-info'>";
+		} elseif ( 'right' == $float ) {
+			return "<div style='float:right;' class='social-info'>";
+		} else {
+			return "<div style='float:left;' class='social-info'>";
+		}
 	}
 
 	public function sec_nav_icons_social( &$ret ) {
