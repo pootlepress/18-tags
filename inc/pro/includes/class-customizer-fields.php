@@ -98,32 +98,35 @@ final class Eighteen_Tags_Pro_Customizer_Fields extends Eighteen_Tags_Pro_Abstra
 				$sec = str_replace( 'existing_', '', $Sec );
 			}
 
-			foreach ( $fields as $f ){
-
-				$id = $this->get_field_id( $f['id'] );
-
-				$f['id'] = $id;
-				$f['section'] = $sec;
-
-				//Setting a default
-				$default = '';
-				if ( isset( $f['default'] ) ) {
-					$default = $f['default'];
-				}
-
-				//Add Setting
-				$wp_customize->add_setting(
-					$id,
-					array(
-						'default'   => $default,
-						'transport' => 'refresh',
-					)
-				);
-
-				if ( ! strpos( $f['id'], 'wc-cart' ) || class_exists( 'WooCommerce' ) ) {
-					$this->render_customizer_field( $wp_customize, $f );
-				}
+			foreach ( $fields as $f ) {
+				$this->setting_and_control( $wp_customize, $f, $sec );
 			}
+		}
+	}
+
+	protected function setting_and_control( $wp_customize, $f, $sec ) {
+		$id = $this->get_field_id( $f['id'] );
+
+		$f['id'] = $id;
+		$f['section'] = $sec;
+
+		//Setting a default
+		$default = '';
+		if ( isset( $f['default'] ) ) {
+			$default = $f['default'];
+		}
+
+		//Add Setting
+		$wp_customize->add_setting(
+			$id,
+			array(
+				'default'   => $default,
+				'transport' => 'refresh',
+			)
+		);
+
+		if ( ! strpos( $f['id'], 'wc-cart' ) || class_exists( 'WooCommerce' ) ) {
+			$this->render_customizer_field( $wp_customize, $f );
 		}
 	}
 
