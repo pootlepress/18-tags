@@ -163,12 +163,6 @@ final class Eighteen_Tags_Pro {
 		if ( ! class_exists( 'Eighteen_Tags_Header_Bar' ) ) {
 			require 'includes/ext/header-bar/header-bar.php';
 		}
-		if ( ! class_exists( 'Eighteen_Tags_Product_Sharing' ) ) {
-			require 'includes/ext/product-sharing/product-sharing.php';
-		}
-		if ( ! class_exists( 'WC_pif' ) ) {
-			require 'includes/ext/woocommerce-product-image-flipper/image-flipper.php';
-		}
 	}
 
 	/**

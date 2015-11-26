@@ -26,7 +26,11 @@
 		</div><!-- .col-full -->
 	</footer><!-- #colophon -->
 
-	<?php do_action( 'eighteen_tags_after_footer' ); ?>
+	<?php do_action( 'eighteen_tags_after_footer' );
+	if ( 'left-vertical' == get_theme_mod( 'eighteen-tags-pro-nav-style' ) ) {
+		echo '</div>';
+	}
+	?>
 
 </div><!-- #page -->
 

@@ -311,11 +311,6 @@ body.eighteen-tags-pro-active .site-header-cart li a{
 		margin-right: 0.7em;
 	}
 
-	.etp-nav-styleleft-vertical ul.menu > li.etp-search > a {
-		padding-left: 0;
-		padding-right: 0;
-	}
-
 	.etp-nav-styleleft-vertical .etp-nav-search .search-form {
 		display:block;
 	}
@@ -333,11 +328,29 @@ body.eighteen-tags-pro-active .site-header-cart li a{
 		padding: 8px;
 	}
 
-	.etp-nav-styleleft-vertical .site-header {
+	.etp-nav-styleleft-vertical #page > .col-full > *{
+		margin-left: 250px;
+	}
+
+	.etp-nav-styleleft-vertical #page .site-header {
+		-webkit-transition: padding 0.100s linear;
+		-moz-transition: padding 0.100s linear;
+		transition: padding 0.100s linear;
 		width: 250px;
 		position: absolute;
 		top: 0;
 		left:0;
+		bottom: 0;
+		margin: 0;
+	}
+
+	.etp-nav-styleleft-vertical #page > .col-full{
+		position: relative;
+	}
+
+	.etp-nav-styleleft-vertical #page .col-full .col-full{
+		padding-left: 1em;
+		padding-right: 1em;
 	}
 
 	.etp-nav-styleleft-vertical #site-navigation.main-navigation ul.menu ul {
@@ -369,12 +382,6 @@ body.eighteen-tags-pro-active .site-header-cart li a{
 
 	.etp-nav-styleleft-vertical #site-navigation .primary-navigation li.mega-menu ul ul {
 		left: 0;
-	}
-
-	.etp-nav-styleleft-vertical .site-content,
-	.etp-nav-styleleft-vertical .shb-header-bar,
-	.etp-nav-styleleft-vertical .bx-wrapper {
-		margin-left: 250px;
 	}
 
 	/* Header Site branding */

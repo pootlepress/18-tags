@@ -173,15 +173,14 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 
 				$html =
 					'<li class="etp-search"><a>' .
-					'<div class="etp-nav-search">' .
+					'<span class="etp-nav-search">' .
 					'<form role="search" method="get" class="search-form" action="' . esc_url( home_url( '/'  ) ) . '">' .
-					'<label class="screen-reader-text" for="s">' . _e( 'Search for:', 'woocommerce' ) . '</label>' .
 					'<input type="search" class="search-field" placeholder="' .
 					esc_attr_x( 'Search&hellip;', 'placeholder', 'woocommerce' ) .
 					'" value="' . get_search_query() . '" name="s" title="' .
 					esc_attr_x( 'Search for:', 'label', 'woocommerce' ) . '" />' .
 					'<input type="submit" value="&#xf002;" />' . $post_type_field .
-					'</form></div></a></li>';
+					'</form></span></a></li>';
 			} else {
 				$html =
 					'<li class="etp-search"><a><i class="fa fa-search"></i></a><ul><li>' .
