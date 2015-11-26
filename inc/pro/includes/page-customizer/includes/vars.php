@@ -68,6 +68,13 @@ $page_customizer_fields = array(
 		'type'    => 'checkbox',
 		'default' => '',
 	),
+	'hide-top-bar' => array(
+		'id'      => 'hide-top-bar',
+		'section' => 'Header',
+		'label'   => 'Hide Top Bar',
+		'type'    => 'checkbox',
+		'default' => '',
+	),
 	'header-background-image' => array(
 		'id'      => 'header-background-image',
 		'section' => 'Header',
@@ -114,6 +121,21 @@ $page_customizer_fields = array(
 		'type'    => 'checkbox',
 		'default' => '',
 	),
+	'hide-footer-bar' => array(
+		'id'      => 'hide-footer-bar',
+		'section' => 'Footer',
+		'label'   => 'Hide footer bar',
+		'type'    => 'checkbox',
+		'default' => '',
+	),
+	'header-hide-bar' => array(
+		'id'      => 'header-hide-bar',
+		'section' => 'Header',
+		'label'   => 'Hide Header Bar',
+		'type'    => 'checkbox',
+		'default' => '',
+	),
+
 	'footer-background-color' => array(
 		'id'      => 'footer-background-color',
 		'section' => 'Footer',

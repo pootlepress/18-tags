@@ -123,7 +123,7 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 		$li_class = 'logo-in-nav-text';
 		$logoHTML = '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a>';
 
-		$logo     = $this->get( 'logo'. get_template_directory_uri() . '/assets/logo.jpg' );
+		$logo     = $this->get( 'logo', get_template_directory_uri() . '/assets/logo.jpg' );
 		if ( $logo ) {
 			$li_class = 'logo-in-nav-image';
 			$logoHTML = ''

@@ -39,6 +39,7 @@ $eighteen_tags_pro_customizer_fields = array(
 			'right' => 'Align right',
 			'center' => 'Centered',
 			'center-inline' => 'Centred inline logo',
+			'left-vertical' => 'Left vertical',
 		),
 	),
 	array(
@@ -453,11 +454,9 @@ $eighteen_tags_pro_customizer_fields = array(
 		'type'      => 'sf-radio-image',
 		'default'   => 'left-image',
 		'choices' => array(
-			'' => PRO18_URL . '/assets/img/admin/layout-default.png',
 			'left-image' => PRO18_URL . '/assets/img/admin/layout-left-image.png',
 			'full-image' => PRO18_URL . '/assets/img/admin/layout-full-image.png',
 			'right-image' => PRO18_URL . '/assets/img/admin/layout-right-image.png',
-
 		),
 	),
 	array(
@@ -521,7 +520,7 @@ $eighteen_tags_pro_customizer_fields = array(
 			'max'   => 25,
 			'step'  => 1,
 		),
-		'default' => 17,
+		'default' => 15,
 	),
 	array(
 		'id'      => 'typo-body-line-height',

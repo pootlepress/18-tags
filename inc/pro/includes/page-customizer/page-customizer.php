@@ -231,7 +231,6 @@ final class Pootle_Page_Customizer {
 	public function setup() {
 		$this->load_plugin_textdomain();
 		$this->get_meta_fields();
-
 		new Lib_Customizer_Postmeta( $this->token, 'Page Customizer', $this->fields );
 		new Pootle_Page_Customizer_Public( $this->token );
 

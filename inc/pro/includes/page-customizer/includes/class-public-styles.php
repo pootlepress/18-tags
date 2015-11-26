@@ -135,6 +135,7 @@ class Pootle_Page_Customizer_Public {
 
 		//Header options
 		$hideHeader    = $this->get_value( 'Header', 'hide-header', false );
+		$hideTopBar    = $this->get_value( 'Header', 'hide-top-bar', false );
 		$headerBgColor = $this->get_value( 'Header', 'header-background-color', null );
 		$headerBgImage = $this->get_value( 'Header', 'header-background-image', null );
 
@@ -152,6 +153,9 @@ class Pootle_Page_Customizer_Public {
 		}
 		//Header styles END
 		$css .= "}\n";
+		if ( $hideTopBar ) {
+			$css .= ".shb-header-bar { display : none !important; }";
+		}
 
 		return $css;
 	}
@@ -193,6 +197,7 @@ class Pootle_Page_Customizer_Public {
 		//Footer options
 		$hideFooter = $this->get_value( 'Footer', 'hide-footer', false );
 		$footerBgColor = $this->get_value( 'Footer', 'footer-background-color', null );
+		$hideFooterBar    = $this->get_value( 'Header', 'hide-footer-bar', false );
 
 		//Footer styles
 		$css = '.colophon, .pootle-page-customizer-active #footer, .pootle-page-customizer-active #main-footer,' .
@@ -205,6 +210,10 @@ class Pootle_Page_Customizer_Public {
 		}
 		//Footer styles END
 		$css .= "}\n";
+
+		if ( $hideFooterBar ) {
+			$css .= ".sfb-footer-bar { display : none !important; }";
+		}
 
 		return $css;
 	}

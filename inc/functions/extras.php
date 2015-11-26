@@ -160,20 +160,20 @@ function wc_breadcrumb_register() {
 	if ( ! function_exists( 'woocommerce_breadcrumb' ) ) {
 		function woocommerce_breadcrumb() {
 			global $post;
-			$separator = " / "; // Simply change the separator to what ever you need e.g. / or >
+			$sep = " / "; // Simply change the separator to what ever you need e.g. / or >
 
 			if ( ! is_front_page() ) {
-				echo '<div class="woocommerce-breadcrumb">';
-				echo '<a href="';
-				echo get_option( 'home' );
-				echo '">Home</a> ' . $separator;
+				$home = '<div class="woocommerce-breadcrumb"><a href="' . get_option( 'home' ) . '">Home</a> ' . $sep;
 				if ( is_category() || is_single() ) {
+					echo $home;
 					the_category( ', ' );
 					if ( is_single() ) {
-						echo $separator;
+						echo $sep;
 						the_title();
 					}
+					echo '</div>';
 				} elseif ( is_page() && $post->post_parent ) {
+					echo $home;
 					$home = get_page( get_option( 'page_on_front' ) );
 					for ( $i = count( $post->ancestors ) - 1; $i >= 0; $i -- ) {
 						if ( ( $home->ID ) != ( $post->ancestors[ $i ] ) ) {
@@ -181,16 +181,16 @@ function wc_breadcrumb_register() {
 							echo get_permalink( $post->ancestors[ $i ] );
 							echo '">';
 							echo get_the_title( $post->ancestors[ $i ] );
-							echo "</a>" . $separator;
+							echo "</a>" . $sep;
 						}
 					}
 					echo the_title();
+					echo '</div>';
 				} elseif ( is_page() ) {
-					echo the_title();
+					echo $home . the_title() . '</div>';
 				} elseif ( is_404() ) {
-					echo "404";
+					echo "{$home}404</div>";
 				}
-				echo '</div>';
 			}
 		}
 	}

@@ -116,7 +116,7 @@ class Eighteen_Tags_Pro_Content_Styles extends Eighteen_Tags_Pro_Abstract {
 		        'font-family:' . $t->get( 'typo-body-font' ) . ';' .
 		        'line-height:' . $t->get( 'typo-body-line-height' ) . '}';
 		$css .= '.eighteen-tags-pro-active .panel-grid-cell, #primary, #secondary {' .
-		        'font-size:' . $t->get( 'typo-body-font-size', 17 ) . 'px; }';;
+		        'font-size:' . $t->get( 'typo-body-font-size', 15 ) . 'px; }';;
 	}
 
 	public function content() {
