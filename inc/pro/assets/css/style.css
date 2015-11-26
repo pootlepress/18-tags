@@ -335,7 +335,9 @@ body.eighteen-tags-pro-active .site-header-cart li a{
 
 	.etp-nav-styleleft-vertical .site-header {
 		width: 250px;
-		float:left;
+		position: absolute;
+		top: 0;
+		left:0;
 	}
 
 	.etp-nav-styleleft-vertical #site-navigation.main-navigation ul.menu ul {
@@ -370,6 +372,7 @@ body.eighteen-tags-pro-active .site-header-cart li a{
 	}
 
 	.etp-nav-styleleft-vertical .site-content,
+	.etp-nav-styleleft-vertical .shb-header-bar,
 	.etp-nav-styleleft-vertical .bx-wrapper {
 		margin-left: 250px;
 	}
