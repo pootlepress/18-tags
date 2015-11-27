@@ -351,7 +351,6 @@ body.eighteen-tags-pro-active .site-header-cart li a{
 	}
 
 	.etp-nav-styleleft-vertical #page .site-header {
-		overflow: auto;
 		-webkit-transition: padding 0.100s linear;
 		-moz-transition: padding 0.100s linear;
 		transition: padding 0.100s linear;
