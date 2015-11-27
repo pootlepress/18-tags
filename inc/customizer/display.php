@@ -46,7 +46,6 @@ if ( ! function_exists( 'eighteen_tags_add_customizer_css' ) ) {
 		}
 
 		.site-header,
-		.main-navigation ul ul,
 		.secondary-navigation ul ul,
 		.main-navigation ul.menu > li.menu-item-has-children:after,
 		.secondary-navigation ul.menu ul {

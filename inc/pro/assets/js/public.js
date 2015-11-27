@@ -30,14 +30,7 @@ jQuery( document ).ready( function ( $ ) {
 		$t.children('.sub-menu' ).css( 'top', $offset );
 	} );
 
-	if ( $body.hasClass('etp-nav-styleleft-vertical') ) {
-		var $h = $('#masthead');
-		$window.scroll( function () {
-			$h.css( 'padding-top', $window.scrollTop() + 30 );
-		} );
-	}
-
-//Sticky header
+//Skrollr
 	if (
 		! ( /Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i )
 			.test( navigator.userAgent || navigator.vendor || window.opera )
@@ -46,7 +39,16 @@ jQuery( document ).ready( function ( $ ) {
 	}
 
 	if ( windowWidth > 767 ) {
-			var $navbar = $( '#site-navigation' ),
+
+//Fixing vertical nav
+		if ( $body.hasClass('etp-nav-styleleft-vertical') ) {
+			var $h = $('#masthead');
+			$window.scroll( function () {
+				$h.css( 'padding-top', $window.scrollTop() + 30 );
+			} );
+		}
+
+		var $navbar = $( '#site-navigation' ),
 				$navSearch = $navbar.children( '.etp-nav-search' );
 		if ( $navbar.children( '.primary-navigation' ).length ) {
 			var navHi = $navbar.innerHeight();

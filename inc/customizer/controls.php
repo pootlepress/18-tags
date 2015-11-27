@@ -305,16 +305,27 @@ if ( ! function_exists( 'eighteen_tags_customize_register' ) ) {
 		) );
 
 		$wp_customize->add_control( new Eighteen_Tags_Custom_Radio_Image_Control( $wp_customize, 'eighteen_tags_layout', array(
-					'settings'		=> 'eighteen_tags_layout',
-					'section'		=> 'eighteen_tags_layout',
-					'label'			=> __( 'General Layout', 'eighteen-tags' ),
-					'priority'		=> 1,
-					'choices'		=> array(
-						'full' 			=> get_template_directory_uri() . '/assets/full.png',
-						'right' 		=> get_template_directory_uri() . '/assets/right.png',
-						'left' 			=> get_template_directory_uri() . '/assets/left.png',
-					)
+			'settings'		=> 'eighteen_tags_layout',
+			'section'		=> 'eighteen_tags_layout',
+			'label'			=> __( 'General Layout', 'eighteen-tags' ),
+			'priority'		=> 1,
+			'choices'		=> array(
+				'full' 			=> get_template_directory_uri() . '/assets/full.png',
+				'right' 		=> get_template_directory_uri() . '/assets/right.png',
+				'left' 			=> get_template_directory_uri() . '/assets/left.png',
+			)
 		) ) );
+
+		$wp_customize->add_setting( 'eighteen_tags_boxed_layout' );
+
+		$wp_customize->add_control( 'eighteen_tags_boxed_layout', array(
+			'settings'		=> 'eighteen_tags_boxed_layout',
+			'section'		=> 'eighteen_tags_layout',
+			'label'			=> __( 'Boxed Layout', 'eighteen-tags' ),
+			'description'   => '<img src="' . get_template_directory_uri() . '/assets/boxed.png">',
+			'priority'		=> 1,
+			'type'          => 'checkbox'
+		) );
 
 		/**
 		 * More

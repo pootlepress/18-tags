@@ -123,6 +123,12 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 			'type'		=> 'text',
 		) );
 
+		$man->add_control( 'eighteen_tags_header_link_color', array(
+			'section'		=> 'nonexistent',
+			'label'			=> __( 'None', 'eighteen-tags' ),
+			'type'		=> 'text',
+		) );
+
 		$man->add_setting( 'etp_post_layout', array(
 			'type'          => 'option'
 		) );
@@ -133,7 +139,7 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 			'label'			=> __( 'Post page Layout', 'eighteen-tags' ),
 			'priority'		=> 7,
 			'choices'		=> array(
-				'' => PRO18_URL . '/assets/img/admin/layout-full-image.png',
+				''      => PRO18_URL . '/assets/img/admin/layout-full-image.png',
 				'fancy' => PRO18_URL . '/assets/img/admin/layout-title-in-image.png',
 			)
 		) ) );

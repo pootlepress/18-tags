@@ -2,6 +2,12 @@
 	height: auto !important;
 }
 
+.etp-nav-styleleft-vertical #page > .col-full{
+	max-width: none;
+	position: relative;
+	margin: 0;
+}
+
 .secondary-navigation:after {
 	display: table;
 	clear: both;
@@ -239,6 +245,18 @@ body.eighteen-tags-pro-active .site-header-cart li a{
 		right: auto;
 	}
 
+	.main-navigation .handheld-navigation ul ul {
+		margin: 0;
+	}
+
+	.main-navigation .handheld-navigation ul ul li a {
+		padding-left: 2.5em;
+	}
+
+	.main-navigation .handheld-navigation ul li {
+		border-top: 1px solid rgba( 255, 255, 255, 0.25 );
+	}
+
 	#site-navigation .handheld-navigation .etp-nav-search:after {
 		display: none;
 	}
@@ -328,29 +346,31 @@ body.eighteen-tags-pro-active .site-header-cart li a{
 		padding: 8px;
 	}
 
-	.etp-nav-styleleft-vertical #page > .col-full > *{
+	.etp-nav-styleleft-vertical #page > *{
 		margin-left: 250px;
 	}
 
 	.etp-nav-styleleft-vertical #page .site-header {
+		overflow: auto;
 		-webkit-transition: padding 0.100s linear;
 		-moz-transition: padding 0.100s linear;
 		transition: padding 0.100s linear;
 		width: 250px;
 		position: absolute;
 		top: 0;
-		left:0;
+		left: 0;
 		bottom: 0;
 		margin: 0;
 	}
 
-	.etp-nav-styleleft-vertical #page > .col-full{
-		position: relative;
-	}
-
-	.etp-nav-styleleft-vertical #page .col-full .col-full{
+	.etp-nav-styleleft-vertical #page .col-full{
 		padding-left: 1em;
 		padding-right: 1em;
+	}
+
+	.etp-nav-styleleft-vertical #page .site-header .col-full{
+		padding: 0;
+		margin: 0;
 	}
 
 	.etp-nav-styleleft-vertical #site-navigation.main-navigation ul.menu ul {
@@ -419,6 +439,7 @@ body.eighteen-tags-pro-active .site-header-cart li a{
 
 	#page {
 		overflow: hidden;
+		position: relative;
 	}
 
 	.primary-navigation + .menu {

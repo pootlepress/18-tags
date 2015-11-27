@@ -64,7 +64,7 @@ if ( ! function_exists( 'eighteen_tags_primary_navigation' ) ) {
 			$post_type_field = "<input type='hidden' name='post_type' value='{$search_pt[0]}' />";
 		}
 		?>
-		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_html_e( 'Primary Navigation', 'eighteen-tags' ); ?>">
+		<div id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_html_e( 'Primary Navigation', 'eighteen-tags' ); ?>">
 			<div class="etp-nav-search" style="display: none;">
 				<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/'  ) ); ?>">
 					<label class="screen-reader-text" for="s"><?php _e( 'Search for:', 'woocommerce' ); ?></label>
@@ -84,22 +84,22 @@ if ( ! function_exists( 'eighteen_tags_primary_navigation' ) ) {
 			);
 
 			echo '<div class="handheld-navigation">';
-			wp_nav_menu(
-				array(
-					'theme_location'	=> 'handheld',
-					'container_class'	=> '',
-				)
-			);
-			echo '</div>';
-			?>
-			<div class="etp-nav-search" style="display: none;">
-				<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/'  ) ); ?>">
-					<label class="screen-reader-text" for="s"><?php _e( 'Search for:', 'woocommerce' ); ?></label>
-					<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search&hellip;', 'placeholder', 'woocommerce' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'woocommerce' ); ?>" />
-					<input type="submit" value="&#xf002;" />
-					<?php echo $post_type_field ?>
-				</form>
-			</div><!-- .etp-nav-search -->
+				wp_nav_menu(
+					array(
+						'theme_location'	=> 'handheld',
+						'container_class'	=> '',
+					)
+				);
+				?>
+				<div class="etp-nav-search">
+					<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/'  ) ); ?>">
+						<label class="screen-reader-text" for="s"><?php _e( 'Search for:', 'woocommerce' ); ?></label>
+						<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search&hellip;', 'placeholder', 'woocommerce' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'woocommerce' ); ?>" />
+						<input type="submit" value="&#xf002;" />
+						<?php echo $post_type_field ?>
+					</form>
+				</div><!-- .etp-nav-search -->
+			</div>
 			<?php
 			do_action( 'eighteen_tags_pro_in_nav' );
 			?>
