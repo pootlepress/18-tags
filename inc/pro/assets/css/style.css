@@ -254,7 +254,7 @@ body.eighteen-tags-pro-active .site-header-cart li a{
 	}
 
 	.main-navigation .handheld-navigation ul li {
-		border-top: 1px solid rgba( 255, 255, 255, 0.25 );
+		border-bottom: 1px solid rgba( 255, 255, 255, 0.25 );
 	}
 
 	#site-navigation .handheld-navigation .etp-nav-search:after {
