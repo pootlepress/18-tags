@@ -542,8 +542,7 @@ body.eighteen-tags-pro-active .site-header-cart li a {
 
 	.etp-nav-stylecenter #site-navigation .site-header-cart,
 	.etp-nav-stylecenter #site-navigation .primary-navigation,
-	.etp-nav-stylecenter-inline #site-navigation .site-header-cart,
-	.etp-nav-stylecenter-inline #site-navigation .primary-navigation {
+	.etp-nav-stylecenter-inline #site-navigation .site-header-cart {
 		display: inline-block;
 		float: none;
 	}
