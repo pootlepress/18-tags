@@ -7,7 +7,6 @@
 
 /**
  * Add postMessage support for site title and description for the Theme Customizer along with several other settings.
- *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  * @since  1.0.0
  */
@@ -322,9 +321,27 @@ if ( ! function_exists( 'eighteen_tags_customize_register' ) ) {
 			'settings'		=> 'eighteen_tags_boxed_layout',
 			'section'		=> 'eighteen_tags_layout',
 			'label'			=> __( 'Boxed Layout', 'eighteen-tags' ),
-			'description'   => '<img src="' . get_template_directory_uri() . '/assets/boxed.png">',
 			'priority'		=> 1,
 			'type'          => 'checkbox'
+		) );
+
+		$wp_customize->add_setting( 'eighteen_tags_boxed_layout_color' );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'eighteen_tags_boxed_layout_color', array(
+			'settings'		=> 'eighteen_tags_boxed_layout_color',
+			'section'		=> 'eighteen_tags_layout',
+			'label'			=> __( 'Boxed Layout - Box Color', 'eighteen-tags' ),
+			'priority'		=> 1,
+		) ) );
+
+		$wp_customize->add_setting( 'eighteen_tags_boxed_layout_padding' );
+
+		$wp_customize->add_control( 'eighteen_tags_boxed_layout_padding', array(
+			'settings'		=> 'eighteen_tags_boxed_layout_padding',
+			'section'		=> 'eighteen_tags_layout',
+			'label'			=> __( 'Boxed Layout - Box padding', 'eighteen-tags' ),
+			'priority'		=> 1,
+			'type'          => 'number'
 		) );
 
 		/**

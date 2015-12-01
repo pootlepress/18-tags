@@ -122,4 +122,20 @@ if ( ! function_exists( 'eighteen_tags_skip_links' ) ) {
 	}
 }
 
+if ( ! function_exists( 'eighteen_tags_hamburger_menu' ) ) {
+	/**
+	 * Skip links
+	 * @since  1.4.1
+	 * @return void
+	 */
+	function eighteen_tags_hamburger_menu() {
+		if ( strpos( get_theme_mod( 'eighteen-tags-pro-nav-style' ), 'hamburger' ) ) {
+			?>
+			<div class="overlay hamburger-overlay"></div>
+			<a class="header-toggle" aria-controls="header" aria-expanded="false"><span class="screen-reader-text"><?php echo esc_attr( apply_filters( 'eighteen_tags_menu_toggle_text', 'Navigation' ) ); ?></span></a>
+			<?php
+		}
+	}
+}
+
 add_action( 'eighteen_tags_content_top', 'woocommerce_breadcrumb', 10 );

@@ -59,8 +59,8 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 	public function reset_all( $data ){
 		$redirect = filter_input( INPUT_GET, 'redirect' );
 		if ( $redirect ) {
-			global $eighteen_tags_pro_customizer_fields;
-			foreach ( $eighteen_tags_pro_customizer_fields as $f ) {
+			$fields = eighteen_tags_pro_fields();
+			foreach ( $fields as $f ) {
 				$id = $f['id'];
 				remove_theme_mod( "{$this->token}-{$id}" );
 			}

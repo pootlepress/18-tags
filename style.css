@@ -469,7 +469,7 @@ body {
  */
 .site-header {
 	background-color: #ffffff;
-	padding-top: 2.618em;
+	padding-top: 25px;
 	color: #9aa0a7;
 	background-position: center center;
 	position: relative;
@@ -516,10 +516,10 @@ body {
 	margin-bottom: 0;
 }
 
-.woocommerce-breadcrumb {
+.eighteen-tags-pro-active .woocommerce-breadcrumb {
 	margin-bottom: 4.236em;
 	font-size: .857em;
-	padding: 1em 0;
+	padding: 1em;
 	border-bottom: 1px solid rgba(0, 0, 0, .05);
 }
 
@@ -1156,6 +1156,7 @@ a:focus {
 
 	body > .col-full {
 		margin: 0;
+		max-width : none;
 	}
 }
 
@@ -1424,11 +1425,21 @@ fieldset legend {
 	text-align: left;
 }
 
-.menu-toggle:before {
+.menu-toggle:before, .header-toggle:before {
 	font-family: "FontAwesome";
 	font-weight: 400;
+	font-size: 25px;
 	content: "\f0c9";
 	margin-right: .53em;
+}
+
+.site-header.hamburger-open .header-toggle:before {
+	content: "\f00d";
+}
+
+.header-toggle:before {
+	display: block;
+	margin: 0 0.5em;
 }
 
 .primary-navigation {
@@ -1474,13 +1485,6 @@ fieldset legend {
 	display: block;
 }
 
-.main-navigation ul li a:before {
-	font-family: "FontAwesome";
-	content: "\f0f6";
-	margin-right: .53em;
-	font-weight: 400;
-}
-
 .main-navigation ul li a:hover {
 	color: #e6e6e6;
 }
@@ -1522,11 +1526,6 @@ fieldset legend {
 	.main-navigation ul li a,
 	.secondary-navigation ul li a {
 		display: block;
-	}
-
-	.main-navigation ul li a:before,
-	.secondary-navigation ul li a:before {
-		display: none;
 	}
 
 	.main-navigation ul li:hover > ul,

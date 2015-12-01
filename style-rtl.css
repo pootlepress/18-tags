@@ -1411,11 +1411,15 @@ fieldset legend {
 	text-align: right;
 }
 
-.menu-toggle:before {
+.menu-toggle:before, .header-toggle:before {
 	font-family: "FontAwesome";
 	font-weight: 400;
 	content: "\f0c9";
 	margin-left: .53em;
+}
+
+.header-toggle:before {
+	margin: 0.7em;
 }
 
 .primary-navigation {
@@ -1454,13 +1458,6 @@ fieldset legend {
 .main-navigation ul li a {
 	padding: 0.857em 1.387em;
 	display: block;
-}
-
-.main-navigation ul li a:before {
-	font-family: "FontAwesome";
-	content: "\f0f6";
-	margin-left: .53em;
-	font-weight: 400;
 }
 
 .main-navigation ul li a:hover {
@@ -1504,11 +1501,6 @@ fieldset legend {
 	.main-navigation ul li a,
 	.secondary-navigation ul li a {
 		display: block;
-	}
-
-	.main-navigation ul li a:before,
-	.secondary-navigation ul li a:before {
-		display: none;
 	}
 
 	.main-navigation ul li:hover > ul,

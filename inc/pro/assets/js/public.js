@@ -40,14 +40,6 @@ jQuery( document ).ready( function ( $ ) {
 
 	if ( windowWidth > 767 ) {
 
-//Fixing vertical nav
-		if ( $body.hasClass('etp-nav-styleleft-vertical') ) {
-			var $h = $('#masthead');
-			$window.scroll( function () {
-				$h.css( 'padding-top', $window.scrollTop() + 30 );
-			} );
-		}
-
 		var $navbar = $( '#site-navigation' ),
 				$navSearch = $navbar.children( '.etp-nav-search' );
 		if ( $navbar.children( '.primary-navigation' ).length ) {
@@ -69,6 +61,12 @@ jQuery( document ).ready( function ( $ ) {
 			}
 		}
 	}
+
+//Hamburger Menu
+	$('.header-toggle, .hamburger-overlay' ).click( function(){
+		$( '#masthead' ).toggleClass( 'hamburger-open' );
+		$( '.hamburger-overlay' ).fadeToggle( 200 );
+	} );
 
 //Mobile menu
 	$('.menu-toggle' ).click( function(){

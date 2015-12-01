@@ -52,13 +52,13 @@ final class Eighteen_Tags_Pro_Customizer_Fields extends Eighteen_Tags_Pro_Abstra
 	/**
 	 * Customizer Controls and settings
 	 * @param object WP_Customize_Manager $wp_customize Theme Customizer object.
-	 * @global array $eighteen_tags_pro_customizer_fields
+	 * @uses eighteen_tags_pro_fields()
 	 */
 	public function etp_customize_register( $wp_customize ) {
-		global $eighteen_tags_pro_customizer_fields;
+		$fields = eighteen_tags_pro_fields();
 
 		$sections = array();
-		foreach ( $eighteen_tags_pro_customizer_fields as $f ) {
+		foreach ( $fields as $f ) {
 			$sections[ $f['section'] ][] = $f;
 		}
 

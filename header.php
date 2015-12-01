@@ -33,6 +33,7 @@ if ( get_theme_mod( 'eighteen_tags_boxed_layout' ) ) {
 			<?php
 			/**
 			 * @hooked eighteen_tags_skip_links - 0
+			 * @hooked eighteen_tags_hamburger_menu - 5
 			 * @hooked eighteen_tags_social_icons - 10
 			 * @hooked eighteen_tags_site_branding - 20
 			 * @hooked eighteen_tags_product_search - 40

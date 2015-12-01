@@ -2,6 +2,12 @@
 $layout = str_replace( '-image', '', get_theme_mod( 'eighteen-tags-pro-blog-layout', 'left-image' ) );
 ?>
 <style>
+
+.single.etp-nav-styleleft-vertical #content > .col-full{
+	padding: 0;
+}
+
+
 .eighteen-tags-pro-active.single #content > .col-full {
 	margin: 0;
 	max-width: none;
@@ -10,7 +16,6 @@ $layout = str_replace( '-image', '', get_theme_mod( 'eighteen-tags-pro-blog-layo
 .wp-post-image {
 	display: block;
 	margin: auto;
-
 }
 
 .etp-full-width {
@@ -36,10 +41,6 @@ $layout = str_replace( '-image', '', get_theme_mod( 'eighteen-tags-pro-blog-layo
 
 .site-header, .woocommerce-breadcrumb {
 	margin-bottom: 0;
-}
-
-.home.blog .site-header, .home.blog .woocommerce-breadcrumb {
-	margin-bottom: 2em;
 }
 
 .attachment-thumbnail {

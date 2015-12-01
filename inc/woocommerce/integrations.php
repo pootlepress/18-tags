@@ -97,6 +97,15 @@ function eighteen_tags_woocommerce_integrations_scripts() {
 		wp_enqueue_style( 'eighteen-tags-woocommerce-bundles-style', get_template_directory_uri() . '/inc/woocommerce/css/bundles.css', 'eighteen-tags-woocommerce-style' );
 		wp_style_add_data( 'eighteen-tags-woocommerce-bundles-style', 'rtl', 'replace' );
 	}
+
+//Header cart display
+	$header_cart = get_theme_mod( 'eighteen-tags-pro-header-wc-cart' );
+	add_action( 'eighteen_tags_pro_in' . $header_cart . '_nav', 'eighteen_tags_header_cart' );
+	if ( ! empty( $header_cart ) ) {
+		add_action( 'eighteen_tags_pro_in_nav', 'eighteen_tags_header_cart' );
+		Eighteen_Tags_Pro_Public::$desktop_css .= '#site-navigation.main-navigation .site-header-cart { display: none !important; }';
+		Eighteen_Tags_Pro_Public::$desktop_css .= '.eighteen-tags-pro-active #site-navigation > div { width: 100%; }';
+	}
 }
 
 /**

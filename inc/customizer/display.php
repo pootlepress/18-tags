@@ -32,6 +32,9 @@ if ( ! function_exists( 'eighteen_tags_add_customizer_css' ) ) {
 		$brighten_factor 				= apply_filters( 'eighteen_tags_brighten_factor', 25 );
 		$darken_factor 					= apply_filters( 'eighteen_tags_darken_factor', -25 );
 
+		$box_color 						= eighteen_tags_sanitize_hex_color( get_theme_mod( 'eighteen_tags_boxed_layout_color', apply_filters( 'eighteen_tags_default_box_layout_color', '' ) ) );
+		$box_padding 					= get_theme_mod( 'eighteen_tags_boxed_layout_padding', apply_filters( 'eighteen_tags_default_box_layout_padding', '' ) );
+
 		$style 							= '
 		.main-navigation ul li a,
 		.site-title a,
@@ -189,6 +192,10 @@ if ( ! function_exists( 'eighteen_tags_add_customizer_css' ) ) {
 			.site-header-cart .widget_shopping_cart,
 			.site-header .product_list_widget li .quantity {
 				color: ' . $header_text_color . ';
+			}
+			body > .col-full {
+				background-color: ' . $box_color . ';
+				padding: ' . $box_padding . 'px;
 			}
 		}';
 

@@ -79,12 +79,3 @@ if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '2.3', '>=' ) ) {
  */
 add_action( 'wp_enqueue_scripts', 						'eighteen_tags_woocommerce_integrations_scripts' );
 add_action( 'wp_enqueue_scripts', 						'eighteen_tags_add_integrations_customizer_css' );
-
-//Header cart display
-$header_cart = get_theme_mod( 'eighteen-tags-pro-header-wc-cart' );
-add_action( 'eighteen_tags_pro_in' . $header_cart . '_nav', 'eighteen_tags_header_cart' );
-if ( ! empty( $header_cart ) ) {
-	add_action( 'eighteen_tags_pro_in_nav', 'eighteen_tags_header_cart' );
-	Eighteen_Tags_Pro_Public::$desktop_css .= '#site-navigation.main-navigation .site-header-cart { display: none !important; }';
-	$this->css .= '.eighteen-tags-pro-active #site-navigation > div { width: 100%; }';
-}

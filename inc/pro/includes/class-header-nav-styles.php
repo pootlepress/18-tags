@@ -32,7 +32,10 @@ class Eighteen_Tags_Pro_Header_Nav extends Eighteen_Tags_Pro_Primary_Navigation 
 		//Add search icon and maybe logo in nav
 		add_filter( 'wp_nav_menu_items', array( $this, 'logo_in_nav' ), 10, 2 );
 
-		$t->css .= '.eighteen-tags-pro-active #masthead { background-color:' . $t->get( 'header-bg-color' ) . ';}';
+		//Header cart color
+		$t->css .= '.eighteen-tags-pro-active .site-header-cart .cart-contents { color: ' . $t->get( 'header-wc-cart-color', '#ffffff' ) . '; }';
+
+		$t->css .= '.eighteen-tags-pro-active #masthead, .eighteen-tags-pro-active .header-toggle { background-color:' . $t->get( 'header-bg-color' ) . ';}';
 
 		$t->css .= "\n/*Secondary navigation*/\n";
 		$t->secondary_nav_typo();

@@ -39,7 +39,7 @@ function eighteen_tags_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
-	if ( ! function_exists( 'woocommerce_breadcrumb' ) ) {
+	if ( ! has_action( 'eighteen_tags_content_top', 'woocommerce_breadcrumb' ) ) {
 		$classes[]	= 'no-wc-breadcrumb';
 	}
 

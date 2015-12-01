@@ -85,7 +85,7 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 		        'font-family:' . $t->get( 'pri-nav-font', 'Montserrat' ) . ';' .
 		        'font-size:' . $t->get( 'pri-nav-text-size' ) . 'px;' .
 		        '}';
-		$css .= '#site-navigation.main-navigation .primary-navigation ul li a {' .
+		$css .= '#site-navigation.main-navigation .primary-navigation ul li a, .eighteen-tags-pro-active .header-toggle {' .
 		        'letter-spacing:' . $t->get( 'pri-nav-letter-spacing' ) . 'px;' .
 		        'color:' . $t->get( 'pri-nav-text-color' ) . ';' .
 		        $t->font_style( $t->get( 'pri-nav-font-style' ) ) .
@@ -127,10 +127,9 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 		if ( $logo ) {
 			$li_class = 'logo-in-nav-image';
 			$logoHTML = ''
-			            . '<a class="logo-in-nav-anchor" href="' . esc_url( home_url( '/' ) ) . '" title="' . get_bloginfo( 'name' ) . '" rel="home">'
-			            . '<img alt="' . get_bloginfo( 'name' ) . '" src="' . $logo . '">'
-			            . '</a>'
-			            . '';
+						. '<a class="logo-in-nav-anchor" href="' . esc_url( home_url( '/' ) ) . '" '
+						. 'title="' . get_bloginfo( 'name' ) . '" rel="home" style="background-image:url(' . $logo . ');">'
+						. '</a>';
 		}
 
 		$this->num_items = count( $items );
@@ -149,8 +148,8 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 
 		foreach ( $items as $item ) {
 			$i++;
-			if ( $this->logo_in_nav && $i > $this->logo_index ) {
-				$html .= $logo_html;
+			if ( $this->logo_in_nav && $logo_html && $i > $this->logo_index ) {
+				$html .= "</ul><ul class='menu nav-menu center-menu'>$logo_html</ul><ul class='menu nav-menu right-menu'>";
 				$logo_html = false;
 			};
 
@@ -164,7 +163,7 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 
 	public function search_menu_item() {
 		if ( ! $this->get( 'remove-search-icon' ) ) {
-			if ( 'left-vertical'  == $this->get( 'nav-style' ) ) {
+			if ( false !== strpos( get_theme_mod( 'eighteen-tags-pro-nav-style' ), 'left-vertical' ) ) {
 				$post_type_field = '';
 				$search_pt = explode( ',', get_theme_mod( 'eighteen-tags-pro-search-post_type', 'post,page' ) );
 				foreach( $search_pt as $pt ) {
