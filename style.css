@@ -1081,6 +1081,7 @@ a:focus {
 	}
 
 	.content-area,
+	.margin-bottom,
 	.widget-area {
 		margin-bottom: 2.618em;
 	}
@@ -1440,6 +1441,10 @@ fieldset legend {
 .header-toggle:before {
 	display: inline;
 	vertical-align: middle;
+	margin: 0;
+}
+
+.header-toggle.has-label:before {
 	margin: 0 0.5em 0 0;
 }
 

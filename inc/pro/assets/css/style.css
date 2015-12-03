@@ -523,7 +523,7 @@ body.eighteen-tags-pro-active .site-header-cart li a {
 		top: -25px;
 		left: 100%;
 		cursor: pointer;
-		padding: 0 0.7em;
+		padding: 0 12px 0 11px;
 	}
 
 	.hamburger-open .header-toggle {

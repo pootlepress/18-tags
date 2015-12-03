@@ -130,9 +130,11 @@ if ( ! function_exists( 'eighteen_tags_hamburger_menu' ) ) {
 	 */
 	function eighteen_tags_hamburger_menu() {
 		if ( strpos( get_theme_mod( 'eighteen-tags-pro-nav-style' ), 'hamburger' ) ) {
+			$label = get_theme_mod( 'eighteen-tags-pro-pri-nav-label' );
+			$class = $label ? 'header-toggle has-label' : 'header-toggle';
 			?>
 			<div class="overlay hamburger-overlay"></div>
-			<a class="header-toggle" aria-controls="header" aria-expanded="false"><?php echo get_theme_mod( 'eighteen-tags-pro-pri-nav-label', 'Menu' ); ?></a>
+			<a class="<?php echo $class; ?>" aria-controls="header" aria-expanded="false"><?php echo $label; ?></a>
 			<?php
 		}
 	}

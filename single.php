@@ -25,10 +25,14 @@ include get_template_directory() . '/inc/styles.php';
 					<div></div>
 					<header class="entry-header">
 						<?php
-						if (has_post_thumbnail( get_the_ID() ) ) {
+						if ( has_post_thumbnail( get_the_ID() ) ) {
 							$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 							echo "<div class='etp-full-width-image-bg' style=\"background-image: url('{$image[0]}')\"></div>";
 							?>
+							<?php
+						} else {
+							?>
+							<div class="margin-bottom"></div>
 							<?php
 						}
 						?>

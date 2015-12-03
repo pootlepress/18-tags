@@ -1418,10 +1418,6 @@ fieldset legend {
 	margin-left: .53em;
 }
 
-.header-toggle:before {
-	margin: 0.7em;
-}
-
 .primary-navigation {
 	display: none;
 }

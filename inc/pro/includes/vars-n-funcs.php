@@ -49,7 +49,6 @@ function eighteen_tags_pro_fields () {
 			'label'   => 'Hamburger Label',
 			'section' => 'Primary Navigation',
 			'type'    => 'text',
-			'default' => 'Menu',
 		),
 		array(
 			'id'      => 'pri-nav-font',
