@@ -81,7 +81,7 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 		$css .= '#site-navigation {' .
 		        'background-color:' . $t->get( 'pri-nav-bg-color' ) . ';' .
 		        '}';
-		$css .= '#site-navigation.main-navigation ul, #site-navigation.main-navigation ul li a {' .
+		$css .= '#site-navigation.main-navigation ul, #site-navigation.main-navigation ul li a, .eighteen-tags-pro-active .header-toggle {' .
 		        'font-family:' . $t->get( 'pri-nav-font', 'Montserrat' ) . ';' .
 		        'font-size:' . $t->get( 'pri-nav-text-size' ) . 'px;' .
 		        '}';
@@ -134,9 +134,6 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 
 		$this->num_items = count( $items );
 		$this->logo_index = $this->num_items / 2;
-		if ( ! $this->get( 'header-wc-cart' ) ) {
-			$this->logo_index++;
-		}
 
 		return '<li class=" ' . $li_class . ' logo-in-nav-menu-item">' . $logoHTML . '</li>';
 	}
@@ -148,6 +145,7 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 
 		foreach ( $items as $item ) {
 			$i++;
+
 			if ( $this->logo_in_nav && $logo_html && $i > $this->logo_index ) {
 				$html .= "</ul><ul class='menu nav-menu center-menu'>$logo_html</ul><ul class='menu nav-menu right-menu'>";
 				$logo_html = false;

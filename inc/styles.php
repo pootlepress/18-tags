@@ -39,7 +39,7 @@ $layout = str_replace( '-image', '', get_theme_mod( 'eighteen-tags-pro-blog-layo
 	padding : 1em;
 }
 
-.site-header, .woocommerce-breadcrumb {
+#masthead, .single .woocommerce-breadcrumb {
 	margin-bottom: 0;
 }
 

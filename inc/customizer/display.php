@@ -142,6 +142,11 @@ if ( ! function_exists( 'eighteen_tags_add_customizer_css' ) ) {
 			.secondary-navigation ul.menu a {
 				color: ' . $header_text_color . ';
 			}
+
+			body > .col-full {
+				background-color: ' . $box_color . ';
+				padding: ' . $box_padding . 'px;
+			}
 		}';
 
 		$woocommerce_style 							= '
@@ -192,10 +197,6 @@ if ( ! function_exists( 'eighteen_tags_add_customizer_css' ) ) {
 			.site-header-cart .widget_shopping_cart,
 			.site-header .product_list_widget li .quantity {
 				color: ' . $header_text_color . ';
-			}
-			body > .col-full {
-				background-color: ' . $box_color . ';
-				padding: ' . $box_padding . 'px;
 			}
 		}';
 

@@ -161,7 +161,6 @@ function wc_breadcrumb_register() {
 		function woocommerce_breadcrumb() {
 			global $post;
 			$sep = " / "; // Simply change the separator to what ever you need e.g. / or >
-
 			if ( ! is_front_page() ) {
 				$home = '<div class="woocommerce-breadcrumb"><a href="' . get_option( 'home' ) . '">Home</a> ' . $sep;
 				if ( is_category() || is_single() ) {
@@ -187,7 +186,9 @@ function wc_breadcrumb_register() {
 					echo the_title();
 					echo '</div>';
 				} elseif ( is_page() ) {
-					echo $home . the_title() . '</div>';
+					echo $home . get_the_title() . '</div>';
+				} elseif ( is_home() && ! is_front_page() ) {
+					echo $home . get_the_title( get_option( 'page_for_posts' ) ) . '</div>';
 				} elseif ( is_404() ) {
 					echo "{$home}404</div>";
 				}

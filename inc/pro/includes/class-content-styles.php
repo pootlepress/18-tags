@@ -180,7 +180,7 @@ class Eighteen_Tags_Pro_Content_Styles extends Eighteen_Tags_Pro_Abstract {
 
 	protected function breadcrumbs() {
 		//Remove breadcrumbs on archives
-		$this->remove_breadcrumbs( is_archive() && $this->get( 'hide-wc-breadcrumbs-archives', true ) );
+		$this->remove_breadcrumbs( ( is_home() || is_archive() ) && $this->get( 'hide-wc-breadcrumbs-archives', true ) );
 		//Remove breadcrumbs on posts
 		$this->remove_breadcrumbs( is_singular( 'post' ) && $this->get( 'hide-wc-breadcrumbs-posts', true ) );
 		//Remove breadcrumbs on pages

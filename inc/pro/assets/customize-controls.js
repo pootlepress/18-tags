@@ -63,33 +63,58 @@
 	api.controlConstructor['range'] = api.etp_range;
 
 	$( document ).ready( function () {
+
+		var $menu_style = $( '[data-customize-setting-link="eighteen-tags-pro-nav-style"]' ),
+			show_hide_ham_label = function () {
+				var $ham_icon_label = $( '#customize-control-eighteen-tags-pro-pri-nav-label' );
+				if ( 'left-vertical hamburger' == $menu_style.val() ) {
+					$ham_icon_label.slideDown();
+				} else {
+					$ham_icon_label.slideUp();
+				}
+			};
+		$menu_style.change( show_hide_ham_label );
+		show_hide_ham_label();
+
 		var $blog_layout = $( '#input_eighteen-tags-pro-blog-layout' ),
 			$grid = $('#customize-control-eighteen-tags-pro-blog-grid' ),
-			$post_content = $( 'select[data-customize-setting-link="eighteen-tags-pro-blog-content"]' ),
+			show_hide_grid = function () {
+				if ( $blog_layout.find( 'input:checked' ).val() ) {
+					$grid.slideDown();
+				} else {
+					$grid.slideUp();
+				}
+			};
+		$blog_layout.find( 'input' ).change( show_hide_grid );
+		show_hide_grid();
+
+		var $post_content = $( 'select[data-customize-setting-link="eighteen-tags-pro-blog-content"]' ),
 			$excert_fields = $(
 				'#customize-control-eighteen-tags-pro-blog-excerpt-count,' +
 				'#customize-control-eighteen-tags-pro-blog-excerpt-end,' +
 				'#customize-control-eighteen-tags-pro-blog-rm-butt-text'
-			);
-		show_hide_grid = function () {
-			if ( $blog_layout.find( 'input:checked' ).val() ) {
-				$grid.slideDown();
-			} else {
-				$grid.slideUp();
-			}
-		};
-		show_hide_excerpt_options = function () {
-			if ( $post_content.val() ) {
-				$excert_fields.slideUp();
-			} else {
-				$excert_fields.slideDown();
-			}
-		};
-
-		$blog_layout.find( 'input' ).change( show_hide_grid );
-		show_hide_grid();
-
+			),
+			show_hide_excerpt_options = function () {
+				if ( $post_content.val() ) {
+					$excert_fields.slideUp();
+				} else {
+					$excert_fields.slideDown();
+				}
+			};
 		$post_content.change( show_hide_excerpt_options );
 		show_hide_excerpt_options();
+
+		var $boxed_layout = $( '[data-customize-setting-link="eighteen_tags_boxed_layout"]' ),
+			show_hide_boxed_layout_options = function () {
+				var $box_props = $( '[id*="customize-control-eighteen_tags_boxed_layout_"]' );
+				if ( $boxed_layout.prop( 'checked' ) ) {
+					$box_props.slideDown();
+				} else {
+					$box_props.slideUp();
+				}
+			};
+		$boxed_layout.change( show_hide_boxed_layout_options );
+		show_hide_boxed_layout_options();
+
 	} );
 })( wp, jQuery );

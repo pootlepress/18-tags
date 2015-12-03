@@ -157,6 +157,7 @@ final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
 	function page_builder_styles( $html = '' ) {
 		return $html . '
 	<style>
+		.etp-nav-styleleft-vertical #content div.col-full { padding-top: 0; }
 		.home.blog .site-header, .home.post-type-archive-product .site-header,
 		.home.page:not(.page-template-template-homepage) .site-header, .eighteen-tags-pro-active .site-header,
 		.eighteen-tags-pro-active .woocommerce-breadcrumb, .eighteen-tags-pro-active .no-wc-breadcrumb .site-header { margin-bottom: 0; }
