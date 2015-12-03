@@ -65,3 +65,12 @@ if ( is_woocommerce_activated() ) {
 	require get_template_directory() . '/inc/woocommerce/template-tags.php';
 	require get_template_directory() . '/inc/woocommerce/integrations.php';
 }
+
+/**
+ * Init Updator
+ */
+require 'admin/update.php';
+$example_update_checker = new ThemeUpdateChecker(
+    'eighteen-tags',
+    'http://pootlepress.github.io/18-Tags/info.json'
+);
