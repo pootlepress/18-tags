@@ -71,6 +71,6 @@ if ( is_woocommerce_activated() ) {
  */
 require 'admin/update.php';
 $example_update_checker = new ThemeUpdateChecker(
-    'eighteen-tags',
+    '18-tags',
     'http://pootlepress.github.io/18-Tags/info.json'
 );
