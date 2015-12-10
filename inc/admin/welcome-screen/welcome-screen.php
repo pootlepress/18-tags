@@ -88,7 +88,7 @@ class Eighteen_Tags_Welcome {
 			 * @hooked eighteen_tags_welcome_enhance - 20
 			 * @hooked eighteen_tags_welcome_contribute - 30
 			 */
-			do_action( 'eighteen_tags_welcome' ); ?>
+			//do_action( 'eighteen_tags_welcome' ); ?>
 
 		</div>
 		<?php
