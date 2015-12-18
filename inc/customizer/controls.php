@@ -315,7 +315,10 @@ if ( ! function_exists( 'eighteen_tags_customize_register' ) ) {
 			)
 		) ) );
 
-		$wp_customize->add_setting( 'eighteen_tags_boxed_layout' );
+		$wp_customize->add_setting( 'eighteen_tags_boxed_layout', array(
+				'default'    		=> null,
+				'sanitize_callback' => 'sanitize_text_field',
+			) );
 
 		$wp_customize->add_control( 'eighteen_tags_boxed_layout', array(
 			'settings'		=> 'eighteen_tags_boxed_layout',
@@ -325,7 +328,10 @@ if ( ! function_exists( 'eighteen_tags_customize_register' ) ) {
 			'type'          => 'checkbox'
 		) );
 
-		$wp_customize->add_setting( 'eighteen_tags_boxed_layout_color' );
+		$wp_customize->add_setting( 'eighteen_tags_boxed_layout_color', array(
+				'default'    		=> null,
+				'sanitize_callback' => 'sanitize_text_field',
+			) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'eighteen_tags_boxed_layout_color', array(
 			'settings'		=> 'eighteen_tags_boxed_layout_color',
@@ -334,7 +340,10 @@ if ( ! function_exists( 'eighteen_tags_customize_register' ) ) {
 			'priority'		=> 1,
 		) ) );
 
-		$wp_customize->add_setting( 'eighteen_tags_boxed_layout_padding' );
+		$wp_customize->add_setting( 'eighteen_tags_boxed_layout_padding', array(
+				'default'    		=> null,
+				'sanitize_callback' => 'sanitize_text_field',
+			) );
 
 		$wp_customize->add_control( 'eighteen_tags_boxed_layout_padding', array(
 			'settings'		=> 'eighteen_tags_boxed_layout_padding',

@@ -162,7 +162,7 @@ function wc_breadcrumb_register() {
 			global $post;
 			$sep = " / "; // Simply change the separator to what ever you need e.g. / or >
 			if ( ! is_front_page() ) {
-				$home = '<div class="woocommerce-breadcrumb"><a href="' . get_option( 'home' ) . '">Home</a> ' . $sep;
+				$home = '<div class="woocommerce-breadcrumb"><a href="' . home_url() . '">Home</a> ' . $sep;
 				if ( is_category() || is_single() ) {
 					echo $home;
 					the_category( ', ' );

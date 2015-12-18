@@ -130,6 +130,7 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 		) );
 
 		$man->add_setting( 'etp_post_layout', array(
+			'sanitize_callback' => 'sanitize_text_field',
 			'type'          => 'option'
 		) );
 
@@ -145,8 +146,10 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 		) ) );
 
 		$man->add_setting( 'etp_blog_layout', array(
+			'sanitize_callback' => 'sanitize_text_field',
 			'default'       => '',
 			'type'          => 'option'
+
 		) );
 
 		$man->add_section( 'eighteen_tags_archive', array(

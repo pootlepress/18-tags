@@ -70,7 +70,7 @@ if ( is_woocommerce_activated() ) {
  * Init Updator
  */
 require 'admin/update.php';
-$example_update_checker = new ThemeUpdateChecker(
+$eighteen_tags_update_checker = new ThemeUpdateChecker(
     '18-tags',
     'http://pootlepress.github.io/18-tags/info.json'
 );

@@ -166,7 +166,8 @@ class Lib_Customizer_Postmeta {
 				$option['id'],
 				array(
 					'default' => $option['default'],
-					'type' => 'post_meta'
+					'type' => 'post_meta',
+					'sanitize_callback' => 'sanitize_text_field',
 				)
 			)
 		);

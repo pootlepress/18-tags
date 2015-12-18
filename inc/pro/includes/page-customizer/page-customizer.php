@@ -190,7 +190,7 @@ final class Pootle_Page_Customizer {
 	 * @since 1.0.0
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', '18-tags' ), '1.0.0' );
 	}
 
 	/**
@@ -199,7 +199,7 @@ final class Pootle_Page_Customizer {
 	 * @since 1.0.0
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', '18-tags' ), '1.0.0' );
 	}
 
 	/**
@@ -249,7 +249,7 @@ final class Pootle_Page_Customizer {
 				'title' => 'Customize Page',
 				'href'  => admin_url( "customize.php?post_id={$post->ID}&autofocus[panel]=lib-pootle-page-customizer&url=" . get_permalink( $post->ID ) . "?post_id={$post->ID}" ),
 				'meta'  => array(
-					'title' => __( 'Customize this page in customizer' ), // Text will be shown on hovering
+					'title' => __( 'Customize this page in customizer', '18-tags' ), // Text will be shown on hovering
 				),
 			);
 			$admin_bar->add_menu( $args );

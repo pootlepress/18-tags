@@ -5,10 +5,10 @@ Author:       	pootlepress
 Author URI:		http://www.pootlepress.com
 Description:  	18 tags is a free WordPress theme that is lightweight, fast and easy to customize. 18 tags is named in honour of Tim Berners-Lee, the British founder of the World Wide Web, whose first html document contained only 18 tags.
 Version:      	1.0.1
+Tags:         	black, white, light, two-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, threaded-comments, accessibility-ready, rtl-language-support
+Text Domain:  	18-tags
 License:      	GNU General Public License v2 or later
 License URI:  	http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain:  	18-tags
-Tags:         	black, white, light, two-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, threaded-comments, accessibility-ready, rtl-language-support
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -710,13 +710,6 @@ table tfoot td {
 /**
  * Typography
  */
-@font-face {
-	font-family: 'FontAwesome';
-	src: url("fonts/fontawesome/fontawesome-webfont.eot?v=#4.1.0");
-	src: url("fonts/fontawesome/fontawesome-webfont.eot?#iefix&v=#4.1.0") format("embedded-opentype"), url("fonts/fontawesome/fontawesome-webfont.woff2?v=#4.1.0") format("woff2"), url("fonts/fontawesome/fontawesome-webfont.woff?v=#4.1.0") format("woff"), url("fonts/fontawesome/fontawesome-webfont.ttf?v=#4.1.0") format("truetype"), url("fonts/fontawesome/fontawesome-webfont.svg?v=#4.1.0#fontawesomeregular") format("svg");
-	font-weight: normal;
-	font-style: normal;
-}
 
 body {
 	-ms-word-wrap: break-word;

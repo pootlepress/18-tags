@@ -125,7 +125,7 @@ final class Eighteen_Tags_Footer_Bar {
 	 * @since 1.0.0
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', '18-tags' ), '1.0.0' );
 	}
 
 	/**
@@ -134,7 +134,7 @@ final class Eighteen_Tags_Footer_Bar {
 	 * @since 1.0.0
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', '18-tags' ), '1.0.0' );
 	}
 
 	/**
@@ -205,6 +205,7 @@ final class Eighteen_Tags_Footer_Bar {
 
 		$wp_customize->add_setting( 'etp_footer_bar', array(
 			'default'       => '',
+			'sanitize_callback' => 'sanitize_text_field',
 			'type'          => 'option'
 		) );
 		$wp_customize->add_control( 'etp_footer_bar', array(
@@ -299,7 +300,7 @@ final class Eighteen_Tags_Footer_Bar {
 	 * @return  void
 	 */
 	public function etfb_styles() {
-		wp_enqueue_style( 'sfb-styles', $this->plugin_url . '/assets/css/style.css' );
+		wp_enqueue_style( 'sfb-styles', $this->plugin_url . '/assets/css/front.css' );
 
 		$footer_bar_bg_image 	= esc_url( get_theme_mod( 'etfb_background_image', '' ) );
 		$footer_bar_bg 			= eighteen_tags_sanitize_hex_color( get_theme_mod( 'etfb_background_color', apply_filters( 'eighteen_tags_default_header_background_color', '#ffffff' ) ) );

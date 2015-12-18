@@ -68,9 +68,9 @@ final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
 	public function scripts_styles() {
 
 		wp_dequeue_script( 'eighteen-tags-navigation' );
-		wp_enqueue_style( 'etp-fawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' );
-		wp_enqueue_script( 'etp-skrollr', 'https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js', array( 'jquery' ) );
-		wp_enqueue_style( 'etp-styles', $this->plugin_url . '/assets/css/style.css' );
+		wp_enqueue_style( 'etp-fawesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
+		wp_enqueue_script( 'etp-skrollr', get_template_directory_uri() . '/js/skrollr.min.js', array( 'jquery' ) );
+		wp_enqueue_style( 'etp-styles', $this->plugin_url . '/assets/css/front.css' );
 		wp_enqueue_script( 'etp-public-script', $this->plugin_url . '/assets/js/public.js', array( 'jquery' ), '1.0.0', true );
 		wp_enqueue_script( 'jquery-masonry' );
 
