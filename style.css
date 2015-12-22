@@ -1,26 +1,25 @@
 /*
 Theme Name:   	Eighteen tags
-Theme URI:    	http://www.pootlepress.com/eighteen-tags
+Theme URI:    	http://www.pootlepress.com/18-tags
 Author:       	pootlepress
 Author URI:		http://www.pootlepress.com
 Description:  	18 tags is a free WordPress theme that is lightweight, fast and easy to customize. 18 tags is named in honour of Tim Berners-Lee, the British founder of the World Wide Web, whose first html document contained only 18 tags.
-Tags:         	black, white, light, two-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, threaded-comments, accessibility-ready, rtl-language-support
+Tags:         	Theme Options, Google Fonts, Accessibility Ready, Light, White, Custom Background, Custom Colors, Custom Header, Custom Menu, Featured Images, Full Width, Page Builder, Page Builder Ready, Left Sidebar, Light, Responsive Layout, Right Sidebar, Left Sidebar, RTL Language Support, Threaded Comments, Responsive Layout, Fluid Layout, One Column, Two Columns
 Text Domain:  	18-tags
-Version:      	1.0.2
+Version:      	1.0.3
 License:      	GNU General Public License v2 or later
 License URI:  	http://www.gnu.org/licenses/gpl-2.0.html
+
+@developer shramee <shramee.srivastav@gmail.com>
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Eighteen tags is based on Underscores http://underscores.me/, (C) 2012-2014 pootlepress, Inc.
+Eighteen tags is based on Underscores http://underscores.me/
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
-
-All sizing (typography, layout, padding/margins etc) are inspired by a modular scale that uses 12px/14px as base sizes with a 1.618 ratio.
-We use the excellent modular scale tool built by Tim Brown to calculate this. http://modularscale.com/scale/?px1=14&px2=12&ra1=1.618&ra2=0
 
 FontAwesome License: SIL Open Font License - http://scripts.sil.org/OFL
 Images License: GNU General Public License v2 or later
