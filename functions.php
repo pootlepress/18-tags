@@ -17,8 +17,17 @@ function eighteen_tags_activated() {
 	$v1_options = get_option( 'theme_mods_18-tags-1.0.0' );
 	if ( $v1_options && array( '' ) == get_option( 'theme_mods_' . $slug ) ) {
 		update_option( 'theme_mods_' . $slug, $v1_options );
-		print_awesome_r( $v1_options );
 	}
+
+	$ppb_url = admin_url( 'plugin-install.php?tab=plugin-information&plugin=pootle-page-builder&TB_iframe=true' );
+	eighteen_tags_add_notice(
+		sprintf(
+			__( 'Kindly check out the cool %sPootle Page Builder%s Plugin', 'eighteen-tags' ),
+			"<a href='$ppb_url' class='thickbox' title='pootle page builder'>", '</a>'
+		),
+		'plugins'
+	);
+
 }
 
 /**

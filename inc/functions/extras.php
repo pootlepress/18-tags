@@ -196,3 +196,15 @@ function wc_breadcrumb_register() {
 		}
 	}
 }
+
+function eighteen_tags_add_notice( $notice, $key = null ) {
+	$notices = get_option( '18-tags-notices', array() );
+
+	if ( $key ) {
+		$notices[ $key ] = '<p>' . $notice . '</p>';
+	} else {
+		$notices[] = '<p>' . $notice . '</p>';
+	}
+
+	update_option( '18-tags-notices', $notices );
+}

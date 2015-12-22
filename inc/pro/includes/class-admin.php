@@ -47,7 +47,7 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 		//Customize preview init script
 		add_action( 'customize_preview_init', array( $this, 'etp_customize_preview_js' ) );
 		//Admin notices
-		add_action( 'admin_notices', array( $this, 'etp_customizer_notice' ) );
+		add_action( 'admin_notices', array( $this, 'admin_notices' ) );
 		//Reset all Eighteen tags pro options
 		add_action( 'wp_ajax_eighteen_tags_pro_reset', array( $this, 'reset_all' ) );
 	}
@@ -221,14 +221,12 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 	 * @since   1.0.0
 	 * @return  void
 	 */
-	public function etp_customizer_notice() {
-		if ( $notices = get_option( 'etp_activation_notice' ) ) {
-
+	public function admin_notices() {
+		if ( $notices = get_option( '18-tags-notices' ) ) {
 			foreach ( $notices as $notice ) {
-				echo '<div class="notice is-dismissible updated">' . $notice . '</div>';
+				echo "<div class='notice is-dismissible updated'>$notice</div>";
 			}
-
-			delete_option( 'etp_activation_notice' );
+			delete_option( '18-tags-notices' );
 		}
 	}
 
@@ -238,11 +236,11 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 	 * @return  void
 	 */
 	public function add_notice( $notice ) {
-		$notices = get_option( 'etp_activation_notice', array() );
+		$notices = get_option( '18-tags-notices', array() );
 
 		$notices[] = $notice;
 
-		update_option( 'etp_activation_notice', $notices );
+		update_option( '18-tags-notices', $notices );
 	}
 
 } // End class
