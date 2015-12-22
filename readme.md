@@ -15,7 +15,7 @@
 
 ## Description
 
-### What is 18 Tags?
+#### What is 18 Tags?
 
 18 tags is a free WordPress theme that is lightweight, fast and easy to customize. 18 tags is named in honour of Tim Berners-Lee, the British founder of the World Wide Web, whose first html document contained only 18 tags.
 
@@ -24,7 +24,7 @@
 Upload your own logo, select your font and colors. Choose the layout you'd like. Design every element of your&nbsp;website to your design specification. We've worked hard to make 18 tags very flexible and very easy to use<br>
 <a href="https://vimeo.com/148267539">Watch the video</a>
 
-##### Header customizer
+#### Header customizer
 
 Customize the layout of your header. We've included 6 layout options. Default, align right, center logo, inline center logo, vertical align left and hamburger. We've also included lots more options including changing header color, making heading colors transparent and activating a sticky header.<br>
 <a href="https://vimeo.com/148243410">Watch the video</a>
@@ -97,7 +97,7 @@ You are free to download 18 tags for free and use on as many websites as you lik
 
 ## Changelog
 
-#### 0.1.1
+##### 0.1.1
 * 2015-07-08
 * Tweak - add new plugin icon (for WordPress.org)
 * Tweak - optimization of multiple classes and operations for enhanced performance
@@ -105,6 +105,6 @@ You are free to download 18 tags for free and use on as many websites as you lik
 * Fix - page defaulting back to page builder after being used as a page with default editor
 * Fix - issue with color picker not updating in content block style options
 
-#### 0.1
+##### 0.1
 * 2015-07-06
 * Initial release. It's alive!
