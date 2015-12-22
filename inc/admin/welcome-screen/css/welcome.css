@@ -26,7 +26,6 @@
   font-weight: 700; }
 
 .appearance_page_eighteen-tags-welcome .sf-review {
-  max-width: 360px;
   float: right;
   margin-bottom: .53em; }
   .appearance_page_eighteen-tags-welcome .sf-review p {
@@ -35,7 +34,7 @@
     clear: both; }
 
 .appearance_page_eighteen-tags-welcome .boxed {
-  padding: 1.387em 2.244em;
+  padding: 1em;
   background: #fff;
   box-sizing: border-box;
   border: 1px solid #ddd;
@@ -61,96 +60,30 @@
     float: left; }
     .appearance_page_eighteen-tags-welcome .boxed ul.extensions li:nth-child(2n) {
       float: right; }
-  .appearance_page_eighteen-tags-welcome .boxed:before {
-    content: "\f127";
-    display: block;
-    position: absolute;
-    top: 1.387em;
-    right: 1.387em;
-    font-size: 1.618em;
-    font-family: 'Dashicons';
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased; }
-  .appearance_page_eighteen-tags-welcome .boxed.enrich:before {
-    content: "\f513"; }
-  .appearance_page_eighteen-tags-welcome .boxed.enhance {
-    border-width: 2px;
-    border-color: #0073aa; }
-    .appearance_page_eighteen-tags-welcome .boxed.enhance:before {
-      content: "\f502";
-      color: #0073aa; }
-  .appearance_page_eighteen-tags-welcome .boxed.free-plugins:before {
-    content: "\f106"; }
-  .appearance_page_eighteen-tags-welcome .boxed.contribute:before {
-    content: "\f487"; }
-  .appearance_page_eighteen-tags-welcome .boxed.suggest:before {
-    content: "\f488"; }
-  .appearance_page_eighteen-tags-welcome .boxed.child-themes:before {
-    content: "\f309"; }
-  .appearance_page_eighteen-tags-welcome .boxed.child-themes .child-theme-title {
-    font-size: .857em; }
-  .appearance_page_eighteen-tags-welcome .boxed.child-themes .child-theme {
-    width: 48%;
-    float: left;
-    clear: both;
-    margin-bottom: 1.618em; }
-    .appearance_page_eighteen-tags-welcome .boxed.child-themes .child-theme img {
-      margin-bottom: 1em;
-      border: 2px solid #ddd; }
-    .appearance_page_eighteen-tags-welcome .boxed.child-themes .child-theme:nth-child(2n) {
-      float: right;
-      clear: none; }
-  .appearance_page_eighteen-tags-welcome .boxed.news .col2-set h4 {
-    font-size: .857em;
-    text-transform: uppercase;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    color: #999; }
-  .appearance_page_eighteen-tags-welcome .boxed.news .col2-set ul {
-    margin-top: 0; }
-  .appearance_page_eighteen-tags-welcome .boxed.news h5 {
-    margin: 0; }
-  .appearance_page_eighteen-tags-welcome .boxed.news .date {
-    text-transform: uppercase;
-    color: #999;
-    font-size: .75em; }
-  .appearance_page_eighteen-tags-welcome .boxed.news:before {
-    content: "\f319"; }
+.appearance_page_eighteen-tags-welcome .video-wrapper {
+  position: relative;
+  padding-top: 56.25%;
+  height: 0;
+}
+.appearance_page_eighteen-tags-welcome iframe.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
-.appearance_page_eighteen-tags-welcome .free {
-  text-transform: uppercase;
-  color: #fff;
-  background: #45B964;
-  display: inline-block;
-  padding: 2px 8px;
-  float: right;
-  margin: 0;
-  font-size: .75em !important;
-  border-radius: 3px; }
-
-.appearance_page_eighteen-tags-welcome .activated {
-  background: #45B964;
-  color: #fff;
-  font-size: 13px;
-  line-height: 26px;
-  height: 26px;
-  margin: 0;
-  padding: 9px 20px;
-  display: inline-block;
-  border-radius: 3px; }
-  .appearance_page_eighteen-tags-welcome .activated span {
-    line-height: 26px; }
-
-.appearance_page_eighteen-tags-welcome .automattic {
+.appearance_page_eighteen-tags-welcome .pootlepress {
   text-align: center;
   clear: both; }
-  .appearance_page_eighteen-tags-welcome .automattic p {
+  .appearance_page_eighteen-tags-welcome .pootlepress p {
     font-size: .75em;
     letter-spacing: 1px;
     text-transform: uppercase;
     color: #aaa; }
-  .appearance_page_eighteen-tags-welcome .automattic img {
-    max-height: 9px;
-    margin: 0 0.53em;
-    margin-top: -3px;
-    opacity: 0.5; }
+.appearance_page_eighteen-tags-welcome .pootlepress a {
+  display: block; }
+.appearance_page_eighteen-tags-welcome .pootlepress img {
+  margin: 0 0.53em;
+  margin-top: -3px;
+  opacity: 0.5; }

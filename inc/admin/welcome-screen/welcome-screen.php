@@ -88,7 +88,7 @@ class Eighteen_Tags_Welcome {
 			 * @hooked eighteen_tags_welcome_enhance - 20
 			 * @hooked eighteen_tags_welcome_contribute - 30
 			 */
-			//do_action( 'eighteen_tags_welcome' ); ?>
+			do_action( 'eighteen_tags_welcome' ); ?>
 
 		</div>
 		<?php
@@ -99,7 +99,7 @@ class Eighteen_Tags_Welcome {
 	 * @since 1.0.0
 	 */
 	public function eighteen_tags_welcome_intro() {
-		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/intro.php' );
+		require_once 'sections/intro.php';
 	}
 
 
@@ -108,7 +108,7 @@ class Eighteen_Tags_Welcome {
 	 * @since 1.5.2
 	 */
 	public function eighteen_tags_welcome_enhance() {
-		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/enhance.php' );
+		require_once 'sections/videos.php';
 	}
 
 	/**
@@ -116,7 +116,7 @@ class Eighteen_Tags_Welcome {
 	 * @since 1.5.2
 	 */
 	public function eighteen_tags_welcome_contribute() {
-		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/contribute.php' );
+		require_once 'sections/contribute.php';
 	}
 }
 

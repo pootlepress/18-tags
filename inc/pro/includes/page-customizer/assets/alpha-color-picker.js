@@ -4,7 +4,7 @@
 /**
  * lib-alpha-color-picker
  *
- * Overwrite Automattic Iris for enabled Alpha Channel in wpColorPicker
+ * Overwrite pootlepress Iris for enabled Alpha Channel in wpColorPicker
  * Only run in input and is defined data alpha in true
  *
  * Version: 1.1
