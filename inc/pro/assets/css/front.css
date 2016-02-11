@@ -19,7 +19,6 @@ nav.secondary-navigation {
 	color: #ccc;
 	background-color: #000;
 	display: block;
-	overflow: hidden;
 }
 
 .secondary-navigation ul.menu li a:hover,
@@ -352,16 +351,17 @@ body.eighteen-tags-pro-active .site-header-cart li a {
 		padding-right: 3.5em;
 	}
 
-	.etp-nav-stylecenter-inline .menu.center-menu:not(.site-header-cart) {
+	.etp-nav-stylecenter-inline .primary-navigation .menu.center-menu:not(.site-header-cart) {
 		position: absolute;
 		left: 50%;
 		top: -25px;
 		margin-left: -125px;
 		width: auto;
 		float: none;
+		padding: 0;
 	}
 
-	.etp-nav-stylecenter-inline .menu:not(.site-header-cart) {
+	.etp-nav-stylecenter-inline .primary-navigation .menu:not(.site-header-cart) {
 		display: block;
 		width: 48%;
 		float: left;
@@ -369,16 +369,16 @@ body.eighteen-tags-pro-active .site-header-cart li a {
 		padding: 0 125px 0 0;
 	}
 
-	.etp-nav-stylecenter-inline .menu li {
+	.etp-nav-stylecenter-inline .primary-navigation .menu li {
 		float: none;
 	}
 
-	.etp-nav-stylecenter-inline .menu.right-menu {
+	.etp-nav-stylecenter-inline .primary-navigation .menu.right-menu {
 		float: right;
 		padding: 0 0 0 125px;
 	}
 
-	.etp-nav-stylecenter-inline .menu.right-menu li {
+	.etp-nav-stylecenter-inline .primary-navigation .menu.right-menu li {
 		float: left;
 	}
 

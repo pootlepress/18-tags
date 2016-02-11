@@ -125,7 +125,7 @@ final class Eighteen_Tags_Footer_Bar {
 	 * @since 1.0.0
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', '18-tags' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'eighteen-tags' ), '1.0.0' );
 	}
 
 	/**
@@ -134,7 +134,7 @@ final class Eighteen_Tags_Footer_Bar {
 	 * @since 1.0.0
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', '18-tags' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'eighteen-tags' ), '1.0.0' );
 	}
 
 	/**
@@ -179,7 +179,7 @@ final class Eighteen_Tags_Footer_Bar {
 	 */
 	function etfb_register_widget_area() {
 		register_sidebar( array(
-			'name'          => __( 'Footer Bar', 'eighteen-tags-footer-bar' ),
+			'name'          => __( 'Footer Bar', 'eighteen-tags' ),
 			'id'            => 'footer-bar-1',
 			'description'   => '',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',

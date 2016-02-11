@@ -125,7 +125,7 @@ final class Eighteen_Tags_Header_Bar {
 	 * @since 1.0.0
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', '18-tags' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'eighteen-tags' ), '1.0.0' );
 	}
 
 	/**
@@ -134,7 +134,7 @@ final class Eighteen_Tags_Header_Bar {
 	 * @since 1.0.0
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', '18-tags' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'eighteen-tags' ), '1.0.0' );
 	}
 
 	/**

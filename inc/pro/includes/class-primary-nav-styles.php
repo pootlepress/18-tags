@@ -173,9 +173,9 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 					'<span class="etp-nav-search">' .
 					'<form role="search" method="get" class="search-form" action="' . esc_url( home_url( '/'  ) ) . '">' .
 					'<input type="search" class="search-field" placeholder="' .
-					esc_attr_x( 'Search&hellip;', 'placeholder', 'woocommerce' ) .
+					esc_attr__( 'Search&hellip;', 'eighteen-tags' ) .
 					'" value="' . get_search_query() . '" name="s" title="' .
-					esc_attr_x( 'Search for:', 'label', 'woocommerce' ) . '" />' .
+					esc_attr__( 'Search for:', 'eighteen-tags' ) . '" />' .
 					'<input type="submit" value="&#xf002;" />' . $post_type_field .
 					'</form></span></a></li>';
 			} else {
