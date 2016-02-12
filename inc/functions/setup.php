@@ -43,7 +43,7 @@ if ( ! function_exists( 'eighteen_tags_setup' ) ) :
 		// wp-content/themes/eighteen-tags/languages/it_IT.mo
 		load_theme_textdomain( 'eighteen-tags', get_template_directory() . '/languages' );
 
-		add_editor_style( 'style.css' );
+		add_editor_style();
 
 		/**
 		 * Add default posts and comments RSS feed links to head.

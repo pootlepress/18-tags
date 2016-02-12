@@ -402,6 +402,7 @@ body.eighteen-tags-pro-active .site-header-cart li a {
 
 	.etp-nav-styleleft-vertical .etp-nav-search .search-form {
 		display: block;
+		position: relative;
 	}
 
 	.etp-nav-styleleft-vertical #site-navigation .etp-nav-search {
@@ -760,7 +761,7 @@ body.eighteen-tags-pro-active .site-header-cart li a {
 	box-shadow: none;
 	position: absolute;
 	top: 1px;
-	right: 2px;
+	right: 0;
 	padding: 0.3em;
 }
 
