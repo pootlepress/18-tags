@@ -13,8 +13,5 @@
 global $etp_blog_across;
 $etp_thumb_size = 'medium';
 $etp_thumb_args = array( 'class' => "etp-full-width", );
-//if ( 3 > $etp_blog_across ) {
-//	$etp_thumb_size = 'large';
-//}
 
 include 'home-left-image.php';

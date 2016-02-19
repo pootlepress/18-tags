@@ -22,19 +22,9 @@ include get_template_directory() . '/inc/styles.php';
 				?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="" itemtype="http://schema.org/BlogPosting">
-					<div></div>
-					<header class="entry-header">
-						<?php
-						if ( has_post_thumbnail( get_the_ID() ) ) {
-							$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-							echo "<div class='etp-full-width-image-bg' style=\"background-image: url('{$image[0]}')\"></div>";
-							?>
-							<?php
-						} else {
-							?>
-							<div class="margin-bottom"></div>
-							<?php
-						}
+					<?php
+					$layout = get_option( 'etp_post_layout' );
+					if ( 'title-top' == $layout ) {
 						?>
 						<div class="col-full">
 							<?php
@@ -51,6 +41,43 @@ include get_template_directory() . '/inc/styles.php';
 							}
 							?>
 						</div><!-- .col-full -->
+						<?php
+					}
+					?>
+					<header class="entry-header">
+						<?php
+						if ( has_post_thumbnail( get_the_ID() ) ) {
+							$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+							$class = "class='etp-full-width-image-bg'";
+							echo "<div $class style='background-image:url('$image[0]')'></div>";
+							?>
+
+							<?php
+						} else {
+							?>
+							<div class="margin-bottom"></div>
+							<?php
+						}
+						if ( 'title-top' != $layout ) {
+							?>
+							<div class="col-full">
+								<?php
+								the_title( '<h1 class="entry-title" itemprop="name headline">', '</h1>' );
+								if ( ! get_theme_mod( 'eighteen-tags-pro-remove-single-post-meta' ) ) {
+									?>
+									<div class="post-meta-container">
+										<?php
+										eighteen_tags_posted_on();
+										eighteen_tags_post_meta();
+										?>
+									</div>
+									<?php
+								}
+								?>
+							</div><!-- .col-full -->
+							<?php
+						}
+						?>
 					</header><!-- .entry-header -->
 					<div class="col-full">
 						<div class="entry-content" itemprop="articleBody">

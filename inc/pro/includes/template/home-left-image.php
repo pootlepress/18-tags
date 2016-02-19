@@ -79,5 +79,20 @@ $posts_array = array();
 
 	</main><!-- #main -->
 </div><!-- #primary -->
-
-<?php get_footer(); ?>
+<?php
+if ( Eighteen_Tags_Pro::instance()->public->get( 'blog-show-sidebar' ) ) {
+	get_sidebar();
+	?>
+	<style>
+	@media screen and (min-width: 768px) {
+		.eighteen-tags-pro-active div#primary {
+			width: 73.9130434783%;
+			float: left;
+			margin-right: 4.347826087%;
+		}
+	}
+	</style>
+	<?
+}
+get_footer();
+?>

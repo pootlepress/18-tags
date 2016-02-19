@@ -416,6 +416,12 @@ function eighteen_tags_pro_fields () {
 		),
 		//Blog
 		array(
+			'id'      => 'blog-show-sidebar',
+			'label'   => 'Show sidebar on archive page',
+			'section' => 'existing_eighteen_tags_archive',
+			'type'    => 'checkbox',
+		),
+		array(
 			'id'          => 'blog-header-size',
 			'label'       => 'Heading size',
 			'section'     => 'existing_eighteen_tags_archive',

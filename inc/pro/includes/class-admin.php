@@ -48,12 +48,12 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 		add_action( 'customize_preview_init', array( $this, 'etp_customize_preview_js' ) );
 		//Admin notices
 		add_action( 'admin_notices', array( $this, 'admin_notices' ) );
-		//Reset all Eighteen tags pro options
+		//Reset all Eighteen tags pro pro options
 		add_action( 'wp_ajax_eighteen_tags_pro_reset', array( $this, 'reset_all' ) );
 	}
 
 	/**
-	 * Resets all Eighteen tags Pro options
+	 * Resets all Eighteen tags pro Pro options
 	 * @action wp_ajax_eighteen_tags_pro_reset
 	 */
 	public function reset_all( $data ){
@@ -64,7 +64,7 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 				$id = $f['id'];
 				remove_theme_mod( "{$this->token}-{$id}" );
 			}
-			$this->add_notice( '<p>All Eighteen tags options have been successfully reset.</p>' );
+			$this->add_notice( '<p>All Eighteen tags pro options have been successfully reset.</p>' );
 			header( 'Location:' . $redirect );
 		}
 	}
@@ -141,6 +141,7 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 			'priority'		=> 7,
 			'choices'		=> array(
 				''      => PRO18_URL . '/assets/img/admin/layout-full-image.png',
+				'title-top'      => PRO18_URL . '/assets/img/admin/layout-full-image-title-top.png',
 				'fancy' => PRO18_URL . '/assets/img/admin/layout-title-in-image.png',
 			)
 		) ) );
@@ -222,11 +223,11 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 	 * @return  void
 	 */
 	public function admin_notices() {
-		if ( $notices = get_option( '18-tags-notices' ) ) {
+		if ( $notices = get_option( '18tags-pro-notices' ) ) {
 			foreach ( $notices as $notice ) {
 				echo "<div class='notice is-dismissible updated'>$notice</div>";
 			}
-			delete_option( '18-tags-notices' );
+			delete_option( '18tags-pro-notices' );
 		}
 	}
 
@@ -236,11 +237,11 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 	 * @return  void
 	 */
 	public function add_notice( $notice ) {
-		$notices = get_option( '18-tags-notices', array() );
+		$notices = get_option( '18tags-pro-notices', array() );
 
 		$notices[] = $notice;
 
-		update_option( '18-tags-notices', $notices );
+		update_option( '18tags-pro-notices', $notices );
 	}
 
 } // End class

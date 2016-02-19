@@ -1,8 +1,8 @@
-# Copyright (C) 2015 Eighteen tags Pro
-# This file is distributed under the same license as the Eighteen tags Pro package.
+# Copyright (C) 2015 Eighteen tags pro Pro
+# This file is distributed under the same license as the Eighteen tags pro Pro package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Eighteen tags Pro 1.0.0\n"
+"Project-Id-Version: Eighteen tags pro Pro 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/eighteen-tags-pro\n"
 "POT-Creation-Date: 2015-01-27 14:35:53+00:00\n"
 "MIME-Version: 1.0\n"
@@ -18,11 +18,11 @@ msgid "Cheatin&#8217; huh?"
 msgstr ""
 
 #: eighteen-tags-pro.php:168
-msgid "%sThanks for installing the Eighteen tags Pro extension. To get started, visit the %sCustomizer%s.%s %sOpen the Customizer%s"
+msgid "%sThanks for installing the Eighteen tags pro Pro extension. To get started, visit the %sCustomizer%s.%s %sOpen the Customizer%s"
 msgstr ""
 
 #: eighteen-tags-pro.php:247
-msgid "Eighteen tags Pro"
+msgid "Eighteen tags pro Pro"
 msgstr ""
 
 #: eighteen-tags-pro.php:248
@@ -57,7 +57,7 @@ msgstr ""
 msgid "Make a selection!"
 msgstr ""
 #. Plugin Name of the plugin/theme
-msgid "Eighteen tags Pro"
+msgid "Eighteen tags pro Pro"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
@@ -65,7 +65,7 @@ msgid "http://pootlepress.com/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "A boilerplate plugin for creating Eighteen tags extensions"
+msgid "A boilerplate plugin for creating Eighteen tags pro extensions"
 msgstr ""
 
 #. Author of the plugin/theme
