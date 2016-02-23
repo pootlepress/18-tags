@@ -1,9 +1,7 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Shramee Srivastav <shramee.srivastav@gmail.com>
- * Date: 3/5/15
- * Time: 7:53 PM
+ * Eighteen tags class
+ * @developer http://wpdevelopment.me <shramee@wpdevelopment.me>
  */
 
 /**

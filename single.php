@@ -49,7 +49,7 @@ include get_template_directory() . '/inc/styles.php';
 						if ( has_post_thumbnail( get_the_ID() ) ) {
 							$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
 							$class = "class='etp-full-width-image-bg'";
-							echo "<div $class style='background-image:url('$image[0]')'></div>";
+							echo "<div $class style=\"background-image:url('$image[0]')\"></div>";
 							?>
 
 							<?php

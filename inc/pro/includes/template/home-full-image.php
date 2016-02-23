@@ -11,7 +11,10 @@
  * @package eighteen-tags
  */
 global $etp_blog_across;
-$etp_thumb_size = 'medium';
+$etp_thumb_size = 'medium_large';
+if ( ! in_array( $etp_thumb_size, get_intermediate_image_sizes() ) ) {
+	$etp_thumb_size = 'large';
+}
 $etp_thumb_args = array( 'class' => "etp-full-width", );
 
 include 'home-left-image.php';

@@ -1,9 +1,7 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: shramee
- * Date: 30/9/15
- * Time: 1:50 PM
+ * Eighteen tags class
+ * @developer http://wpdevelopment.me <shramee@wpdevelopment.me>
  */
 global $page_customizer_fields;
 $page_customizer_fields = array(

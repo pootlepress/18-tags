@@ -1,9 +1,7 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: shramee
- * Date: 23/10/15
- * Time: 3:04 PM
+ * Eighteen tags class
+ * @developer http://wpdevelopment.me <shramee@wpdevelopment.me>
  */
 class Eighteen_Tags_Add_Nav_Icons {
 	protected $ico;

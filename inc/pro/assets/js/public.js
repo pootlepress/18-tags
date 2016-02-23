@@ -1,5 +1,6 @@
 /**
- * Created by shramee on 9/10/15.
+ * Eighteen tags class
+ * @developer http://wpdevelopment.me <shramee@wpdevelopment.me>
  */
 
 /*!

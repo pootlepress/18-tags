@@ -1,9 +1,7 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Shramee Srivastav <shramee.srivastav@gmail.com>
- * Date: 27/4/15
- * Time: 5:36 PM
+ * Eighteen tags admin class
+ * @developer http://wpdevelopment.me <shramee@wpdevelopment.me>
  */
 
 
@@ -53,7 +51,7 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 	}
 
 	/**
-	 * Resets all Eighteen tags pro Pro options
+	 * Resets all Eighteen tags pro options
 	 * @action wp_ajax_eighteen_tags_pro_reset
 	 */
 	public function reset_all( $data ){
