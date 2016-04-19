@@ -8,7 +8,7 @@ Donate link:
 
 Requires at least: 4.0
 Tested up to: 4.4
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -99,14 +99,26 @@ You are free to download 18 tags for free and use on as many websites as you lik
 
 == Changelog ==
 
-= 0.1.1 =
-* 2015-07-08
-* Tweak - add new plugin icon (for WordPress.org)
-* Tweak - optimization of multiple classes and operations for enhanced performance
-* Fix - showing message in edit area before content blocks being displayed
-* Fix - page defaulting back to page builder after being used as a page with default editor
-* Fix - issue with color picker not updating in content block style options
+=== 1.0.4 ===
+* 2016.04.19
+* **Tweak** - Using require_oncenstead of require
+* **Tweak** - Removed custom updator
+* **Tweak** - Used wp_oembed_get for videos
 
-= 0.1 =
-* 2015-07-06
-* Initial release. It's alive!
+=== 1.0.3 ===
+* 2015.12.22
+* **Enhancement** - Welcome screen ready
+* **Enhancement** - Recommending pootle page builder on install
+* **Fix** - Theme tester recommendations
+
+=== 1.0.2 ===
+* 2015.12.10
+* **Enhancement** - Takes settings from v1.0.0 directory
+
+=== 1.0.1 ===
+* 2015.12.10
+* **Fix** - Error on Appearance > Eighteen tags Page.
+
+=== 1.0.0 ===
+* 2015-12-03
+* Born to the world!
