@@ -92,7 +92,7 @@ if ( Eighteen_Tags_Pro::instance()->public->get( 'blog-show-sidebar' ) ) {
 		}
 	}
 	</style>
-	<?
+	<?php
 }
 get_footer();
 ?>
