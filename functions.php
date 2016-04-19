@@ -9,7 +9,7 @@
 /**
  * Initialize all the things.
  */
-require get_template_directory() . '/inc/init.php';
+require_once get_template_directory() . '/inc/init.php';
 
 add_action('after_switch_theme', 'eighteen_tags_activated');
 

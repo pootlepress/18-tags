@@ -185,7 +185,7 @@ class Pootle_Page_Customizer_Public {
 		}
 
 		if ( $hideSidebar ) {
-			$css .= "aside, #sidebar, .sidebar, .side-bar {display : none !important;}\n";
+			$css .= "#sidebar, .sidebar, .side-bar {display : none !important;}\n";
 			$css .= "#content, .content, .content-area { width : 100% !important;}\n";
 		}
 		return $css;

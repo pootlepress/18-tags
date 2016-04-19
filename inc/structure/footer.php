@@ -53,11 +53,14 @@ if ( ! function_exists( 'eighteen_tags_credit' ) ) {
 	 * @return void
 	 */
 	function eighteen_tags_credit() {
+		$title = 'Premium WordPress Themes & Plugins by pootlepress';
+		$link = "<a href='http://www.pootlepress.com' title='$title' rel='designer'>pootlepress</a>";
+		$copy = '&copy; ' . get_bloginfo( 'name' ) . ' ' . date( 'Y' )
 		?>
 		<div class="site-info">
-			<?php echo esc_html( apply_filters( 'eighteen_tags_copyright_text', $content = '&copy; ' . get_bloginfo( 'name' ) . ' ' . date( 'Y' ) ) ); ?>
+			<?php echo esc_html( apply_filters( 'eighteen_tags_copyright_text', $copy ) ); ?>
 			<?php if ( apply_filters( 'eighteen_tags_credit_link', true ) ) { ?>
-			<br /> <?php printf( __( '%1$s designed by %2$s.', 'eighteen-tags' ), 'Eighteen tags', '<a href="http://www.pootlepress.com" alt="Premium WordPress Themes & Plugins by pootlepress" title="Premium WordPress Themes & Plugins by pootlepress" rel="designer">pootlepress</a>' ); ?>
+			<br /> <?php printf( __( '%1$s designed by %2$s.', 'eighteen-tags' ), 'Eighteen tags', $link ); ?>
 			<?php } ?>
 		</div><!-- .site-info -->
 		<?php

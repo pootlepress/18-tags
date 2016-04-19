@@ -8,6 +8,7 @@
 
 .appearance_page_eighteen-tags-welcome .col2-set .col-1,
 .appearance_page_eighteen-tags-welcome .col2-set .col-2 {
+  overflow: hidden;
   width: 48%;
   float: left; }
 
@@ -40,7 +41,8 @@
   border: 1px solid #ddd;
   border-radius: 4px;
   position: relative;
-  margin-bottom: 2.618em; }
+  margin-bottom: 2.618em;
+  clear: both; }
   .appearance_page_eighteen-tags-welcome .boxed > h2:first-child {
     font-weight: 700;
     font-size: 1.1em; }
@@ -65,7 +67,7 @@
   padding-top: 56.25%;
   height: 0;
 }
-.appearance_page_eighteen-tags-welcome iframe.video {
+.appearance_page_eighteen-tags-welcome .video-wrapper iframe {
   position: absolute;
   top: 0;
   left: 0;

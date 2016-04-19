@@ -48,6 +48,10 @@ if ( ! function_exists( 'eighteen_tags_add_customizer_css' ) ) {
 			color: ' . eighteen_tags_adjust_color_brightness( $header_link_color, $darken_factor ) . ';
 		}
 
+		.site-header {
+			background-image: url(' . esc_url( get_header_image() ) . ');
+		}
+
 		.site-header,
 		.secondary-navigation ul ul,
 		.main-navigation ul.menu > li.menu-item-has-children:after,
