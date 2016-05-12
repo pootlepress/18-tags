@@ -7,8 +7,8 @@ Author: PootlePress
 Donate link:
 
 Requires at least: 4.0
-Tested up to: 4.4
-Stable tag: 1.0.4
+Tested up to: 4.5.2
+Stable tag: 1.0.6
 
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -98,6 +98,11 @@ We've added support for our free Pootle page builder, Divi page builder and Site
 You are free to download 18 tags for free and use on as many websites as you like. However if you'd like to get support, please select the premium support level option below. You'll be required to quote your order number when submitting any support questions through our website. By taking out Premium support you'll also be contributing to 18 tags so that we can continue to improve it and make it the best theme possible – so a big thank you if you select the premium support option :)
 
 == Changelog ==
+
+=== 1.0.6 ===
+* 2016.05.12
+* **Tweak** - Removing accessibility-ready tag for now
+* **Tweak** - Updated tested upto to 4.5.2
 
 === 1.0.4 ===
 * 2016.04.19

@@ -6,8 +6,8 @@
 * Author: PootlePress
 * Donate link:
 * Requires at least: 4.0
-* Tested up to: 4.4
-* Stable tag: 1.0.4
+* Tested up to: 4.5.2
+* Stable tag: 1.0.6
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -97,9 +97,14 @@ You are free to download 18 tags for free and use on as many websites as you lik
 
 ## Changelog
 
+##### 1.0.6
+* 2016.05.12
+* **Tweak** - Removed accessibility-ready tag for now
+* **Tweak** - Updated tested upto to 4.5.2
+
 ##### 1.0.4
 * 2016.04.19
-* **Tweak** - Using require_oncenstead of require
+* **Tweak** - Using require_once instead of require
 * **Tweak** - Removed custom updator
 * **Tweak** - Used wp_oembed_get for videos
 
