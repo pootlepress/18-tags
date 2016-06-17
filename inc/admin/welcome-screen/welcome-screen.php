@@ -68,7 +68,7 @@ class Eighteen_Tags_Welcome {
 	 * @since 1.0.0
 	 */
 	public function eighteen_tags_welcome_register_menu() {
-		add_theme_page( 'Eighteen tags', 'Eighteen tags', 'activate_plugins', 'eighteen-tags-welcome', array( $this, 'eighteen_tags_welcome_screen' ) );
+		add_theme_page( 'Eighteen tags', 'Eighteen tags', 'edit_theme_options', 'eighteen-tags-welcome', array( $this, 'eighteen_tags_welcome_screen' ) );
 	}
 
 	/**

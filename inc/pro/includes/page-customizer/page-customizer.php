@@ -151,8 +151,6 @@ final class Pootle_Page_Customizer {
 		$this->plugin_path = plugin_dir_path( __FILE__ );
 		$this->version     = '1.0.0';
 
-		register_activation_hook( __FILE__, array( $this, 'install' ) );
-
 		add_action( 'init', array( $this, 'setup' ) );
 	}
 
@@ -200,28 +198,6 @@ final class Pootle_Page_Customizer {
 	 */
 	public function __wakeup() {
 		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'eighteen-tags' ), '1.0.0' );
-	}
-
-	/**
-	 * Installation.
-	 * Runs on activation. Logs the version number and assigns a notice message to a WordPress option.
-	 * @access  public
-	 * @since   1.0.0
-	 * @return  void
-	 */
-	public function install() {
-		$this->_log_version_number();
-	}
-
-	/**
-	 * Log the plugin version number.
-	 * @access  private
-	 * @since   1.0.0
-	 * @return  void
-	 */
-	private function _log_version_number() {
-		// Log the version number.
-		update_option( $this->token . '-version', $this->version );
 	}
 
 	/**

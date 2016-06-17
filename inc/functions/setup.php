@@ -15,8 +15,8 @@ if ( ! isset( $content_width ) ) {
 /**
  * Assign the Eighteen tags version to a var
  */
-$theme 					= wp_get_theme( 'eighteen-tags' );
-$eighteen_tags_version 	= $theme['Version'];
+$eighteen_tags_theme 	= wp_get_theme( 'eighteen-tags' );
+$eighteen_tags_version 	= $eighteen_tags_theme['Version'];
 
 if ( ! function_exists( 'eighteen_tags_setup' ) ) :
 	/**
@@ -83,10 +83,7 @@ if ( ! function_exists( 'eighteen_tags_setup' ) ) :
 			'default-image' => '',
 		) ) );
 
-		// Add support for the Site Logo plugin and the site logo functionality in JetPack
-		// https://github.com/pootlepress/site-logo
-		// http://jetpack.me/
-		add_theme_support( 'site-logo', array( 'size' => 'full' ) );
+		add_theme_support( 'custom-logo' );
 
 		// Declare WooCommerce support
 		add_theme_support( 'woocommerce' );
@@ -147,7 +144,7 @@ function eighteen_tags_widgets_init() {
 function eighteen_tags_scripts() {
 	global $eighteen_tags_version;
 
-	wp_enqueue_style( 'eighteen-tags-style', get_template_directory_uri() . '/style.css', '', $eighteen_tags_version );
+	wp_enqueue_style( 'eighteen-tags-theme-style', get_stylesheet_uri(), '', $eighteen_tags_version );
 
 	wp_style_add_data( 'eighteen-tags-style', 'rtl', 'replace' );
 
@@ -167,7 +164,8 @@ function eighteen_tags_scripts() {
  * @since  1.0.0
  */
 function eighteen_tags_child_scripts() {
+	global $eighteen_tags_version;
 	if ( is_child_theme() ) {
-		wp_enqueue_style( 'eighteen-tags-child-style', get_stylesheet_uri(), '' );
+		wp_enqueue_style( 'eighteen-tags-style', get_template_directory_uri() . '/style.css', '', $eighteen_tags_version );
 	}
 }

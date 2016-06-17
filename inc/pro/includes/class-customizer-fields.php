@@ -67,7 +67,7 @@ final class Eighteen_Tags_Pro_Customizer_Fields extends Eighteen_Tags_Pro_Abstra
 		$this->customizer_fields( $wp_customize, $sections );
 		do_action( $this->token . '-customize-register', $wp_customize );
 
-		update_option( 'etp-google-fonts', $this->google_font_fields );
+		set_theme_mod( 'etp-google-fonts', implode( ':|:', $this->google_font_fields ) );
 
 	}
 

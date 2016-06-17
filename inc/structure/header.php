@@ -30,12 +30,10 @@ if ( ! function_exists( 'eighteen_tags_site_branding' ) ) {
 	 * @return void
 	 */
 	function eighteen_tags_site_branding() {
-		if ( get_theme_mod( 'eighteen-tags-pro-logo', get_template_directory_uri() . '/assets/logo.jpg' ) ) {
-			?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo-link" rel="home">
-				<img src="<?php echo get_theme_mod( 'eighteen-tags-pro-logo', get_template_directory_uri() . '/assets/logo.jpg' ); ?>" alt="<?php echo get_bloginfo( 'name' ); ?>" />
-			</a>
-			<?php
+		if ( get_theme_mod( 'custom_logo' ) && function_exists( 'the_custom_logo' ) ) {
+
+			the_custom_logo();
+
 		} else { ?>
 			<div class="site-branding">
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -67,7 +65,7 @@ if ( ! function_exists( 'eighteen_tags_primary_navigation' ) ) {
 		<div id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_html_e( 'Primary Navigation', 'eighteen-tags' ); ?>">
 			<div class="etp-nav-search" style="display: none;">
 				<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/'  ) ); ?>">
-					<label class="screen-reader-text" for="s"><?php _e( 'Search for:', 'woocommerce' ); ?></label>
+					<label class="screen-reader-text" for="s"><?php _e( 'Search for:', 'eighteen-tags' ); ?></label>
 					<input type="search" class="search-field" placeholder="<?php echo esc_attr__( 'Search&hellip;', 'eighteen-tags' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr__( 'Search for:', 'eighteen-tags' ); ?>" />
 					<input type="submit" value="&#xf002;" />
 					<?php echo $post_type_field ?>
@@ -93,7 +91,7 @@ if ( ! function_exists( 'eighteen_tags_primary_navigation' ) ) {
 				?>
 				<div class="etp-nav-search">
 					<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/'  ) ); ?>">
-						<label class="screen-reader-text" for="s"><?php _e( 'Search for:', 'woocommerce' ); ?></label>
+						<label class="screen-reader-text" for="s"><?php _e( 'Search for:', 'eighteen-tags' ); ?></label>
 						<input type="search" class="search-field" placeholder="<?php echo esc_attr__( 'Search&hellip;', 'eighteen-tags' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr__( 'Search for:', 'eighteen-tags' ); ?>" />
 						<input type="submit" value="&#xf002;" />
 						<?php echo $post_type_field ?>

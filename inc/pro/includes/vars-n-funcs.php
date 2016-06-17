@@ -232,14 +232,6 @@ function eighteen_tags_pro_fields () {
 		),
 		//Header Elements
 		array(
-			'id'       => 'logo',
-			'label'    => 'Logo',
-			'section'  => 'existing_header_image',
-			'type'     => 'image',
-			'default'  => get_template_directory_uri() . '/assets/logo.jpg',
-			'priority' => 1,
-		),
-		array(
 			'id'          => 'logo-max-height',
 			'label'       => 'Logo max height',
 			'section'     => 'existing_header_image',

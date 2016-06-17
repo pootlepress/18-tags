@@ -10,6 +10,9 @@
 * Stable tag: 1.0.6
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-3.0.html
+* FontAwesome License: SIL Open Font License - http://scripts.sil.org/OFL
+* Skrollr License: The MIT License - https://opensource.org/licenses/MIT
+* Images License: GNU General Public License v2 or later
 
 #### A free WordPress theme that makes it easy to design your website
 

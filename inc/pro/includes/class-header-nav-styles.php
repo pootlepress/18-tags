@@ -168,7 +168,7 @@ class Eighteen_Tags_Pro_Header_Nav extends Eighteen_Tags_Pro_Primary_Navigation 
 	public function mobile_nav() {
 		$css = &Eighteen_Tags_Pro_Public::$mobile_css;
 		if ( $this->get( 'mob-hide-logo' ) ) {
-			$css .= '.site-header .site-logo-anchor, .site-header .site-logo-link { display: none; }';
+			$css .= '.site-header .site-logo-anchor, .site-header .custom-logo-link { display: none; }';
 		}
 		$css .= '#site-navigation a.menu-toggle, .eighteen-tags-pro-active .site-header-cart .cart-contents {';
 		$css .= 'color: ' . $this->get( 'mob-menu-icon-color', '#000' ) . ';';

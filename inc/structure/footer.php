@@ -53,7 +53,7 @@ if ( ! function_exists( 'eighteen_tags_credit' ) ) {
 	 * @return void
 	 */
 	function eighteen_tags_credit() {
-		$title = 'Premium WordPress Themes & Plugins by pootlepress';
+		$title = __( 'Premium WordPress Themes & Plugins by pootlepress', 'eighteen-tags' );
 		$link = "<a href='http://www.pootlepress.com' title='$title' rel='designer'>pootlepress</a>";
 		$copy = '&copy; ' . get_bloginfo( 'name' ) . ' ' . date( 'Y' )
 		?>

@@ -40,8 +40,8 @@ class Lib_Customize_Setting extends WP_Customize_Setting {
 
 		add_filter( "get_post_metadata", array( $this, 'filter_post_metadata' ), 10, 4 );
 
-		if ( $_GET['post_id'] != get_option( 'lib_current_post_meta' ) ) {
-			update_option( 'lib_current_post_meta', $_GET['post_id'] );
+		if ( $_GET['post_id'] != get_theme_mod( 'post_id_editing' ) ) {
+			set_theme_mod( 'post_id_editing', $_GET['post_id'] );
 		}
 	}
 
@@ -72,7 +72,7 @@ class Lib_Customize_Setting extends WP_Customize_Setting {
 
 	protected function update( $value ) {
 
-		$post_id = get_option( 'lib_current_post_meta' );
+		$post_id = get_theme_mod( 'post_id_editing' );
 
 		$options = get_post_meta( $post_id, $this->id_data['base'], true );
 

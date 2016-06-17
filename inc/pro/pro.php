@@ -125,8 +125,6 @@ final class Eighteen_Tags_Pro {
 		$this->version		= PRO18_VERSION;
 		self::$url			= $this->plugin_url;
 
-		register_activation_hook( __FILE__, array( $this, 'install' ) );
-
 		add_action( 'after_setup_theme', array( $this, 'include_ext_plugins' ) );
 
 		add_action( 'init', array( $this, 'setup' ) );

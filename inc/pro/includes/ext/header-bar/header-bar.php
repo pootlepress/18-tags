@@ -9,7 +9,7 @@
  * Requires at least:	4.0.0
  * Tested up to:		4.2.2
  *
- * Text Domain: eighteen-tags-header-bar
+ * Text Domain: eighteen-tags
  * Domain Path: /languages/
  *
  * @package Eighteen_Tags_Header_Bar
@@ -81,12 +81,10 @@ final class Eighteen_Tags_Header_Bar {
 	 * @return  void
 	 */
 	public function __construct() {
-		$this->token 			= 'eighteen-tags-header-bar';
+		$this->token 			= 'eighteen-tags';
 		$this->plugin_url 		= PRO18_URL . '/includes/ext/header-bar/';
 		$this->plugin_path 		= plugin_dir_path( __FILE__ );
 		$this->version 			= '1.0.1';
-
-		register_activation_hook( __FILE__, array( $this, 'install' ) );
 
 		add_action( 'init', array( $this, 'shb_load_plugin_textdomain' ) );
 
@@ -116,7 +114,7 @@ final class Eighteen_Tags_Header_Bar {
 	 * @return  void
 	 */
 	public function shb_load_plugin_textdomain() {
-		load_plugin_textdomain( 'eighteen-tags-header-bar', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+		load_plugin_textdomain( 'eighteen-tags', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
 
 	/**
@@ -138,28 +136,6 @@ final class Eighteen_Tags_Header_Bar {
 	}
 
 	/**
-	 * Installation.
-	 * Runs on activation. Logs the version number and assigns a notice message to a WordPress option.
-	 * @access  public
-	 * @since   1.0.0
-	 * @return  void
-	 */
-	public function install() {
-		$this->_log_version_number();
-	}
-
-	/**
-	 * Log the plugin version number.
-	 * @access  private
-	 * @since   1.0.0
-	 * @return  void
-	 */
-	private function _log_version_number() {
-		// Log the version number.
-		update_option( $this->token . '-version', $this->version );
-	}
-
-	/**
 	 * Setup all the things.
 	 * Only executes if Eighteen tags or a child theme using Eighteen tags as a parent is active and the extension specific filter returns true.
 	 * Child themes can disable this extension using the eighteen_tags_extension_boilerplate_enabled filter
@@ -178,7 +154,7 @@ final class Eighteen_Tags_Header_Bar {
 	 */
 	function shb_register_widget_area() {
 		register_sidebar( array(
-			'name'          => __( 'Header Bar', 'eighteen-tags-header-bar' ),
+			'name'          => __( 'Header Bar', 'eighteen-tags' ),
 			'id'            => 'header-bar-1',
 			'description'   => '',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -197,7 +173,7 @@ final class Eighteen_Tags_Header_Bar {
 	     * Add a new section
 	     */
         $wp_customize->add_section( 'shb_section' , array(
-		    'title'      	=> __( 'Header Bar', 'eighteen-tags-extention-boilerplate' ),
+		    'title'      	=> __( 'Header Bar', 'eighteen-tags' ),
 		    'priority'   	=> 55,
 		    'panel'         => 'etp-header',
 		) );
@@ -223,7 +199,7 @@ final class Eighteen_Tags_Header_Bar {
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Upload_Control( $wp_customize, 'shb_background_image', array(
-			'label'			=> __( 'Background image', 'eighteen-tags-header-bar' ),
+			'label'			=> __( 'Background image', 'eighteen-tags' ),
 			'section'		=> 'shb_section',
 			'settings'		=> 'shb_background_image',
 			'priority'		=> 10,
@@ -238,7 +214,7 @@ final class Eighteen_Tags_Header_Bar {
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'shb_background_color', array(
-			'label'			=> __( 'Background color', 'eighteen-tags-header-bar' ),
+			'label'			=> __( 'Background color', 'eighteen-tags' ),
 			'section'		=> 'shb_section',
 			'settings'		=> 'shb_background_color',
 			'priority'		=> 15,
@@ -253,7 +229,7 @@ final class Eighteen_Tags_Header_Bar {
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'shb_heading_color', array(
-			'label'			=> __( 'Heading color', 'eighteen-tags-header-bar' ),
+			'label'			=> __( 'Heading color', 'eighteen-tags' ),
 			'section'		=> 'shb_section',
 			'settings'		=> 'shb_heading_color',
 			'priority'		=> 20,
@@ -268,7 +244,7 @@ final class Eighteen_Tags_Header_Bar {
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'shb_text_color', array(
-			'label'			=> __( 'Text color', 'eighteen-tags-header-bar' ),
+			'label'			=> __( 'Text color', 'eighteen-tags' ),
 			'section'		=> 'shb_section',
 			'settings'		=> 'shb_text_color',
 			'priority'		=> 30,
@@ -283,7 +259,7 @@ final class Eighteen_Tags_Header_Bar {
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'shb_link_color', array(
-			'label'			=> __( 'Link color', 'eighteen-tags-header-bar' ),
+			'label'			=> __( 'Link color', 'eighteen-tags' ),
 			'section'		=> 'shb_section',
 			'settings'		=> 'shb_link_color',
 			'priority'		=> 40,

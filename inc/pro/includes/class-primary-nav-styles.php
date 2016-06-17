@@ -42,8 +42,8 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 			/** @noinspection PhpExpressionResultUnusedInspection */
 			case 'center':
 				$css .= '.eighteen-tags-pro-active #site-navigation { width: 100%; text-align: center; }';
-				$css .= '.eighteen-tags-pro-active .site-header .site-logo-link, .eighteen-tags-pro-active .site-header .site-branding{ width: 100%; text-align: center; }';
-				$css .= '.eighteen-tags-pro-active .site-header .site-logo-link img { margin: auto; }';
+				$css .= '.eighteen-tags-pro-active .site-header .custom-logo-link, .eighteen-tags-pro-active .site-header .site-branding{ width: 100%; text-align: center; }';
+				$css .= '.eighteen-tags-pro-active .site-header .custom-logo-link img { margin: auto; }';
 		}
 
 		$this->heights();
@@ -68,7 +68,7 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 		$logo_height = $this->get( 'logo-max-height', 100 );
 
 		if ( $logo_height ) {
-			$css .= ".site-header .site-logo-link img, .site-header .logo-in-nav-anchor img { max-height: {$logo_height}px; }";
+			$css .= ".site-header .custom-logo-link img, .site-header .logo-in-nav-anchor img { max-height: {$logo_height}px; }";
 		}
 	}
 

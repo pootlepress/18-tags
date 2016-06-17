@@ -105,7 +105,7 @@ final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
 
 		wp_add_inline_style( 'etp-styles', $css );
 
-		$fonts_options = get_option( 'etp-google-fonts', array() );
+		$fonts_options = explode( ':|:', get_theme_mod( 'etp-google-fonts', '' ) );
 		$load_fonts = array( 'Montserrat' );
 
 		foreach ( $fonts_options as $option ) {

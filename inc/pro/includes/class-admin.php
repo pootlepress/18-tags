@@ -221,11 +221,12 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 	 * @return  void
 	 */
 	public function admin_notices() {
-		if ( $notices = get_option( '18tags-pro-notices' ) ) {
+		if ( $notices = get_theme_mod( '18tags-pro-notices', '' ) ) {
+			$notices = explode( ':|:', get_theme_mod( '18tags-pro-notices', '' ) );
 			foreach ( $notices as $notice ) {
 				echo "<div class='notice is-dismissible updated'>$notice</div>";
 			}
-			delete_option( '18tags-pro-notices' );
+			remove_theme_mod( '18tags-pro-notices' );
 		}
 	}
 
@@ -235,11 +236,11 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 	 * @return  void
 	 */
 	public function add_notice( $notice ) {
-		$notices = get_option( '18tags-pro-notices', array() );
+		$notices = explode( ':|:', get_theme_mod( '18tags-pro-notices', '' ) );
 
 		$notices[] = $notice;
 
-		update_option( '18tags-pro-notices', $notices );
+		set_theme_mod( '18tags-pro-notices', implode( ':|:',  $notices ) );
 	}
 
 } // End class

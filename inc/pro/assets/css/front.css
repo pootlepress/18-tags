@@ -77,7 +77,7 @@ nav.secondary-navigation {
 	margin: 0.5em;
 }
 
-.site-header .in-nav-site-branding .site-logo-link {
+.site-header .in-nav-site-branding .custom-logo-link {
 	width: auto;
 	padding: 0;
 	margin: 0;
@@ -169,7 +169,7 @@ body.eighteen-tags-pro-active .site-header-cart li a {
 	width: 100%;
 }
 
-.site-header .site-logo-link {
+.site-header .custom-logo-link {
 	margin-bottom: 1em;
 }
 
@@ -201,7 +201,7 @@ body.eighteen-tags-pro-active .site-header-cart li a {
 		display: none;
 	}
 
-	.site-header .site-logo-link {
+	.site-header .custom-logo-link {
 		margin-top: 1em;
 	}
 
@@ -286,7 +286,7 @@ body.eighteen-tags-pro-active .site-header-cart li a {
 		display: block;
 	}
 
-	.site-header .site-logo-anchor img, .site-header .site-logo-link img {
+	.site-header .site-logo-anchor img, .site-header .custom-logo-link img {
 		max-width: 200px;
 		max-height: none;
 	}
@@ -399,7 +399,7 @@ body.eighteen-tags-pro-active .site-header-cart li a {
 		margin-right: 0.7em;
 	}
 
-	.etp-nav-styleleft-vertical #page .site-header .site-logo-link {
+	.etp-nav-styleleft-vertical #page .site-header .custom-logo-link {
 		margin-bottom: 2em;
 		padding: 0 1em;
 	}
@@ -458,7 +458,7 @@ body.eighteen-tags-pro-active .site-header-cart li a {
 	.etp-nav-styleleft-vertical #masthead .primary-navigation,
 	.etp-nav-styleleft-vertical #masthead .nav-menu,
 	.etp-nav-styleleft-vertical #masthead ul li,
-	.etp-nav-styleleft-vertical .site-logo-link {
+	.etp-nav-styleleft-vertical .custom-logo-link {
 		margin: 0;
 		display: block;
 		width: 100%;
@@ -541,8 +541,8 @@ body.eighteen-tags-pro-active .site-header-cart li a {
 	}
 
 	/* Header Site branding */
-	.etp-nav-stylecenter .site-header .site-logo-link,
-	.etp-nav-style .site-header .site-logo-link {
+	.etp-nav-stylecenter .site-header .custom-logo-link,
+	.etp-nav-style .site-header .custom-logo-link {
 		width: auto;
 	}
 
@@ -567,7 +567,7 @@ body.eighteen-tags-pro-active .site-header-cart li a {
 		float: none;
 	}
 
-	.etp-nav-stylecenter-inline .site-logo-link,
+	.etp-nav-stylecenter-inline .custom-logo-link,
 	.etp-nav-stylecenter-inline .site-branding {
 		display: none !important;
 	}
@@ -712,7 +712,7 @@ body.eighteen-tags-pro-active .site-header-cart li a {
 
 @media only screen and (max-width: 480px) {
 
-	.site-header .site-logo-anchor img, .site-header .site-logo-link img {
+	.site-header .site-logo-anchor img, .site-header .custom-logo-link img {
 		max-width: 200px;
 	}
 

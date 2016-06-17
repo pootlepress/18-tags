@@ -4,8 +4,8 @@ Theme URI:    	http://www.pootlepress.com/18-tags
 Author:       	pootlepress
 Author URI:		http://www.pootlepress.com
 Description:  	18 tags is a free WordPress theme that is lightweight, fast and easy to customize. 18 tags is named in honour of Tim Berners-Lee, the British founder of the World Wide Web, whose first html document contained only 18 tags.
-Tags:         	light, white, one-column, two-columns, left-sidebar, right-sidebar, responsive-layout, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options
-Text Domain:  	18-tags
+Tags:         	one-column, two-columns, left-sidebar, right-sidebar, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options
+Text Domain:  	eighteen-tags
 Version:      	1.0.6
 License:      	GNU General Public License v2 or later
 License URI:  	http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,6 +22,7 @@ Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 FontAwesome License: SIL Open Font License - http://scripts.sil.org/OFL
+Skrollr License: The MIT License - https://opensource.org/licenses/MIT
 Images License: GNU General Public License v2 or later
 
 ======
@@ -476,19 +477,19 @@ body {
 }
 
 .site-header .site-logo-anchor,
-.site-header .site-logo-link {
+.site-header .custom-logo-link {
 	display: block;
 }
 
 .site-header .site-logo-anchor img,
-.site-header .site-logo-link img {
+.site-header .custom-logo-link img {
 	max-height: 2.618em;
 	width: auto;
 }
 
 .site-header .site-branding,
 .site-header .site-logo-anchor,
-.site-header .site-logo-link {
+.site-header .custom-logo-link {
 	margin-bottom: 1.618em;
 }
 
@@ -929,7 +930,7 @@ a:focus {
 @media screen and (min-width: 768px) {
 	.site-header .site-branding,
 	.site-header .site-logo-anchor,
-	.site-header .site-logo-link {
+	.site-header .custom-logo-link {
 		display: block;
 		width: 21.7391304348%;
 		float: left;
@@ -939,7 +940,7 @@ a:focus {
 
 	.site-header .site-branding img,
 	.site-header .site-logo-anchor img,
-	.site-header .site-logo-link img {
+	.site-header .custom-logo-link img {
 		height: auto;
 		max-width: 100%;
 		max-height: none;
@@ -982,7 +983,7 @@ a:focus {
 	.site-search,
 	.site-header-cart,
 	.site-logo-anchor,
-	.site-logo-link {
+	.custom-logo-link {
 		margin-bottom: 1em;
 	}
 

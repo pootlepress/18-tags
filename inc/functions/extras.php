@@ -198,7 +198,7 @@ function wc_breadcrumb_register() {
 }
 
 function eighteen_tags_add_notice( $notice, $key = null ) {
-	$notices = get_option( '18-tags-notices', array() );
+	$notices = get_theme_mod( '18-tags-notices', array() );
 
 	if ( $key ) {
 		$notices[ $key ] = '<p>' . $notice . '</p>';
@@ -206,5 +206,5 @@ function eighteen_tags_add_notice( $notice, $key = null ) {
 		$notices[] = '<p>' . $notice . '</p>';
 	}
 
-	update_option( '18-tags-notices', $notices );
+	set_theme_mod( '18-tags-notices', $notices );
 }

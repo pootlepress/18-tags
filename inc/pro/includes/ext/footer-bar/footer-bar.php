@@ -9,7 +9,7 @@
  * Requires at least:	4.0.0
  * Tested up to:		4.2.2
  *
- * Text Domain: eighteen-tags-footer-bar
+ * Text Domain: eighteen-tags
  * Domain Path: /languages/
  *
  * @package Eighteen_Tags_Footer_Bar
@@ -81,12 +81,10 @@ final class Eighteen_Tags_Footer_Bar {
 	 * @return  void
 	 */
 	public function __construct() {
-		$this->token 			= 'eighteen-tags-footer-bar';
+		$this->token 			= 'eighteen-tags';
 		$this->plugin_url 		= PRO18_URL . '/includes/ext/footer-bar/';
 		$this->plugin_path 		= PRO18_PATH . '/includes/ext/footer-bar/';
 		$this->version 			= '1.0.1';
-
-		register_activation_hook( __FILE__, array( $this, 'install' ) );
 
 		add_action( 'init', array( $this, 'etfb_load_plugin_textdomain' ) );
 
@@ -116,7 +114,7 @@ final class Eighteen_Tags_Footer_Bar {
 	 * @return  void
 	 */
 	public function etfb_load_plugin_textdomain() {
-		load_plugin_textdomain( 'eighteen-tags-footer-bar', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+		load_plugin_textdomain( 'eighteen-tags', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
 
 	/**
@@ -135,28 +133,6 @@ final class Eighteen_Tags_Footer_Bar {
 	 */
 	public function __wakeup() {
 		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'eighteen-tags' ), '1.0.0' );
-	}
-
-	/**
-	 * Installation.
-	 * Runs on activation. Logs the version number and assigns a notice message to a WordPress option.
-	 * @access  public
-	 * @since   1.0.0
-	 * @return  void
-	 */
-	public function install() {
-		$this->_log_version_number();
-	}
-
-	/**
-	 * Log the plugin version number.
-	 * @access  private
-	 * @since   1.0.0
-	 * @return  void
-	 */
-	private function _log_version_number() {
-		// Log the version number.
-		update_option( $this->token . '-version', $this->version );
 	}
 
 	/**
@@ -198,7 +174,7 @@ final class Eighteen_Tags_Footer_Bar {
 	     * Add a new section
 	     */
         $wp_customize->add_section( 'etfb_section' , array(
-		    'title'      	=> __( 'Footer Bar', 'eighteen-tags-extention-boilerplate' ),
+		    'title'      	=> __( 'Footer Bar', 'eighteen-tags' ),
 		    'priority'   	=> 55,
 	        'panel'         => 'etp-footer',
 		) );
@@ -224,7 +200,7 @@ final class Eighteen_Tags_Footer_Bar {
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Upload_Control( $wp_customize, 'etfb_background_image', array(
-			'label'			=> __( 'Background image', 'eighteen-tags-footer-bar' ),
+			'label'			=> __( 'Background image', 'eighteen-tags' ),
 			'section'		=> 'etfb_section',
 			'settings'		=> 'etfb_background_image',
 			'priority'		=> 10,
@@ -240,7 +216,7 @@ final class Eighteen_Tags_Footer_Bar {
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'etfb_background_color', array(
-			'label'			=> __( 'Background color', 'eighteen-tags-footer-bar' ),
+			'label'			=> __( 'Background color', 'eighteen-tags' ),
 			'section'		=> 'etfb_section',
 			'settings'		=> 'etfb_background_color',
 			'priority'		=> 15,
@@ -256,7 +232,7 @@ final class Eighteen_Tags_Footer_Bar {
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'etfb_heading_color', array(
-			'label'			=> __( 'Heading color', 'eighteen-tags-footer-bar' ),
+			'label'			=> __( 'Heading color', 'eighteen-tags' ),
 			'section'		=> 'etfb_section',
 			'settings'		=> 'etfb_heading_color',
 			'priority'		=> 20,
@@ -272,7 +248,7 @@ final class Eighteen_Tags_Footer_Bar {
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'etfb_text_color', array(
-			'label'			=> __( 'Text color', 'eighteen-tags-footer-bar' ),
+			'label'			=> __( 'Text color', 'eighteen-tags' ),
 			'section'		=> 'etfb_section',
 			'settings'		=> 'etfb_text_color',
 			'priority'		=> 30,
@@ -287,7 +263,7 @@ final class Eighteen_Tags_Footer_Bar {
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'etfb_link_color', array(
-			'label'			=> __( 'Link color', 'eighteen-tags-footer-bar' ),
+			'label'			=> __( 'Link color', 'eighteen-tags' ),
 			'section'		=> 'etfb_section',
 			'settings'		=> 'etfb_link_color',
 			'priority'		=> 40,
