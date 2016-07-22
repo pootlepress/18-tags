@@ -946,6 +946,12 @@ a:focus {
 		max-height: none;
 	}
 
+	.etp-nav-styleleft-vertical .site-header .site-branding,
+	.etp-nav-styleleft-vertical .site-header .site-logo-anchor,
+	.etp-nav-styleleft-vertical .site-header .custom-logo-link {
+		width: auto;
+	}
+
 	.woocommerce-active .site-header .secondary-navigation {
 		width: 47.8260869565%;
 		float: left;
