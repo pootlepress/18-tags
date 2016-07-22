@@ -150,13 +150,7 @@ class Eighteen_Tags_Pro_Content_Styles extends Eighteen_Tags_Pro_Abstract {
 	 * @return string The end of the excerpt
 	 */
 	function excerpt_more() {
-
 		$set = $this->get( 'blog-excerpt-end', '...' );
-		$read_more = $this->get( 'blog-rm-butt-text' );
-		if ( $read_more ) {
-			$set .= '<a class="button read-more alignright" href="' . get_post_permalink() . '">' . $read_more . '</a>';
-		}
-
 		return $set;
 	}
 
@@ -173,6 +167,10 @@ class Eighteen_Tags_Pro_Content_Styles extends Eighteen_Tags_Pro_Abstract {
 			);
 		} else {
 			the_excerpt();
+			$read_more = $this->get( 'blog-rm-butt-text' );
+			if ( $read_more ) {
+				echo '<a class="button read-more alignright" href="' . get_post_permalink() . '">' . $read_more . '</a>';
+			}
 		}
 		remove_filter( 'excerpt_length', array( $this, 'excerpt_length' ) );
 		remove_filter( 'excerpt_more', array( $this, 'excerpt_more' ) );

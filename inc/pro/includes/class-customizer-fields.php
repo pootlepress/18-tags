@@ -122,7 +122,6 @@ final class Eighteen_Tags_Pro_Customizer_Fields extends Eighteen_Tags_Pro_Abstra
 			array(
 				'default'   => $default,
 				'transport' => 'refresh',
-				'sanitize_callback' => 'sanitize_text_field',
 			)
 		);
 

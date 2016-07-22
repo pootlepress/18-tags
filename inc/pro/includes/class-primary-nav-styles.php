@@ -30,7 +30,8 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 				$css .= '.eighteen-tags-pro-active .site-header .main-navigation{ ' .
 				        'width: 73.6%; margin: 0; padding: 0; float: right; clear: none;' .
 				        '}';
-				$css .= '#site-navigation > div { width: 70%; }';
+				$css .= '#site-navigation > div { width: 100%; }';
+				$css .= '.woocommerce-active #site-navigation > div { width: 70%; }';
 				$css .= '.woocommerce-active .site-header .site-header-cart { width: 30%; }';
 				break;
 			case 'center-inline':
@@ -127,9 +128,9 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 		if ( $logo ) {
 			$li_class = 'logo-in-nav-image';
 			$logoHTML = ''
-						. '<a class="logo-in-nav-anchor" href="' . esc_url( home_url( '/' ) ) . '" '
-						. 'title="' . get_bloginfo( 'name' ) . '" rel="home" style="background-image:url(' . $logo . ');">'
-						. '</a>';
+			            . '<a class="logo-in-nav-anchor" href="' . esc_url( home_url( '/' ) ) . '" '
+			            . 'title="' . get_bloginfo( 'name' ) . '" rel="home" style="background-image:url(' . $logo . ');">'
+			            . '</a>';
 		}
 
 		$this->num_items = count( $items );

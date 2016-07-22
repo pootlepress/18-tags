@@ -49,7 +49,7 @@ class Pootle_Page_Customizer_Public {
 
 		if ( ! is_single() && ! is_page() ) { return false; }
 		wp_enqueue_style( 'ppc-styles', PRO18_URL . '/includes/page-customizer/assets/css/front.css' );
-		wp_enqueue_script( 'page-custo-script', PRO18_URL . '/includes/page-customizer/assets/js/public.js' );
+		wp_enqueue_script( 'page-custo-script', PRO18_URL . '/includes/page-customizer/assets/js/public.js', array( 'jquery' ) );
 
 		//Init $css
 		$css = '/*PootlePressPageCustomizer*/';

@@ -33,7 +33,7 @@ class Eighteen_Tags_Pro_Header_Nav extends Eighteen_Tags_Pro_Primary_Navigation 
 		add_filter( 'wp_nav_menu_items', array( $this, 'logo_in_nav' ), 10, 2 );
 
 		//Header cart color
-		$t->css .= '.eighteen-tags-pro-active .site-header-cart .cart-contents { color: ' . $t->get( 'header-wc-cart-color', '#ffffff' ) . '; }';
+		$t->css .= '.eighteen-tags-pro-active .site-header-cart .cart-contents { color: ' . $t->get( 'header-wc-cart-color', '' ) . '; }';
 
 		$t->css .= '.eighteen-tags-pro-active #masthead, .eighteen-tags-pro-active .header-toggle { background-color:' . $t->get( 'header-bg-color' ) . ';}';
 

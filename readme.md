@@ -10,8 +10,9 @@
 * Stable tag: 1.0.7
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-3.0.html
-* FontAwesome License: SIL Open Font License - http://scripts.sil.org/OFL
-* Skrollr License: The MIT License - https://opensource.org/licenses/MIT
+* FontAwesome: by @davegandy - http://fontawesome.io - @fontawesome - License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+* Skrollr: by Alexander Prinzhorn - https://github.com/Prinzhorn/skrollr | Free to use under terms of MIT license
+* The Kirki Framework: Copyright Aristeides Stathopoulos (@aristath), licensed under the terms of the GNU GPL, Version 2 (or later).
 * Images License: GNU General Public License v2 or later
 
 #### A free WordPress theme that makes it easy to design your website
@@ -99,6 +100,13 @@ We've added support for our free Pootle page builder, Divi page builder and Site
 You are free to download 18 tags for free and use on as many websites as you like. However if you'd like to get support, please select the premium support level option below. You'll be required to quote your order number when submitting any support questions through our website. By taking out Premium support you'll also be contributing to 18 tags so that we can continue to improve it and make it the best theme possible – so a big thank you if you select the premium support option :)
 
 ## Changelog
+
+##### 1.0.8
+* 2016.07.22
+* **Fix** - Adding a manual excerpt causes the read more button to disappear
+* **Fix** - Increase width of align menu right
+* **Fix** - HTML being stripped out of custom footer box
+* **Tweak** - Updated copyright info and licensing
 
 ##### 1.0.7
 * 2016.06.17
