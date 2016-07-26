@@ -15,9 +15,9 @@ add_action('after_switch_theme', 'eighteen_tags_activated');
 
 function eighteen_tags_activated() {
 	$slug = get_option( 'stylesheet' );
-	$v1_options = get_option( 'theme_mods_18-tags-1.0.0' );
-	if ( $v1_options && array( '' ) == get_option( 'theme_mods_' . $slug ) ) {
-		update_option( 'theme_mods_' . $slug, $v1_options );
+	$old_options = get_option( 'theme_mods_18-tags' );
+	if ( $old_options && array( '' ) == get_option( 'theme_mods_' . $slug ) ) {
+		update_option( 'theme_mods_' . $slug, $old_options );
 	}
 
 	$ppb_url = admin_url( 'plugin-install.php?tab=plugin-information&plugin=pootle-page-builder&TB_iframe=true' );
