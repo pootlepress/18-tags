@@ -54,7 +54,7 @@ class Eighteen_Tags_Custom_Radio_Image_Control extends WP_Customize_Control {
 		<div id="input_<?php echo esc_attr( $this->id ); ?>" class="image">
 			<?php foreach ( $this->choices as $value => $label ) : ?>
 				<input class="image-select" type="radio" value="<?php echo esc_attr( $value ); ?>" id="<?php echo $this->id . $value; ?>" name="<?php echo esc_attr( $name ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?>>
-					<label for="<?php echo esc_attr( $this->id ) . esc_attr( $value ); ?>">
+					<label style="height: auto" for="<?php echo esc_attr( $this->id ) . esc_attr( $value ); ?>">
 						<img src="<?php echo esc_html( $label ); ?>" alt="<?php echo esc_attr( $value ); ?>" title="<?php echo esc_attr( $value ); ?>">
 					</label>
 				</input>

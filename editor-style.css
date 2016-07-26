@@ -1735,25 +1735,6 @@ fieldset legend {
 	margin-bottom: 1.618em;
 }
 
-.hentry .entry-header {
-	margin-bottom: 3.631em;
-}
-
-.hentry .entry-header h1 {
-	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-	padding-bottom: .618em;
-	margin-bottom: 3px;
-}
-
-.eighteen-tags-pro-active .post-meta-container {
-	font-size: 0.857em;
-	margin-bottom: 1em;
-}
-
-.entry-date.published + .updated {
-	display: none;
-}
-
 .post-meta:after {
 	content: ' | ';
 }

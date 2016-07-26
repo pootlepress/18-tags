@@ -368,18 +368,6 @@ function eighteen_tags_pro_fields () {
 			'section' => 'Content Elements',
 			'type'    => 'checkbox',
 		),
-		array(
-			'id'      => 'hide-hr',
-			'label'   => 'Hide horizontal lines',
-			'section' => 'Content Elements',
-			'type'    => 'checkbox',
-		),
-		array(
-			'id'      => 'content-hr-color',
-			'label'   => 'Change horizontal lines color',
-			'section' => 'Content Elements',
-			'type'    => 'color',
-		),
 		//Single
 		array(
 			'id'          => 'single-header-size',

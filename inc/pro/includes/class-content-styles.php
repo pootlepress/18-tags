@@ -19,7 +19,6 @@ class Eighteen_Tags_Pro_Content_Styles extends Eighteen_Tags_Pro_Abstract {
 	public function styles() {
 		$this->headings_typo();
 		$this->text_typo();
-		$this->hr_styles();
 		$this->breadcrumbs();
 
 		if ( $this->get( 'hide-link-focus-outline', 1 ) ) {
@@ -33,23 +32,6 @@ class Eighteen_Tags_Pro_Content_Styles extends Eighteen_Tags_Pro_Abstract {
 
 		}
 		return $this->css;
-	}
-
-	public function hr_styles() {
-
-		if ( $this->get( 'hide-hr' ) ) {
-			$this->css .= '.eighteen-tags-pro-active .hentry .entry-header, ' .
-			           '.eighteen-tags-pro-active .widget h3.widget-title, ' .
-			           '.hentry, .hentry .entry-header h1, ' .
-			           '.eighteen-tags-pro-active .widget h2.widgettitle { ' .
-			           'border: none; }';
-		}
-
-		$this->css .= '.eighteen-tags-pro-active .hentry .entry-header, ' .
-		           '.eighteen-tags-pro-active .widget h3.widget-title, ' .
-		           '.eighteen-tags-pro-active .widget h2.widgettitle {' .
-		           'border-color: ' . $this->get( 'content-hr-color' ) . ' }';
-
 	}
 
 	/**

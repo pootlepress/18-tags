@@ -165,7 +165,5 @@ function eighteen_tags_scripts() {
  */
 function eighteen_tags_child_scripts() {
 	global $eighteen_tags_version;
-	if ( is_child_theme() ) {
-		wp_enqueue_style( 'eighteen-tags-style', get_template_directory_uri() . '/style.css', '', $eighteen_tags_version );
-	}
+	wp_enqueue_style( 'eighteen-tags-style', get_template_directory_uri() . '/style.css', '', $eighteen_tags_version );
 }

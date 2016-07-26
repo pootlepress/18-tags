@@ -4,7 +4,6 @@
  *
  * @package eighteen-tags
  */
-
 add_action( 'customize_preview_init', 			'eighteen_tags_customize_preview_js' );
 add_action( 'customize_register', 				'eighteen_tags_customize_register' );
 add_filter( 'body_class', 						'eighteen_tags_layout_class' );

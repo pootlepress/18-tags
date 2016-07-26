@@ -68,12 +68,6 @@ $layout = str_replace( '-image', '', get_theme_mod( 'eighteen-tags-pro-blog-layo
 	clear: both;
 }
 
-.eighteen-tags-pro-active .hentry .entry-header,
-.eighteen-tags-pro-active .hentry .entry-header h1 {
-	border: none;
-	margin: auto;
-}
-
 @media only screen and (min-width: 768px) {
 	.eighteen-tags-pro-active #primary {
 		width: 100%;
