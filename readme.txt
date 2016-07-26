@@ -104,7 +104,9 @@ You are free to download 18 tags for free and use on as many websites as you lik
 == Changelog ==
 
 === 1.0.8 ===
-* 2016.07.22
+* 2016-07-26
+* **Fix** - Lots of setting showing live preview in customizer but not saving.
+* **Fix** - Image radio fields in customizer collapsed.
 * **Fix** - Adding a manual excerpt causes the read more button to disappear
 * **Fix** - Increase width of align menu right
 * **Fix** - HTML being stripped out of custom footer box
