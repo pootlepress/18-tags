@@ -577,6 +577,7 @@ function eighteen_tags_pro_fields () {
 			'label'       => 'Custom footer text',
 			'section'     => 'existing_eighteen_tags_footer',
 			'type'        => 'textarea',
+			'sanitize_callback' =>'wp_kses_post',
 			'description' => 'Type here some text to replace footer text.',
 		),
 		//Footer - Widgets
