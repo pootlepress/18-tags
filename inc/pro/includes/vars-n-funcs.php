@@ -230,6 +230,77 @@ function eighteen_tags_pro_fields () {
 			'section' => 'Secondary Navigation',
 			'type'    => 'color',
 		),
+		// Title and tagline
+		array(
+			'id'          => 'site-title-font-size',
+			'label'       => 'Title font size',
+			'section'     => 'existing_title_tagline',
+			'type'        => 'range',
+			'input_attrs' => array(
+				'min'  => 5,
+				'max'  => 52,
+				'step' => 1,
+			),
+		),
+		array(
+			'id'      => 'site-title-font-style',
+			'label'   => 'Title font style',
+			'section' => 'existing_title_tagline',
+			'type'    => 'multi-checkbox',
+			'choices' => array(
+				'bold'      => 'Bold',
+				'italic'    => 'Italic',
+				'underline' => 'Underline',
+				'uppercase' => 'Uppercase',
+			),
+		),
+		array(
+			'id'      => 'site-title-font',
+			'label'   => 'Title font',
+			'section' => 'existing_title_tagline',
+			'type'    => 'font',
+		),
+		array(
+			'id'      => 'site-title-color',
+			'label'   => 'Title color',
+			'section' => 'existing_title_tagline',
+			'type'    => 'color',
+		),
+		array(
+			'id'          => 'site-tagline-font-size',
+			'label'       => 'Tagline font size',
+			'section'     => 'existing_title_tagline',
+			'type'        => 'range',
+			'input_attrs' => array(
+				'min'  => 5,
+				'max'  => 34,
+				'step' => 1,
+			),
+		),
+		array(
+			'id'      => 'site-tagline-font-style',
+			'label'   => 'Tagline font style',
+			'section' => 'existing_title_tagline',
+			'type'    => 'multi-checkbox',
+			'choices' => array(
+				'bold'      => 'Bold',
+				'italic'    => 'Italic',
+				'underline' => 'Underline',
+				'uppercase' => 'Uppercase',
+			),
+		),
+		array(
+			'id'      => 'site-tagline-font',
+			'label'   => 'Tagline font',
+			'section' => 'existing_title_tagline',
+			'type'    => 'font',
+		),
+		array(
+			'id'      => 'site-tagline-color',
+			'label'   => 'Tagline color',
+			'section' => 'existing_title_tagline',
+			'type'    => 'color',
+		),
 		//Header Elements
 		array(
 			'id'          => 'logo-max-height',

@@ -159,7 +159,8 @@ final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
 		.home.blog .site-header, .home.post-type-archive-product .site-header,
 		.home.page:not(.page-template-template-homepage) .site-header, .eighteen-tags-pro-active .site-header,
 		.eighteen-tags-pro-active .woocommerce-breadcrumb, .eighteen-tags-pro-active .no-wc-breadcrumb .site-header { margin-bottom: 0; }
-		.eighteen-tags-pro-active .hentry .entry-header { display: none; }
+		.eighteen-tags-pro-active.page .hentry .entry-header { display: none; }
+		.eighteen-tags-pro-active .hentry .entry-header { margin: 0; }
 		.eighteen-tags-pro-active #secondary { margin-top: 4.236em; }
 		.eighteen-tags-pro-active .page.hentry { margin: 0; padding: 0; border: none; }
 		.eighteen-tags-pro-active .site-main { margin: 0; }

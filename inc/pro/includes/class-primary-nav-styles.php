@@ -86,7 +86,7 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 		        'font-family:' . $t->get( 'pri-nav-font', 'Montserrat' ) . ';' .
 		        'font-size:' . $t->get( 'pri-nav-text-size' ) . 'px;' .
 		        '}';
-		$css .= '#site-navigation.main-navigation .primary-navigation ul li a, .eighteen-tags-pro-active .header-toggle {' .
+		$css .= '#site-navigation.main-navigation .primary-navigation ul li a, #site-navigation.main-navigation ul.site-header-cart li a, .eighteen-tags-pro-active .header-toggle {' .
 		        'letter-spacing:' . $t->get( 'pri-nav-letter-spacing' ) . 'px;' .
 		        'color:' . $t->get( 'pri-nav-text-color' ) . ';' .
 		        $t->font_style( $t->get( 'pri-nav-font-style' ) ) .
@@ -124,7 +124,7 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 		$li_class = 'logo-in-nav-text';
 		$logoHTML = '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a>';
 
-		$logo     = $this->get( 'logo', get_template_directory_uri() . '/assets/logo.jpg' );
+		$logo     = get_theme_mod( 'custom_logo', get_template_directory_uri() . '/assets/logo.jpg' );
 		if ( $logo ) {
 			$li_class = 'logo-in-nav-image';
 			$logoHTML = ''

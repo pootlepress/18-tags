@@ -22,6 +22,9 @@ class Eighteen_Tags_Pro_Header_Nav extends Eighteen_Tags_Pro_Primary_Navigation 
 	public function styles() {
 		$t = &$this;
 
+		$t->css .= "\n/*Title Tagline*/\n";
+		$t->title_tagline();
+
 		$t->css .= "\n/*Primary navigation*/\n";
 		$t->primary_nav_style( $t->get( 'nav-style' ) );
 		$t->primary_nav_typo();
@@ -40,6 +43,30 @@ class Eighteen_Tags_Pro_Header_Nav extends Eighteen_Tags_Pro_Primary_Navigation 
 		$t->css .= "\n/*Secondary navigation*/\n";
 		$t->secondary_nav_typo();
 		return $this->css;
+	}
+
+	/**
+	 * Primary nav typography
+	 */
+	public function title_tagline() {
+		$t   = &$this;
+		$css = &$t->css;
+
+		$font = $t->get( 'site-title-font-size' ) ? 'font-size:' . ( 2.5 * $t->get( 'site-title-font-size' ) ) . 'px;}' : '';
+
+		$css .= '.eighteen-tags-pro-active .site-branding .site-title a {' .
+		        'font-family:' . $t->get( 'site-title-font' ) . ';' .
+		        'color:' . $t->get( 'site-title-color' ) . ';' .
+		        $t->font_style( $t->get( 'site-title-font-style' ) ) .
+		        $font;
+
+		$font = $t->get( 'site-tagline-font-size' ) ? 'font-size:' . ( 1.6 * $t->get( 'site-tagline-font-size' ) ) . 'px;}' : '';
+
+		$css .= '.eighteen-tags-pro-active .site-branding .site-description {' .
+		        'font-family:' . $t->get( 'site-tagline-font' ) . ';' .
+		        'color:' . $t->get( 'site-tagline-color' ) . ';' .
+		        $t->font_style( $t->get( 'site-tagline-font-style' ) ) .
+		        $font;
 	}
 
 	/**

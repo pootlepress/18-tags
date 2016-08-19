@@ -11,8 +11,12 @@
  * @package eighteen-tags
  */
 
+global $etp_blog_across;
+
 get_header();
 include get_template_directory() . '/inc/styles.php';
+
+if ( empty( $etp_blog_across ) ) $etp_blog_across = 1;
 
 //Thumbnail args
 if ( empty( $etp_thumb_size ) ) {

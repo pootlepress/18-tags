@@ -52,7 +52,7 @@ class Pootle_Page_Customizer_Public {
 		wp_enqueue_script( 'page-custo-script', PRO18_URL . '/includes/page-customizer/assets/js/public.js', array( 'jquery' ) );
 
 		//Init $css
-		$css = '/*PootlePressPageCustomizer*/';
+		$css = '/*18Tags Page Customizer*/';
 
 		$css .= $this->bg_styles();
 
@@ -185,7 +185,7 @@ class Pootle_Page_Customizer_Public {
 		}
 
 		if ( $hideSidebar ) {
-			$css .= "#sidebar, .sidebar, .side-bar {display : none !important;}\n";
+			$css .= "#secondary, #sidebar, .sidebar, .side-bar {display : none !important;}\n";
 			$css .= "#content, .content, .content-area { width : 100% !important;}\n";
 		}
 		return $css;
