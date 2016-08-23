@@ -68,7 +68,7 @@ $layout = str_replace( '-image', '', get_theme_mod( 'eighteen-tags-pro-blog-layo
 	clear: both;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 763px) {
 	.eighteen-tags-pro-active #primary {
 		width: 100%;
 	}

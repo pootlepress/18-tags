@@ -124,14 +124,17 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 		$li_class = 'logo-in-nav-text';
 		$logoHTML = '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a>';
 
-		$logo     = get_theme_mod( 'custom_logo', get_template_directory_uri() . '/assets/logo.jpg' );
-		if ( $logo ) {
+		$custom_logo_id = get_theme_mod( 'custom_logo' );
+		$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+		$logo = $image[0];
+		if ( ! $logo ) {
+			$logo = get_template_directory_uri() . '/assets/logo.jpg';
+		}
 			$li_class = 'logo-in-nav-image';
 			$logoHTML = ''
 			            . '<a class="logo-in-nav-anchor" href="' . esc_url( home_url( '/' ) ) . '" '
 			            . 'title="' . get_bloginfo( 'name' ) . '" rel="home" style="background-image:url(' . $logo . ');">'
 			            . '</a>';
-		}
 
 		$this->num_items = count( $items );
 		$this->logo_index = $this->num_items / 2;

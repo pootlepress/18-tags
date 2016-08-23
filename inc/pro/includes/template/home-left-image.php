@@ -88,7 +88,7 @@ if ( Eighteen_Tags_Pro::instance()->public->get( 'blog-show-sidebar' ) ) {
 	get_sidebar();
 	?>
 	<style>
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: 763px) {
 		.eighteen-tags-pro-active div#primary {
 			width: 73.9130434783%;
 			float: left;

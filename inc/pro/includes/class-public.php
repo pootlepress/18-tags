@@ -53,7 +53,6 @@ final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
 		add_filter( 'pre_get_posts', array( $this, 'pre_get_posts' ), 999 );
 		//Products per page
 		add_filter( 'eighteen_tags_products_per_page', array( $this, 'products_per_page' ), 999 );
-		add_filter( 'pootlepb_render', array( $this, 'page_builder_styles' ) );
 		add_filter( 'siteorigin_panels_render', array( $this, 'page_builder_styles' ) );
 		add_filter( 'siteorigin_panels_render', array( $this, 'page_builder_styles' ) );
 	}
@@ -86,13 +85,13 @@ final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
 
 		$css .= $this->footer_styles->styles();
 
-		$css .= '@media only screen and (min-width: 768px) {';
+		$css .= '@media only screen and (min-width: 763px) {';
 
 		$css .= self::$desktop_css;
 
 		$css .= '}';
 
-		$css .= '@media only screen and (max-width: 768px) {';
+		$css .= '@media only screen and (max-width: 763px) {';
 
 		$css .= self::$mobile_css;
 
@@ -100,6 +99,8 @@ final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
 
 		if ( function_exists( 'et_pb_is_pagebuilder_used' ) && et_pb_is_pagebuilder_used( get_the_ID() ) ) {
 			$css .= '#content > .col-full { max-width: none; margin: 0; }';
+			$css .= strip_tags( $this->page_builder_styles() );
+		} else if ( function_exists( 'pootlepb_is_panel' ) && pootlepb_is_panel() ) {
 			$css .= strip_tags( $this->page_builder_styles() );
 		}
 

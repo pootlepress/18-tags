@@ -926,7 +926,7 @@ a:focus {
 /**
  * General Layout
  */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 763px) {
 	.site-header .site-branding,
 	.site-header .site-logo-anchor,
 	.site-header .custom-logo-link {
@@ -1487,7 +1487,7 @@ fieldset legend {
 	color: #e6e6e6;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 763px) {
 	.menu-toggle,
 	.handheld-navigation,
 	.main-navigation.toggled .handheld-navigation,
@@ -1753,7 +1753,7 @@ fieldset legend {
 	margin-bottom: 1em;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 763px) {
 	.hentry.type-post::after {
 		clear: both;
 		content: "";
@@ -2049,7 +2049,7 @@ video {
 	margin-bottom: 0;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 763px) {
 	.comment-list::after {
 		clear: both;
 		content: "";
