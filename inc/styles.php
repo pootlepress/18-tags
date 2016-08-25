@@ -75,7 +75,6 @@ $layout = str_replace( '-image', '', get_theme_mod( 'eighteen-tags-pro-blog-layo
 
 	.single #content .col-full {
 		margin: auto;
-		max-width: 700px;
 	}
 
 	.eighteen-tags-pro-active .hentry.type-post .entry-content {

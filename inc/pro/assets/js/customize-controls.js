@@ -76,6 +76,8 @@
 		$menu_style.change( show_hide_ham_label );
 		show_hide_ham_label();
 
+		$('.google-font-18t').msGoogleFonts();
+
 		var $blog_layout = $( '#input_eighteen-tags-pro-blog-layout' ),
 			$grid = $('#customize-control-eighteen-tags-pro-blog-grid' ),
 			show_hide_grid = function () {

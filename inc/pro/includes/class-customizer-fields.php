@@ -143,7 +143,7 @@ final class Eighteen_Tags_Pro_Customizer_Fields extends Eighteen_Tags_Pro_Abstra
 			$f['type'] = 'multi-checkbox';
 			$f['choices'] = get_post_types( array( 'exclude_from_search' => false, ) );
 		}
-		if ( in_array( $f['type'], array( 'sf-radio-image', 'alpha-color', 'color', 'grid', 'multi-checkbox', 'post-types', 'image', 'sf-text', 'sf-heading', 'sf-divider', ) ) ) {
+		if ( in_array( $f['type'], array( 'font', 'sf-radio-image', 'alpha-color', 'color', 'grid', 'multi-checkbox', 'post-types', 'image', 'sf-text', 'sf-heading', 'sf-divider', ) ) ) {
 
 			$this->cool_fields( $wp_customize, $f['type'], $f['id'], $f );
 			return;
@@ -152,14 +152,6 @@ final class Eighteen_Tags_Pro_Customizer_Fields extends Eighteen_Tags_Pro_Abstra
 
 		//Setting type
 		$args = $f;
-
-		if ( 'font' == $f['type'] ) {
-
-			$this->google_font_fields[] = $f['id'];
-			$args['choices'] = $this->get_fonts();
-			$args['type'] = 'select';
-
-		}
 
 		$wp_customize->add_control(
 			$f['id'],
@@ -187,6 +179,10 @@ final class Eighteen_Tags_Pro_Customizer_Fields extends Eighteen_Tags_Pro_Abstra
 		} elseif ( in_array( $type, array( 'alpha-color', ) ) ) {
 			$field_class = 'Lib_Customize_Alpha_Color_Control';
 			$args['type'] = 'lib_color';
+		} else if ( 'font' == $args['type'] ) {
+			$field_class = 'PRO18_Custom_Customize_Control';
+			$this->google_font_fields[] = $args['id'];
+			$args['choices']            = $this->get_fonts();
 		} else {
 			$this->find_control_class( $type, $field_class, $args );
 		}
@@ -207,9 +203,9 @@ final class Eighteen_Tags_Pro_Customizer_Fields extends Eighteen_Tags_Pro_Abstra
 	 * @return array Fonts
 	 */
 	public function get_fonts(){
-		global $sf_pro_fonts;
+		global $google_18t_fonts;
 
-		return $sf_pro_fonts;
+		return $google_18t_fonts;
 	}
 
 	private function find_control_class( $type, &$field_class, &$args ) {

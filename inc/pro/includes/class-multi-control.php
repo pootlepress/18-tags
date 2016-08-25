@@ -62,11 +62,16 @@ class PRO18_Custom_Customize_Control extends WP_Customize_Control {
 	 * @return void
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'lib-customize-controls', PRO18_URL . '/assets/customize-controls.js', array( 'jquery' ), '', true );
+		wp_enqueue_script( 'lib-customize-controls', PRO18_URL . '/assets/js/customize-controls.js', array( 'jquery' ), '', true );
+		wp_enqueue_script( 'lib-google-fonts', PRO18_URL . '/assets/js/google-fonts.js', array( 'jquery' ), '', true );
+		wp_enqueue_style( 'lib-google-fonts-css', PRO18_URL . '/assets/css/google-fonts.css', array() );
 	}
 
 	protected function output_select_options( $options, $val_now ) {
 		foreach ( $options as $value => $label ) {
+			if ( ! is_string( $label ) ) {
+				$label = $value;
+			}
 			echo '<option value="' . esc_attr( $value ) . '"' . selected( $val_now, $value, false ) . '>' . $label . '</option>';
 		}
 	}
@@ -107,6 +112,12 @@ class PRO18_Custom_Customize_Control extends WP_Customize_Control {
 
 		if ( 'grid' == $this->type ) {
 			$this->render_grid();
+		} else if ( 'font' == $this->type ) {
+			?>
+			<select class="google-font-18t" <?php $this->link(); ?>>
+				<?php $this->output_select_options( $this->choices, $this->value() ); ?>
+			</select>
+			<?php
 		} else {
 			$this->render_multi_checkbox();
 		}
