@@ -104,7 +104,7 @@ final class Eighteen_Tags_Pro_Customizer_Fields extends Eighteen_Tags_Pro_Abstra
 		}
 	}
 
-	protected function setting_and_control( $wp_customize, $f, $sec ) {
+	protected function setting_and_control( WP_Customize_Manager $wp_customize, $f, $sec ) {
 		$id = $this->get_field_id( $f['id'] );
 
 		$f['id'] = $id;
@@ -116,15 +116,23 @@ final class Eighteen_Tags_Pro_Customizer_Fields extends Eighteen_Tags_Pro_Abstra
 			$default = $f['default'];
 		}
 
-		//Add Setting
-		$wp_customize->add_setting(
-			$id,
-			array(
-				'default'   => $default,
-				'transport' => 'refresh',
-				'sanitize_callback' => empty( $f['sanitize_callback'] ) ? 'sanitize_text_field' : $f['sanitize_callback'],
-			)
+		$setting_args = array(
+			'default'           => $default,
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'sanitize_text_field',
 		);
+
+		if ( ! empty( $f['transport'] ) ) {
+			$setting_args['transport'] = $f['transport'];
+			//print_awesome_r( "$id > $f[transport]" );
+
+		}
+		if ( ! empty( $f['sanitize_callback'] ) ) {
+			$setting_args['sanitize_callback'] = $f['sanitize_callback'];
+		}
+
+		//Add Setting
+		$wp_customize->add_setting( $id, $setting_args );
 
 		if ( ! strpos( $f['id'], 'wc-cart' ) || class_exists( 'WooCommerce' ) ) {
 			$this->render_customizer_field( $wp_customize, $f );

@@ -58,7 +58,7 @@ class Eighteen_Tags_Pro_Header_Nav extends Eighteen_Tags_Pro_Primary_Navigation 
 		        'font-family:' . $t->get( 'site-title-font' ) . ';' .
 		        'color:' . $t->get( 'site-title-color' ) . ';' .
 		        $t->font_style( $t->get( 'site-title-font-style' ) ) .
-		        $font;
+		        $font . '}';
 
 		$font = $t->get( 'site-tagline-font-size' ) ? 'font-size:' . ( 1.6 * $t->get( 'site-tagline-font-size' ) ) . 'px;}' : '';
 
@@ -66,7 +66,7 @@ class Eighteen_Tags_Pro_Header_Nav extends Eighteen_Tags_Pro_Primary_Navigation 
 		        'font-family:' . $t->get( 'site-tagline-font' ) . ';' .
 		        'color:' . $t->get( 'site-tagline-color' ) . ';' .
 		        $t->font_style( $t->get( 'site-tagline-font-style' ) ) .
-		        $font;
+		        $font . '}';
 	}
 
 	/**

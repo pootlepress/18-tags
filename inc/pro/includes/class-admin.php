@@ -41,13 +41,71 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 		//Customize register
 		add_action( $this->token . '-customize-register', array( $this, 'create_panels' ) );
 		//Customize register
-		add_action( 'customize_register', array( $this->customizer, 'etp_customize_register' ), 999 );
+		add_action( 'customize_register', array( $this, 'customize_register' ), 999 );
+
 		//Customize preview init script
 		add_action( 'customize_preview_init', array( $this, 'etp_customize_preview_js' ) );
 		//Admin notices
 		add_action( 'admin_notices', array( $this, 'admin_notices' ) );
 		//Reset all Eighteen tags pro pro options
 		add_action( 'wp_ajax_eighteen_tags_pro_reset', array( $this, 'reset_all' ) );
+		//Filter fields
+		add_action( 'eighteen_tags_pro_fields', array( $this, 'filter_fields' ) );
+	}
+
+	protected function is_selective_refresh_field( $f ) {
+		return in_array( $f['type'], array( 'color', 'alpha-color', ) );
+	}
+
+	public function filter_fields( $fields ) {
+		foreach ( $fields as $id => $f ) {
+			if ( $this->is_selective_refresh_field( $f ) ) {
+				$fields[ $id ][ 'transport' ] = 'postMessage';
+			}
+		}
+
+		return $fields;
+	}
+
+	public function customize_register( WP_Customize_Manager $wp_customize ) {
+		$this->customizer->etp_customize_register( $wp_customize ); // Call customize fields registering method
+
+		// Abort if selective refresh is not available.
+		if ( ! isset( $wp_customize->selective_refresh ) ) return;
+
+		add_action( 'wp_footer', function() {
+			echo '<style id="eighteen-tags-selective-refresh-css"></style>';
+		}, 999 );
+
+		$fields = eighteen_tags_pro_fields();
+
+		$sel_ref_options = array();
+
+		foreach ( $fields as $f ) {
+			if ( $this->is_selective_refresh_field( $f ) ) {
+				$id = "$this->token-$f[id]";
+				$sel_ref_options[] = $id;
+				$wp_customize->get_setting( $id )->transport = 'postMessage';
+			}
+		}
+
+		$wp_customize->selective_refresh->add_partial( $this->token . '-style-partial', array(
+			'selector'        => '#eighteen-tags-selective-refresh-css',
+//								 '#pg-2-3',
+			'settings'        => $sel_ref_options,
+			'render_callback' => function () {
+				echo Pro_18Tags()->public->generate_css();
+			},
+			'container_inclusive' => false,
+		) );
+
+		$wp_customize->get_setting( 'eighteen-tags-pro-footer-custom-text' )->transport = 'postMessage';
+		$wp_customize->selective_refresh->add_partial( 'eighteen-tags-pro-footer-custom-text', array(
+			'selector' => '#colophon > .col-full',
+			'settings' => array( 'eighteen-tags-pro-footer-custom-text' ),
+			'render_callback' => array( Pro_18Tags()->public->footer_styles, 'credit' ),
+			'container_inclusive' => false,
+		) );
 	}
 
 	/**

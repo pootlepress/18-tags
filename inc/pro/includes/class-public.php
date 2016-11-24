@@ -55,6 +55,11 @@ final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
 		add_filter( 'eighteen_tags_products_per_page', array( $this, 'products_per_page' ), 999 );
 		add_filter( 'siteorigin_panels_render', array( $this, 'page_builder_styles' ) );
 		add_filter( 'siteorigin_panels_render', array( $this, 'page_builder_styles' ) );
+
+		$this->header_nav_styles = new Eighteen_Tags_Pro_Header_Nav( $this->token, $this->plugin_path, $this->plugin_url );
+		$this->content_styles = new Eighteen_Tags_Pro_Content_Styles( $this->token, $this->plugin_path, $this->plugin_url );
+		$this->footer_styles = new Eighteen_Tags_Pro_Footer_Styles( $this->token, $this->plugin_path, $this->plugin_url );
+
 	}
 
 	/**
@@ -71,12 +76,26 @@ final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
 		wp_enqueue_script( 'etp-public-script', $this->plugin_url . '/assets/js/public.js', array( 'jquery' ), '1.0.0', true );
 		wp_enqueue_script( 'jquery-masonry' );
 
-		$this->header_nav_styles = new Eighteen_Tags_Pro_Header_Nav( $this->token, $this->plugin_path, $this->plugin_url );
-		$this->content_styles = new Eighteen_Tags_Pro_Content_Styles( $this->token, $this->plugin_path, $this->plugin_url );
-		$this->footer_styles = new Eighteen_Tags_Pro_Footer_Styles( $this->token, $this->plugin_path, $this->plugin_url );
-
 		$this->features();
 
+
+		wp_add_inline_style( 'etp-styles', $this->generate_css() );
+
+		$fonts_options = explode( ':|:', get_theme_mod( 'etp-google-fonts', '' ) );
+		$load_fonts = array( 'Montserrat' );
+
+		foreach ( $fonts_options as $option ) {
+			$font = get_theme_mod( $option );
+			if ( ! empty( $font ) && false === strpos( $font, 'serif' ) ) {
+				$load_fonts[] = $font;
+			}
+		}
+
+		wp_enqueue_style( 'etp-google-fonts', '//fonts.googleapis.com/css?family=' . join( '%7C', $load_fonts ) );
+
+	}
+
+	public function generate_css() {
 		$css = "/*-----STOREFRONT PRO-----*/";
 
 		$css .= $this->header_nav_styles->styles();
@@ -104,20 +123,7 @@ final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
 			$css .= strip_tags( $this->page_builder_styles() );
 		}
 
-		wp_add_inline_style( 'etp-styles', $css );
-
-		$fonts_options = explode( ':|:', get_theme_mod( 'etp-google-fonts', '' ) );
-		$load_fonts = array( 'Montserrat' );
-
-		foreach ( $fonts_options as $option ) {
-			$font = get_theme_mod( $option );
-			if ( ! empty( $font ) && false === strpos( $font, 'serif' ) ) {
-				$load_fonts[] = $font;
-			}
-		}
-
-		wp_enqueue_style( 'etp-google-fonts', '//fonts.googleapis.com/css?family=' . join( '%7C', $load_fonts ) );
-
+		return $css;
 	}
 
 	public function features() {

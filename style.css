@@ -938,6 +938,26 @@ a:focus {
 		clear: both;
 	}
 
+	.etp-nav-styleright .site-header {
+		padding: 0;
+	}
+
+	.etp-nav-styleright .site-header .col-full {
+		display: -ms-flex;
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: flex;
+		align-items: center;
+	}
+
+	.etp-nav-styleright .site-header .site-branding,
+	.etp-nav-styleright .site-header .site-logo-anchor,
+	.etp-nav-styleright .site-header .custom-logo-link {
+		float: none;
+		margin: 0;
+		margin-right: auto;
+	}
+
 	.site-header .site-branding img,
 	.site-header .site-logo-anchor img,
 	.site-header .custom-logo-link img {

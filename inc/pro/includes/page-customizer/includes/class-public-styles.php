@@ -9,7 +9,8 @@ class Pootle_Page_Customizer_Public {
 	 * @access  public
 	 * @since   1.0.0
 	 */
-	public function __construct( $token ) {
+	public function
+	__construct( $token ) {
 		$this->token = $token;
 		add_action( 'wp_enqueue_scripts', array( $this, 'public_scripts' ) );
 		add_filter( 'body_class', array( $this, 'body_class' ) );
@@ -19,10 +20,10 @@ class Pootle_Page_Customizer_Public {
 	 * Gets value of post meta
 	 * @global WP_Post $post
 	 *
-	 * @param string $section
-	 * @param string $id
-	 * @param mixed $default
-	 * @param int|bool $post_id
+	 * @param string	$section
+	 * @param string	$id
+	 * @param mixed		$default
+	 * @param int|bool	$post_id
 	 *
 	 * @return string
 	 */
@@ -33,12 +34,14 @@ class Pootle_Page_Customizer_Public {
 			$post_id = $post->ID;
 		}
 
-		$ret = get_post_meta( $post_id, $this->token, true );
-		if ( ! empty( $ret[ $id ] ) ) {
-			return $ret[ $id ];
+		$post_meta = get_post_meta( $post_id, $this->token, true );
+		if ( ! empty( $post_meta[ $id ] ) ) {
+			$return = $post_meta[ $id ];
 		} else {
-			return $default;
+			$return = $default;
 		}
+
+		return apply_filters( "post_meta_customize_setting_$this->token[$id]", $return, $id );
 	}
 
 	/**
@@ -48,11 +51,11 @@ class Pootle_Page_Customizer_Public {
 	public function public_scripts() {
 
 		if ( ! is_single() && ! is_page() ) { return false; }
-		wp_enqueue_style( 'ppc-styles', PRO18_URL . '/includes/page-customizer/assets/css/front.css' );
-		wp_enqueue_script( 'page-custo-script', PRO18_URL . '/includes/page-customizer/assets/js/public.js', array( 'jquery' ) );
+		wp_enqueue_style( 'ppc-styles', plugins_url( '/../assets/css/style.css', __FILE__ ) );
+		wp_enqueue_script( 'page-custo-script', plugins_url( '/../assets/js/public.js', __FILE__ ) );
 
 		//Init $css
-		$css = '/*18Tags Page Customizer*/';
+		$css = '/* Storefront Page Customizer */';
 
 		$css .= $this->bg_styles();
 
@@ -64,7 +67,7 @@ class Pootle_Page_Customizer_Public {
 
 		$css .= $this->ux_styles();
 
-		$css .= '@media only screen and (max-width:763px) {';
+		$css .= '@media only screen and (max-width:768px) {';
 		$css .= $this->mobile_styles();
 		$css .= '}';
 
@@ -94,7 +97,7 @@ class Pootle_Page_Customizer_Public {
 
 		//Background styles
 		$css .= 'body.pootle-page-customizer-active {';
-		if ( 'color' == $bodyBgType ) {
+		if ( 'color' == $bodyBgType && $bgColor ) {
 			$css .= "background: {$bgColor} !important;";
 		} else if ( $bgImage ) {
 			$css .= "background : url({$bgImage}){$BgOptions} !important;";
@@ -135,7 +138,6 @@ class Pootle_Page_Customizer_Public {
 
 		//Header options
 		$hideHeader    = $this->get_value( 'Header', 'hide-header', false );
-		$hideTopBar    = $this->get_value( 'Header', 'hide-top-bar', false );
 		$headerBgColor = $this->get_value( 'Header', 'header-background-color', null );
 		$headerBgImage = $this->get_value( 'Header', 'header-background-image', null );
 
@@ -144,19 +146,15 @@ class Pootle_Page_Customizer_Public {
 		if ( $hideHeader ) {
 			$css .= "display : none !important;";
 		}
-
-		$css .= "background-color : {$headerBgColor} !important;";
-
+		if ( $headerBgColor ) {
+			$css .= "background-color : {$headerBgColor} !important;";
+		}
 		if ( $headerBgImage ) {
 			$css .= "background-image : url({$headerBgImage}) !important;";
 			$css .= "background-size : cover !important;";
 		}
 		//Header styles END
 		$css .= "}\n";
-
-		if ( $hideTopBar ) {
-			$css .= ".shb-header-bar { display : none !important; }";
-		}
 
 		return $css;
 	}
@@ -179,15 +177,14 @@ class Pootle_Page_Customizer_Public {
 			        "display : none !important;\n" .
 			        "}\n";
 		}
-
 		if ( $hideTitle ) {
 			$css .= ".main_title, .entry-title {display : none !important;}\n";
 		}
-
 		if ( $hideSidebar ) {
-			$css .= "#secondary, #sidebar, .sidebar, .side-bar {display : none !important;}\n";
-			$css .= "#content, .content, .content-area { width : 100% !important;}\n";
+			$css .= "#secondary, .widget-area, #sidebar, .sidebar, .side-bar {display : none !important;}\n";
+			$css .= "#primary, #content, .content, .content-area { width : 100% !important;}\n";
 		}
+
 		return $css;
 	}
 
@@ -199,7 +196,6 @@ class Pootle_Page_Customizer_Public {
 		//Footer options
 		$hideFooter = $this->get_value( 'Footer', 'hide-footer', false );
 		$footerBgColor = $this->get_value( 'Footer', 'footer-background-color', null );
-		$hideFooterBar    = $this->get_value( 'Header', 'hide-footer-bar', false );
 
 		//Footer styles
 		$css = '.colophon, .pootle-page-customizer-active #footer, .pootle-page-customizer-active #main-footer,' .
@@ -207,15 +203,11 @@ class Pootle_Page_Customizer_Public {
 		if ( $hideFooter ) {
 			$css .= "display : none !important;";
 		}
-
-		$css .= "background-color : $footerBgColor !important;";
-
+		if ( $footerBgColor ) {
+			$css .= "background-color : $footerBgColor !important;";
+		}
 		//Footer styles END
 		$css .= "}\n";
-
-		if ( $hideFooterBar ) {
-			$css .= ".sfb-footer-bar { display : none !important; }";
-		}
 
 		return $css;
 	}

@@ -5,6 +5,8 @@
  */
 
 ( function( $ ) {
+	$( '#accordion-section-themes' ).find('.accordion-section-title').append('<a href=""></a>');
+
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {

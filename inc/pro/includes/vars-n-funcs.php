@@ -25,7 +25,7 @@
  * if not set ;)
  *
  */
-function eighteen_tags_pro_fields () {
+function eighteen_tags_pro_fields() {
 	$fields = array(
 		//Primary Nav
 		array(
@@ -1271,3 +1271,4 @@ if ( ! function_exists( 'eighteen_tags_post_thumbnail' ) ) {
 		}
 	}
 }
+

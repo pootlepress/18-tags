@@ -147,9 +147,11 @@ final class Pootle_Page_Customizer {
 	 */
 	public function __construct() {
 		$this->token       = 'pootle-page-customizer';
-		$this->plugin_url  = PRO18_URL . '/includes/page-customizer/';
+		$this->plugin_url  = plugin_dir_url( __FILE__ );
 		$this->plugin_path = plugin_dir_path( __FILE__ );
 		$this->version     = '1.0.0';
+
+		register_activation_hook( __FILE__, array( $this, 'install' ) );
 
 		add_action( 'init', array( $this, 'setup' ) );
 	}
@@ -188,7 +190,7 @@ final class Pootle_Page_Customizer {
 	 * @since 1.0.0
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'eighteen-tags' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), '1.0.0' );
 	}
 
 	/**
@@ -197,7 +199,29 @@ final class Pootle_Page_Customizer {
 	 * @since 1.0.0
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'eighteen-tags' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), '1.0.0' );
+	}
+
+	/**
+	 * Installation.
+	 * Runs on activation. Logs the version number and assigns a notice message to a WordPress option.
+	 * @access  public
+	 * @since   1.0.0
+	 * @return  void
+	 */
+	public function install() {
+		$this->_log_version_number();
+	}
+
+	/**
+	 * Log the plugin version number.
+	 * @access  private
+	 * @since   1.0.0
+	 * @return  void
+	 */
+	private function _log_version_number() {
+		// Log the version number.
+		update_option( $this->token . '-version', $this->version );
 	}
 
 	/**
@@ -207,6 +231,7 @@ final class Pootle_Page_Customizer {
 	public function setup() {
 		$this->load_plugin_textdomain();
 		$this->get_meta_fields();
+
 		new Lib_Customizer_Postmeta( $this->token, 'Page Customizer', $this->fields );
 		new Pootle_Page_Customizer_Public( $this->token );
 
@@ -225,7 +250,7 @@ final class Pootle_Page_Customizer {
 				'title' => 'Customize Page',
 				'href'  => admin_url( "customize.php?post_id={$post->ID}&autofocus[panel]=lib-pootle-page-customizer&url=" . get_permalink( $post->ID ) . "?post_id={$post->ID}" ),
 				'meta'  => array(
-					'title' => __( 'Customize this page in customizer', 'eighteen-tags' ), // Text will be shown on hovering
+					'title' => __( 'Customize this page in customizer' ), // Text will be shown on hovering
 				),
 			);
 			$admin_bar->add_menu( $args );
@@ -237,13 +262,13 @@ final class Pootle_Page_Customizer {
 	 * @since 1.0.0
 	 */
 	public function customizer_script() {
-		wp_enqueue_script( 'pppc-customize-controls', $this->plugin_url . 'assets/js/customizer.js', array( 'jquery' ), false, true );
-		wp_enqueue_style( 'pppc-customize-controls-styles', $this->plugin_url . 'assets/css/customizer.css' );
+		wp_enqueue_script( 'pppc-customize-controls', plugin_dir_url( __FILE__ ) . 'assets/js/customizer.js', array( 'jquery' ), false, true );
+		wp_enqueue_style( 'pppc-customize-controls-styles', plugin_dir_url( __FILE__ ) . 'assets/css/customizer.css' );
 	}
 
 	private function get_meta_fields() {
 		global $page_customizer_fields;
-		$this->fields = $page_customizer_fields;
+		$this->fields = apply_filters( 'storefront_page_customizer', $page_customizer_fields );
 	}
 
 } // End Class

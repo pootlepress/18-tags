@@ -53,7 +53,7 @@ require_once 'includes/class-content-styles.php';
  * Returns the main instance of Eighteen_Tags_Pro to prevent the need to use globals.
  *
  * @since  1.0.0
- * @return object Eighteen_Tags_Pro
+ * @return Eighteen_Tags_Pro Instance
  */
 function Pro_18Tags() {
 	return Eighteen_Tags_Pro::instance();

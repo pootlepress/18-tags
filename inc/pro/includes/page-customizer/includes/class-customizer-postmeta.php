@@ -1,7 +1,9 @@
 <?php
 /**
- * Eighteen tags class
- * @developer http://wpdevelopment.me <shramee@wpdevelopment.me>
+ * Created by PhpStorm.
+ * User: shramee
+ * Date: 30/9/15
+ * Time: 2:12 PM
  */
 
 class Lib_Customizer_Postmeta {
@@ -144,7 +146,7 @@ class Lib_Customizer_Postmeta {
 	public function customizer_scripts(){
 		wp_enqueue_script(
 			'ppc-custo-controls',
-			PRO18_URL . '/includes/page-customizer/assets/ppc-custo-controls.js',
+			plugin_dir_url( __FILE__ ) . '../assets/ppc-custo-controls.js',
 			array( 'jquery', 'wp-color-picker' )
 		);
 	}
@@ -159,13 +161,12 @@ class Lib_Customizer_Postmeta {
 
 		//Add settings
 		$manager->add_setting(
-			new Lib_Customize_Setting(
+			new Shramee_Post_Meta_Customize_Setting(
 				$manager,
 				$option['id'],
 				array(
 					'default' => $option['default'],
-					'type' => 'post_meta',
-					'sanitize_callback' => 'sanitize_text_field',
+					'type' => 'post_meta'
 				)
 			)
 		);
