@@ -58,6 +58,12 @@ $layout = str_replace( '-image', '', get_theme_mod( 'eighteen-tags-pro-blog-layo
 	clear: none;
 }
 
+.blog .entry-title:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
 .hentry.type-post .entry-content {
 	float: none;
 }
@@ -69,14 +75,6 @@ $layout = str_replace( '-image', '', get_theme_mod( 'eighteen-tags-pro-blog-layo
 }
 
 @media only screen and (min-width: 763px) {
-	.eighteen-tags-pro-active #primary {
-		width: 100%;
-	}
-
-	.single #content .col-full {
-		margin: auto;
-	}
-
 	.eighteen-tags-pro-active .hentry.type-post .entry-content {
 		width: 100%;
 	}

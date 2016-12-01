@@ -30,6 +30,7 @@ if ( ! function_exists( 'eighteen_tags_site_branding' ) ) {
 	 * @return void
 	 */
 	function eighteen_tags_site_branding() {
+
 		if ( get_theme_mod( 'custom_logo' ) && function_exists( 'the_custom_logo' ) ) {
 
 			the_custom_logo();

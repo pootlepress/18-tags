@@ -6,6 +6,16 @@
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+	?>
+	<style>
+		.right-sidebar .content-area,
+		.left-sidebar .content-area {
+			width: 100%;
+			float: none;
+			margin: 0;
+		}
+	</style>
+	<?php
 	return;
 }
 ?>

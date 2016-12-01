@@ -13,8 +13,47 @@
 
 get_header();
 include get_template_directory() . '/inc/styles.php';
+# region Title on top
+$layout = get_option( 'etp_post_layout' );
+if ( 'title-top' == $layout ) {
+	?>
+	<div class="col-full">
+		<?php
+		the_title( '<h1 class="entry-title" itemprop="name headline">', '</h1>' );
+		if ( ! get_theme_mod( 'eighteen-tags-pro-remove-single-post-meta' ) ) {
+			?>
+			<div class="post-meta-container">
+				<?php
+				eighteen_tags_posted_on();
+				eighteen_tags_post_meta();
+				?>
+			</div>
+			<?php
+		}
+		?>
+	</div><!-- .col-full -->
+	<?php
+}
+# endregion
 ?>
+<header class="entry-header">
+	<?php
+	if ( has_post_thumbnail( get_the_ID() ) ) {
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+		$class = "class='etp-full-width-image-bg'";
+		echo "<div $class style=\"background-image:url('$image[0]')\"></div>";
+		?>
 
+		<?php
+	} else {
+		?>
+		<div class="margin-bottom"></div>
+		<?php
+	}
+	?>
+</header><!-- .entry-header -->
+
+<div class="col-full">
 <div id="primary" class="content-area etp-awesome-layout-1">
 	<main id="main" class="site-main" role="main">
 		<?php if ( have_posts() ) :
@@ -23,8 +62,8 @@ include get_template_directory() . '/inc/styles.php';
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="" itemtype="http://schema.org/BlogPosting">
 					<?php
-					$layout = get_option( 'etp_post_layout' );
-					if ( 'title-top' == $layout ) {
+					# region title not on top
+					if ( 'title-top' != $layout ) {
 						?>
 						<div class="col-full">
 							<?php
@@ -43,42 +82,8 @@ include get_template_directory() . '/inc/styles.php';
 						</div><!-- .col-full -->
 						<?php
 					}
+					# endregion
 					?>
-					<header class="entry-header">
-						<?php
-						if ( has_post_thumbnail( get_the_ID() ) ) {
-							$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
-							$class = "class='etp-full-width-image-bg'";
-							echo "<div $class style=\"background-image:url('$image[0]')\"></div>";
-							?>
-
-							<?php
-						} else {
-							?>
-							<div class="margin-bottom"></div>
-							<?php
-						}
-						if ( 'title-top' != $layout ) {
-							?>
-							<div class="col-full">
-								<?php
-								the_title( '<h1 class="entry-title" itemprop="name headline">', '</h1>' );
-								if ( ! get_theme_mod( 'eighteen-tags-pro-remove-single-post-meta' ) ) {
-									?>
-									<div class="post-meta-container">
-										<?php
-										eighteen_tags_posted_on();
-										eighteen_tags_post_meta();
-										?>
-									</div>
-									<?php
-								}
-								?>
-							</div><!-- .col-full -->
-							<?php
-						}
-						?>
-					</header><!-- .entry-header -->
 					<div class="col-full">
 						<div class="entry-content" itemprop="articleBody">
 							<?php the_content( sprintf( __( 'Continue reading %s', 'eighteen-tags' ), get_the_title() ) ); ?>
@@ -106,5 +111,21 @@ include get_template_directory() . '/inc/styles.php';
 	</main><!-- #main -->
 </div><!-- #primary -->
 
+	<?php
+	if ( get_theme_mod( 'eighteen-tags-pro-single-keep-sidebar' ) ) {
+		do_action( 'eighteen_tags_sidebar' );
+	} else {
+		?>
+		<style>
+			@media only screen and (min-width: 763px) {
+				.eighteen-tags-pro-active #primary {
+					width: 100%;
+				}
+			}
+		</style>
+		<?php
+	}
+	?>
+</div>
 <?php
-get_footer(); ?>
+get_footer();

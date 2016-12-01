@@ -458,8 +458,20 @@ function eighteen_tags_pro_fields() {
 			'type'    => 'color',
 		),
 		array(
+			'id'      => 'single-header-color',
+			'label'   => 'Heading color',
+			'section' => 'existing_eighteen_tags_single_post',
+			'type'    => 'color',
+		),
+		array(
 			'id'      => 'remove-single-post-meta',
 			'label'   => 'Remove post meta',
+			'section' => 'existing_eighteen_tags_single_post',
+			'type'    => 'checkbox',
+		),
+		array(
+			'id'      => 'single-keep-sidebar',
+			'label'   => 'Keep sidebar',
 			'section' => 'existing_eighteen_tags_single_post',
 			'type'    => 'checkbox',
 		),

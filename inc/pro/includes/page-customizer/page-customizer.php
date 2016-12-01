@@ -147,8 +147,8 @@ final class Pootle_Page_Customizer {
 	 */
 	public function __construct() {
 		$this->token       = 'pootle-page-customizer';
-		$this->plugin_url  = plugin_dir_url( __FILE__ );
-		$this->plugin_path = plugin_dir_path( __FILE__ );
+		$this->plugin_url  = str_replace( get_template_directory(), get_template_directory_uri(), dirname( __FILE__ ) ) . '/';
+		$this->plugin_path = dirname( __FILE__ );
 		$this->version     = '1.0.0';
 
 		register_activation_hook( __FILE__, array( $this, 'install' ) );
@@ -233,7 +233,7 @@ final class Pootle_Page_Customizer {
 		$this->get_meta_fields();
 
 		new Lib_Customizer_Postmeta( $this->token, 'Page Customizer', $this->fields );
-		new Pootle_Page_Customizer_Public( $this->token );
+		new Pootle_Page_Customizer_Public( $this->token, $this->plugin_url, $this->plugin_path );
 
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'customizer_script' ) );
 		add_action( 'admin_bar_menu', array( $this, 'add_item' ), 999 );
@@ -262,8 +262,8 @@ final class Pootle_Page_Customizer {
 	 * @since 1.0.0
 	 */
 	public function customizer_script() {
-		wp_enqueue_script( 'pppc-customize-controls', plugin_dir_url( __FILE__ ) . 'assets/js/customizer.js', array( 'jquery' ), false, true );
-		wp_enqueue_style( 'pppc-customize-controls-styles', plugin_dir_url( __FILE__ ) . 'assets/css/customizer.css' );
+		wp_enqueue_script( 'pppc-customize-controls', $this->plugin_url . 'assets/js/customizer.js', array( 'jquery' ), false, true );
+		wp_enqueue_style( 'pppc-customize-controls-styles', $this->plugin_url . 'assets/css/customizer.css' );
 	}
 
 	private function get_meta_fields() {

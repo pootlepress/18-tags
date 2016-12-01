@@ -10,8 +10,10 @@ class Pootle_Page_Customizer_Public {
 	 * @since   1.0.0
 	 */
 	public function
-	__construct( $token ) {
-		$this->token = $token;
+	__construct( $token, $plugin_url, $plugin_path ) {
+		$this->token       = $token;
+		$this->plugin_url  = $plugin_url;
+		$this->plugin_path = $plugin_path;
 		add_action( 'wp_enqueue_scripts', array( $this, 'public_scripts' ) );
 		add_filter( 'body_class', array( $this, 'body_class' ) );
 	}
@@ -51,8 +53,8 @@ class Pootle_Page_Customizer_Public {
 	public function public_scripts() {
 
 		if ( ! is_single() && ! is_page() ) { return false; }
-		wp_enqueue_style( 'ppc-styles', plugins_url( '/../assets/css/style.css', __FILE__ ) );
-		wp_enqueue_script( 'page-custo-script', plugins_url( '/../assets/js/public.js', __FILE__ ) );
+		wp_enqueue_style( 'ppc-styles', $this->plugin_url . '/../assets/css/style.css' );
+		wp_enqueue_script( 'page-custo-script', $this->plugin_url . '/../assets/js/public.js' );
 
 		//Init $css
 		$css = '/* Storefront Page Customizer */';

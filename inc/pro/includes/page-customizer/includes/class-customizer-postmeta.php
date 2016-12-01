@@ -146,7 +146,7 @@ class Lib_Customizer_Postmeta {
 	public function customizer_scripts(){
 		wp_enqueue_script(
 			'ppc-custo-controls',
-			plugin_dir_url( __FILE__ ) . '../assets/ppc-custo-controls.js',
+			str_replace( get_template_directory(), get_template_directory_uri(), dirname( __FILE__ ) ) . '/../assets/ppc-custo-controls.js',
 			array( 'jquery', 'wp-color-picker' )
 		);
 	}

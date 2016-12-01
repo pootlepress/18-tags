@@ -1110,6 +1110,10 @@ a:focus {
 
 	}
 
+	.secondary-navigation .site-header-cart .cart-contents {
+		font-size: 1em;
+	}
+
 	/**
 	   * Full width & homepage template
 	   */
@@ -1683,7 +1687,6 @@ fieldset legend {
 	}
 
 	.secondary-navigation .menu {
-		font-size: .857em;
 		width: auto;
 		float: right;
 	}
@@ -1718,10 +1721,6 @@ fieldset legend {
 	.secondary-navigation .menu ul a {
 		padding: 0.326em 0.857em;
 		background: rgba(0, 0, 0, 0.05);
-	}
-
-	.secondary-navigation .menu ul li:first-child a {
-		padding-top: 1em;
 	}
 
 	.secondary-navigation .menu ul li:last-child a {
@@ -1763,12 +1762,12 @@ fieldset legend {
 }
 
 .hentry .entry-header {
-	margin-bottom: 3.631em;
+	margin-bottom: 0.52em;
 }
 
 .hentry .entry-header h1 {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-	padding-bottom: .618em;
+	padding-bottom: .25em;
 	margin-bottom: 3px;
 }
 
