@@ -12,23 +12,25 @@
 
 		$t.find( 'option' ).each( function () {
 			var $$ = $( this ),
+				Label = $$.text() || 'Default',
 				Font = $$.attr( 'value' ) || 'Default',
 				font = Font.replace( / /g, '-' ).toLowerCase(),
 				classes = 'ms-gf-' + font;
 			if ( $$.prop( 'selected' ) ) {
 				classes += ' active'
 			}
-			$div.append( $( '<span/>' ).data( 'font', Font ).addClass( classes ).text( Font ) );
+			$div.append( $( '<span/>' ).data( 'font', Font ).addClass( classes ).html( '<i style=\'font-family:' + Font + '\'>' + Label + '</i>' ) );
 		} );
 		$t.after( $( '<div />' ).addClass( 'ms-google-fonts-wrap' ).append( $div ) );
 		$t.hide();
 		$div = $t.siblings( '.ms-google-fonts-wrap' ).children( '.ms-google-fonts' );
 		$div.show();
 		$div.find( 'span' ).click( function () {
-			var $$ = $( this );
+			var $$ = $( this ),
+				$select = $$.closest('.ms-google-fonts-wrap').prev('select');
 			$$.siblings().removeClass( 'active' );
 			$$.addClass( 'active' );
-			$t.val( $$.data( 'font' ) ).change();
+			$select.val( $$.data( 'font' ) ).change();
 		} );
 
 		var $active_field = $t.siblings( 'div.ms-google-fonts' ).find( '.active' );

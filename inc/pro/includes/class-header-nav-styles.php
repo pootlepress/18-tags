@@ -50,17 +50,17 @@ class Eighteen_Tags_Pro_Header_Nav extends Eighteen_Tags_Pro_Primary_Navigation 
 	 */
 	public function title_tagline() {
 		$t   = &$this;
-		$css = &$t->css;
+		$css = &$t->css . '/* Title tagline styles */';
 
-		$font = $t->get( 'site-title-font-size' ) ? 'font-size:' . ( 2.5 * $t->get( 'site-title-font-size' ) ) . 'px;}' : '';
+		$font = $t->get( 'site-title-font-size' ) ? 'font-size:' . ( 2.5 * $t->get( 'site-title-font-size' ) ) . 'px;' : '';
 
-		$css .= '.eighteen-tags-pro-active .site-branding .site-title a {' .
+		$css .= '.eighteen-tags-pro-active .site-branding .site-title, .eighteen-tags-pro-active .site-branding .site-title a {' .
 		        'font-family:' . $t->get( 'site-title-font' ) . ';' .
 		        'color:' . $t->get( 'site-title-color' ) . ';' .
 		        $t->font_style( $t->get( 'site-title-font-style' ) ) .
 		        $font . '}';
 
-		$font = $t->get( 'site-tagline-font-size' ) ? 'font-size:' . ( 1.6 * $t->get( 'site-tagline-font-size' ) ) . 'px;}' : '';
+		$font = $t->get( 'site-tagline-font-size' ) ? 'font-size:' . ( 1.6 * $t->get( 'site-tagline-font-size' ) ) . 'px;' : '';
 
 		$css .= '.eighteen-tags-pro-active .site-branding .site-description {' .
 		        'font-family:' . $t->get( 'site-tagline-font' ) . ';' .

@@ -20,11 +20,21 @@
 	height: 30px;
 	padding: 5px 10px;
 	text-indent: -9999px;
+	font-size: 20px;
 	background-repeat: no-repeat;
 	background-image: url(../img/all-fonts.png);
 	margin-bottom: 0;
 	cursor: pointer;
 	border-bottom: none;
+}
+
+.ms-google-fonts span[class*=','] {
+	background-image: none;
+	text-indent: 0;
+}
+
+.ms-google-fonts span i {
+	font-style: normal;
 }
 
 .ms-google-fonts span:hover {
@@ -39,7 +49,6 @@
 	right: 0;
 	border-bottom: 1px solid #dfdfdf;
 }
-
 .ms-gf-abel { background-position: 0 -40px; }
 .ms-gf-amatic-sc { background-position: 0 -80px; }
 .ms-gf-arimo { background-position: 0 -120px; }

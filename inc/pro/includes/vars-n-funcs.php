@@ -795,6 +795,20 @@ function eighteen_tags_remove_wc_fields ( $fields ) {
 }
 
 $google_18t_fonts = array(
+	'Georgia, serif'										=> 'Georgia',
+	'"Palatino Linotype", "Book Antiqua", Palatino, serif'	=> 'Palatino Linotype',
+	'"Times New Roman", Times, serif'						=> 'Times New Roman',
+	'Arial, Helvetica, sans-serif'							=> 'Arial',
+	'"Arial Black", Gadget, sans-serif'						=> 'Arial Black',
+	'"Comic Sans MS", cursive, sans-serif'					=> 'Comic Sans MS',
+	'Impact, Charcoal, sans-serif'							=> 'Impact',
+	'"Lucida Sans Unicode", "Lucida Grande", sans-serif'	=> 'Lucida Sans Unicode',
+	'Tahoma, Geneva, sans-serif'							=> 'Tahoma',
+	'"Trebuchet MS", Helvetica, sans-serif'					=> 'Trebuchet MS',
+	'Verdana, Geneva, sans-serif'							=> 'Verdana',
+	'"Courier New", Courier, monospace'						=> 'Courier New',
+	'"Lucida Console", Monaco, monospace'					=> 'Lucida Console',
+	
 	'Abel' => array(
 		'styles' 		=> '400',
 		'character_set' => 'latin',
