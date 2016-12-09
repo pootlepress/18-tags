@@ -6,14 +6,14 @@
 
 
 /**
- * Eighteen_Tags_Pro_Admin Class
+ * Eighteen_Tags_Admin Class
  *
- * @class Eighteen_Tags_Pro_Admin
+ * @class Eighteen_Tags_Admin
  * @version	1.0.0
  * @since 1.0.0
- * @package	Eighteen_Tags_Pro
+ * @package	Eighteen_Tags
  */
-final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
+final class Eighteen_Tags_Admin extends Eighteen_Tags_Abstract {
 
 	/**
 	 * The customizer control render object.
@@ -35,7 +35,7 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 		//Enqueue scripts and styles
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ), 999 );
 		//Customizer fields renderer
-		$this->customizer = new Eighteen_Tags_Pro_Customizer_Fields( $this->token, $this->plugin_path, $this->plugin_url );
+		$this->customizer = new Eighteen_Tags_Customizer_Fields( $this->token, $this->plugin_path, $this->plugin_url );
 		//Customize register
 		add_action( $this->token . '-sections-filter-args', array( $this, 'filter_sections' ) );
 		//Customize register
@@ -54,7 +54,11 @@ final class Eighteen_Tags_Pro_Admin extends Eighteen_Tags_Pro_Abstract {
 	}
 
 	protected function is_selective_refresh_field( $f ) {
-		return in_array( $f['type'], array( 'color', 'alpha-color', ) );
+		return apply_filters(
+			'18tags_is_selective_refresh',
+			in_array( $f['type'], array( 'color', 'alpha-color', ) ), // All color fields should use selective refresh
+			$f
+		);
 	}
 
 	public function filter_fields( $fields ) {

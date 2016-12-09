@@ -2,14 +2,14 @@
 require_once 'class-primary-nav-styles.php';
 
 /**
- * Eighteen_Tags_Pro_Header_Nav Class
+ * Eighteen_Tags_Header_Nav Class
  *
- * @class Eighteen_Tags_Pro_Header_Nav
+ * @class Eighteen_Tags_Header_Nav
  * @version	1.0.0
  * @since 1.0.0
- * @package	Eighteen_Tags_Pro
+ * @package	Eighteen_Tags
  */
-class Eighteen_Tags_Pro_Header_Nav extends Eighteen_Tags_Pro_Primary_Navigation {
+class Eighteen_Tags_Header_Nav extends Eighteen_Tags_Primary_Navigation {
 
 	protected $css = '';
 	protected $logo_url;
@@ -193,7 +193,7 @@ class Eighteen_Tags_Pro_Header_Nav extends Eighteen_Tags_Pro_Primary_Navigation 
 	}
 
 	public function mobile_nav() {
-		$css = &Eighteen_Tags_Pro_Public::$mobile_css;
+		$css = &Eighteen_Tags_Public::$mobile_css;
 		if ( $this->get( 'mob-hide-logo' ) ) {
 			$css .= '.site-header .site-logo-anchor, .site-header .custom-logo-link { display: none; }';
 		}

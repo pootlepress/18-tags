@@ -1,13 +1,13 @@
 <?php
 /**
- * Eighteen_Tags_Pro_Footer_Styles Class
+ * Eighteen_Tags_Footer_Styles Class
  *
- * @class Eighteen_Tags_Pro_Footer_Styles
+ * @class Eighteen_Tags_Footer_Styles
  * @version	1.0.0
  * @since 1.0.0
- * @package	Eighteen_Tags_Pro
+ * @package	Eighteen_Tags
  */
-class Eighteen_Tags_Pro_Content_Styles extends Eighteen_Tags_Pro_Abstract {
+class Eighteen_Tags_Content_Styles extends Eighteen_Tags_Abstract {
 
 	protected $css = "\n/*Main Content Styles*/";
 

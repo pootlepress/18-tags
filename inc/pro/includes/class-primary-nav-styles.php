@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Eighteen_Tags_Pro_Primary_Navigation Class
+ * Eighteen_Tags_Primary_Navigation Class
  *
- * @class Eighteen_Tags_Pro_Primary_Navigation
+ * @class Eighteen_Tags_Primary_Navigation
  * @version    1.0.0
  * @since 1.0.0
- * @package    Eighteen_Tags_Pro
+ * @package    Eighteen_Tags
  */
-class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
+class Eighteen_Tags_Primary_Navigation extends Eighteen_Tags_Abstract {
 
 	protected $css = '';
 
@@ -22,7 +22,7 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 	 * Adds a class based on the extension name and any relevant settings.
 	 */
 	public function primary_nav_style( $style ) {
-		$css = &Eighteen_Tags_Pro_Public::$desktop_css;
+		$css = &Eighteen_Tags_Public::$desktop_css;
 		switch ( $style ) {
 			case 'right':
 				remove_action( 'eighteen_tags_header', 'eighteen_tags_primary_navigation', 50 );
@@ -55,7 +55,7 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 	 * Adds a class based on the extension name and any relevant settings.
 	 */
 	public function heights() {
-		$css = &Eighteen_Tags_Pro_Public::$desktop_css;
+		$css = &Eighteen_Tags_Public::$desktop_css;
 		$pad = $this->get( 'pri-nav-height' );
 		$pad = is_numeric( $pad ) ? $pad : 1.3;
 
@@ -78,7 +78,7 @@ class Eighteen_Tags_Pro_Primary_Navigation extends Eighteen_Tags_Pro_Abstract {
 	 */
 	public function primary_nav_typo() {
 		$t   = &$this;
-		$css = &Eighteen_Tags_Pro_Public::$desktop_css;
+		$css = &Eighteen_Tags_Public::$desktop_css;
 		$css .= '#site-navigation {' .
 		        'background-color:' . $t->get( 'pri-nav-bg-color' ) . ';' .
 		        '}';

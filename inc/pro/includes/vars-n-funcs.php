@@ -21,7 +21,7 @@
  * sf- prefixed controls are arbitrary eighteen-tags controls
  *
  * NOTE : sf-text control doesn't show anything if description is not set but
- * in Eighteen_Tags_Pro_Customizer_Fields class we assign it to label
+ * in Eighteen_Tags_Customizer_Fields class we assign it to label
  * if not set ;)
  *
  */
@@ -303,6 +303,13 @@ function eighteen_tags_pro_fields() {
 		),
 		//Header Elements
 		array(
+			'id'      => 'header-bg-color',
+			'label'   => 'Header Background Color',
+			'section' => 'existing_header_image',
+			'type'    => 'alpha-color',
+			'default' => apply_filters( 'eighteen_tags_default_header_background_color', '#ffffff' ),
+		),
+		array(
 			'id'          => 'logo-max-height',
 			'label'       => 'Logo max height',
 			'section'     => 'existing_header_image',
@@ -396,13 +403,7 @@ function eighteen_tags_pro_fields() {
 			'label'   => 'Make sticky?',
 			'section' => 'existing_header_image',
 			'type'    => 'checkbox',
-		),
-		array(
-			'id'      => 'header-bg-color',
-			'label'   => 'Header Background Color',
-			'section' => 'existing_header_image',
-			'type'    => 'alpha-color',
-			'default' => apply_filters( 'eighteen_tags_default_header_background_color', '#ffffff' ),
+			'priority' => 99,
 		),
 		//Content
 		array(
@@ -764,12 +765,22 @@ function eighteen_tags_pro_fields() {
 		),
 	);
 
+	$fd = array();
+	$sec = array();
+	$i = 0;
+
+	foreach ( $fields as $f ) {
+		$sec[ $f['section'] ] = empty( $sec[ $f['section'] ] ) ? 1 : $sec[ $f['section'] ]++;
+		$f['prio']
+		$fd[ $f['id'] ] = $f;
+	}
+
 	return apply_filters( 'eighteen_tags_pro_fields', $fields );
 }
 
-add_filter( 'eighteen_tags_pro_fields', 'eighteen_tags_remove_wc_fields' );
+add_filter( 'eighteen_tags_pro_fields', 'eighteen_tags_add_wc_fields' );
 
-function eighteen_tags_remove_wc_fields ( $fields ) {
+function eighteen_tags_add_wc_fields ( $fields ) {
 	if ( class_exists( 'WooCommerce' ) ) {
 		$fields[] = array(
 			'id'      => 'header-wc-cart',
@@ -1298,3 +1309,45 @@ if ( ! function_exists( 'eighteen_tags_post_thumbnail' ) ) {
 	}
 }
 
+/**
+ * Gets the theme mod for customizer fields
+ *
+ * @param string $id
+ * @param mixed $default
+ * @return mixed Setting value
+ */
+function get_18tags_mod( $id, $default = null ){
+	return get_theme_mod( Eighteen_Tags::instance()->token . '-' . $id, $default );
+}
+
+/**
+ * @param string $value Value to font style option
+ * @return string CSS for font style
+ */
+function eighteen_tags_font_style( $value ) {
+	$s = explode( ',', $value );
+	$css = '';
+	if ( in_array( 'bold', $s ) ) {
+		$css .= 'font-weight: bold;';
+	} else {
+		$css .= 'font-weight: normal;';
+	}
+	if ( in_array( 'italic', $s ) ) {
+		$css .= 'font-style: italic;';
+	} else {
+		$css .= 'font-style: normal;';
+	}
+	if ( in_array( 'underline', $s ) ) {
+		$css .= 'text-decoration: underline;';
+	} else {
+		$css .= 'text-decoration: none;';
+	}
+	if ( in_array( 'uppercase', $s ) ) {
+		$css .= 'text-transform: uppercase;';
+	} else {
+		$css .= 'text-transform: none;';
+	}
+
+	return $css;
+
+}

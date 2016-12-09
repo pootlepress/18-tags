@@ -56,7 +56,7 @@ $posts_array = array();
 				?>
 			</header><!-- .entry-header -->
 			<div class="entry-content" itemprop="articleBody">
-				<?php Eighteen_Tags_Pro::instance()->public->content_styles->blog_content(); ?>
+				<?php Eighteen_Tags::instance()->public->content_styles->blog_content(); ?>
 			</div><!-- .entry-content -->
 
 		</article><!-- #post-## -->
@@ -84,7 +84,7 @@ $posts_array = array();
 	</main><!-- #main -->
 </div><!-- #primary -->
 <?php
-if ( Eighteen_Tags_Pro::instance()->public->get( 'blog-show-sidebar' ) ) {
+if ( Eighteen_Tags::instance()->public->get( 'blog-show-sidebar' ) ) {
 	get_sidebar();
 	?>
 	<style>

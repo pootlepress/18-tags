@@ -1,13 +1,13 @@
 <?php
 /**
- * Eighteen_Tags_Pro_Footer_Styles Class
+ * Eighteen_Tags_Footer_Styles Class
  *
- * @class Eighteen_Tags_Pro_Footer_Styles
+ * @class Eighteen_Tags_Footer_Styles
  * @version	1.0.0
  * @since 1.0.0
- * @package	Eighteen_Tags_Pro
+ * @package	Eighteen_Tags
  */
-class Eighteen_Tags_Pro_Footer_Styles extends Eighteen_Tags_Pro_Abstract {
+class Eighteen_Tags_Footer_Styles extends Eighteen_Tags_Abstract {
 
 	protected $css = "\n/* Footer Styles */";
 
@@ -83,7 +83,7 @@ class Eighteen_Tags_Pro_Footer_Styles extends Eighteen_Tags_Pro_Abstract {
 
 	protected function layout() {
 		$t = &$this;
-		$css = &Eighteen_Tags_Pro_Public::$desktop_css;
+		$css = &Eighteen_Tags_Public::$desktop_css;
 		$layout = $t->get( 'typo-footer-layout' );
 		$class_prefix = '.footer-widget-';
 		$selector_prefix = '.eighteen-tags-pro-active .footer-widgets ';

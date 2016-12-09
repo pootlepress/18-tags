@@ -12,7 +12,7 @@
  * Text Domain: eighteen-tags-pro
  * Domain Path: /languages/
  *
- * @package Eighteen_Tags_Pro
+ * @package Eighteen_Tags
  * @category Core
  * @author Shramee Srivastav <shramee.srivastav@gmail.com>
  */
@@ -50,29 +50,29 @@ require_once 'includes/class-footer-styles.php';
 require_once 'includes/class-content-styles.php';
 
 /**
- * Returns the main instance of Eighteen_Tags_Pro to prevent the need to use globals.
+ * Returns the main instance of Eighteen_Tags to prevent the need to use globals.
  *
  * @since  1.0.0
- * @return Eighteen_Tags_Pro Instance
+ * @return Eighteen_Tags Instance
  */
 function Pro_18Tags() {
-	return Eighteen_Tags_Pro::instance();
+	return Eighteen_Tags::instance();
 } // End Pro_18Tags()
 
 Pro_18Tags();
 
 /**
- * Main Eighteen_Tags_Pro Class
+ * Main Eighteen_Tags Class
  *
- * @class Eighteen_Tags_Pro
+ * @class Eighteen_Tags
  * @version	1.0.0
  * @since 1.0.0
- * @package	Eighteen_Tags_Pro
+ * @package	Eighteen_Tags
  * @author Shramee Srivastav <shramee.srivastav@gmail.com>
  */
-final class Eighteen_Tags_Pro {
+final class Eighteen_Tags {
 	/**
-	 * Eighteen_Tags_Pro The single instance of Eighteen_Tags_Pro.
+	 * Eighteen_Tags The single instance of Eighteen_Tags.
 	 * @var 	object
 	 * @access  private
 	 * @since 	1.0.0
@@ -99,7 +99,7 @@ final class Eighteen_Tags_Pro {
 
 	/**
 	 * The admin object.
-	 * @var     Eighteen_Tags_Pro_Admin
+	 * @var     Eighteen_Tags_Admin
 	 * @access  public
 	 * @since   1.0.0
 	 */
@@ -107,7 +107,7 @@ final class Eighteen_Tags_Pro {
 
 	/**
 	 * The public object.
-	 * @var     Eighteen_Tags_Pro_Public
+	 * @var     Eighteen_Tags_Public
 	 * @access  public
 	 * @since   1.0.0
 	 */
@@ -138,10 +138,10 @@ final class Eighteen_Tags_Pro {
 	 */
 	public function setup() {
 		//Setting admin object
-		$this->admin = new Eighteen_Tags_Pro_Admin( $this->token, $this->plugin_path, $this->plugin_url );
+		$this->admin = new Eighteen_Tags_Admin( $this->token, $this->plugin_path, $this->plugin_url );
 
 		//Setting public object
-		$this->public = new Eighteen_Tags_Pro_Public( $this->token, $this->plugin_path, $this->plugin_url );
+		$this->public = new Eighteen_Tags_Public( $this->token, $this->plugin_path, $this->plugin_url );
 	}
 
 	/**
@@ -164,14 +164,14 @@ final class Eighteen_Tags_Pro {
 	}
 
 	/**
-	 * Main Eighteen_Tags_Pro Instance
+	 * Main Eighteen_Tags Instance
 	 *
-	 * Ensures only one instance of Eighteen_Tags_Pro is loaded or can be loaded.
+	 * Ensures only one instance of Eighteen_Tags is loaded or can be loaded.
 	 *
 	 * @since 1.0.0
 	 * @static
-	 * @see Eighteen_Tags_Pro()
-	 * @return Eighteen_Tags_Pro instance
+	 * @see Eighteen_Tags()
+	 * @return Eighteen_Tags instance
 	 */
 	public static function instance() {
 		if ( is_null( self::$_instance ) )

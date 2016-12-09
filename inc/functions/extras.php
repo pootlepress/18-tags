@@ -43,17 +43,6 @@ function eighteen_tags_body_classes( $classes ) {
 		$classes[]	= 'no-wc-breadcrumb';
 	}
 
-	/**
-	 * What is this?!
-	 * Take the blue pill, close this file and forget you saw the following code.
-	 * Or take the red pill, filter eighteen_tags_make_me_cute and see how deep the rabbit hole goes...
-	 */
-	$cute	= apply_filters( 'eighteen_tags_make_me_cute', false );
-
-	if ( true === $cute ) {
-		$classes[] = 'eighteen-tags-cute';
-	}
-
 	return $classes;
 }
 

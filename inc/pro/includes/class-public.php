@@ -6,27 +6,27 @@
 
 
 /**
- * Eighteen_Tags_Pro_Public Class
+ * Eighteen_Tags_Public Class
  *
- * @class Eighteen_Tags_Pro_Public
+ * @class Eighteen_Tags_Public
  * @version	1.0.0
  * @since 1.0.0
- * @package	Eighteen_Tags_Pro
+ * @package	Eighteen_Tags
  */
-final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
+final class Eighteen_Tags_Public extends Eighteen_Tags_Abstract {
 
 	public static $desktop_css = '';
 
 	public static $mobile_css = '';
 
 
-	/** @var Eighteen_Tags_Pro_Header_Nav Instance */
+	/** @var Eighteen_Tags_Header_Nav Instance */
 	public $header_nav_styles;
 
-	/** @var Eighteen_Tags_Pro_Content_Styles Instance */
+	/** @var Eighteen_Tags_Content_Styles Instance */
 	public $content_styles;
 
-	/** @var Eighteen_Tags_Pro_Footer_Styles Instance */
+	/** @var Eighteen_Tags_Footer_Styles Instance */
 	public $footer_styles;
 
 	protected $header;
@@ -56,9 +56,9 @@ final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
 		add_filter( 'siteorigin_panels_render', array( $this, 'page_builder_styles' ) );
 		add_filter( 'siteorigin_panels_render', array( $this, 'page_builder_styles' ) );
 
-		$this->header_nav_styles = new Eighteen_Tags_Pro_Header_Nav( $this->token, $this->plugin_path, $this->plugin_url );
-		$this->content_styles = new Eighteen_Tags_Pro_Content_Styles( $this->token, $this->plugin_path, $this->plugin_url );
-		$this->footer_styles = new Eighteen_Tags_Pro_Footer_Styles( $this->token, $this->plugin_path, $this->plugin_url );
+		$this->header_nav_styles = new Eighteen_Tags_Header_Nav( $this->token, $this->plugin_path, $this->plugin_url );
+		$this->content_styles = new Eighteen_Tags_Content_Styles( $this->token, $this->plugin_path, $this->plugin_url );
+		$this->footer_styles = new Eighteen_Tags_Footer_Styles( $this->token, $this->plugin_path, $this->plugin_url );
 
 	}
 
@@ -96,6 +96,9 @@ final class Eighteen_Tags_Pro_Public extends Eighteen_Tags_Pro_Abstract {
 	}
 
 	public function generate_css() {
+
+		do_action( 'eighteen_tags_before_generate_css' );
+
 		$css = "/*-----STOREFRONT PRO-----*/";
 
 		$css .= $this->header_nav_styles->styles();

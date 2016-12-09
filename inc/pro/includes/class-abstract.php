@@ -5,15 +5,15 @@
  */
 
 /**
- * Eighteen_Tags_Pro_Abstract
+ * Eighteen_Tags_Abstract
  * All classes except main extend this
  *
- * @class Eighteen_Tags_Pro_Abstract
+ * @class Eighteen_Tags_Abstract
  * @version	1.0.0
  * @since 1.0.0
- * @package	Eighteen_Tags_Pro
+ * @package	Eighteen_Tags
  */
-abstract class Eighteen_Tags_Pro_Abstract {
+abstract class Eighteen_Tags_Abstract {
 
 	/**
 	 * The token.
@@ -76,35 +76,11 @@ abstract class Eighteen_Tags_Pro_Abstract {
 	/**
 	 * Gets the theme mod for customizer fields
 	 *
-	 * @param string $id
-	 * @param string $default
+	 * @param string $value Font style option value
 	 * @return string Setting value
 	 */
-	public function font_style( $style ){
-		$s = explode( ',', $style );
-		$css = '';
-		if ( in_array( 'bold', $s ) ) {
-			$css .= 'font-weight: bold;';
-		} else {
-			$css .= 'font-weight: normal;';
-		}
-		if ( in_array( 'italic', $s ) ) {
-			$css .= 'font-style: italic;';
-		} else {
-			$css .= 'font-style: normal;';
-		}
-		if ( in_array( 'underline', $s ) ) {
-			$css .= 'text-decoration: underline;';
-		} else {
-			$css .= 'text-decoration: none;';
-		}
-		if ( in_array( 'uppercase', $s ) ) {
-			$css .= 'text-transform: uppercase;';
-		} else {
-			$css .= 'text-transform: none;';
-		}
-
-		return $css;
+	public function font_style( $value ){
+		eighteen_tags_font_style( $value );
 	}
 
 	/**

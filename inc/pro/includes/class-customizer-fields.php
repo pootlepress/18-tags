@@ -20,7 +20,7 @@
  * @subpackage Cover_Pages/admin
  * @author     Your Name <email@example.com>
  */
-final class Eighteen_Tags_Pro_Customizer_Fields extends Eighteen_Tags_Pro_Abstract {
+final class Eighteen_Tags_Customizer_Fields extends Eighteen_Tags_Abstract {
 	/**
 	 * Initialize the class and set its properties.
 	 * @since    1.0.0
