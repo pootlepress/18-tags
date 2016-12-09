@@ -764,17 +764,17 @@ function eighteen_tags_pro_fields() {
 			'default' => '#ffffff',
 		),
 	);
-
+/* @TODO prioritize fields with key as id
 	$fd = array();
 	$sec = array();
 	$i = 0;
 
 	foreach ( $fields as $f ) {
 		$sec[ $f['section'] ] = empty( $sec[ $f['section'] ] ) ? 1 : $sec[ $f['section'] ]++;
-		$f['prio']
+		$f['priority'] = ''; //@TODO CALCULATE PRIORITY
 		$fd[ $f['id'] ] = $f;
 	}
-
+*/
 	return apply_filters( 'eighteen_tags_pro_fields', $fields );
 }
 
