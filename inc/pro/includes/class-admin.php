@@ -63,6 +63,7 @@ final class Eighteen_Tags_Admin extends Eighteen_Tags_Abstract {
 
 	public function filter_fields( $fields ) {
 		foreach ( $fields as $id => $f ) {
+			$f['id'] = $id;
 			if ( $this->is_selective_refresh_field( $f ) ) {
 				$fields[ $id ][ 'transport' ] = 'postMessage';
 			}
@@ -85,9 +86,10 @@ final class Eighteen_Tags_Admin extends Eighteen_Tags_Abstract {
 
 		$sel_ref_options = array();
 
-		foreach ( $fields as $f ) {
+		foreach ( $fields as $id => $f ) {
+			$f['id'] = $id;
 			if ( $this->is_selective_refresh_field( $f ) ) {
-				$id = "$this->token-$f[id]";
+				$id = "$this->token-$id";
 				$sel_ref_options[] = $id;
 				$wp_customize->get_setting( $id )->transport = 'postMessage';
 			}
@@ -116,12 +118,11 @@ final class Eighteen_Tags_Admin extends Eighteen_Tags_Abstract {
 	 * Resets all Eighteen tags pro options
 	 * @action wp_ajax_eighteen_tags_pro_reset
 	 */
-	public function reset_all( $data ){
+	public function reset_all(){
 		$redirect = filter_input( INPUT_GET, 'redirect' );
 		if ( $redirect ) {
 			$fields = eighteen_tags_pro_fields();
-			foreach ( $fields as $f ) {
-				$id = $f['id'];
+			foreach ( $fields as $id => $f ) {
 				remove_theme_mod( "{$this->token}-{$id}" );
 			}
 			$this->add_notice( '<p>All Eighteen tags pro options have been successfully reset.</p>' );

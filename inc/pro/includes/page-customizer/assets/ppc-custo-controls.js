@@ -11,6 +11,7 @@ jQuery(function($, undef){
 
 			picker.val( control.setting() ).libColorPicker({
 				change: function() {
+					console.log( control );
 					control.setting.set( picker.libColorPicker('color') );
 				},
 				clear: function() {

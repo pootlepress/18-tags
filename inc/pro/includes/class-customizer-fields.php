@@ -58,7 +58,8 @@ final class Eighteen_Tags_Customizer_Fields extends Eighteen_Tags_Abstract {
 		$fields = eighteen_tags_pro_fields();
 
 		$sections = array();
-		foreach ( $fields as $f ) {
+		foreach ( $fields as $id => $f ) {
+			$f['id'] = $id;
 			$sections[ $f['section'] ][] = $f;
 		}
 
@@ -98,7 +99,7 @@ final class Eighteen_Tags_Customizer_Fields extends Eighteen_Tags_Abstract {
 				$sec = str_replace( 'existing_', '', $Sec );
 			}
 
-			foreach ( $fields as $f ) {
+			foreach ( $fields as $id => $f ) {
 				$this->setting_and_control( $wp_customize, $f, $sec );
 			}
 		}

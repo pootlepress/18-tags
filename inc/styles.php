@@ -8,7 +8,8 @@ $layout = str_replace( '-image', '', get_theme_mod( 'eighteen-tags-pro-blog-layo
 }
 
 
-.eighteen-tags-pro-active.single #content > .col-full {
+.eighteen-tags-pro-active.single #content > .col-full,
+.eighteen-tags-pro-active.single #content > .jscroll-inner > .col-full {
 	margin: 0;
 	max-width: none;
 }

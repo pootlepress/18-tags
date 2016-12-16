@@ -6,8 +6,6 @@ jQuery( document ).ready( function ($) {
 		stickyNavTop = $t.offset().top,
 		$tHi = $t.outerHeight() + parseInt( $t.css( 'margin-bottom' ) );
 
-	console.log( $t.outerHeight() + ' + ' + $t.css( 'margin-bottom' ) + ' = ' + $tHi );
-
 	var stickyNav = function () {
 		var scrollTop = $( window ).scrollTop();
 
