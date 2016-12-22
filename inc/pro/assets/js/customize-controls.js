@@ -118,5 +118,18 @@
 		$boxed_layout.change( show_hide_boxed_layout_options );
 		show_hide_boxed_layout_options();
 
+		$( '.button.change-theme' )
+			.after(
+				$( '<a href="http://pootlepress.com/18-tags-pro" class="upgrade-to-18tagspro">Upgrade to PRO</a>' )
+					.css( {
+						position: 'static', textDecoration: 'none', padding: '5px 11px',
+						background: '#ef4832', color: '#fff',
+					} )
+			)
+			.after(
+				$( '<div/>' ).css( {
+					padding: 5
+				} )
+			);
 	} );
 })( wp, jQuery );

@@ -7,12 +7,12 @@
 .ms-google-fonts {
 	height: 0;
 	overflow: auto;
-	transition: height .5s .5s;
+	transition: height .25s;
 }
 
-.ms-google-fonts-wrap:hover .ms-google-fonts {
+.ms-google-fonts-wrap.ms-google-fonts-open .ms-google-fonts {
 	height: 280px;
-	transition: height .5s;
+	transition: height .25s;
 }
 
 .ms-google-fonts span {

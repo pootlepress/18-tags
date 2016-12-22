@@ -253,7 +253,7 @@ final class Eighteen_Tags_Admin extends Eighteen_Tags_Abstract {
 		) );
 
 		$man->add_panel( 'etp-blog', array(
-			'title' => 'Blog',
+			'title' => 'Posts',
 			'priority' => 30,
 		) );
 

@@ -540,40 +540,11 @@ function eighteen_tags_pro_fields() {
 				'type'     => 'checkbox',
 				'priority' => 55,
 			),
-			'typo-body-font'               => array(
-				'label'    => 'Body font',
-				'section'  => 'existing_eighteen_tags_typography',
-				'type'     => 'font',
-				'priority' => 10,
-			),
-			'typo-body-font-size'          => array(
-				'label'       => 'Body text size',
-				'section'     => 'existing_eighteen_tags_typography',
-				'type'        => 'range',
-				'input_attrs' => array(
-					'min'  => 5,
-					'max'  => 25,
-					'step' => 1,
-				),
-				'default'     => 15,
-				'priority'    => 15,
-			),
-			'typo-body-line-height'        => array(
-				'label'       => 'Body line height',
-				'section'     => 'existing_eighteen_tags_typography',
-				'type'        => 'range',
-				'input_attrs' => array(
-					'min'  => 0.5,
-					'max'  => 2.5,
-					'step' => '0.1',
-				),
-				'priority'    => 20,
-			),
 			'typo-header-font'             => array(
 				'label'    => 'Heading font',
 				'section'  => 'existing_eighteen_tags_typography',
 				'type'     => 'font',
-				'priority' => 25,
+				'priority' => 5,
 			),
 			'typo-header-font-size'        => array(
 				'label'       => 'Heading text size',
@@ -584,7 +555,7 @@ function eighteen_tags_pro_fields() {
 					'max'  => 25,
 					'step' => 1,
 				),
-				'priority'    => 30,
+				'priority'    => 10,
 			),
 			'typo-header-letter-spacing'   => array(
 				'label'       => 'Heading letter spacing',
@@ -595,7 +566,7 @@ function eighteen_tags_pro_fields() {
 					'max'  => 10,
 					'step' => 1,
 				),
-				'priority'    => 35,
+				'priority'    => 15,
 			),
 			'typo-header-line-height'      => array(
 				'label'       => 'Heading line height',
@@ -606,7 +577,7 @@ function eighteen_tags_pro_fields() {
 					'max'  => 2.5,
 					'step' => '0.1',
 				),
-				'priority'    => 40,
+				'priority'    => 20,
 			),
 			'typo-header-font-style'       => array(
 				'label'    => 'Heading font style',
@@ -618,7 +589,37 @@ function eighteen_tags_pro_fields() {
 					'underline' => 'Underline',
 					'uppercase' => 'Uppercase',
 				),
-				'priority' => 45,
+				'priority' => 25,
+			),
+
+			'typo-body-font'               => array(
+				'label'    => 'Body text font',
+				'section'  => 'existing_eighteen_tags_typography',
+				'type'     => 'font',
+				'priority' => 30,
+			),
+			'typo-body-font-size'          => array(
+				'label'       => 'Body text size',
+				'section'     => 'existing_eighteen_tags_typography',
+				'type'        => 'range',
+				'input_attrs' => array(
+					'min'  => 5,
+					'max'  => 25,
+					'step' => 1,
+				),
+				'default'     => 15,
+				'priority'    => 35,
+			),
+			'typo-body-line-height'        => array(
+				'label'       => 'Body text line height',
+				'section'     => 'existing_eighteen_tags_typography',
+				'type'        => 'range',
+				'input_attrs' => array(
+					'min'  => 0.5,
+					'max'  => 2.5,
+					'step' => '0.1',
+				),
+				'priority'    => 40,
 			),
 			'typo-footer-layout'           => array(
 				'label'    => 'Footer layout',
@@ -1321,3 +1322,6 @@ function eighteen_tags_font_style( $value ) {
 	return $css;
 
 }
+
+
+//PHP code:
