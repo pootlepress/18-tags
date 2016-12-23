@@ -62,6 +62,26 @@
 	} );
 	api.controlConstructor['range'] = api.etp_range;
 
+	api.etp_font = api.Control.extend( {
+		ready : function () {
+			var control = this,
+				container = control.container;
+			container.find( 'input[type="range"]' )
+			         .css('vertical-align', 'middle')
+			         .after( $( ' <span class="dashicons dashicons-update"></span>' ) );
+			container.find( '.dashicons' )
+			         .css('vertical-align', 'middle')
+			         .click( function () {
+				         var $t = $( this ),
+					         $input = $t.siblings( 'input' );
+				         $input
+					         .val( '0' );
+				         control.setting.set( false );
+			         } );
+		}
+	} );
+	api.controlConstructor['font'] = api.etp_font;
+
 	$( document ).ready( function () {
 
 		var $menu_style = $( '[data-customize-setting-link="eighteen-tags-pro-nav-style"]' ),

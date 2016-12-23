@@ -191,7 +191,7 @@ final class Eighteen_Tags_Customizer_Fields extends Eighteen_Tags_Abstract {
 		} else if ( 'font' == $args['type'] ) {
 			$field_class = 'PRO18_Custom_Customize_Control';
 			$this->google_font_fields[] = $args['id'];
-			$args['choices']            = $this->get_fonts();
+			$args['choices']            = array_merge( array( '' => 'Default' ), $this->get_fonts() );
 		} else {
 			$this->find_control_class( $type, $field_class, $args );
 		}

@@ -16,8 +16,8 @@
 
 			$t.find( 'option' ).each( function () {
 				var $$ = $( this ),
-					Label = $$.text() || 'Default',
-					Font = $$.attr( 'value' ) || 'Default',
+					Label = $$.text(),
+					Font = $$.attr( 'value' ),
 					font = Font.replace( / /g, '-' ).toLowerCase(),
 					classes = 'ms-gf-' + font;
 
@@ -33,12 +33,12 @@
 			$div.find( 'span' ).click( function () {
 				var $$ = $( this ),
 					$select = $$.closest('.ms-google-fonts-wrap').prev('select');
-
-				$$.closest( '.ms-google-fonts-wrap' ).toggleClass( 'ms-google-fonts-open' );
-
 				$$.siblings().removeClass( 'active' );
 				$$.addClass( 'active' );
 				$select.val( $$.data( 'font' ) ).change();
+			} );
+			$t.siblings( '.ms-google-fonts-wrap' ).click( function () {
+				$( this ).toggleClass( 'ms-google-fonts-open' );
 			} );
 
 			var $active_field = $t.siblings( 'div.ms-google-fonts' ).find( '.active' );

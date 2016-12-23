@@ -11,8 +11,9 @@ jQuery(function($, undef){
 
 			picker.val( control.setting() ).libColorPicker({
 				change: function() {
-					console.log( control );
-					control.setting.set( picker.libColorPicker('color') );
+					try {
+						control.setting.set( picker.libColorPicker('color') );
+					} catch ( e ) {}
 				},
 				clear: function() {
 					control.setting.set( '' );
