@@ -63,6 +63,9 @@ class PRO18_Custom_Customize_Control extends WP_Customize_Control {
 	 */
 	public function enqueue() {
 		wp_enqueue_script( 'lib-customize-controls', PRO18_URL . '/assets/js/customize-controls.js', array( 'jquery' ), '', true );
+		wp_localize_script( 'lib-customize-controls', 'customizerControls18tags', array(
+			'proActive' => class_exists( 'Eighteen_Tags_Pro' )
+		) );
 		wp_enqueue_script( 'lib-google-fonts', PRO18_URL . '/assets/js/google-fonts.js', array( 'jquery' ), '', true );
 		wp_enqueue_style( 'lib-google-fonts-css', PRO18_URL . '/assets/css/google-fonts.css', array() );
 	}

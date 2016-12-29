@@ -25,7 +25,7 @@ jQuery( document ).ready( function ( $ ) {
 		gutter = parseInt( $products.children( '.product:first' ).css( 'margin-right' ) );
 
 //Fixing mega menu in multi line nav
-	$( '.mega-menu' ).each( function() {
+	$( '.main-navigation .mega-menu' ).each( function() {
 		var $t = $( this ),
 			$offset = $t.offset().top - $t.closest('.main-navigation').offset().top + $t.height();
 		$t.children('.sub-menu' ).css( 'top', $offset );

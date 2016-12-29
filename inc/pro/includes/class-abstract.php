@@ -80,7 +80,7 @@ abstract class Eighteen_Tags_Abstract {
 	 * @return string Setting value
 	 */
 	public function font_style( $value ){
-		eighteen_tags_font_style( $value );
+		return eighteen_tags_font_style( $value );
 	}
 
 	/**
