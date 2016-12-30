@@ -591,6 +591,12 @@ function eighteen_tags_pro_fields() {
 				),
 				'priority' => 25,
 			),
+			'typo-body-typo-div' => array(
+				'label'   => '',
+				'section' => 'existing_eighteen_tags_typography',
+				'type'    => 'sf-divider',
+				'priority' => 27,
+			),
 
 			'typo-body-font'               => array(
 				'label'    => 'Body text font',

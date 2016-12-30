@@ -58,7 +58,7 @@ if ( ! function_exists( 'eighteen_tags_customize_register' ) ) {
 			'label'	   => __( 'Heading color', 'eighteen-tags' ),
 			'section'  => 'eighteen_tags_typography',
 			'settings' => 'eighteen_tags_heading_color',
-			'priority' => 20,
+			'priority' => 7,
 		) ) );
 
 		/**
@@ -71,10 +71,10 @@ if ( ! function_exists( 'eighteen_tags_customize_register' ) ) {
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'eighteen_tags_text_color', array(
-			'label'		=> __( 'Text color', 'eighteen-tags' ),
+			'label'		=> __( 'Body Text color', 'eighteen-tags' ),
 			'section'	=> 'eighteen_tags_typography',
 			'settings'	=> 'eighteen_tags_text_color',
-			'priority'	=> 30,
+			'priority'	=> 34,
 		) ) );
 
 		/**
@@ -128,7 +128,7 @@ if ( ! function_exists( 'eighteen_tags_customize_register' ) ) {
 			'label'	   => __( 'Text color', 'eighteen-tags' ),
 			'section'  => 'header_image',
 			'settings' => 'eighteen_tags_header_text_color',
-			'priority' => 20,
+			'priority' => 12,
 		) ) );
 
 		/**
