@@ -8,7 +8,7 @@ Donate link:
 
 Requires at least: 4.0
 Tested up to: 4.5.2
-Stable tag: 1.0.7
+Stable tag: 2.0.0
 
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -102,6 +102,26 @@ We've added support for our free Pootle page builder, Divi page builder and Site
 You are free to download 18 tags for free and use on as many websites as you like. However if you'd like to get support, please select the premium support level option below. You'll be required to quote your order number when submitting any support questions through our website. By taking out Premium support you'll also be contributing to 18 tags so that we can continue to improve it and make it the best theme possible – so a big thank you if you select the premium support option :)
 
 == Changelog ==
+
+=== 2.0.0 ===
+* 2016-07-26
+* New - Google font options preview in customizer drop down
+* New - Selective refresh implemented for smoother customizer preview
+* New - Fancy single post layouts can now have a sidebar
+* New - Site title typography options
+* New - Site tagline typography options
+* New - CSS3 flexbox for menu, align menu right and logo align automagically
+* Tweak - Customizer options prioritized
+* Tweak - Page customizer WP 4.7 compatible
+* Tweak - Content full width if no widget assigned to the sidebar
+* Tweak - Heading and body typography options sorted
+* Tweak - Blog layout
+* Tweak - Secondary nav now displayed on iPad portrait
+* Fix - Site header cart appearance
+* Fix - Mega menu in menu location other than main menu throwing console error and breaking stuf
+* Fix - Error: Division by zero on blog page
+* Dev - Mobile excludes iPad portrait resolution
+* Dev - Action `eighteen_tags_before_generate_css` to add styles to eighteen tags styles
 
 === 1.0.8 ===
 * 2016-07-26

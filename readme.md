@@ -6,8 +6,8 @@
 * Author: PootlePress
 * Donate link:
 * Requires at least: 4.0
-* Tested up to: 4.5.2
-* Stable tag: 1.0.7
+* Tested up to: 4.7.0
+* Stable tag: 2.0.0
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-3.0.html
 * FontAwesome: by @davegandy - http://fontawesome.io - @fontawesome - License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -101,44 +101,64 @@ You are free to download 18 tags for free and use on as many websites as you lik
 
 ## Changelog
 
+### 2.0.0
+* 2016-07-26
+* New - Google font options preview in customizer drop down
+* New - Selective refresh implemented for smoother customizer preview
+* New - Fancy single post layouts can now have a sidebar
+* New - Site title typography options
+* New - Site tagline typography options
+* New - CSS3 flexbox for menu, align menu right and logo align automagically
+* Tweak - Customizer options prioritized
+* Tweak - Page customizer WP 4.7 compatible
+* Tweak - Content full width if no widget assigned to the sidebar
+* Tweak - Heading and body typography options sorted
+* Tweak - Blog layout
+* Tweak - Secondary nav now displayed on iPad portrait
+* Fix - Site header cart appearance
+* Fix - Mega menu in menu location other than main menu throwing console error and breaking stuf
+* Fix - Error: Division by zero on blog page
+* Dev - Mobile excludes iPad portrait resolution
+* Dev - Action `eighteen_tags_before_generate_css` to add styles to eighteen tags styles
+
 ### Version 1.0.8
 * 2016-07-26
-* **Fix** - Lots of setting showing live preview in customizer but not saving.
-* **Fix** - Image radio fields in customizer collapsed.
-* **Fix** - Adding a manual excerpt causes the read more button to disappear
-* **Fix** - Increase width of align menu right
-* **Fix** - HTML being stripped out of custom footer box
-* **Tweak** - Updated copyright info and licensing
+* Fix - Lots of setting showing live preview in customizer but not saving.
+* Fix - Image radio fields in customizer collapsed.
+* Fix - Adding a manual excerpt causes the read more button to disappear
+* Fix - Increase width of align menu right
+* Fix - HTML being stripped out of custom footer box
+* Tweak - Updated copyright info and licensing
 
 ##### 1.0.7
 * 2016.06.17
-* **Tweak** - Uniform text domain
-* **Tweak** - Uses theme mod not options
+* Tweak - Uniform text domain
+* Tweak - Uses theme mod not options
 
 ##### 1.0.6
 * 2016.05.12
-* **Tweak** - Removed accessibility-ready tag for now
-* **Tweak** - Updated tested upto to 4.5.2
+* Tweak - Removed accessibility-ready tag for now
+* Tweak - Updated tested upto to 4.5.2
 
 ##### 1.0.4
 * 2016.04.19
-* **Tweak** - Using require_once instead of require
-* **Tweak** - Removed custom updator
-* **Tweak** - Used wp_oembed_get for videos
+* Tweak - Using require_once instead of require
+* Tweak - Removed custom updator
+* Tweak - Used wp_oembed_get for videos
 
 ##### 1.0.3
 * 2015.12.22
-* **Enhancement** - Welcome screen ready
-* **Enhancement** - Recommending pootle page builder on install
-* **Fix** - Theme tester recommendations
+* Enhancement - Welcome screen ready
+* Enhancement - Recommending pootle page builder on install
+* Fix - Theme tester recommendations
 
 ##### 1.0.2
 * 2015.12.10
-* **Enhancement** - Takes settings from v1.0.0 directory
+* Enhancement - Takes settings from v1.0.0 directory
 
 ##### 1.0.1
 * 2015.12.10
-* **Fix** - Error on Appearance > Eighteen tags Page.
+* Fix - Error on Appearance > Eighteen tags Page.
 
 ##### 1.0.0
 * 2015-12-03
