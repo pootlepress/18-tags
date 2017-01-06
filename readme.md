@@ -102,7 +102,7 @@ You are free to download 18 tags for free and use on as many websites as you lik
 ## Changelog
 
 ### 2.0.0
-* 2016-07-26
+* 2017-01-06
 * New - Google font options preview in customizer drop down
 * New - Selective refresh implemented for smoother customizer preview
 * New - Fancy single post layouts can now have a sidebar
