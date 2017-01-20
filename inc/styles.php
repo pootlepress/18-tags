@@ -75,7 +75,7 @@ $layout = str_replace( '-image', '', get_theme_mod( 'eighteen-tags-pro-blog-layo
 	clear: both;
 }
 
-@media only screen and (min-width: 763px) {
+@media only screen and (min-width: 770px) {
 	.eighteen-tags-pro-active .hentry.type-post .entry-content {
 		width: 100%;
 	}

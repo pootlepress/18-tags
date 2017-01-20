@@ -13,7 +13,8 @@
 
 get_header();
 include get_template_directory() . '/inc/styles.php';
-?>
+if ( ! pootlepb_is_panel() ) {
+	?>
 	<header class="entry-header">
 		<?php if ( has_post_thumbnail( get_the_ID() ) ) {
 			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
@@ -37,6 +38,9 @@ include get_template_directory() . '/inc/styles.php';
 			</div><!-- .col-full -->
 		<?php } ?>
 	</header><!-- .entry-header -->
+	<?php
+}
+	?>
 <div class="col-full">
 	<div id="primary" class="content-area etp-awesome-layout-1">
 		<main id="main" class="site-main" role="main">
@@ -91,7 +95,7 @@ include get_template_directory() . '/inc/styles.php';
 	} else {
 		?>
 		<style>
-			@media only screen and (min-width: 763px) {
+			@media only screen and (min-width: 770px) {
 				.eighteen-tags-pro-active #primary {
 					width: 100%;
 				}

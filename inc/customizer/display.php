@@ -138,7 +138,7 @@ if ( ! function_exists( 'eighteen_tags_add_customizer_css' ) ) {
 			color: ' . $footer_heading_color . ';
 		}
 
-		@media screen and ( min-width: 763px ) {
+		@media screen and ( min-width: 770px ) {
 			.secondary-navigation ul.menu a:hover {
 				color: ' . eighteen_tags_adjust_color_brightness( $header_text_color, $brighten_factor ) . ';
 			}
@@ -197,7 +197,7 @@ if ( ! function_exists( 'eighteen_tags_add_customizer_css' ) ) {
 			border-color: ' . $accent_color . ';
 		}
 
-		@media screen and ( min-width: 763px ) {
+		@media screen and ( min-width: 770px ) {
 			.site-header-cart .widget_shopping_cart,
 			.site-header .product_list_widget li .quantity {
 				color: ' . $header_text_color . ';

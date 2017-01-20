@@ -117,23 +117,12 @@ final class Eighteen_Tags_Customizer_Fields extends Eighteen_Tags_Abstract {
 			$default = $f['default'];
 		}
 
-		$setting_args = array(
-			'default'           => $default,
-			'transport'         => 'refresh',
-			'sanitize_callback' => 'sanitize_text_field',
-		);
-
-		if ( ! empty( $f['transport'] ) ) {
-			$setting_args['transport'] = $f['transport'];
-			//print_awesome_r( "$id > $f[transport]" );
-
-		}
-		if ( ! empty( $f['sanitize_callback'] ) ) {
-			$setting_args['sanitize_callback'] = $f['sanitize_callback'];
-		}
-
 		//Add Setting
-		$wp_customize->add_setting( $id, $setting_args );
+		$wp_customize->add_setting( $id, array(
+			'default'           => $default,
+			'transport'         => isset( $f['transport'] )         ? $f['transport'] : 'refresh',
+			'sanitize_callback' => isset( $f['sanitize_callback'] ) ? $f['sanitize_callback'] : 'sanitize_text_field',
+		) );
 
 		if ( ! strpos( $f['id'], 'wc-cart' ) || class_exists( 'WooCommerce' ) ) {
 			$this->render_customizer_field( $wp_customize, $f );

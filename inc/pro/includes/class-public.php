@@ -107,13 +107,13 @@ final class Eighteen_Tags_Public extends Eighteen_Tags_Abstract {
 
 		$css .= $this->footer_styles->styles();
 
-		$css .= '@media only screen and (min-width: 763px) {';
+		$css .= '@media only screen and (min-width: 770px) {';
 
 		$css .= self::$desktop_css;
 
 		$css .= '}';
 
-		$css .= '@media only screen and (max-width: 763px) {';
+		$css .= '@media only screen and (max-width: 770px) {';
 
 		$css .= self::$mobile_css;
 
@@ -122,7 +122,7 @@ final class Eighteen_Tags_Public extends Eighteen_Tags_Abstract {
 		if ( function_exists( 'et_pb_is_pagebuilder_used' ) && et_pb_is_pagebuilder_used( get_the_ID() ) ) {
 			$css .= '#content > .col-full { max-width: none; margin: 0; }';
 			$css .= strip_tags( $this->page_builder_styles() );
-		} else if ( function_exists( 'pootlepb_is_panel' ) && pootlepb_is_panel() ) {
+		} else if ( pootlepb_is_panel() ) {
 			$css .= strip_tags( $this->page_builder_styles() );
 		}
 
@@ -163,19 +163,19 @@ final class Eighteen_Tags_Public extends Eighteen_Tags_Abstract {
 	 * @filter pootlepb_render
 	 */
 	function page_builder_styles( $html = '' ) {
-		return $html . '
+		return $html . <<<HTML
 	<style>
 		.etp-nav-styleleft-vertical #content div.col-full { padding-top: 0; }
 		.home.blog .site-header, .home.post-type-archive-product .site-header,
 		.home.page:not(.page-template-template-homepage) .site-header, .eighteen-tags-pro-active .site-header,
 		.eighteen-tags-pro-active .woocommerce-breadcrumb, .eighteen-tags-pro-active .no-wc-breadcrumb .site-header { margin-bottom: 0; }
-		.eighteen-tags-pro-active.page .hentry .entry-header { display: none; }
-		.eighteen-tags-pro-active .hentry .entry-header { margin: 0; }
+		h1.entry-title,.post-meta-container,.eighteen-tags-pro-active .entry-header { display: none; }
 		.eighteen-tags-pro-active #secondary { margin-top: 4.236em; }
 		.eighteen-tags-pro-active .page.hentry { margin: 0; padding: 0; border: none; }
 		.eighteen-tags-pro-active .site-main { margin: 0; }
 		.eighteen-tags-pro-active .content-area { margin: 0; }
-    </style>';
+    </style>
+HTML;
 	}
 
 	/**

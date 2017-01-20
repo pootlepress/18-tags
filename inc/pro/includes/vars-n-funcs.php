@@ -759,8 +759,7 @@ add_filter( 'eighteen_tags_pro_fields', 'eighteen_tags_add_wc_fields' );
 
 function eighteen_tags_add_wc_fields ( $fields ) {
 	if ( class_exists( 'WooCommerce' ) ) {
-		$fields[] = array(
-			'id'      => 'header-wc-cart',
+		$fields[ 'header-wc-cart' ] = array(
 			'label'   => 'Cart location',
 			'section' => 'existing_header_image',
 			'type'    => 'select',
@@ -770,8 +769,7 @@ function eighteen_tags_add_wc_fields ( $fields ) {
 				'hide' => 'Hide',
 			),
 		);
-		$fields[] = array(
-			'id'      => 'header-wc-cart-color',
+		$fields[ 'header-wc-cart-color' ] = array(
 			'label'   => 'Cart text color',
 			'section' => 'existing_header_image',
 			'type'    => 'color',
@@ -1329,5 +1327,10 @@ function eighteen_tags_font_style( $value ) {
 
 }
 
+if ( ! function_exists( 'pootlepb_is_panel' ) ) {
+	function pootlepb_is_panel() {
+		return false;
+	}
+}
 
 //PHP code:

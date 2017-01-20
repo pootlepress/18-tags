@@ -35,31 +35,33 @@ if ( 'title-top' == $layout ) {
 	<?php
 }
 # endregion
-?>
-<header class="entry-header">
-	<?php
-	if ( has_post_thumbnail( get_the_ID() ) ) {
-		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
-		$class = "class='etp-full-width-image-bg'";
-		echo "<div $class style=\"background-image:url('$image[0]')\"></div>";
-		?>
-
-		<?php
-	} else {
-		?>
-		<div class="margin-bottom"></div>
-		<?php
-	}
+if ( ! pootlepb_is_panel() ) {
 	?>
-</header><!-- .entry-header -->
+	<header class="entry-header">
+		<?php
+		if ( has_post_thumbnail( get_the_ID() ) ) {
+			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+			$class = "class='etp-full-width-image-bg'";
+			echo "<div $class style=\"background-image:url('$image[0]')\"></div>";
+			?>
 
+			<?php
+		} else {
+			?>
+			<div class="margin-bottom"></div>
+			<?php
+		}
+		?>
+	</header><!-- .entry-header -->
+	<?php
+}
+?>
 <div class="col-full">
 <div id="primary" class="content-area etp-awesome-layout-1">
 	<main id="main" class="site-main" role="main">
 		<?php if ( have_posts() ) :
 			while ( have_posts() ) : the_post();
 				?>
-
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="" itemtype="http://schema.org/BlogPosting">
 					<?php
 					# region title not on top
@@ -117,7 +119,7 @@ if ( 'title-top' == $layout ) {
 	} else {
 		?>
 		<style>
-			@media only screen and (min-width: 763px) {
+			@media only screen and (min-width: 770px) {
 				.eighteen-tags-pro-active #primary {
 					width: 100%;
 				}

@@ -8,7 +8,7 @@ h1.page-title,
 	display: none;
 }
 
-@media screen and (max-width: 763px) {
+@media screen and (max-width: 770px) {
 	.site-main .site-search .widget_product_search {
 		margin: 1em 0;
 	}
