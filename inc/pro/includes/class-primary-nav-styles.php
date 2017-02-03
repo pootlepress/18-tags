@@ -23,8 +23,8 @@ class Eighteen_Tags_Primary_Navigation extends Eighteen_Tags_Abstract {
 	 */
 	public function primary_nav_style( $style ) {
 		$css = &Eighteen_Tags_Public::$desktop_css;
-		switch ( $style ) {
-			case 'right':
+		switch ( true ) {
+			case is_numeric( strpos( $style, 'right' ) ):
 				remove_action( 'eighteen_tags_header', 'eighteen_tags_primary_navigation', 50 );
 				add_action( 'eighteen_tags_header', 'eighteen_tags_primary_navigation', 25 );
 				$css .= '.eighteen-tags-pro-active .site-header .main-navigation{ ' .
@@ -34,14 +34,14 @@ class Eighteen_Tags_Primary_Navigation extends Eighteen_Tags_Abstract {
 				$css .= '.woocommerce-active #site-navigation > div { width: 70%; }';
 				$css .= '.woocommerce-active .site-header .site-header-cart { width: 30%; }';
 				break;
-			case 'center-inline':
+			case $style == 'center-inline':
 				//Get primary menu on the top of header
 				remove_action( 'eighteen_tags_header', 'eighteen_tags_primary_navigation', 50 );
 				add_action( 'eighteen_tags_header', 'eighteen_tags_primary_navigation', 25 );
 				$this->logo_in_nav = true;
 				$css .= '.eighteen-tags-pro-active .site-branding { display:none }';
 			/** @noinspection PhpExpressionResultUnusedInspection */
-			case 'center':
+			case $style == 'center':
 				$css .= '.eighteen-tags-pro-active #site-navigation { width: 100%; text-align: center; }';
 				$css .= '.eighteen-tags-pro-active .site-header .custom-logo-link, .eighteen-tags-pro-active .site-header .site-branding{ width: 100%; text-align: center; }';
 				$css .= '.eighteen-tags-pro-active .site-header .custom-logo-link img { margin: auto; }';
