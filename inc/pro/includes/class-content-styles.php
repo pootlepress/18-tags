@@ -44,7 +44,7 @@ class Eighteen_Tags_Content_Styles extends Eighteen_Tags_Abstract {
 		$css .= '.eighteen-tags-pro-active h1, .eighteen-tags-pro-active h2, ' .
 		        '.eighteen-tags-pro-active h3, .eighteen-tags-pro-active h4, ' .
 		        '.eighteen-tags-pro-active h5, .eighteen-tags-pro-active h6 {' .
-		        'font-family:' . $t->get( 'typo-header-font' ) . ';' .
+		        'font-family:' . $t->get( 'typo-header-font', 'Raleway' ) . ';' .
 		        'letter-spacing:' . $t->get( 'typo-header-letter-spacing' ) . 'px;' .
 		        'line-height:' . $t->get( 'typo-header-line-height' ) . ';' .
 		        $t->font_style( $t->get( 'typo-header-font-style' ) ) .
@@ -95,7 +95,7 @@ class Eighteen_Tags_Content_Styles extends Eighteen_Tags_Abstract {
 		$css = &$this->css;
 
 		$css .= 'body.eighteen-tags-pro-active, .eighteen-tags-pro-active .panel-grid-cell { ' .
-		        'font-family:' . $t->get( 'typo-body-font' ) . ';' .
+		        'font-family:' . $t->get( 'typo-body-font', 'Merriweather' ) . ';' .
 		        'line-height:' . $t->get( 'typo-body-line-height' ) . '}';
 		$css .= '.eighteen-tags-pro-active .panel-grid-cell, #primary, #secondary {' .
 		        'font-size:' . $t->get( 'typo-body-font-size', 15 ) . 'px; }';;

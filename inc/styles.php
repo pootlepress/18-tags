@@ -1,7 +1,11 @@
 <?php
-$layout = str_replace( '-image', '', get_theme_mod( 'eighteen-tags-pro-blog-layout', 'left-image' ) );
+$layout = str_replace( '-image', '', get_theme_mod( 'eighteen-tags-pro-blog-layout', 'full-image' ) );
 ?>
 <style>
+
+body:not(.single) .post:hover {
+	background: rgba(0, 0, 0, 0.07);
+}
 
 .single.etp-nav-styleleft-vertical #content > .col-full{
 	padding: 0;
@@ -24,7 +28,7 @@ $layout = str_replace( '-image', '', get_theme_mod( 'eighteen-tags-pro-blog-layo
 }
 
 .etp-awesome-layout-full .wp-post-image.etp-full-width {
-	margin: 0;
+	margin: 0 0 1em;
 }
 
 .etp-full-width-image-bg {

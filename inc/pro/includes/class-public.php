@@ -78,11 +78,11 @@ final class Eighteen_Tags_Public extends Eighteen_Tags_Abstract {
 
 		$this->features();
 
+		$load_fonts = array( $this->get( 'typo-header-font', 'Raleway' ), $this->get( 'typo-body-font', 'Merriweather' ) );
 
 		wp_add_inline_style( 'etp-styles', $this->generate_css() );
 
 		$fonts_options = explode( ':|:', get_theme_mod( 'etp-google-fonts', '' ) );
-		$load_fonts = array( 'Montserrat' );
 
 		foreach ( $fonts_options as $option ) {
 			$font = get_theme_mod( $option );
@@ -136,7 +136,12 @@ final class Eighteen_Tags_Public extends Eighteen_Tags_Abstract {
 		remove_action( 'eighteen_tags_loop_post', 'eighteen_tags_post_content', 30 );
 		add_action( 'eighteen_tags_loop_post', array( $this->content_styles, 'content' ), 30 );
 
-		if ( $this->get( 'header-sticky' ) ) {
+		if ( $this->get( 'header-sticky', true ) ) {
+			if ( $this->get( 'header-sticky-show-on-scroll-up', true ) ) {
+				self::$desktop_css .=
+					'#masthead.sticky {margin-top: -340px;transition: 0.5s margin}' .
+					'#masthead.sticky.sticky-scrolling-up {margin-top: 0}';
+			}
 			wp_enqueue_script( 'etp-sticky-header', $this->plugin_url . '/assets/js/sticky-header.js', array( 'jquery' ) );
 		}
 
@@ -211,7 +216,7 @@ HTML;
 			if ( $post_archive ) {
 				$etp_blog_grid = explode( ',', $this->get( 'blog-grid', '1,10' ) );
 				$per_page      = array_product( $etp_blog_grid );
-				if ( $this->get( 'blog-layout', 'left-image' ) && $per_page ) {
+				if ( $this->get( 'blog-layout', 'full-image' ) && $per_page ) {
 					$query->set( 'posts_per_page', $per_page );
 				}
 			}
@@ -225,7 +230,7 @@ HTML;
 	public function body_class( $classes ) {
 		$classes[] = 'layout-' . filter_input( INPUT_GET, 'layout' );
 		$classes[] = 'eighteen-tags-pro-active';
-		$classes[] = 'etp-nav-style' . $this->get( 'nav-style' );
+		$classes[] = 'etp-nav-style' . $this->get( 'nav-style', 'right' );
 		return $classes;
 	}
 
@@ -234,7 +239,7 @@ HTML;
 	 * @return string Template path
 	 */
 	function blog_layout( $template ) {
-		$layout = $this->get( 'blog-layout', 'left-image' );
+		$layout = $this->get( 'blog-layout', 'full-image' );
 		$dir = dirname( __FILE__ );
 
 		if ( ! empty( $layout ) && file_exists( "$dir/template/home-{$layout}.php" ) ) {

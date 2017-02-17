@@ -56,7 +56,11 @@ $posts_array = array();
 				?>
 			</header><!-- .entry-header -->
 			<div class="entry-content" itemprop="articleBody">
-				<?php Eighteen_Tags::instance()->public->content_styles->blog_content(); ?>
+				<?php
+				echo sprintf( '<a href="%s" rel="bookmark" style="color:inherit;text-decoration:none;">', get_permalink() );
+				Eighteen_Tags::instance()->public->content_styles->blog_content();
+				echo '</a>';
+				?>
 			</div><!-- .entry-content -->
 
 		</article><!-- #post-## -->
@@ -84,7 +88,7 @@ $posts_array = array();
 	</main><!-- #main -->
 </div><!-- #primary -->
 <?php
-if ( Eighteen_Tags::instance()->public->get( 'blog-show-sidebar' ) ) {
+if ( Eighteen_Tags::instance()->public->get( 'blog-show-sidebar', true ) ) {
 	get_sidebar();
 	?>
 	<style>

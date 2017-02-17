@@ -705,7 +705,7 @@ body.eighteen-tags-pro-active .site-header-cart li a {
 .col {
 	display: block;
 	float: left;
-	margin: 1% 0 1% 4%;
+	margin: 0 0 1% 4%;
 }
 
 .col:first-child {
@@ -780,6 +780,10 @@ body.eighteen-tags-pro-active .site-header-cart li a {
 	max-width: 350px;
 	margin: auto;
 	right: 1em;
+}
+
+.etp-nav-styleright #site-navigation .etp-nav-search {
+	left: -17.935%;
 }
 
 .etp-nav-search .search-form {

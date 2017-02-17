@@ -32,7 +32,7 @@ function eighteen_tags_pro_fields() {
 				'section'  => 'Primary Navigation',
 				'type'     => 'select',
 				'choices'  => array(
-					''                        => 'Default',
+					''                        => 'Old Skool',
 					'right'                   => 'Align right',
 					'center'                  => 'Centered',
 					'center-inline'           => 'Centred inline logo',
@@ -398,6 +398,12 @@ function eighteen_tags_pro_fields() {
 				'section'  => 'existing_header_image',
 				'type'     => 'checkbox',
 				'priority' => 75,
+			),
+			'header-sticky-show-on-scroll-up'                => array(
+				'label'    => 'Sticky header show on scrolling up',
+				'section'  => 'existing_header_image',
+				'type'     => 'checkbox',
+				'priority' => 80,
 			),
 			'hide-link-focus-outline'      => array(
 				'label'    => 'Hide accessibility box around active links',

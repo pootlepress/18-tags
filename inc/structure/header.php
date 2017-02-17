@@ -128,7 +128,7 @@ if ( ! function_exists( 'eighteen_tags_hamburger_menu' ) ) {
 	 * @return void
 	 */
 	function eighteen_tags_hamburger_menu() {
-		if ( strpos( get_theme_mod( 'eighteen-tags-pro-nav-style' ), 'hamburger' ) ) {
+		if ( strpos( get_theme_mod( 'eighteen-tags-pro-nav-style', 'right' ), 'hamburger' ) ) {
 			$label = get_theme_mod( 'eighteen-tags-pro-pri-nav-label' );
 			$class = $label ? 'header-toggle has-label' : 'header-toggle';
 			?>

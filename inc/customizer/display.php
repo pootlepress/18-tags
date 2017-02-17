@@ -22,8 +22,8 @@ if ( ! function_exists( 'eighteen_tags_add_customizer_css' ) ) {
 		$footer_heading_color 			= eighteen_tags_sanitize_hex_color( get_theme_mod( 'eighteen_tags_footer_heading_color', apply_filters( 'eighteen_tags_default_footer_heading_color', '#494c50' ) ) );
 		$footer_text_color 				= eighteen_tags_sanitize_hex_color( get_theme_mod( 'eighteen_tags_footer_text_color', apply_filters( 'eighteen_tags_default_footer_text_color', '#61656b' ) ) );
 
-		$text_color 					= eighteen_tags_sanitize_hex_color( get_theme_mod( 'eighteen_tags_text_color', apply_filters( 'eighteen_tags_default_text_color', '#60646c' ) ) );
-		$heading_color 					= eighteen_tags_sanitize_hex_color( get_theme_mod( 'eighteen_tags_heading_color', apply_filters( 'eighteen_tags_default_heading_color', '#484c51' ) ) );
+		$text_color 					= eighteen_tags_sanitize_hex_color( get_theme_mod( 'eighteen_tags_text_color', apply_filters( 'eighteen_tags_default_text_color', '#565656' ) ) );
+		$heading_color 					= eighteen_tags_sanitize_hex_color( get_theme_mod( 'eighteen_tags_heading_color', apply_filters( 'eighteen_tags_default_heading_color', '#353535' ) ) );
 		$button_background_color 		= eighteen_tags_sanitize_hex_color( get_theme_mod( 'eighteen_tags_button_background_color', apply_filters( 'eighteen_tags_default_button_background_color', '#60646c' ) ) );
 		$button_text_color 				= eighteen_tags_sanitize_hex_color( get_theme_mod( 'eighteen_tags_button_text_color', apply_filters( 'eighteen_tags_default_button_text_color', '#ffffff' ) ) );
 		$button_alt_background_color 	= eighteen_tags_sanitize_hex_color( get_theme_mod( 'eighteen_tags_button_alt_background_color', apply_filters( 'eighteen_tags_default_button_alt_background_color', '#428bca' ) ) );

@@ -83,12 +83,12 @@ class Eighteen_Tags_Primary_Navigation extends Eighteen_Tags_Abstract {
 		        'background-color:' . $t->get( 'pri-nav-bg-color' ) . ';' .
 		        '}';
 		$css .= '#site-navigation.main-navigation ul, #site-navigation.main-navigation ul li a, .eighteen-tags-pro-active .header-toggle {' .
-		        'font-family:' . $t->get( 'pri-nav-font', 'Montserrat' ) . ';' .
+		        'font-family:' . $t->get( 'pri-nav-font', 'Raleway' ) . ';' .
 		        'font-size:' . $t->get( 'pri-nav-text-size' ) . 'px;' .
 		        '}';
 		$css .= '#site-navigation.main-navigation .primary-navigation ul li a, #site-navigation.main-navigation ul.site-header-cart li a, .eighteen-tags-pro-active .header-toggle {' .
 		        'letter-spacing:' . $t->get( 'pri-nav-letter-spacing' ) . 'px;' .
-		        'color:' . $t->get( 'pri-nav-text-color' ) . ';' .
+		        'color:' . $t->get( 'pri-nav-text-color', '#353535' ) . ';' .
 		        $t->font_style( $t->get( 'pri-nav-font-style' ) ) .
 		        '}';
 		$css .= '#site-navigation.main-navigation ul li.current_page_item a {' .
@@ -165,7 +165,7 @@ class Eighteen_Tags_Primary_Navigation extends Eighteen_Tags_Abstract {
 
 	public function search_menu_item() {
 		if ( ! $this->get( 'remove-search-icon' ) ) {
-			if ( false !== strpos( get_theme_mod( 'eighteen-tags-pro-nav-style' ), 'left-vertical' ) ) {
+			if ( false !== strpos( get_theme_mod( 'eighteen-tags-pro-nav-style', 'right' ), 'left-vertical' ) ) {
 				$post_type_field = '';
 				$search_pt = explode( ',', get_theme_mod( 'eighteen-tags-pro-search-post_type', 'post,page' ) );
 				foreach( $search_pt as $pt ) {
