@@ -3,10 +3,6 @@ $layout = str_replace( '-image', '', get_theme_mod( 'eighteen-tags-pro-blog-layo
 ?>
 <style>
 
-body:not(.single) .post:hover {
-	background: rgba(0, 0, 0, 0.07);
-}
-
 .single.etp-nav-styleleft-vertical #content > .col-full{
 	padding: 0;
 }

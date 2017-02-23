@@ -39,6 +39,7 @@ function eighteen_tags_pro_fields() {
 					'left-vertical'           => 'Left vertical',
 					'left-vertical hamburger' => 'Hamburger',
 				),
+				'default'  => 'right',
 				'priority' => 10,
 			),
 			'pri-nav-label'                => array(
@@ -51,7 +52,7 @@ function eighteen_tags_pro_fields() {
 				'label'    => 'Font',
 				'section'  => 'Primary Navigation',
 				'type'     => 'font',
-				'default'  => 'Montserrat',
+				'default'  => 'Raleway',
 				'priority' => 20,
 			),
 			'pri-nav-text-size'            => array(
@@ -255,6 +256,7 @@ function eighteen_tags_pro_fields() {
 				'label'    => 'Title font',
 				'section'  => 'existing_title_tagline',
 				'type'     => 'font',
+				'default'  => 'Raleway',
 				'priority' => 20,
 			),
 			'site-title-color'             => array(
@@ -290,6 +292,7 @@ function eighteen_tags_pro_fields() {
 				'label'    => 'Tagline font',
 				'section'  => 'existing_title_tagline',
 				'type'     => 'font',
+				'default'  => 'Merriweather',
 				'priority' => 40,
 			),
 			'site-tagline-color'           => array(
@@ -397,12 +400,14 @@ function eighteen_tags_pro_fields() {
 				'label'    => 'Make sticky?',
 				'section'  => 'existing_header_image',
 				'type'     => 'checkbox',
+				'default'  => true,
 				'priority' => 75,
 			),
 			'header-sticky-show-on-scroll-up'                => array(
 				'label'    => 'Sticky header show on scrolling up',
 				'section'  => 'existing_header_image',
 				'type'     => 'checkbox',
+				'default'  => true,
 				'priority' => 80,
 			),
 			'hide-link-focus-outline'      => array(
@@ -466,12 +471,14 @@ function eighteen_tags_pro_fields() {
 				'label'    => 'Keep sidebar',
 				'section'  => 'existing_eighteen_tags_single_post',
 				'type'     => 'checkbox',
+				'default'  => true,
 				'priority' => 30,
 			),
 			'blog-show-sidebar'            => array(
 				'label'    => 'Show sidebar on archive page',
 				'section'  => 'existing_eighteen_tags_archive',
 				'type'     => 'checkbox',
+				'default'  => true,
 				'priority' => 10,
 			),
 			'blog-header-size'             => array(
@@ -495,7 +502,7 @@ function eighteen_tags_pro_fields() {
 				'label'    => 'Layout',
 				'section'  => 'existing_eighteen_tags_archive',
 				'type'     => 'sf-radio-image',
-				'default'  => 'left-image',
+				'default'  => 'full-image',
 				'choices'  => array(
 					'left-image'  => Eighteen_Tags::$url . 'assets/img/admin/layout-left-image.png',
 					'full-image'  => Eighteen_Tags::$url . 'assets/img/admin/layout-full-image.png',
@@ -550,6 +557,7 @@ function eighteen_tags_pro_fields() {
 				'label'    => 'Heading font',
 				'section'  => 'existing_eighteen_tags_typography',
 				'type'     => 'font',
+				'default'  => 'Raleway',
 				'priority' => 5,
 			),
 			'typo-header-font-size'        => array(
@@ -608,6 +616,7 @@ function eighteen_tags_pro_fields() {
 				'label'    => 'Body text font',
 				'section'  => 'existing_eighteen_tags_typography',
 				'type'     => 'font',
+				'default'  => 'Merriweather',
 				'priority' => 30,
 			),
 			'typo-body-font-size'          => array(
@@ -1333,10 +1342,9 @@ function eighteen_tags_font_style( $value ) {
 
 }
 
-if ( ! function_exists( 'pootlepb_is_panel' ) ) {
-	function pootlepb_is_panel() {
-		return false;
+function eighteen_tags_is_ppb() {
+	if ( function_exists( 'pootlepb_is_panel' ) ) {
+		return pootlepb_is_panel();
 	}
+	return false;
 }
-
-//PHP code:

@@ -62,7 +62,8 @@ class Eighteen_Tags_Primary_Navigation extends Eighteen_Tags_Abstract {
 		$button_background_color = eighteen_tags_sanitize_hex_color( get_theme_mod( 'eighteen_tags_button_background_color', apply_filters( 'eighteen_tags_default_button_background_color', '#60646c' ) ) );
 		$css .= '.etp-nav-search .etp-nav-search-close{' . 'color:' . $button_background_color . '}';
 
-		$css .= ".main-navigation ul.menu > li > a, .etp-nav-search a { padding-top: {$pad}em; padding-bottom: {$pad}em; }";
+		$css .=
+			".main-navigation ul.menu > li > a, .main-navigation ul.nav-menu > li > a, .etp-nav-search a { padding-top: {$pad}em; padding-bottom: {$pad}em; }";
 		$css .= ".eighteen-tags-pro-active .main-navigation .site-header-cart li:first-child { padding-top: {$pad}em; }";
 		$css .= ".eighteen-tags-pro-active .main-navigation .site-header-cart .cart-contents { padding-top: 0; padding-bottom: {$pad}em; }";
 

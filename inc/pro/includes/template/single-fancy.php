@@ -13,7 +13,7 @@
 
 get_header();
 include get_template_directory() . '/inc/styles.php';
-if ( ! pootlepb_is_panel() ) {
+if ( ! eighteen_tags_is_ppb() ) {
 	?>
 	<header class="entry-header">
 		<?php if ( has_post_thumbnail( get_the_ID() ) ) {

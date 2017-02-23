@@ -122,7 +122,7 @@ final class Eighteen_Tags_Public extends Eighteen_Tags_Abstract {
 		if ( function_exists( 'et_pb_is_pagebuilder_used' ) && et_pb_is_pagebuilder_used( get_the_ID() ) ) {
 			$css .= '#content > .col-full { max-width: none; margin: 0; }';
 			$css .= strip_tags( $this->page_builder_styles() );
-		} else if ( pootlepb_is_panel() ) {
+		} else if ( eighteen_tags_is_ppb() ) {
 			$css .= strip_tags( $this->page_builder_styles() );
 		}
 

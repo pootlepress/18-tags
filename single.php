@@ -38,7 +38,7 @@ if ( have_posts() ) :
 			<?php
 		}
 # endregion
-		if ( ! pootlepb_is_panel() ) {
+		if ( ! eighteen_tags_is_ppb() ) {
 			?>
 			<header class="entry-header">
 				<?php
