@@ -966,6 +966,8 @@ a:focus {
 	.etp-nav-styleleft-vertical .site-header .site-logo-anchor,
 	.etp-nav-styleleft-vertical .site-header .custom-logo-link {
 		width: auto;
+		margin-bottom: 2em;
+		padding: 0 1em;
 	}
 
 	.woocommerce-active .site-header .secondary-navigation {
