@@ -786,6 +786,10 @@ body.eighteen-tags-pro-active .site-header-cart li a {
 	left: -17.935%;
 }
 
+.etp-nav-styleright #site-navigation .handheld-navigation .etp-nav-search {
+	left: 0;
+}
+
 .etp-nav-search .search-form {
 	display: inline-block;
 	margin: 0;
