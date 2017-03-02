@@ -6,6 +6,8 @@
  * @developer shramee <shramee.srivastav@gmail.com>
  */
 
+define( 'EIGHTEENTAGS_VERSION', '2.1.0' );
+
 /**
  * Initialize all the things.
  */

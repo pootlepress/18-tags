@@ -1,18 +1,6 @@
 <?php
 /**
- * Plugin Name:			Eighteen tags Pro
- * Plugin URI:			http://www.pootlepress.com/eighteen-tags-pro/
- * Description:			Customize the design of every element of your Eighteen tags website
- * Version:				2.0.0
- * Author:				pootlepress
- * Author URI:			http://pootlepress.com/
- * Requires at least:	4.0.0
- * Tested up to:		4.3.1
- *
- * Text Domain: eighteen-tags-pro
- * Domain Path: /languages/
- *
- * @package Eighteen_Tags
+ * @package Eighteen_Tags_Pro
  * @category Core
  * @author Shramee Srivastav <shramee.srivastav@gmail.com>
  */
@@ -20,7 +8,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 define( 'PRO18_URL', get_template_directory_uri() . '/inc/pro/' );
 define( 'PRO18_PATH', get_template_directory() . '/inc/pro/' );
-define( 'PRO18_VERSION', '2.0.0' );
+define( 'PRO18_VERSION', EIGHTEENTAGS_VERSION );
 
 /** Including abstract class */
 require_once 'includes/class-abstract.php';

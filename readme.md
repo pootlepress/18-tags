@@ -7,7 +7,7 @@
 * Donate link:
 * Requires at least: 4.0
 * Tested up to: 4.7.0
-* Stable tag: 2.0.0
+* Stable tag: 2.1.0
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-3.0.html
 * FontAwesome: by @davegandy - http://fontawesome.io - @fontawesome - License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -101,6 +101,24 @@ You are free to download 18 tags for free and use on as many websites as you lik
 
 ## Changelog
 
+### 2.1.0
+* 2017-03-02
+* New - Fixed header scroll up to show (enabled by default)
+* Tweak - Mobile styling now triggers at 770px ( includes iPad portrait )
+* Tweak - Default sticky header (enabled)
+* Tweak - Default body typography 
+* Tweak - Default typography (Site title) - Raleway (#353535)
+* Tweak - Default typography (Site tagline) - Merriweather (#565656)
+* Tweak - Default typography (Primary navigation) - Raleway (#353535)
+* Tweak - Default typography (Heading font) - Raleway (#353535)
+* Tweak - Default typography (Body font) - Merriweather (#565656)
+* Tweak - Default navigation now right aligned
+* Tweak - Default blog page layout image top
+* Tweak - Default sidebar on blog page
+* Tweak - Default search box centered for right aligned menu
+* Tweak - Blog page post content now links to post page
+* Fix - Options not showing in customizer because of console error
+
 ### 2.0.0
 * 2017-01-06
 * New - Google font options preview in customizer drop down
@@ -130,36 +148,36 @@ You are free to download 18 tags for free and use on as many websites as you lik
 * Fix - HTML being stripped out of custom footer box
 * Tweak - Updated copyright info and licensing
 
-##### 1.0.7
+### 1.0.7
 * 2016.06.17
 * Tweak - Uniform text domain
 * Tweak - Uses theme mod not options
 
-##### 1.0.6
+### 1.0.6
 * 2016.05.12
 * Tweak - Removed accessibility-ready tag for now
 * Tweak - Updated tested upto to 4.5.2
 
-##### 1.0.4
+### 1.0.4
 * 2016.04.19
 * Tweak - Using require_once instead of require
 * Tweak - Removed custom updator
 * Tweak - Used wp_oembed_get for videos
 
-##### 1.0.3
+### 1.0.3
 * 2015.12.22
 * Enhancement - Welcome screen ready
 * Enhancement - Recommending pootle page builder on install
 * Fix - Theme tester recommendations
 
-##### 1.0.2
+### 1.0.2
 * 2015.12.10
 * Enhancement - Takes settings from v1.0.0 directory
 
-##### 1.0.1
+### 1.0.1
 * 2015.12.10
 * Fix - Error on Appearance > Eighteen tags Page.
 
-##### 1.0.0
+### 1.0.0
 * 2015-12-03
 * Born to the world!

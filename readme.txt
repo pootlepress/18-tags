@@ -8,7 +8,7 @@ Donate link:
 
 Requires at least: 4.0
 Tested up to: 4.5.2
-Stable tag: 2.0.0
+Stable tag: 2.1.0
 
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -102,6 +102,24 @@ We've added support for our free Pootle page builder, Divi page builder and Site
 You are free to download 18 tags for free and use on as many websites as you like. However if you'd like to get support, please select the premium support level option below. You'll be required to quote your order number when submitting any support questions through our website. By taking out Premium support you'll also be contributing to 18 tags so that we can continue to improve it and make it the best theme possible – so a big thank you if you select the premium support option :)
 
 == Changelog ==
+
+=== 2.1.0 ===
+* 2017-03-02
+* New - Fixed header scroll up to show (enabled by default)
+* Tweak - Mobile styling now triggers at 770px ( includes iPad portrait )
+* Tweak - Default sticky header (enabled)
+* Tweak - Default body typography
+* Tweak - Default typography (Site title) - Raleway (#353535)
+* Tweak - Default typography (Site tagline) - Merriweather (#565656)
+* Tweak - Default typography (Primary navigation) - Raleway (#353535)
+* Tweak - Default typography (Heading font) - Raleway (#353535)
+* Tweak - Default typography (Body font) - Merriweather (#565656)
+* Tweak - Default navigation now right aligned
+* Tweak - Default blog page layout image top
+* Tweak - Default sidebar on blog page
+* Tweak - Default search box centered for right aligned menu
+* Tweak - Blog page post content now links to post page
+* Fix - Options not showing in customizer because of console error
 
 === 2.0.0 ===
 * 2017-01-06
