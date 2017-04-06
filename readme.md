@@ -7,7 +7,7 @@
 * Donate link:
 * Requires at least: 4.0
 * Tested up to: 4.7.0
-* Stable tag: 2.1.0
+* Stable tag: 2.2.0
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-3.0.html
 * FontAwesome: by @davegandy - http://fontawesome.io - @fontawesome - License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -100,6 +100,10 @@ We've added support for our free Pootle page builder, Divi page builder and Site
 You are free to download 18 tags for free and use on as many websites as you like. However if you'd like to get support, please select the premium support level option below. You'll be required to quote your order number when submitting any support questions through our website. By taking out Premium support you'll also be contributing to 18 tags so that we can continue to improve it and make it the best theme possible – so a big thank you if you select the premium support option :)
 
 ## Changelog
+
+### 2.2.0
+* 2017-04-06
+* New - WooCommerce fancy gallery theme support
 
 ### 2.1.0
 * 2017-03-02
