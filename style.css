@@ -1361,6 +1361,7 @@ input::-moz-focus-inner {
 }
 
 input[type="text"],
+input[type="tel"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
