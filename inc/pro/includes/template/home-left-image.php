@@ -30,7 +30,20 @@ $posts_array = array();
 
 <div id="primary" class="content-area etp-awesome-layout-<?php echo $layout ?>">
 	<main id="main" class="site-main section group" role="main">
-		<?php if ( have_posts() ) :
+
+		<header class="page-header">
+			<h1 class="page-title">
+				<?php the_archive_title(); ?>
+			</h1>
+
+			<?php the_archive_description(); ?>
+		</header><!-- .page-header -->
+
+		<?php
+
+		do_action( 'eighteen_tags_loop_before' );
+
+		if ( have_posts() ) :
 			while ( have_posts() ) : the_post();
 				$i++;
 				ob_start();
