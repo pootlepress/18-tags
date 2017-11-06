@@ -232,7 +232,7 @@ final class Eighteen_Tags_Admin extends Eighteen_Tags_Abstract {
 			'priority' => 7,
 		) );
 
-		$man->get_section( 'header_image' )->title = 'Header Elements';
+		$man->get_section( 'header_image' )->title = 'Header';
 		$man->get_section( 'header_image' )->panel = 'etp-header';
 		$man->get_section( 'header_image' )->priority = 7;
 

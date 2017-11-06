@@ -101,6 +101,14 @@ class Eighteen_Tags_Primary_Navigation extends Eighteen_Tags_Abstract {
 		$css .= '#site-navigation.main-navigation .site-header-cart .widget_shopping_cart, #site-navigation.main-navigation ul.menu ul {' .
 		        'background-color:' . $t->get( 'pri-nav-dd-bg-color', '#000' ) . ';' .
 		        '}';
+
+		Eighteen_Tags_Public::$mobile_css .= '.handheld-navigation-container a, .handheld-navigation a {' .
+						'font-family:' . $t->get( 'pri-nav-font', 'Raleway' ) . ';' .
+						'font-size:' . $t->get( 'pri-nav-text-size' ) . 'px;' .
+						'letter-spacing:' . $t->get( 'pri-nav-letter-spacing' ) . 'px;' .
+						'color:' . $t->get( 'pri-nav-text-color', '#353535' ) . ';' .
+						$t->font_style( $t->get( 'pri-nav-font-style' ) ) .
+						'}';
 	}
 
 	function logo_in_nav( $items, $args ) {

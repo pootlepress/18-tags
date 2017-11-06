@@ -222,10 +222,11 @@ final class Pootle_Page_Customizer {
 	function add_item( $admin_bar ) {
 		global $post;
 		if ( is_page() ) {
+			$url = urlencode( get_permalink( $post->ID ) . "?post_id={$post->ID}" );
 			$args = array(
 				'id'    => 'page-custo-link',
 				'title' => 'Customize Page',
-				'href'  => admin_url( "customize.php?post_id={$post->ID}&autofocus[panel]=lib-pootle-page-customizer&url=" . get_permalink( $post->ID ) . "?post_id={$post->ID}" ),
+				'href'  => admin_url( "customize.php?post_id={$post->ID}&autofocus[panel]=lib-pootle-page-customizer&url=" . $url ),
 				'meta'  => array(
 					'title' => __( 'Customize this page in customizer', 'eighteen-tags' ), // Text will be shown on hovering
 				),
