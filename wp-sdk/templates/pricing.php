@@ -2,7 +2,7 @@
 	/**
 	 * @package     Freemius
 	 * @copyright   Copyright (c) 2015, Freemius, Inc.
-	 * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+	 * @license     https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License Version 3
 	 * @since       1.0.3
 	 */
 
@@ -12,11 +12,19 @@
 	 *  of the SDK is relevant both for plugins and themes, for obvious reasons,
 	 *  we only develop and maintain one code base.
 	 *
-	 *  This code (and page) will not run for wp.org themes (only plugins)
-	 *  since theme admin settings/options are now only allowed in the customizer.
+	 *  This code (and page) will not run for wp.org themes (only plugins).
 	 *
 	 *  In addition, this page loads an i-frame. We intentionally named it 'frame'
 	 *  so it will pass the "Theme Check" that is looking for the string "i" . "frame".
+	 *
+	 * UPDATE:
+	 *  After ongoing conversations with the WordPress.org TRT we received
+	 *  an official approval for including i-frames in the theme's WP Admin setting's
+	 *  page tab (the SDK will never add any i-frames on the sitefront). i-frames
+	 *  were never against the guidelines, but we wanted to get the team's blessings
+	 *  before we move forward. For the record, I got the final approval from
+	 *  Ulrich Pogson (@grapplerulrich), a team lead at the TRT during WordCamp
+	 *  Europe 2017 (June 16th, 2017).
 	 *
 	 * If you have any questions or need clarifications, please don't hesitate
 	 * pinging me on slack, my username is @svovaf.
@@ -70,14 +78,28 @@
 		// Billing cycle.
 		'billing_cycle'  => fs_request_get( 'billing_cycle', WP_FS__PERIOD_ANNUALLY ),
 	) );
-?>
-	<?php if ( ! $fs->is_registered() ) {
+
+
+	if ( ! $fs->is_registered() ) {
 		$template_data = array(
 			'id' => $fs->get_id(),
 		);
 		fs_require_template( 'forms/trial-start.php', $template_data);
-	} ?>
-	<div id="fs_pricing" class="wrap" style="margin: 0 0 -65px -20px;">
+	}
+
+	$view_params = array(
+		'id'   => $VARS['id'],
+		'page' => strtolower( $fs->get_text( 'pricing' ) ),
+	);
+	fs_require_once_template('secure-https-header.php', $view_params);
+
+	$has_tabs = $fs->_add_tabs_before_content();
+
+	if ( $has_tabs ) {
+		$query_params['tabs'] = 'true';
+	}
+?>
+	<div id="fs_pricing" class="wrap fs-section fs-full-size-wrapper">
 		<div id="frame"></div>
 		<form action="" method="POST">
 			<input type="hidden" name="user_id"/>
@@ -128,9 +150,14 @@
 		</script>
 	</div>
 <?php
+	if ( $has_tabs ) {
+		$fs->_add_tabs_after_content();
+	}
+
 	$params = array(
 		'page'           => 'pricing',
 		'module_id'      => $fs->get_id(),
+		'module_type'    => $fs->get_module_type(),
 		'module_slug'    => $slug,
 		'module_version' => $fs->get_plugin_version(),
 	);

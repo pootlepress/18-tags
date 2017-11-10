@@ -2,7 +2,7 @@
 	/**
 	 * @package     Freemius
 	 * @copyright   Copyright (c) 2015, Freemius, Inc.
-	 * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+	 * @license     https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License Version 3
 	 * @since       1.0.3
 	 */
 
@@ -21,7 +21,7 @@
 	/**
 	 * @var FS_Plugin_Tag $update
 	 */
-	$update = $fs->get_update( false, false );
+	$update = $fs->get_update( false, false, WP_FS__TIME_24_HOURS_IN_SEC / 24 );
 
 	$is_paying              = $fs->is_paying();
 	$user                   = $fs->get_user();
@@ -41,8 +41,15 @@
 	if ( fs_request_get_bool( 'auto_install' ) ) {
 		$fs->_add_auto_installation_dialog_box();
 	}
+
+	$has_tabs = $fs->_add_tabs_before_content();
+
+	if ( $has_tabs ) {
+		$query_params['tabs'] = 'true';
+	}
 ?>
-	<div class="wrap">
+	<div class="wrap fs-section">
+		<?php if ( ! $has_tabs ) : ?>
 		<h2 class="nav-tab-wrapper">
 			<a href="<?php echo $fs->get_account_url() ?>"
 			   class="nav-tab nav-tab-active"><?php fs_echo( 'account', $slug ) ?></a>
@@ -56,18 +63,15 @@
 					<a href="<?php echo $fs->get_trial_url() ?>" class="nav-tab"><?php fs_echo( 'free-trial', $slug ) ?></a>
 				<?php endif ?>
 			<?php endif ?>
-			<?php if ( ! $plan->is_free() ) : ?>
-				<a href="<?php echo $fs->get_account_tab_url( 'billing' ) ?>"
-				   class="nav-tab"><?php fs_echo( 'billing', $slug ) ?></a>
-			<?php endif ?>
 		</h2>
+		<?php endif ?>
 
 		<div id="poststuff">
 			<div id="fs_account">
 				<div class="has-sidebar has-right-sidebar">
 					<div class="has-sidebar-content">
 						<div class="postbox">
-							<h3><?php fs_echo( 'account-details', $slug ) ?></h3>
+							<h3><span class="dashicons dashicons-businessman"></span> <?php fs_echo( 'account-details', $slug ) ?></h3>
 							<div class="fs-header-actions">
 								<ul>
 									<?php if ( ! $is_paying ) : ?>
@@ -266,12 +270,10 @@
 																<label
 																	class="fs-tag fs-warn"><?php echo esc_html( sprintf( fs_text( 'expires-in', $slug ), human_time_diff( time(), strtotime( $license->expiration ) ) ) ) ?></label>
 															<?php elseif ( $is_active_subscription && ! $subscription->is_first_payment_pending() ) : ?>
-																<label
-																	class="fs-tag fs-success"><?php printf( fs_text( 'renews-in', $slug ), human_time_diff( time(), strtotime( $subscription->next_payment ) ) ) ?></label>
+																<label class="fs-tag fs-success"><?php echo esc_html( sprintf( fs_text( 'renews-in', $slug ), human_time_diff( time(), strtotime( $subscription->next_payment ) ) ) ) ?></label>
 															<?php endif ?>
 														<?php elseif ( $fs->is_trial() ) : ?>
-															<label
-																class="fs-tag fs-warn"><?php printf( fs_text( 'expires-in', $slug ), human_time_diff( time(), strtotime( $site->trial_ends ) ) ) ?></label>
+															<label class="fs-tag fs-warn"><?php echo esc_html( sprintf( fs_text( 'expires-in', $slug ), human_time_diff( time(), strtotime( $site->trial_ends ) ) ) ) ?></label>
 														<?php endif ?>
 														<div class="button-group">
 															<?php $available_license = $fs->is_free_plan() ? $fs->_get_available_premium_license() : false ?>
@@ -691,7 +693,7 @@
 															<?php endif ?>
 														</td>
 													<?php endif ?>
-													<?php if ( defined( 'WP_FS__DEV_MODE' ) && WP_FS__DEV_MODE ) : ?>
+													<?php if ( ! $is_paying && defined( 'WP_FS__DEV_MODE' ) && WP_FS__DEV_MODE ) : ?>
 														<td>
 															<!-- Optional Delete Action -->
 															<?php
@@ -717,17 +719,27 @@
 						<?php endif ?>
 
 						<?php $fs->do_action( 'after_account_details' ) ?>
+
+						<?php
+							$view_params = array( 'id' => $VARS['id'] );
+							fs_require_once_template( 'account/billing.php', $view_params );
+							fs_require_once_template( 'account/payments.php', $view_params );
+						?>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 <?php
+	if ( $has_tabs ) {
+		$fs->_add_tabs_after_content();
+	}
+
 	$params = array(
 		'page'           => 'account',
 		'module_id'      => $fs->get_id(),
+		'module_type'    => $fs->get_module_type(),
 		'module_slug'    => $slug,
 		'module_version' => $fs->get_plugin_version(),
 	);
 	fs_require_template( 'powered-by.php', $params );
-?>

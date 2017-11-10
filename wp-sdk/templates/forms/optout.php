@@ -2,7 +2,7 @@
 	/**
 	 * @package     Freemius
 	 * @copyright   Copyright (c) 2015, Freemius, Inc.
-	 * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+	 * @license     https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License Version 3
 	 * @since       1.2.1.5
 	 */
 
@@ -20,6 +20,11 @@
 	$action = $fs->is_tracking_allowed() ?
 		'stop_tracking' :
 		'allow_tracking';
+
+	$reconnect_url = $fs->get_activation_url( array(
+		'nonce'     => wp_create_nonce( $fs->get_unique_affix() . '_reconnect' ),
+		'fs_action' => ( $fs->get_unique_affix() . '_reconnect' ),
+	) );
 
 	$plugin_title                     = "<strong>{$fs->get_plugin()->title}</strong>";
 	$opt_out_button_text              = fs_text( 'opt-out', $slug );
@@ -53,7 +58,7 @@
 		<p>{$opt_out_message_clicking_opt_out}</p>
 HTML;
 
-	fs_enqueue_local_style( 'dialog-boxes', '/admin/dialog-boxes.css' );
+	fs_enqueue_local_style( 'fs_dialog_boxes', '/admin/dialog-boxes.css' );
 	fs_enqueue_local_style( 'fs_common', '/admin/common.css' );
 ?>
 <script type="text/javascript">
@@ -86,7 +91,7 @@ HTML;
 			$actionLink.attr( 'data-action', action );
 			$modal.appendTo( $( 'body' ) );
 
-			function registerEventHandlers() {
+			function registerActionLinkClick() {
 				$actionLink.click(function( evt ) {
 					evt.preventDefault();
 
@@ -95,7 +100,13 @@ HTML;
 					} else {
 						optIn();
 					}
+
+					return false;
 				});
+			}
+
+			function registerEventHandlers() {
+				registerActionLinkClick();
 
 				$modal.on( 'click', '.button-opt-out', function( evt ) {
 					evt.preventDefault();
@@ -216,6 +227,40 @@ HTML;
 				$optOutErrorMessage.find( ' > p' ).html( msg );
 				$optOutErrorMessage.show();
 			}
+
+			<?php if ( $fs->is_theme() ) : ?>
+			/**
+			 * Add opt-in/out button to the active theme's buttons collection
+			 * in the theme's extended details overlay.
+			 *
+			 * @author Vova Feldman (@svovaf)
+			 * @since 1.2.2.7
+			 */
+			$('.theme-overlay').contentChange(function () {
+				if (!$(this).find('.theme-overlay').hasClass('active')) {
+					// Add opt-in/out button only to the currently active theme.
+					return;
+				}
+
+				if ($('#fs_theme_opt_in_out').length > 0){
+					// Button already there.
+					return;
+				}
+
+				var label = (('stop_tracking' == action) ?
+				        <?php fs_json_encode_echo( 'opt-out', $slug ) ?> :
+				        <?php fs_json_encode_echo( 'opt-in', $slug ) ?>),
+				    href = (('stop_tracking' != action) ?
+					    '<?php echo esc_js( $reconnect_url ) ?>' :
+					    '');
+
+				$actionLink = $('<a id="fs_theme_opt_in_out" href="' + encodeURI(href) + '" class="button" data-action="' + action + '">' + label + '</a>');
+
+				$('.theme-wrap .theme-actions .active-theme').append($actionLink);
+
+				registerActionLinkClick();
+			});
+			<?php endif ?>
 		});
 	})( jQuery );
 </script>

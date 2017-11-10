@@ -2,7 +2,7 @@
 	/**
 	 * @package     Freemius
 	 * @copyright   Copyright (c) 2016, Freemius, Inc.
-	 * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+	 * @license     https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License Version 3
 	 * @since       1.2.0
 	 */
 
@@ -11,11 +11,13 @@
 	}
 
 	/**
+	 * @var array $VARS
+	 */
+	$slug = $VARS['slug'];
+	/**
 	 * @var Freemius $fs
 	 */
-	$fs = freemius( $VARS['id'] );
-
-	$slug = $fs->get_slug();
+	$fs = freemius( $slug );
 
 	/**
 	 * @var FS_Plugin_Tag $update
@@ -454,8 +456,8 @@
 						data   : {
 							action   : '<?php echo $fs->get_ajax_action( 'update_billing' ) ?>',
 							security : '<?php echo $fs->get_ajax_security( 'update_billing' ) ?>',
-							module_id: '<?php echo $fs->get_id() ?>',
-							billing  : billing
+							slug    : '<?php echo $slug ?>',
+							billing : billing
 						},
 						success: function (resultObj) {
 							if (resultObj.success) {

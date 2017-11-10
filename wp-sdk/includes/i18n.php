@@ -2,7 +2,7 @@
 	/**
 	 * @package     Freemius
 	 * @copyright   Copyright (c) 2015, Freemius, Inc.
-	 * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+	 * @license     https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License Version 3
 	 * @since       1.1.4
 	 */
 
@@ -35,13 +35,13 @@
 
 	$fs_text = array(
 		'account'                       => _fs_text( 'Account' ),
-		'addon'                         => _fs_text( 'Add On' ),
+		'addon'                         => _fs_text( 'Add-On' ),
 		'contact-us'                    => _fs_text( 'Contact Us' ),
 		'contact-support'               => _fs_text( 'Contact Support' ),
 		'change-ownership'              => _fs_text( 'Change Ownership' ),
 		'support'                       => _fs_text( 'Support' ),
 		'support-forum'                 => _fs_text( 'Support Forum' ),
-		'add-ons'                       => _fs_text( 'Add Ons' ),
+		'add-ons'                       => _fs_text( 'Add-Ons' ),
 		'upgrade'                       => _fs_x( 'Upgrade', 'verb' ),
 		'awesome'                       => _fs_text( 'Awesome' ),
 		'pricing'                       => _fs_x( 'Pricing', 'noun' ),
@@ -92,7 +92,7 @@
 		'activate-x-now'                => _fs_x( 'Complete "%s" Activation Now',
 			'%s - plugin name. As complete "Jetpack" activation now' ),
 		'few-plugin-tweaks'             => _fs_text( 'We made a few tweaks to the %s, %s' ),
-		'optin-x-now'                   => _fs_text( 'Opt-in to make "%s" Better!' ),
+		'optin-x-now'                   => _fs_text( 'Opt in to make "%s" Better!' ),
 		'error'                         => _fs_text( 'Error' ),
 		'failed-finding-main-path'      => _fs_text( 'Freemius SDK couldn\'t find the plugin\'s main file. Please contact sdk@freemius.com with the current error.' ),
 		#region Account
@@ -217,13 +217,13 @@
 		#region Connect
 		'hey-x'                                    => _fs_x( 'Hey %s,', 'greeting' ),
 		'thanks-x'                                 => _fs_x( 'Thanks %s!', 'a greeting. E.g. Thanks John!' ),
-		'connect-message'                          => _fs_text( 'Never miss an important update - opt-in to our security and feature updates notifications, and non-sensitive diagnostic tracking with %4$s.' ),
-		'connect-message_on-update'                => _fs_text( 'Please help us improve %1$s! If you opt-in, some data about your usage of %1$s will be sent to %4$s. If you skip this, that\'s okay! %1$s will still work just fine.' ),
+		'connect-message'                          => _fs_text( 'Never miss an important update - opt in to our security and feature updates notifications, and non-sensitive diagnostic tracking with %4$s.' ),
+		'connect-message_on-update'                => _fs_text( 'Please help us improve %1$s! If you opt in, some data about your usage of %1$s will be sent to %4$s. If you skip this, that\'s okay! %1$s will still work just fine.' ),
 		'pending-activation-message'               => _fs_text( 'You should receive an activation email for %s to your mailbox at %s. Please make sure you click the activation button in that email to %s.' ),
 		'complete-the-install'                     => _fs_text( 'complete the install' ),
 		'start-the-trial'                          => _fs_text( 'start the trial' ),
 		'thanks-for-purchasing'                    => _fs_text( 'Thanks for purchasing %s! To get started, please enter your license key:' ),
-		'license-sync-disclaimer'                  => _fs_text( 'The %s will be periodically sending data to %s to check for %s updates and verify the validity of your license.' ),
+		'license-sync-disclaimer'                  => _fs_text( 'The %1$s will be periodically sending data to %2$s to check for security and feature updates, and verify the validity of your license.' ),
 		'what-permissions'                         => _fs_text( 'What permissions are being granted?' ),
 		'permissions-profile'                      => _fs_text( 'Your Profile Overview' ),
 		'permissions-profile_desc'                 => _fs_text( 'Name and email address' ),
@@ -390,7 +390,8 @@
 		'connectivity-test-fails-message'          => _fs_text( 'From unknown reason, the API connectivity test failed.' ),
 		'connectivity-test-maybe-temporary'        => _fs_text( 'It\'s probably a temporary issue on our end. Just to be sure, with your permission, would it be o.k to run another connectivity test?' ),
 		'curl-missing-message'                     => _fs_text( 'We use PHP cURL library for the API calls, which is a very common library and usually installed and activated out of the box. Unfortunately, cURL is not activated (or disabled) on your server.' ),
-		'curl-disabled-methods'                    => _fs_text( 'Disabled method(s):' ),		'cloudflare-blocks-connection-message'     => _fs_text( 'From unknown reason, CloudFlare, the firewall we use, blocks the connection.' ),
+		'curl-disabled-methods'                    => _fs_text( 'Disabled method(s):' ),
+        'cloudflare-blocks-connection-message'     => _fs_text( 'From unknown reason, CloudFlare, the firewall we use, blocks the connection.' ),
 		'x-requires-access-to-api'                 => _fs_x( '%s requires an access to our API.',
 			'as pluginX requires an access to our API' ),
 		'squid-blocks-connection-message'          => _fs_text( 'It looks like your server is using Squid ACL (access control lists), which blocks the connection.' ),
@@ -455,7 +456,7 @@
 		/* translators: %1$s: Number of trial days; %2$s: Plan name; */
 		'start-trial-prompt-header'                => _fs_text( 'You are 1-click away from starting your %1$s-day free trial of the %2$s plan.' ),
 		/* translators: %s: Link to freemius.com */
-		'start-trial-prompt-message'               => _fs_text( 'For compliance with the WordPress.org guidelines, before we start the trial we ask that you opt-in with your user and non-sensitive site information, allowing the %s to periodically send data to %s to check for version updates and to validate your trial.' ),
+		'start-trial-prompt-message'               => _fs_text( 'For compliance with the WordPress.org guidelines, before we start the trial we ask that you opt in with your user and non-sensitive site information, allowing the %s to periodically send data to %s to check for version updates and to validate your trial.' ),
 
 		#endregion
 		#--------------------------------------------------------------------------------
@@ -490,6 +491,11 @@
 		'auto-install-error-invalid-license'         => _fs_text( 'You do not have a valid license to access the premium version.' ),
 		'auto-install-error-serviceware'             => _fs_text( 'Plugin is a "Serviceware" which means it does not have a premium code version.' ),
         #endregion
+
+		/* translators: %s: Page name */
+		'secure-x-page-header' => _fs_text( 'Secure HTTPS %s page, running from an external domain' ),
+		'pci-compliant'        => _fs_text( 'PCI compliant' ),
+		'view-paid-features'   => _fs_text( 'View paid features' ),
 	);
 
 	/**

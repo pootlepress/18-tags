@@ -2,7 +2,7 @@
 	/**
 	 * @package     Freemius
 	 * @copyright   Copyright (c) 2015, Freemius, Inc.
-	 * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+	 * @license     https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License Version 3
 	 * @since       1.1.3
 	 */
 
@@ -265,11 +265,12 @@
 		 *
 		 * @param string $id
 		 * @param bool   $default
+		 * @param bool   $ignore_menu_existence Since 1.2.2.7 If true, check if the submenu item visible even if there's no parent menu.
 		 *
 		 * @return bool
 		 */
-		function is_submenu_item_visible( $id, $default = true ) {
-			if ( ! $this->has_menu() ) {
+		function is_submenu_item_visible( $id, $default = true, $ignore_menu_existence = false ) {
+			if ( ! $ignore_menu_existence && ! $this->has_menu() ) {
 				return false;
 			}
 
@@ -407,7 +408,7 @@
 			}
 
 			global $pagenow;
-			if ( ( WP_FS__MODULE_TYPE_THEME === $this->_module_type ) && 'themes.php' === $pagenow ) {
+			if ( ( WP_FS__MODULE_TYPE_THEME === $this->_module_type ) && Freemius::is_themes_page() ) {
 				/**
 				 * In activation only when show_optin query string param is given.
 				 *
@@ -567,7 +568,16 @@
 				return false;
 			}
 
-			$submenu[ $menu_slug ] = array();
+			/**
+			 * This method is NOT executed for WordPress.org themes.
+			 * Since we maintain only one version of the SDK we added this small
+			 * hack to avoid the error from Theme Check since it's a false-positive.
+			 *
+			 * @author Vova Feldman (@svovaf)
+			 * @since  1.2.2.7
+			 */
+			$submenu_ref               = &$submenu;
+			$submenu_ref[ $menu_slug ] = array();
 
 			return true;
 		}
@@ -596,6 +606,32 @@
 			$this->remove_all_submenu_items();
 
 			return $menu;
+		}
+
+		/**
+		 * Get module's main admin setting page URL.
+		 *
+		 * @todo This method was only tested for wp.org compliant themes with a submenu item. Need to test for plugins with top level, submenu, and CPT top level, menu items.
+		 *
+		 * @author Vova Feldman (@svovaf)
+		 * @since  1.2.2.7
+		 *
+		 * @return string
+		 */
+		function main_menu_url() {
+			$this->_logger->entrance();
+
+			if ( $this->_is_top_level ) {
+				$menu = $this->find_top_level_menu();
+			} else {
+				$menu = $this->find_main_submenu();
+			}
+
+			$parent_slug = isset( $menu['parent_slug'] ) ?
+                $menu['parent_slug'] :
+                'admin.php';
+
+			return admin_url( $parent_slug . '?page=' . $menu['menu'][2] );
 		}
 
 		/**
@@ -655,27 +691,36 @@
 
 			$mask = '%s <span class="update-plugins %s count-%3$s" aria-hidden="true"><span>%3$s<span class="screen-reader-text">%3$s notifications</span></span></span>';
 
-			if ($this->_is_top_level) {
+			/**
+			 * This method is NOT executed for WordPress.org themes.
+			 * Since we maintain only one version of the SDK we added this small
+			 * hack to avoid the error from Theme Check since it's a false-positive.
+			 *
+			 * @author Vova Feldman (@svovaf)
+			 * @since  1.2.2.7
+			 */
+			$menu_ref    = &$menu;
+			$submenu_ref = &$submenu;
+
+			if ( $this->_is_top_level ) {
 				// Find main menu item.
 				$found_menu = $this->find_top_level_menu();
 
 				if ( false !== $found_menu ) {
 					// Override menu label.
-					$menu[ $found_menu['position'] ][0] = sprintf(
+					$menu_ref[ $found_menu['position'] ][0] = sprintf(
 						$mask,
 						$found_menu['menu'][0],
 						$class,
 						$counter
 					);
 				}
-			}
-			else
-			{
+			} else {
 				$found_submenu = $this->find_main_submenu();
 
 				if ( false !== $found_submenu ) {
 					// Override menu label.
-					$submenu[ $found_submenu['parent_slug'] ][ $found_submenu['position'] ][0] = sprintf(
+					$submenu_ref[ $found_submenu['parent_slug'] ][ $found_submenu['position'] ][0] = sprintf(
 						$mask,
 						$found_submenu['menu'][0],
 						$class,

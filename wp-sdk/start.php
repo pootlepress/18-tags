@@ -2,7 +2,7 @@
 	/**
 	 * @package     Freemius
 	 * @copyright   Copyright (c) 2015, Freemius, Inc.
-	 * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+	 * @license     https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License Version 3
 	 * @since       1.0.3
 	 */
 
@@ -15,7 +15,7 @@
 	 *
 	 * @var string
 	 */
-	$this_sdk_version = '1.2.2.6';
+	$this_sdk_version = '1.2.2.9';
 
 	#region SDK Selection Logic --------------------------------------------------------------------
 
@@ -72,7 +72,6 @@
 		/**
 		 * Store the WP install absolute path reference to identify environment change
 		 * while replicating the storage.
-
 		 *
 		 * @author Vova Feldman (@svovaf)
 		 * @since  1.2.1.7
@@ -99,9 +98,17 @@
 			 * @author Vova Feldman (@svovaf)
 			 * @since  1.2.1.7
 			 */
+			$has_changes = false;
 			foreach ( $fs_active_plugins->plugins as $sdk_path => &$data ) {
 				if ( ! file_exists( WP_PLUGIN_DIR . '/' . $sdk_path ) ) {
 					unset( $fs_active_plugins->plugins[ $sdk_path ] );
+					$has_changes = true;
+				}
+			}
+
+			if ( $has_changes ) {
+				if ( empty( $fs_active_plugins->plugins ) ) {
+					unset( $fs_active_plugins->newest );
 				}
 
 				update_option( 'fs_active_plugins', $fs_active_plugins );

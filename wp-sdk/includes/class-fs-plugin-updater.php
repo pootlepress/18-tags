@@ -2,7 +2,7 @@
 	/**
 	 * @package     Freemius
 	 * @copyright   Copyright (c) 2015, Freemius, Inc.
-	 * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+	 * @license     https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License Version 3
 	 * @since       1.0.4
 	 *
 	 * @link        https://github.com/easydigitaldownloads/EDD-License-handler/blob/master/EDD_SL_Plugin_Updater.php
@@ -204,7 +204,11 @@
 
 			if ( ! isset( $this->_update_details ) ) {
 				// Get plugin's newest update.
-				$new_version = $this->_fs->get_update( false, false );
+				$new_version = $this->_fs->get_update(
+					false,
+					fs_request_get_bool( 'force-check' ),
+					WP_FS__TIME_24_HOURS_IN_SEC / 24
+				);
 
 				$this->_update_details = false;
 
@@ -589,7 +593,7 @@ if ( !isset($info->error) ) {
 				global $wp_filesystem;
 
 				$error_code    = 'unable_to_connect_to_filesystem';
-				$error_message = __( 'Unable to connect to the filesystem. Please confirm your credentials.' );
+				$error_message = $this->_fs->get_text( 'Unable to connect to the filesystem. Please confirm your credentials.' );
 
 				// Pass through the error from WP_Filesystem if one was raised.
 				if ( $wp_filesystem instanceof WP_Filesystem_Base &&

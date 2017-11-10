@@ -2,7 +2,7 @@
 	/**
 	 * @package     Freemius
 	 * @copyright   Copyright (c) 2015, Freemius, Inc.
-	 * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+	 * @license     https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License Version 3
 	 * @since       1.0.4
 	 */
 
@@ -232,7 +232,7 @@
 
 			$cached_result = self::$_cache->get( $cache_key );
 
-			if ( $flush || ! self::$_cache->has_valid( $cache_key ) ) {
+			if ( $flush || ! self::$_cache->has_valid( $cache_key, $expiration ) ) {
 				$result = $this->call( $path );
 
 				if ( ! is_object( $result ) || isset( $result->error ) ) {

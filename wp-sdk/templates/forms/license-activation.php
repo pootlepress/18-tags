@@ -2,7 +2,7 @@
 	/**
 	 * @package     Freemius
 	 * @copyright   Copyright (c) 2015, Freemius, Inc.
-	 * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+	 * @license     https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License Version 3
 	 * @since       1.1.9
 	 */
 
@@ -32,16 +32,16 @@
 
 		$freemius_link = '<a href="' . $freemius_site_url . '" target="_blank" tabindex="0">freemius.com</a>';
 
-		$message_below_input_field = sprintf( fs_text( 'license-sync-disclaimer', $slug ),
-				$fs->get_module_type(),
-				$freemius_link,
-				$fs->get_module_type()
-			);
+		$message_below_input_field = sprintf(
+			fs_text( 'license-sync-disclaimer', $slug ),
+			$fs->get_module_label( true ),
+			$freemius_link
+		);
 
 		$activate_button_text = fs_text( 'agree-activate-license', $slug );
 	}
 
-	$license_key_text = fs_text(  'license-key' , $slug );
+	$license_key_text = fs_text( 'license-key' , $slug );
 
 	/**
 	 * IMPORTANT:
@@ -57,7 +57,7 @@
 	<p>{$message_below_input_field}</p>
 HTML;
 
-	fs_enqueue_local_style( 'dialog-boxes', '/admin/dialog-boxes.css' );
+	fs_enqueue_local_style( 'fs_dialog_boxes', '/admin/dialog-boxes.css' );
 ?>
 <script type="text/javascript">
 (function( $ ) {

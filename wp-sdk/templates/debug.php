@@ -2,7 +2,7 @@
 	/**
 	 * @package     Freemius
 	 * @copyright   Copyright (c) 2015, Freemius, Inc.
-	 * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+	 * @license     https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License Version 3
 	 * @since       1.1.1
 	 */
 
@@ -262,14 +262,19 @@
 					<td><?php echo $data->file ?></td>
 					<td><?php echo $data->public_key ?></td>
 					<td>
-						<?php if ( $is_active && $fs->has_trial_plan() ) : ?>
-							<form action="" method="POST">
-								<input type="hidden" name="fs_action" value="simulate_trial">
-								<input type="hidden" name="module_id" value="<?php echo $fs->get_id() ?>">
-								<?php wp_nonce_field( 'simulate_trial' ) ?>
+						<?php if ( $is_active ) : ?>
+							<?php if ( $fs->has_trial_plan() ) : ?>
+								<form action="" method="POST">
+									<input type="hidden" name="fs_action" value="simulate_trial">
+									<input type="hidden" name="module_id" value="<?php echo $fs->get_id() ?>">
+									<?php wp_nonce_field( 'simulate_trial' ) ?>
 
-							<button type="submit" class="button button-primary simulate-trial"><?php fs_echo( 'Simulate Trial' ) ?></button>
-							</form>
+								<button type="submit" class="button button-primary simulate-trial"><?php fs_echo( 'Simulate Trial' ) ?></button>
+								</form>
+							<?php endif ?>
+							<?php if ( $fs->is_registered() ) : ?>
+								<a class="button" href="<?php echo $fs->get_account_url() ?>"><?php fs_echo('account') ?></a>
+							<?php endif ?>
 						<?php endif ?>
 					</td>
 				</tr>
@@ -293,9 +298,11 @@
 			<tr>
 				<th><?php fs_echo( 'id' ) ?></th>
 				<th><?php fs_echo( 'slug' ) ?></th>
+				<th><?php fs_echo( 'user-id' ) ?></th>
 				<th><?php fs_echo( 'plan' ) ?></th>
 				<th><?php fs_echo( 'public-key' ) ?></th>
 				<th><?php fs_echo( 'secret-key' ) ?></th>
+				<th><?php fs_echo( 'actions' ) ?></th>
 			</tr>
 			</thead>
 			<tbody>
@@ -303,6 +310,7 @@
 				<tr>
 					<td><?php echo $site->id ?></td>
 					<td><?php echo $slug ?></td>
+					<td><?php echo $site->user_id ?></td>
 					<td><?php
 							echo is_object( $site->plan ) ?
 								Freemius::_decrypt( $site->plan->name ) :
@@ -310,6 +318,13 @@
 						?></td>
 					<td><?php echo $site->public_key ?></td>
 					<td><?php echo $site->secret_key ?></td>
+					<td><form action="" method="POST">
+							<input type="hidden" name="fs_action" value="delete_install">
+							<?php wp_nonce_field( 'delete_install' ) ?>
+							<input type="hidden" name="module_id" value="<?php echo $site->plugin_id ?>">
+							<input type="hidden" name="module_type" value="<?php echo $module_type ?>">
+							<input type="hidden" name="slug" value="<?php echo $slug ?>">
+							<button type="submit" class="button"><?php fs_echo( 'delete' ) ?></button></td>
 				</tr>
 			<?php endforeach ?>
 			</tbody>
@@ -449,8 +464,7 @@
 		<input name="logger" type="text" placeholder="<?php fs_echo( 'logger' ) ?>"/>
 		<input name="message" type="text" placeholder="<?php fs_echo( 'message' ) ?>"/>
 		<div style="margin: 10px 0">
-			<button id="fs_filter" class="button" style="float: left"><i
-					class="dashicons dashicons-filter"></i> <?php fs_echo( 'filter' ) ?>
+			<button id="fs_filter" class="button" style="float: left"><i class="dashicons dashicons-filter"></i> <?php fs_echo( 'filter' ) ?>
 			</button>
 
 			<form action="" method="POST" style="float: left; margin-left: 10px;">

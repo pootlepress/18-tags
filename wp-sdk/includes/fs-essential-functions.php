@@ -7,7 +7,7 @@
 	 *
 	 * @package     Freemius
 	 * @copyright   Copyright (c) 2015, Freemius, Inc.
-	 * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+	 * @license     https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License Version 3
 	 * @since       1.1.5
 	 */
 
@@ -365,7 +365,7 @@
 			$in_activation = ( ! is_plugin_active( $plugin_file ) );
 		} else {
 			$theme         = wp_get_theme();
-			$in_activation = ( $newest_sdk->plugin_path != $theme->stylesheet );
+			$in_activation = ( $newest_sdk->plugin_path == $theme->stylesheet );
 		}
 
 		$fs_active_plugins->newest = (object) array(
@@ -436,9 +436,16 @@
 			if ( is_null( $newest_sdk_data ) || version_compare( $data->version, $newest_sdk_data->version, '>' )
 			) {
 				// If plugin inactive or SDK starter file doesn't exist, remove SDK reference.
-				if ( ! is_plugin_active( $data->plugin_path ) ||
-				     ! file_exists( fs_normalize_path( WP_PLUGIN_DIR . '/' . $sdk_relative_path . '/start.php' ) )
-				) {
+				if ( 'plugin' === $data->type ) {
+					$is_module_active = is_plugin_active( $data->plugin_path );
+				} else {
+					$active_theme     = wp_get_theme();
+					$is_module_active = ( $data->plugin_path === $active_theme->get_template() );
+				}
+
+				$is_sdk_exists = file_exists( fs_normalize_path( WP_PLUGIN_DIR . '/' . $sdk_relative_path . '/start.php' ) );
+
+				if ( ! $is_module_active || ! $is_sdk_exists ) {
 					unset( $fs_active_plugins->plugins[ $sdk_relative_path ] );
 
 					// No need to store the data since it will be stored in fs_update_sdk_newest_version()
