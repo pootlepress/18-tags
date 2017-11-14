@@ -141,7 +141,7 @@ final class Eighteen_Tags_Customizer_Fields extends Eighteen_Tags_Abstract {
 			$f['type'] = 'multi-checkbox';
 			$f['choices'] = get_post_types( array( 'exclude_from_search' => false, ) );
 		}
-		if ( in_array( $f['type'], array( 'font', 'sf-radio-image', 'alpha-color', 'color', 'grid', 'multi-checkbox', 'post-types', 'image', 'sf-text', 'sf-heading', 'sf-divider', ) ) ) {
+		if ( in_array( $f['type'], array( 'font', 'et-radio-image', 'alpha-color', 'color', 'grid', 'multi-checkbox', 'post-types', 'image', 'et-text', 'et-heading', 'et-divider', ) ) ) {
 
 			$this->cool_fields( $wp_customize, $f['type'], $f['id'], $f );
 			return;
@@ -171,9 +171,9 @@ final class Eighteen_Tags_Customizer_Fields extends Eighteen_Tags_Abstract {
 		$field_class = '';
 		if ( in_array( $type, array( 'multi-checkbox', 'grid', ) ) ) {
 			$field_class = 'PRO18_Custom_Customize_Control';
-		} elseif ( in_array( $type, array( 'sf-text', 'sf-heading', 'sf-divider', ) ) ) {
+		} elseif ( in_array( $type, array( 'et-text', 'et-heading', 'et-divider', ) ) ) {
 			$field_class = 'Arbitrary_Eighteen_Tags_Control';
-			$args['type'] = str_replace( 'sf-', '', $type );
+			$args['type'] = str_replace( 'et-', '', $type );
 		} elseif ( in_array( $type, array( 'alpha-color', ) ) ) {
 			$field_class = 'Lib_Customize_Alpha_Color_Control';
 			$args['type'] = 'lib_color';
@@ -214,9 +214,9 @@ final class Eighteen_Tags_Customizer_Fields extends Eighteen_Tags_Abstract {
 			case 'image':
 				$field_class = 'WP_Customize_Image_Control';
 				break;
-			case 'sf-radio-image':
+			case 'et-radio-image':
 				$field_class = 'Eighteen_Tags_Custom_Radio_Image_Control';
-				$args['type'] = str_replace( 'sf-', '', $type );
+				$args['type'] = str_replace( 'et-', '', $type );
 		}
 	}
 

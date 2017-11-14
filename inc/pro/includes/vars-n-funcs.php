@@ -14,13 +14,13 @@
  * * textarea
  * * color
  * * image
- * * sf-text
- * * sf-heading
- * * sf-divider
+ * * et-text
+ * * et-heading
+ * * et-divider
  *
- * sf- prefixed controls are arbitrary eighteen-tags controls
+ * et- prefixed controls are arbitrary eighteen-tags controls
  *
- * NOTE : sf-text control doesn't show anything if description is not set but
+ * NOTE : et-text control doesn't show anything if description is not set but
  * in Eighteen_Tags_Customizer_Fields class we assign it to label
  * if not set ;)
  *
@@ -503,7 +503,7 @@ function eighteen_tags_pro_fields() {
 			'blog-layout'                  => array(
 				'label'    => 'Layout',
 				'section'  => 'existing_eighteen_tags_archive',
-				'type'     => 'sf-radio-image',
+				'type'     => 'et-radio-image',
 				'default'  => 'full-image',
 				'choices'  => array(
 					'left-image'  => Eighteen_Tags::$url . 'assets/img/admin/layout-left-image.png',
@@ -610,7 +610,7 @@ function eighteen_tags_pro_fields() {
 			'typo-body-typo-div' => array(
 				'label'   => '',
 				'section' => 'existing_eighteen_tags_typography',
-				'type'    => 'sf-divider',
+				'type'    => 'et-divider',
 				'priority' => 27,
 			),
 
