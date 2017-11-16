@@ -108,7 +108,6 @@ You are free to download 18 tags for free and use on as many websites as you lik
 * Fix - WooCommerce reviews broken
 * Fix - Style telephone inputs `[type='tel']`
 * Fix - Nav broken html structure
-* Fix - 
 * Tweak - Category title on category pages
 * Tweak - Social media and contact info in Secondary nav section
 * Tweak - `Header elements` section now called `Header`
