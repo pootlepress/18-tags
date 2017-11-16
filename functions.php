@@ -6,8 +6,8 @@
  * @developer shramee <shramee.srivastav@gmail.com>
  */
 
-define( 'EIGHTEENTAGS_VERSION', '2.2.0' );
-
+define( 'EIGHTEENTAGS_VERSION', '2.5.0' );
+/*
 // Create a helper function for easy SDK access.
 function eighteen_tags_fs() {
 	global $eighteen_tags_fs;
@@ -51,6 +51,7 @@ eighteen_tags_fs()->add_filter( 'connect_url', 'eighteen_tags_fs_settings_url' )
 eighteen_tags_fs()->add_filter( 'after_skip_url', 'eighteen_tags_fs_settings_url' );
 eighteen_tags_fs()->add_filter( 'after_connect_url', 'eighteen_tags_fs_settings_url' );
 eighteen_tags_fs()->add_filter( 'after_pending_connect_url', 'eighteen_tags_fs_settings_url' );// Signal that SDK was initiated.
+*/
 
 /**
  * Initialize all the things.
