@@ -104,8 +104,17 @@ You are free to download 18 tags for free and use on as many websites as you lik
 == Changelog ==
 
 === 2.5.0 ===
-* 2017-04-06
-* New - WooCommerce fancy gallery theme support
+* 2017-11-16
+* New - WordPress 4.9 compatibility
+* New - Responsive embedded videos
+* Fix - WooCommerce reviews broken
+* Fix - Style telephone inputs `[type='tel']`
+* Fix - Nav broken html structure
+* Fix -
+* Tweak - Category title on category pages
+* Tweak - Social media and contact info in Secondary nav section
+* Tweak - `Header elements` section now called `Header`
+* Tweak - Mobile menu text uses primary menu typography
 
 === 2.2.0 ===
 * 2017-04-06

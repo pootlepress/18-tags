@@ -113,7 +113,6 @@ You are free to download 18 tags for free and use on as many websites as you lik
 * Tweak - Social media and contact info in Secondary nav section
 * Tweak - `Header elements` section now called `Header`
 * Tweak - Mobile menu text uses primary menu typography
-* Tweak - 
 
 ### 2.2.0
 * 2017-04-06
