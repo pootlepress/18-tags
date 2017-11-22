@@ -32,10 +32,12 @@ $posts_array = array();
 	<main id="main" class="site-main section group" role="main">
 
 		<header class="page-header">
-			<h1 class="page-title">
-				<?php the_archive_title(); ?>
-			</h1>
-
+			<?php
+			if ( ! is_home() ) { ?>
+				<h1 class="page-title">
+					<?php the_archive_title(); ?>
+				</h1>
+			<?php } ?>
 			<?php the_archive_description(); ?>
 		</header><!-- .page-header -->
 

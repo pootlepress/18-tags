@@ -88,25 +88,28 @@ if ( ! function_exists( 'eighteen_tags_primary_navigation' ) ) {
 				)
 			);
 
-			echo '<div class="handheld-navigation">';
-			wp_nav_menu(
-				array(
-					'theme_location'  => 'handheld',
-					'container_class' => '',
-				)
-			);
 			?>
-			<div class="etp-nav-search">
-				<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-					<label class="screen-reader-text" for="s"><?php _e( 'Search for:', 'eighteen-tags' ); ?></label>
-					<input type="search" class="search-field"
-								 placeholder="<?php echo esc_attr__( 'Search&hellip;', 'eighteen-tags' ); ?>"
-								 value="<?php echo get_search_query(); ?>" name="s"
-								 title="<?php echo esc_attr__( 'Search for:', 'eighteen-tags' ); ?>"/>
-					<input type="submit" value="&#xf002;"/>
-					<?php echo $post_type_field ?>
-				</form>
-			</div><!-- .etp-nav-search -->
+			<div class="handheld-navigation">
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location'  => 'handheld',
+						'container_class' => '',
+					)
+				);
+				?>
+				<div class="etp-nav-search">
+					<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+						<label class="screen-reader-text" for="s"><?php _e( 'Search for:', 'eighteen-tags' ); ?></label>
+						<input type="search" class="search-field"
+									 placeholder="<?php echo esc_attr__( 'Search&hellip;', 'eighteen-tags' ); ?>"
+									 value="<?php echo get_search_query(); ?>" name="s"
+									 title="<?php echo esc_attr__( 'Search for:', 'eighteen-tags' ); ?>"/>
+						<input type="submit" value="&#xf002;"/>
+						<?php echo $post_type_field ?>
+					</form>
+				</div><!-- .etp-nav-search -->
+			</div><!-- .handheld-navigation -->
 			<?php
 			do_action( 'eighteen_tags_pro_in_nav' );
 			?>

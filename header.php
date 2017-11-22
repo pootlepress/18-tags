@@ -38,7 +38,6 @@ if ( get_theme_mod( 'eighteen_tags_boxed_layout' ) ) {
 			 * @hooked eighteen_tags_site_branding - 20
 			 * @hooked eighteen_tags_product_search - 40
 			 * @hooked eighteen_tags_primary_navigation - 50
-			 * @hooked eighteen_tags_header_cart - 60
 			 */
 			do_action( 'eighteen_tags_header' ); ?>
 

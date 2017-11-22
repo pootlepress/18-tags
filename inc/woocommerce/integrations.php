@@ -100,6 +100,7 @@ function eighteen_tags_woocommerce_integrations_scripts() {
 
 //Header cart display
 	$header_cart = get_theme_mod( 'eighteen-tags-pro-header-wc-cart' );
+
 	add_action( 'eighteen_tags_pro_in' . $header_cart . '_nav', 'eighteen_tags_header_cart' );
 	if ( ! empty( $header_cart ) ) {
 		add_action( 'eighteen_tags_pro_in_nav', 'eighteen_tags_header_cart' );
