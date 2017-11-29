@@ -59,6 +59,8 @@ final class Eighteen_Tags_Public extends Eighteen_Tags_Abstract {
 		$this->header_nav_styles = new Eighteen_Tags_Header_Nav( $this->token, $this->plugin_path, $this->plugin_url );
 		$this->content_styles = new Eighteen_Tags_Content_Styles( $this->token, $this->plugin_path, $this->plugin_url );
 		$this->footer_styles = new Eighteen_Tags_Footer_Styles( $this->token, $this->plugin_path, $this->plugin_url );
+		add_filter( 'excerpt_length', array( $this->content_styles, 'excerpt_length' ) );
+		add_filter( 'excerpt_more', array( $this->content_styles, 'excerpt_more' ) );
 
 	}
 

@@ -137,8 +137,6 @@ class Eighteen_Tags_Content_Styles extends Eighteen_Tags_Abstract {
 	}
 
 	function blog_content() {
-		add_filter( 'excerpt_length', array( $this, 'excerpt_length' ) );
-		add_filter( 'excerpt_more', array( $this, 'excerpt_more' ) );
 		$show_full = $this->get( 'blog-content' );
 		if ( $show_full ) {
 			the_content(
@@ -154,8 +152,6 @@ class Eighteen_Tags_Content_Styles extends Eighteen_Tags_Abstract {
 				echo '<a class="button read-more alignright" href="' . get_post_permalink() . '">' . $read_more . '</a>';
 			}
 		}
-		remove_filter( 'excerpt_length', array( $this, 'excerpt_length' ) );
-		remove_filter( 'excerpt_more', array( $this, 'excerpt_more' ) );
 	}
 
 	protected function breadcrumbs() {
