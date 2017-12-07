@@ -215,7 +215,7 @@ final class Eighteen_Tags_Admin extends Eighteen_Tags_Abstract {
 		) );
 
 		$man->add_section( 'eighteen_tags_archive', array(
-			'title' => 'Archive',
+			'title' => 'Posts Page',
 			'panel' => 'etp-blog',
 			'priority' => 7,
 		) );
