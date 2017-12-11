@@ -145,7 +145,7 @@ class Eighteen_Tags_Header_Nav extends Eighteen_Tags_Primary_Navigation {
 
 		$return = $this->sec_nav_icons_container( $float );
 
-		if ( $phone ) { $return .= "<a class='contact-info'><i class='fa fa-phone'></i>$phone</a>"; }
+		if ( $phone ) { $return .= "<a href='tel:$phone' class='contact-info'><i class='fa fa-phone'></i>$phone</a>"; }
 
 		if ( $email ) {
 			$return .= "<a class='contact-info' href='mailto:{$email}'><i class='fa fa-envelope'></i>$email</a>";
