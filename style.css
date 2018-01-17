@@ -469,7 +469,6 @@ body {
  */
 .site-header {
 	background-color: #ffffff;
-	padding-top: 25px;
 	color: #9aa0a7;
 	background-position: center center;
 	position: relative;
@@ -517,10 +516,14 @@ body {
 }
 
 .eighteen-tags-pro-active .woocommerce-breadcrumb {
-	margin-bottom: 4.236em;
+	margin: 0 -99em;
 	font-size: .857em;
 	padding: 1em 99em;
 	border-bottom: 1px solid rgba(0, 0, 0, .05);
+}
+
+.site-content .col-full {
+	overflow: hidden;
 }
 
 .header-widget-region {
