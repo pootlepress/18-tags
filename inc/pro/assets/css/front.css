@@ -684,6 +684,7 @@ body.eighteen-tags-pro-active .site-header-cart li a {
 	#site-navigation .primary-navigation li.mega-menu > ul > li li, #site-navigation .primary-navigation li.mega-menu > ul a {
 		display: block;
 		width: auto;
+		float: none;
 	}
 
 	#site-navigation.main-navigation ul li.mega-menu > ul > li > ul {

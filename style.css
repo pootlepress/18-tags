@@ -469,6 +469,7 @@ body {
  */
 .site-header {
 	background-color: #ffffff;
+	padding-top: 25px;
 	color: #9aa0a7;
 	background-position: center center;
 	position: relative;
