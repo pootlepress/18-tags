@@ -6,7 +6,7 @@
  * @developer shramee <shramee.srivastav@gmail.com>
  */
 
-define( 'EIGHTEENTAGS_VERSION', '2.5.0' );
+define( 'EIGHTEENTAGS_VERSION', '2.6.0' );
 /*
 // Create a helper function for easy SDK access.
 function eighteen_tags_fs() {
