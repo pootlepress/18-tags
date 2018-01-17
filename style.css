@@ -516,14 +516,9 @@ body {
 }
 
 .eighteen-tags-pro-active .woocommerce-breadcrumb {
-	margin: 0 -99em;
+	margin: 0 0 1em;
 	font-size: .857em;
-	padding: 1em 99em;
-	border-bottom: 1px solid rgba(0, 0, 0, .05);
-}
-
-.site-content .col-full {
-	overflow: hidden;
+	padding: 1em 0;
 }
 
 .header-widget-region {
