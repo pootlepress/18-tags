@@ -85,7 +85,7 @@ class Eighteen_Tags_Header_Nav extends Eighteen_Tags_Primary_Navigation {
 			'.eighteen-tags-pro-active nav.secondary-navigation a:hover {' .
 			'font-size:' . $t->get( 'sec-nav-text-size' ) . 'px;' .
 			'letter-spacing:' . $t->get( 'sec-nav-letter-spacing' ) . 'px;' .
-			'color:' . $t->get( 'sec-nav-text-color' ) . ';' .
+			'color:' . $t->get( 'sec-nav-text-color', '#fff' ) . ';' .
 			$t->font_style( $t->get( 'sec-nav-font-style' ) ) .
 			'}';
 

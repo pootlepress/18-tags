@@ -33,7 +33,8 @@ function eighteen_tags_pro_fields() {
 				'type'     => 'select',
 				'choices'  => array(
 					''                        => 'Old Skool',
-					'right'                   => 'Align right',
+					'right'                   => 'Align right items left',
+					'right nav-items-right'   => 'Align right items right',
 					'center'                  => 'Centered',
 					'center-inline'           => 'Centred inline logo',
 					'left-vertical'           => 'Left vertical',
@@ -210,6 +211,7 @@ function eighteen_tags_pro_fields() {
 				'section'  => 'Secondary Navigation',
 				'type'     => 'color',
 				'priority' => 40,
+				'default'  => '#fff',
 			),
 			'sec-nav-active-link-color'    => array(
 				'label'    => 'Active link color',
@@ -477,7 +479,7 @@ function eighteen_tags_pro_fields() {
 				'priority' => 30,
 			),
 			'blog-show-sidebar'            => array(
-				'label'    => 'Show sidebar on archive page',
+				'label'    => 'Show sidebar on posts page',
 				'section'  => 'existing_eighteen_tags_archive',
 				'type'     => 'checkbox',
 				'default'  => true,
