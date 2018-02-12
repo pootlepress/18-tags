@@ -92,7 +92,7 @@ final class Eighteen_Tags_Customizer_Fields extends Eighteen_Tags_Abstract {
 					'priority' => 25,
 				) );
 
-				$args = apply_filters(  $sec . 'filter-args', $args );
+				$args = apply_filters(  $sec . '-filter-args', $args );
 
 				$wp_customize->add_section( $sec, $args );
 			} else {

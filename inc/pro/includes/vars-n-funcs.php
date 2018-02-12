@@ -1311,7 +1311,9 @@ if ( ! function_exists( 'eighteen_tags_post_thumbnail' ) ) {
  * @return mixed Setting value
  */
 function get_18tags_mod( $id, $default = null ){
-	return get_theme_mod( Eighteen_Tags::instance()->token . '-' . $id, $default );
+	$return = get_theme_mod( Eighteen_Tags::instance()->token . '-' . $id, $default );
+
+	return apply_filters( "storefront_pro_filter_mod_$id", $return, $id );
 }
 
 /**

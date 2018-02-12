@@ -144,7 +144,7 @@ final class Eighteen_Tags_Admin extends Eighteen_Tags_Abstract {
 	 * @return array Arguments
 	 */
 	public function filter_sections ( $args ) {
-		if ( in_array( $args['title'], array( 'Primary Navigation', 'Secondary Navigation', 'Header elements', 'Mobile menu', ) ) ) {
+		if ( in_array( $args['title'], array( 'Primary Navigation', 'Secondary Navigation', 'Header type', 'Header elements', 'Mobile menu', ) ) ) {
 			$args['panel'] = 'etp-header';
 			if ( 'Mobile menu' == $args['title'] ) {
 				$args['description'] = 'Mobile menu customizations require menu assigned to Handheld Menu location';
