@@ -15,6 +15,8 @@
  */
 final class Eighteen_Tags_Public extends Eighteen_Tags_Abstract {
 
+	public static $css = '';
+
 	public static $desktop_css = '';
 
 	public static $mobile_css = '';
@@ -108,6 +110,8 @@ final class Eighteen_Tags_Public extends Eighteen_Tags_Abstract {
 		$css .= $this->content_styles->styles();
 
 		$css .= $this->footer_styles->styles();
+
+		$css .= self::$css;
 
 		$css .= '@media only screen and (min-width: 770px) {';
 
