@@ -36,6 +36,10 @@ nav.secondary-navigation {
 	padding: 7px;
 }
 
+.nav-items-right .primary-navigation ul {
+	text-align: right;
+}
+
 #site-navigation.main-navigation ul.menu .etp-search a, a.etp-nav-search-close {
 	cursor: pointer;
 }
@@ -701,7 +705,8 @@ body.eighteen-tags-pro-active .site-header-cart li a {
 .col {
 	display: block;
 	float: left;
-	margin: 1.6%;
+	margin: 0 1.6%;
+	margin-bottom: 3.2%;
 }
 
 .col:first-child {
