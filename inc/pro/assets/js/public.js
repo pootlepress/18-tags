@@ -48,6 +48,11 @@ jQuery( document ).ready( function ( $ ) {
 			$navbar.find( '.etp-search ul' ).hide();
 			$navbar.css( 'height', navHi );
 
+			$( window ).resize( function() {
+				navHi = $navbar.innerHeight();
+				$navbar.css( 'height', navHi );
+			} );
+
 			toggleSearch = function () {
 				$navbar.toggleClass( 'show-search' );
 				$navbar.children( '.primary-navigation, .site-header-cart' ).slideToggle( { easing : 'linear' } );
