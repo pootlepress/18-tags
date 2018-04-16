@@ -8,7 +8,7 @@ $video_args = array(
 	'width' => '1280',
 )
 ?>
-<div class="col">
+<div class="col" id="help-videos">
 	<div class="boxed video">
 		<h2><?php _e( 'How to customize the header and menus', 'eighteen-tags' ); ?></h2>
 		<div class="video-wrapper">

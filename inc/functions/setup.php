@@ -171,3 +171,9 @@ function eighteen_tags_child_scripts() {
 	global $eighteen_tags_version;
 	wp_enqueue_style( 'eighteen-tags-style', get_template_directory_uri() . '/style.css', '', $eighteen_tags_version );
 }
+
+add_action('after_switch_theme', 'eighteen_tags_activated');
+
+function eighteen_tags_activated() {
+	update_option( 'eighteen_tags_version', EIGHTEENTAGS_VERSION );
+}

@@ -65,3 +65,9 @@ if ( is_woocommerce_activated() ) {
 	require_once get_template_directory() . '/inc/woocommerce/template-tags.php';
 	require_once get_template_directory() . '/inc/woocommerce/integrations.php';
 }
+
+global $pagenow;
+if ( isset( $_GET['activated'] ) && $pagenow == 'themes.php' ) {
+	wp_redirect( admin_url( 'themes.php?page=eighteen-tags-welcome&just-installed' ) );
+	exit;
+}

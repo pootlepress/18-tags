@@ -48,7 +48,9 @@ final class Eighteen_Tags_Admin extends Eighteen_Tags_Abstract {
 		//Admin notices
 		add_action( 'admin_notices', array( $this, 'admin_notices' ) );
 		//Reset all Eighteen tags pro pro options
-		add_action( 'wp_ajax_eighteen_tags_pro_reset', array( $this, 'reset_all' ) );
+		add_action( 'wp_ajax_18tags_apply_skin', array( $this, 'apply_skin' ) );
+		add_action( 'wp_ajax_18tags_export', array( $this, 'export' ) );
+		add_action( 'wp_ajax_18tags_reset', array( $this, 'reset_all' ) );
 		//Filter fields
 		add_action( 'eighteen_tags_pro_fields', array( $this, 'filter_fields' ) );
 	}
@@ -116,17 +118,73 @@ final class Eighteen_Tags_Admin extends Eighteen_Tags_Abstract {
 
 	/**
 	 * Resets all Eighteen tags pro options
+	 * @action wp_ajax_eighteen_tags_pro_apply
+	 */
+	public function apply_skin(){
+		$skin = filter_input( INPUT_GET, 'skin' );
+		$nonce = filter_input( INPUT_GET, '_wpnonce' );
+		$redirect = filter_input( INPUT_GET, 'redirect' );
+		if ( ! current_user_can( 'manage_options' ) && wp_verify_nonce( $nonce, '18tags_apply_skin' ) ) {
+			wp_send_json( array(
+				'msg'  => __( 'Current user lacks required permissions or nonce invalid.', 'eighteen-tags' ),
+				'type' => 'error',
+			) );
+		}
+		$response = array(
+			'msg'  => __( 'Skin not found.', 'eighteen-tags' ),
+			'type' => 'error',
+		);
+
+		if ( $skin ) {
+			$skins = eighteen_tags_skins();
+			if ( ! empty( $skins[ $skin ] ) ) {
+				$mods  = json_decode( $skins[ $skin ]['data'], 'array' );
+				$theme = get_option( 'stylesheet' );
+				if ( $mods ) {
+					$success         = update_option( "theme_mods_$theme", $mods );
+//					$response["theme_mods_$theme"] = $mods;
+					$response['msg'] = __( 'Could not save settings from data.', 'eighteen-tags' );
+					if ( $success ) {
+						$response['msg']   = __( 'Successfully imported settings from the file.', 'eighteen-tags' );
+						$response['type']  = 'success';
+					}
+					if ( $redirect ) {
+						$redirect .= strpos( $redirect, '?' ) ? '&' : '?';
+						$redirect .= "skin_applied=$skin";
+						header( 'Location:' . $redirect );
+					}
+				}
+			}
+		}
+
+		wp_send_json( $response );
+	}
+
+	/**
+	 * Resets all Storefront Pro options
+	 * @action wp_ajax_storefront_pro_reset
+	 */
+	public function export() {
+		if ( current_user_can( 'manage_options' ) ) {
+			wp_send_json( get_theme_mods() );
+		}
+	}
+
+	/**
+	 * Resets all Eighteen tags pro options
 	 * @action wp_ajax_eighteen_tags_pro_reset
 	 */
 	public function reset_all(){
-		$redirect = filter_input( INPUT_GET, 'redirect' );
-		if ( $redirect ) {
+		if ( current_user_can( 'manage_options' ) ) {
 			$fields = eighteen_tags_pro_fields();
 			foreach ( $fields as $id => $f ) {
 				remove_theme_mod( "{$this->token}-{$id}" );
 			}
-			$this->add_notice( '<p>All Eighteen tags pro options have been successfully reset.</p>' );
-			header( 'Location:' . $redirect );
+			$redirect = filter_input( INPUT_GET, 'redirect' );
+			if ( $redirect ) {
+				$this->add_notice( '<p>All Eighteen tags pro options have been successfully reset.</p>' );
+				header( 'Location:' . $redirect );
+			}
 		}
 	}
 
