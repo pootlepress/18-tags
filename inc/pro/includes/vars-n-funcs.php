@@ -1358,9 +1358,18 @@ function eighteen_tags_is_ppb() {
 function eighteen_tags_skins() {
 	$skins = [
 		'Yellow' => [
-			'img' => 'https://images.unsplash.com/photo-1436262513933-a0b06755c784?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjI5MTV9&s=49704df43f9b78b97e99929a3cfca926',
+			'img'  => 'https://images.unsplash.com/photo-1436262513933-a0b06755c784?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjI5MTV9&s=49704df43f9b78b97e99929a3cfca926',
 			'data' => '{"0":false,"nav_menu_locations":{"primary":19,"secondary":20,"handheld":198},"custom_css_post_id":-1,"etp-google-fonts":"eighteen-tags-pro-pri-nav-font:|:eighteen-tags-pro-sec-nav-font:|:eighteen-tags-pro-site-title-font:|:eighteen-tags-pro-site-tagline-font:|:eighteen-tags-pro-typo-header-font:|:eighteen-tags-pro-typo-body-font","eighteen-tags-pro-pri-nav-dd-bg-color":"#000000","eighteen-tags-pro-single-image-height":"400","eighteen-tags-pro-header-wc-cart":"hide","sidebars_widgets":{"time":1523880901,"data":{"wp_inactive_widgets":["custom_html-3","archives-2","meta-2","search-2","categories-2","recent-posts-2","recent-comments-2"],"sidebar-1":["search-4","calendar-3"],"header-1":[],"footer-1":["text-2"],"footer-2":["text-3"],"footer-3":[],"footer-4":[],"footer-bar-1":[],"header-bar-1":[]}},"eighteen-tags-pro-nav-style":"center-inline","eighteen-tags-pro-pri-nav-font":"Crafty Girls","eighteen-tags-pro-pri-nav-text-color":"#c48a27","eighteen-tags-pro-pri-nav-active-link-color":"#dd3333","eighteen-tags-pro-pri-nav-bg-color":"#eeee22","eighteen-tags-pro-pri-nav-dd-animation":"fade","eighteen-tags-pro-remove-search-icon":"1","eighteen-tags-pro-header-bg-color":"#eeee22","eighteen_tags_footer_background_color":"#eeee22","eighteen_tags_footer_heading_color":"#dd3333","eighteen_tags_footer_text_color":"#5b0b0b","eighteen_tags_footer_link_color":"#b53b3b","header_image":"http:\/\/wp\/ppb\/wp-content\/uploads\/2018\/03\/moon.png","header_image_data":{"attachment_id":2041,"url":"http:\/\/wp\/ppb\/wp-content\/uploads\/2018\/03\/moon.png","thumbnail_url":"http:\/\/wp\/ppb\/wp-content\/uploads\/2018\/03\/moon.png","height":512,"width":512},"background_image":"https://images.unsplash.com/photo-1436262513933-a0b06755c784?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjI5MTV9&s=49704df43f9b78b97e99929a3cfca926"}',
-		]
+		],
+		'Blue - Pro unavailable'   => [
+			'pro' => '1',
+			'img' => 'https://images.unsplash.com/photo-1486848538113-ce1a4923fbc5?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjI5MTV9&s=9c82428ba19f6201b12985019341e6c2',
+		],
+		'Aqua - Pro available'   => [
+			'pro' => '1',
+			'img' => 'https://images.unsplash.com/photo-1517093728432-a0440f8d45af?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjI5MTV9&s=a684671440a6eac069d68c2775b3e99b',
+			'data' => '{"etp-google-fonts":"eighteen-tags-pro-pri-nav-font:|:eighteen-tags-pro-sec-nav-font:|:eighteen-tags-pro-site-title-font:|:eighteen-tags-pro-site-tagline-font:|:eighteen-tags-pro-typo-header-font:|:eighteen-tags-pro-typo-body-font","custom_css_post_id":-1,"eighteen-tags-pro-pri-nav-dd-bg-color":"#000000","nav_menu_locations":{"primary":19},"eighteen-tags-pro-header-bg-color":"#25b6ea","header_image":"remove-header","eighteen-tags-pro-nav-style":"center","eighteen-tags-pro-pri-nav-text-color":"#dbf1ff","eighteen-tags-pro-pri-nav-active-link-color":"#ffffff","eighteen-tags-pro-header-wc-cart":"hide","eighteen_tags_footer_background_color":"#7cdcff"}',
+		],
 	];
 
 	return apply_filters( 'eighteen_tags_skins', $skins );

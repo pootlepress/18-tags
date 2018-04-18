@@ -150,8 +150,12 @@ final class Eighteen_Tags_Admin extends Eighteen_Tags_Abstract {
 					}
 					if ( $redirect ) {
 						$redirect .= strpos( $redirect, '?' ) ? '&' : '?';
-						$redirect .= "skin_applied=$skin";
+						$this->add_notice( '<p>All Eighteen tags pro options have been successfully reset.</p>' );
+
+						$notice = sprintf( __( '%s Skin applied.', 'eighteen-tags' ), "&quot;<b>$skin</b>&quot;" );
+						$this->add_notice( '<p>' . $notice . '</p>' );
 						header( 'Location:' . $redirect );
+						die();
 					}
 				}
 			}
@@ -176,14 +180,16 @@ final class Eighteen_Tags_Admin extends Eighteen_Tags_Abstract {
 	 */
 	public function reset_all(){
 		if ( current_user_can( 'manage_options' ) ) {
-			$fields = eighteen_tags_pro_fields();
-			foreach ( $fields as $id => $f ) {
-				remove_theme_mod( "{$this->token}-{$id}" );
-			}
+			$theme = get_option( 'stylesheet' );
+			update_option( "theme_mods_$theme", [] );
+
 			$redirect = filter_input( INPUT_GET, 'redirect' );
+			var_dump($redirect);
+
 			if ( $redirect ) {
 				$this->add_notice( '<p>All Eighteen tags pro options have been successfully reset.</p>' );
 				header( 'Location:' . $redirect );
+				die();
 			}
 		}
 	}
@@ -345,7 +351,8 @@ final class Eighteen_Tags_Admin extends Eighteen_Tags_Abstract {
 		if ( $notices = get_theme_mod( '18tags-pro-notices', '' ) ) {
 			$notices = explode( ':|:', get_theme_mod( '18tags-pro-notices', '' ) );
 			foreach ( $notices as $notice ) {
-				echo "<div class='notice is-dismissible updated'>$notice</div>";
+				if ( $notice )
+					echo "<div class='notice is-dismissible updated'>$notice</div>";
 			}
 			remove_theme_mod( '18tags-pro-notices' );
 		}
