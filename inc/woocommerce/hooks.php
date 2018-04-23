@@ -78,4 +78,3 @@ if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '2.3', '>=' ) ) {
  * @see  eighteen_tags_add_bookings_customizer_css()
  */
 add_action( 'wp_enqueue_scripts', 						'eighteen_tags_woocommerce_integrations_scripts' );
-add_action( 'wp_enqueue_scripts', 						'eighteen_tags_add_integrations_customizer_css' );
