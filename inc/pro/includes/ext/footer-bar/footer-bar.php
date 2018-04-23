@@ -145,7 +145,6 @@ final class Eighteen_Tags_Footer_Bar {
 		add_action( 'wp_enqueue_scripts', array( $this, 'etfb_styles' ), 999 );
 		add_action( 'customize_register', array( $this, 'etfb_customize_register' ) );
 		add_action( 'customize_preview_init', array( $this, 'etfb_customize_preview_js' ) );
-		add_action( 'eighteen_tags_before_footer', array( $this, 'etfb_footer_bar' ), 10 );
 		$this->etfb_register_widget_area();
 	}
 
@@ -276,38 +275,41 @@ final class Eighteen_Tags_Footer_Bar {
 	 * @return  void
 	 */
 	public function etfb_styles() {
-		wp_enqueue_style( 'sfb-styles', $this->plugin_url . '/assets/css/front.css' );
+		if ( is_active_sidebar( 'footer-bar-1' ) && get_option( 'etp_footer_bar' ) ) {
+			add_action( 'eighteen_tags_before_footer', array( $this, 'etfb_footer_bar' ), 10 );
+			wp_enqueue_style( 'sfb-styles', $this->plugin_url . '/assets/css/front.css' );
 
-		$footer_bar_bg_image 	= esc_url( get_theme_mod( 'etfb_background_image', '' ) );
-		$footer_bar_bg 			= eighteen_tags_sanitize_hex_color( get_theme_mod( 'etfb_background_color', apply_filters( 'eighteen_tags_default_header_background_color', '#ffffff' ) ) );
-		$footer_bar_text 		= eighteen_tags_sanitize_hex_color( get_theme_mod( 'etfb_text_color', apply_filters( 'eighteen_tags_default_header_text_color', '#9aa0a7' ) ) );
-		$footer_bar_headings 	= eighteen_tags_sanitize_hex_color( get_theme_mod( 'etfb_heading_color', apply_filters( 'etfb_default_heading_color', '#ffffff' ) ) );
-		$footer_bar_links 		= eighteen_tags_sanitize_hex_color( get_theme_mod( 'etfb_link_color', apply_filters( 'eighteen_tags_default_header_link_color', '#ffffff' ) ) );
+			$footer_bar_bg_image = esc_url( get_theme_mod( 'etfb_background_image', '' ) );
+			$footer_bar_bg       = eighteen_tags_sanitize_hex_color( get_theme_mod( 'etfb_background_color', apply_filters( 'eighteen_tags_default_header_background_color', '#ffffff' ) ) );
+			$footer_bar_text     = eighteen_tags_sanitize_hex_color( get_theme_mod( 'etfb_text_color', apply_filters( 'eighteen_tags_default_header_text_color', '#9aa0a7' ) ) );
+			$footer_bar_headings = eighteen_tags_sanitize_hex_color( get_theme_mod( 'etfb_heading_color', apply_filters( 'etfb_default_heading_color', '#ffffff' ) ) );
+			$footer_bar_links    = eighteen_tags_sanitize_hex_color( get_theme_mod( 'etfb_link_color', apply_filters( 'eighteen_tags_default_header_link_color', '#ffffff' ) ) );
 
-		$etfb_style = '
-		.sfb-footer-bar {
-			background-color: ' . $footer_bar_bg . ';
-			background-image: url(' . $footer_bar_bg_image . ');
+			$etfb_style = '
+				.sfb-footer-bar {
+					background-color: ' . $footer_bar_bg . ';
+					background-image: url(' . $footer_bar_bg_image . ');
+				}
+
+				.sfb-footer-bar .widget {
+					color: ' . $footer_bar_text . ';
+				}
+
+				.sfb-footer-bar .widget h1,
+				.sfb-footer-bar .widget h2,
+				.sfb-footer-bar .widget h3,
+				.sfb-footer-bar .widget h4,
+				.sfb-footer-bar .widget h5,
+				.sfb-footer-bar .widget h6 {
+					color: ' . $footer_bar_headings . ';
+				}
+
+				.sfb-footer-bar .widget a {
+					color: ' . $footer_bar_links . ';
+				}';
+
+			wp_add_inline_style( 'sfb-styles', $etfb_style );
 		}
-
-		.sfb-footer-bar .widget {
-			color: ' . $footer_bar_text . ';
-		}
-
-		.sfb-footer-bar .widget h1,
-		.sfb-footer-bar .widget h2,
-		.sfb-footer-bar .widget h3,
-		.sfb-footer-bar .widget h4,
-		.sfb-footer-bar .widget h5,
-		.sfb-footer-bar .widget h6 {
-			color: ' . $footer_bar_headings . ';
-		}
-
-		.sfb-footer-bar .widget a {
-			color: ' . $footer_bar_links . ';
-		}';
-
-		wp_add_inline_style( 'sfb-styles', $etfb_style );
 	}
 
 	/**
@@ -316,17 +318,15 @@ final class Eighteen_Tags_Footer_Bar {
 	 * @since  1.0.0
 	 */
 	public function etfb_customize_preview_js() {
-		wp_enqueue_script( 'sfb-customizer', $this->plugin_url . '/assets/js/customizer.min.js', array( 'customize-preview' ), '1.1', true );
+			wp_enqueue_script( 'sfb-customizer', $this->plugin_url . '/assets/js/customizer.min.js', array( 'customize-preview' ), '1.1', true );
 	}
 
 	/**
 	 * Footer bar display
 	 */
 	public function etfb_footer_bar() {
-		if ( is_active_sidebar( 'footer-bar-1' ) && get_option( 'etp_footer_bar' ) ) {
-			echo '<div class="sfb-footer-bar"><div class="col-full">';
-				dynamic_sidebar( 'footer-bar-1' );
-			echo '</div></div>';
-		}
+		echo '<div class="sfb-footer-bar"><div class="col-full">';
+		dynamic_sidebar( 'footer-bar-1' );
+		echo '</div></div>';
 	}
 } // End Class
