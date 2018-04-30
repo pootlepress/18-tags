@@ -184,7 +184,6 @@ final class Eighteen_Tags_Admin extends Eighteen_Tags_Abstract {
 			update_option( "theme_mods_$theme", [] );
 
 			$redirect = filter_input( INPUT_GET, 'redirect' );
-			var_dump($redirect);
 
 			if ( $redirect ) {
 				$this->add_notice( '<p>All Eighteen tags pro options have been successfully reset.</p>' );

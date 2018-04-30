@@ -4,16 +4,15 @@
 	<?php settings_errors(); ?>
 
 	<?php
-	$url = wp_nonce_url(
+	$reset_url = wp_nonce_url(
 		       admin_url(
 			       'admin-ajax.php?redirect=' .
 			       urlencode( admin_url( 'themes.php?page=eighteen-tags-skins' ) )
 		       ),
 		       '18tags_apply_skin'
-	       ) . '&action=18tags_';
+	       ) . '&action=18tags_reset';
 
-	$reset_url = "{$url}reset";
-	$skin_url  = "{$url}apply_skin";
+	$skin_url = admin_url( "customize.php?apply_skin" );
 	?>
 	<div class="boxed">
 		<?php
@@ -25,7 +24,7 @@
 				<?php
 				if ( ! empty( $skin['data'] ) ) {
 
-					echo "<a href='$skin_url&skin=$name' class='skin-anchor'>";
+					echo "<a href='$skin_url=$name' class='skin-anchor'>";
 
 					if ( ! empty( $skin['pro'] ) )
 						echo '<div class="pro-badge">PRO</div>';

@@ -61,8 +61,6 @@ final class Eighteen_Tags_Public extends Eighteen_Tags_Abstract {
 		$this->header_nav_styles = new Eighteen_Tags_Header_Nav( $this->token, $this->plugin_path, $this->plugin_url );
 		$this->content_styles = new Eighteen_Tags_Content_Styles( $this->token, $this->plugin_path, $this->plugin_url );
 		$this->footer_styles = new Eighteen_Tags_Footer_Styles( $this->token, $this->plugin_path, $this->plugin_url );
-		add_filter( 'excerpt_length', array( $this->content_styles, 'excerpt_length' ) );
-		add_filter( 'excerpt_more', array( $this->content_styles, 'excerpt_more' ) );
 
 	}
 
@@ -140,6 +138,10 @@ final class Eighteen_Tags_Public extends Eighteen_Tags_Abstract {
 		new Eighteen_Tags_Add_Nav_Icons();
 
 		remove_action( 'eighteen_tags_loop_post', 'eighteen_tags_post_content', 30 );
+
+		add_filter( 'excerpt_length', array( $this->content_styles, 'excerpt_length' ) );
+		add_filter( 'excerpt_more', array( $this->content_styles, 'excerpt_more' ) );
+
 		add_action( 'eighteen_tags_loop_post', array( $this->content_styles, 'content' ), 30 );
 
 		if ( $this->get( 'header-sticky', true ) ) {

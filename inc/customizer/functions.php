@@ -12,7 +12,29 @@
  */
 if ( ! function_exists( 'eighteen_tags_customize_preview_js' ) ) {
 	function eighteen_tags_customize_preview_js() {
-		wp_enqueue_script( 'eighteen_tags_customizer', get_template_directory_uri() . '/inc/customizer/js/customizer.min.js', array( 'customize-preview' ), '1.15', true );
+		wp_enqueue_script( 'eighteen_tags_customizer', get_template_directory_uri() . '/inc/customizer/js/customizer.min.js', array( 'customize-preview' ), EIGHTEENTAGS_VERSION, true );
+	}
+}
+
+/**
+ * Enqueues skins handling JS file
+ *
+ * @since  1.0.0
+ */
+if ( ! function_exists( 'eighteen_tags_customize_skins_js' ) ) {
+	function eighteen_tags_customize_skins_js() {
+
+		wp_enqueue_script( 'eighteen_tags_skins', get_template_directory_uri() . '/inc/customizer/js/skins.min.js', array( 'jquery' ), EIGHTEENTAGS_VERSION );
+
+		if ( isset( $_GET['apply_skin'] ) ) {
+			$skin  = $_GET['apply_skin'];
+			$skins = eighteen_tags_skins();
+			if ( ! empty( $skins[ $skin ] ) ) {
+				$skins[ $skin ]['name'] = $skin;
+				$skins[ $skin ]['data'] = json_decode( $skins[ $skin ]['data'], 'array' );
+				wp_localize_script( 'eighteen_tags_skins', 'etpApplySkin', $skins[ $skin ] );
+			}
+		}
 	}
 }
 
