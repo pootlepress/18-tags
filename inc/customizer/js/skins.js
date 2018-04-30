@@ -71,7 +71,7 @@ etpSkins = 'object' === typeof etpSkins && etpSkins ? etpSkins : {};
 					console.log( 'Couldn\'t find setting for ' + setID );
 				}
 			} );
-			return etps.notice( 'Loading skin preview...' );
+			return etps.notice( 'Generating skin preview...' );
 		}
 	};
 
