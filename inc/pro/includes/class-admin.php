@@ -212,7 +212,7 @@ final class Eighteen_Tags_Admin extends Eighteen_Tags_Abstract {
 			if ( 'Mobile menu' == $args['title'] ) {
 				$args['description'] = 'Mobile menu customizations require menu assigned to Handheld Menu location';
 			}
-		} else if ( in_array( $args['title'], array( 'Product Details', 'Shop', 'Checkout', ) ) ) {
+		} else if ( in_array( $args['title'], array( 'Product Page', 'Shop', 'Checkout', ) ) ) {
 			$args['panel'] = 'etp-wc';
 		} else if ( 'Widgets' == $args['title'] ) {
 			$args['panel'] = 'etp-footer';

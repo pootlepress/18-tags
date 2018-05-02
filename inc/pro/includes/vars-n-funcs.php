@@ -1372,5 +1372,16 @@ function eighteen_tags_skins() {
 		],
 	];
 
+	$resp = wp_remote_get( 'https://tags-c585f.firebaseio.com/pro.json' );
+
+	if ( !is_wp_error( $resp ) ) {
+		$body = wp_remote_retrieve_body( $resp );
+		$pro_skins = json_decode( $body, 'array' );
+		foreach ( $pro_skins as $skin ) {
+			$skin['pro'] = true;
+			$skins[] = $skin;
+		}
+	}
+
 	return apply_filters( 'eighteen_tags_skins', $skins );
 }

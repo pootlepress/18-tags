@@ -19,14 +19,20 @@
 		echo "<div class='skin'><a href='$reset_url' class='skin-anchor'><img src='" . get_template_directory_uri() . "/assets/reset.png'><span>Reset settings</span></a></div>";
 		$skins = eighteen_tags_skins();
 		foreach ( $skins as $name => $skin ) {
+			if ( isset( $skin['name'] ) ) {
+				$name = $skin['name'];
+			}
+			if ( ! isset( $skin['img'] ) ) {
+				$skin['img'] = 'https://image.freepik.com/free-vector/modern-geometric-infographic-template_1201-1154.jpg';
+			}
 			?>
 			<div class='skin'>
 				<?php
-				if ( ! empty( $skin['data'] ) ) {
+				if ( ! isset( $skin['pro'] ) || class_exists( 'Eighteen_Tags_Pro' ) ) {
 
 					echo "<a href='$skin_url=$name' class='skin-anchor'>";
 
-					if ( ! empty( $skin['pro'] ) )
+					if ( isset( $skin['pro'] ) )
 						echo '<div class="pro-badge">PRO</div>';
 
 				} else {
