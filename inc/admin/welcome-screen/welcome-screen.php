@@ -16,10 +16,6 @@ class Eighteen_Tags_Welcome {
 		add_action( 'load-themes.php', array( $this, 'activation_admin_notice' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'welcome_style' ) );
 
-		if ( isset( $_GET['just-installed'] ) ) {
-			add_action( 'eighteen_tags_welcome', array( $this, 'welcome_new_user' ), 	5 );
-		}
-
 		add_action( 'eighteen_tags_welcome', array( $this, 'welcome_intro' ), 			10 );
 		add_action( 'eighteen_tags_welcome', array( $this, 'welcome_enhance' ), 		20 );
 		add_action( 'eighteen_tags_welcome', array( $this, 'welcome_contribute' ), 	30 );
@@ -97,14 +93,6 @@ class Eighteen_Tags_Welcome {
 
 		</div>
 		<?php
-	}
-
-	/**
-	 * Welcome screen intro
-	 * @since 1.0.0
-	 */
-	public function welcome_new_user() {
-		require_once 'sections/new-user.php';
 	}
 
 	/**

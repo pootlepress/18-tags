@@ -68,6 +68,6 @@ if ( is_woocommerce_activated() ) {
 
 global $pagenow;
 if ( isset( $_GET['activated'] ) && $pagenow == 'themes.php' ) {
-	wp_redirect( admin_url( 'themes.php?page=eighteen-tags-welcome&just-installed' ) );
+	wp_redirect( admin_url( 'themes.php?page=eighteen-tags-skins&just-installed' ) );
 	exit;
 }
