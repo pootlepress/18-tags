@@ -92,6 +92,17 @@ if ( ! eighteen_tags_is_ppb() ) {
 	<?php
 	if ( get_theme_mod( 'eighteen-tags-pro-single-keep-sidebar' ) ) {
 		do_action( 'eighteen_tags_sidebar' );
+		?>
+		<style>
+			@media only screen and (min-width: 770px) {
+				.eighteen-tags-pro-active.full-sidebar #primary {
+					width: 73.9130434783%;
+					float: left;
+					margin-right: 4.347826087%;
+				}
+			}
+		</style>
+		<?php
 	} else {
 		?>
 		<style>

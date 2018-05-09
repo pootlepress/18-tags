@@ -404,14 +404,12 @@ function eighteen_tags_pro_fields() {
 				'label'    => 'Make sticky?',
 				'section'  => 'existing_header_image',
 				'type'     => 'checkbox',
-				'default'  => true,
 				'priority' => 75,
 			),
 			'header-sticky-show-on-scroll-up'                => array(
 				'label'    => 'Sticky header show on scrolling up',
 				'section'  => 'existing_header_image',
 				'type'     => 'checkbox',
-				'default'  => true,
 				'priority' => 80,
 			),
 			'hide-link-focus-outline'      => array(

@@ -144,8 +144,8 @@ final class Eighteen_Tags_Public extends Eighteen_Tags_Abstract {
 
 		add_action( 'eighteen_tags_loop_post', array( $this->content_styles, 'content' ), 30 );
 
-		if ( $this->get( 'header-sticky', true ) ) {
-			if ( $this->get( 'header-sticky-show-on-scroll-up', true ) ) {
+		if ( $this->get( 'header-sticky' ) ) {
+			if ( $this->get( 'header-sticky-show-on-scroll-up' ) ) {
 				self::$desktop_css .=
 					'#masthead.sticky {margin-top: -340px;transition: 0.5s margin}' .
 					'#masthead.sticky.sticky-scrolling-up {margin-top: 0}';
@@ -154,7 +154,11 @@ final class Eighteen_Tags_Public extends Eighteen_Tags_Abstract {
 		}
 
 		if ( 'full' == get_theme_mod( 'eighteen_tags_layout', 'full' ) ) {
-			remove_action( 'eighteen_tags_sidebar', 'eighteen_tags_get_sidebar' );
+			if ( is_single() && get_theme_mod( 'eighteen-tags-pro-single-keep-sidebar' ) ) {
+				// Don't remove for posts when `Keep sidebar` is set
+			} else {
+				remove_action( 'eighteen_tags_sidebar', 'eighteen_tags_get_sidebar' );
+			}
 		}
 
 		// Infinite scroll

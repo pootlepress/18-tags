@@ -79,7 +79,7 @@ if ( ! function_exists( 'eighteen_tags_setup' ) ) :
 
 		// Setup the WordPress core custom background feature.
 		add_theme_support( 'custom-background', apply_filters( 'eighteen_tags_custom_background_args', array(
-			'default-color' => apply_filters( 'eighteen_tags_default_background_color', 'fcfcfc' ),
+			'default-color' => apply_filters( 'eighteen_tags_default_background_color', 'ffffff' ),
 			'default-image' => '',
 		) ) );
 
