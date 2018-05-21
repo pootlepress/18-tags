@@ -1,23 +1,12 @@
-<div class="wrap" id="skins">
+<div class="wrap" id="eighteen-tags-skins">
 	<h1 style='margin-right:auto'>18Tags skins</h1>
 
 	<?php settings_errors(); ?>
 
 	<?php
-	$skin_url = admin_url( "customize.php?apply_skin" );
+	$skin_url = admin_url( 'customize.php?apply_skin' );
 	?>
 	<div class="boxed">
-
-		<?php
-		if ( isset( $_GET['just-installed'] ) ) {
-			?>
-			<h1>Thanks for installing 18 Tags!</h1>
-			<h3>
-				Please choose a skin below or <a href="<?php echo admin_url( 'customize.php' ) ?>">start from scratch</a>
-			</h3>
-			<?php
-		}
-		?>
 		<div class="skins">
 			<?php
 			$skins = eighteen_tags_skins();

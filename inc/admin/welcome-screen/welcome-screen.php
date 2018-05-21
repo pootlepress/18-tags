@@ -6,11 +6,27 @@
  */
 class Eighteen_Tags_Welcome {
 
+	static function get_skins() {
+
+		$skins     = get_transient( 'eighteen_tags_skins' );
+
+		if ( ! $skins || isset( $_GET['force_get_templates'] ) ) {
+			$response = wp_remote_retrieve_body( wp_remote_get( 'https://pagebuilder-9144f.firebaseio.com/design-templates.json' ) );
+			if ( $response ) {
+				$skins = json_decode( $response, 'assoc' );
+				set_transient( 'eighteen_tags_skins', $skins, DAY_IN_SECONDS * 2.5 );
+			}
+		}
+
+		return $skins;
+	}
+
 	/**
 	 * Constructor
 	 * Sets up the welcome screen
 	 */
 	public function __construct() {
+		global $pagenow;
 
 		add_action( 'admin_menu', array( $this, 'welcome_register_menu' ) );
 		add_action( 'load-themes.php', array( $this, 'activation_admin_notice' ) );
@@ -20,32 +36,10 @@ class Eighteen_Tags_Welcome {
 		add_action( 'eighteen_tags_welcome', array( $this, 'welcome_enhance' ), 		20 );
 		add_action( 'eighteen_tags_welcome', array( $this, 'welcome_contribute' ), 	30 );
 
-	} // end constructor
-
-	/**
-	 * Adds an admin notice upon successful activation.
-	 * @since 1.0.3
-	 */
-	public function activation_admin_notice() {
-		global $pagenow;
-
-		if ( is_admin() && 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) { // input var okay
-			add_action( 'admin_notices', array( $this, 'eighteen_tags_welcome_admin_notice' ), 99 );
+		if ( isset( $_GET['eighteen-tags-theme_show_optin'] ) && $pagenow == 'themes.php' ) {
+			add_action( 'admin_notices', array( $this, 'welcome' ), 	7 );
 		}
-	}
-
-	/**
-	 * Display an admin notice linking to the welcome screen
-	 * @since 1.0.3
-	 */
-	public function welcome_admin_notice() {
-		?>
-			<div class="updated notice is-dismissible">
-				<p><?php echo sprintf( esc_html__( 'Thanks for choosing Eighteen tags! You can read hints and tips on how get the most out of your new theme on the %swelcome screen%s.', 'eighteen-tags' ), '<a href="' . esc_url( admin_url( 'themes.php?page=eighteen-tags-welcome' ) ) . '">', '</a>' ); ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=eighteen-tags-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with Eighteen tags', 'eighteen-tags' ); ?></a></p>
-			</div>
-		<?php
-	}
+	} // end constructor
 
 	/**
 	 * Load welcome screen css
@@ -53,9 +47,9 @@ class Eighteen_Tags_Welcome {
 	 * @since  1.4.4
 	 */
 	public function welcome_style( $hook_suffix ) {
-		global $eighteen_tags_version;
+		global $pagenow;
 
-		if ( false !== strpos( $hook_suffix, 'appearance_page_eighteen-tags' ) ) {
+		if ( 'themes.php' == $pagenow ) {
 			wp_enqueue_style( 'eighteen-tags-welcome-screen', get_template_directory_uri() . '/inc/admin/welcome-screen/css/welcome.css', $eighteen_tags_version );
 			wp_enqueue_style( 'thickbox' );
 			wp_enqueue_script( 'thickbox' );
@@ -93,6 +87,14 @@ class Eighteen_Tags_Welcome {
 
 		</div>
 		<?php
+	}
+
+	/**
+	 * Welcome screen intro
+	 * @since 1.0.0
+	 */
+	public function welcome() {
+		require_once 'sections/welcome.php';
 	}
 
 	/**

@@ -8,13 +8,6 @@
 
 define( 'EIGHTEENTAGS_VERSION', '2.7.1' );
 
-/**
- * Initialize all the things.
- */
-
-require_once get_template_directory() . '/inc/init.php';
-
-// Create a helper function for easy SDK access.
 function eighteen_tags_fs() {
 	global $eighteen_tags_fs;
 
@@ -31,7 +24,7 @@ function eighteen_tags_fs() {
 			'has_addons'          => false,
 			'has_paid_plans'      => false,
 			'menu'                => array(
-				'slug'           => 'eighteen-tags-welcome',
+				'slug'           => 'eighteen-tags-skins',
 				'support'        => false,
 				'parent'         => array(
 					'slug' => 'themes.php',
@@ -47,6 +40,12 @@ function eighteen_tags_fs() {
 eighteen_tags_fs();
 // Signal that SDK was initiated.
 do_action( 'eighteen_tags_fs_loaded' );
+
+/**
+ * Initialize all the things.
+ */
+
+require_once get_template_directory() . '/inc/init.php';
 
 /**
  * Note: Do not add any custom code here. Please use a custom plugin so that your customizations aren't lost during updates.
