@@ -234,28 +234,20 @@
 
 #eighteen-tags-welcome {
 	text-align: center;
-	padding: 0 1em 2.5em;
+	padding: 0;
 	overflow: hidden;
 	position: relative;
-	perspective: 250px;
+	perspective: 277px;
 	border: 7px solid #fff;
+	background: rgb(245, 245, 245);
 	h1, h2 {
-		display: inline-block;
-		z-index: 7;
 		position: relative;
 		text-shadow: 1px 1px 1px #fff;
 		margin: 0;
 		padding: .7em 1.6em;
-		background: #fff;
 	}
 	h1 {
 		border-radius: 0 0 5px 5px;
-	}
-	h2 {
-		position: absolute;
-		bottom: 0;
-		left: 50%;
-		transform: translateX(-50%);
 	}
 	~ .updated {
 		display: none !important;
@@ -291,22 +283,31 @@
 	}
 
 	#eighteen-tags-skins {
+		.skins-carousel {
+			padding: 1em 0;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			max-height: 430px;
+			overflow: hidden;
+		}
 		.skin {
 			position: relative;
 			opacity: .88;
+			margin: 0;
+			padding: 1em;
+			&:first-child {
+				padding-left: 4em;
+			}
+			&:last-child {
+				padding-right: 4em;
+			}
 			&:hover {
 				opacity: 1;
 			}
-		}
-		.skins-wrap {
-			overflow: auto;
-			transform-origin: 50% 88%;
-			transform: rotate(3deg) rotateX(5deg) scale(1.24);
-			height: 700px;
-			margin: -200px 0 -38px;
-			transition: all .7s;
-			&.scrolled-down {
-				transform: rotateX(5deg);
+			img {
+				width: auto;
+				height: 250px;
 			}
 		}
 		&.show-skins {
@@ -319,14 +320,36 @@
 			.skin-anchor {
 				cursor: auto;
 			}
-			.skins-wrap {
-				transform: rotateX(11deg);
-				margin: 1em auto;
-			}
 		}
 		.skins-4 {
 			overflow: auto;
 			min-height: 2500px;
 		}
+	}
+}
+
+.skins-carousel-wrap {
+	position: relative;
+	margin: 1em;
+	.carousel-left,
+	.carousel-right {
+		cursor: pointer;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+		font-size: 50px;
+		z-index: 9;
+		color: rgba(0,0,0,0.5);
+		height: auto;
+		width: 50px;
+		line-height: 320px;
+		background: linear-gradient( -90deg, rgba(245, 245, 245, 0), rgba(245, 245, 245, .5), rgba(245, 245, 245, .7), rgba(245, 245, 245,1) )
+	}
+	.carousel-right {
+		left: auto;
+		right: 0;
+		background: linear-gradient( 90deg, rgba(245, 245, 245, 0), rgba(245, 245, 245, .5), rgba(245, 245, 245, .7), rgba(245, 245, 245,1) )
 	}
 }

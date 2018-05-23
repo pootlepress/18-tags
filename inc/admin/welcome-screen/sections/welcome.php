@@ -1,6 +1,12 @@
+<?php
+wp_enqueue_style( 'flexslider', PRO18_URL . 'assets/css/flexslider.css' );
+wp_enqueue_script( 'flexslider', PRO18_URL . 'assets/js/flexslider.min.js', array( 'jquery' ) );
+?>
+
 <div class="updated notice is-dismissible" id="eighteen-tags-welcome">
-	<h1>Thanks for installing 18 Tags! <small>Choose a skin to jumpstart your site.</small></h1>
-	<h2><a href="?page=eighteen-tags-skins">View all skins</a></h2>
+	<h1>Thanks for installing 18 Tags!
+	</h1>
+	<h3>Choose a skin or <a href="<?php echo admin_url( 'customize.php' ) ?>">Start from scratch</a>.</h3>
 	<?php /*
 	<div class="col3-set">
 		<div class="col">
@@ -25,11 +31,14 @@
 */ ?>
 
 	<div id="eighteen-tags-skins">
-		<div class="skins-wrap">
-			<div class="skins-4">
+		<div class="skins-carousel-wrap">
+			<div class="dashicons carousel-left dashicons-arrow-left-alt2"></div>
+			<div class="skins-carousel">
 				<?php
 				$skins = Eighteen_Tags_Welcome::get_skins();
+				$i = 0;
 				foreach ( $skins as $id => $skin ) {
+					if ( $i++ > 16 ) break;
 					if ( isset( $skin['name'] ) ) {
 						$name = $skin['name'];
 					}
@@ -65,20 +74,28 @@
 				}
 				?>
 			</div>
+			<div class="dashicons carousel-right dashicons-arrow-right-alt2"></div>
 		</div>
 	</div>
 	<script>
-		( function ( $ ) {
-			var $skW = $( '.skins-wrap' );
-			setTimeout( function () {
-				$skW.animate( {scrollTop: 5000}, {
-					easing: 'linear',
-					duration: 250000
-				} );
-			}, 1000 );
-			$skW.on( 'mousewheel', function( e ) {
-				if ( this.scrollTop > 160 ) $skW.stop();
+		jQuery( function ( $ ) {
+			var diff,
+				carouselScroll = 0,
+				carouselItem = 0,
+				$carousel = $( '.skins-carousel' );
+			$( '.carousel-left' ).click( function() {
+				carouselItem--;
+				diff = $carousel.children().eq( 1 ).outerWidth();
+				console.log( diff )
+				$carousel.animate( { scrollLeft: '-=' + diff } );
 			} );
-		} )( jQuery );
+			$( '.carousel-right' ).click( function() {
+				carouselItem++;
+				diff = $carousel.children().eq( 1 ).outerWidth();
+				console.log( diff )
+				$carousel.animate( { scrollLeft: '+=' + diff } );
+			} );
+		} );
 	</script>
+	<h2><a href="?page=eighteen-tags-skins">View all skins</a></h2>
 </div>
