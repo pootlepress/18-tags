@@ -17,6 +17,10 @@ class Eighteen_Tags_Content_Styles extends Eighteen_Tags_Abstract {
 	 * @return string CSS
 	 */
 	public function styles() {
+		if ( $this->get_pc_value( 0, 'flush-content-to-header', null ) ) {
+			$this->css .= '#masthead, .woocommerce-breadcrumb{margin-bottom: 0 !important;}';
+		}
+
 		$this->headings_typo();
 		$this->text_typo();
 		$this->breadcrumbs();

@@ -74,6 +74,34 @@ abstract class Eighteen_Tags_Abstract {
 	}
 
 	/**
+	 * Gets the page customizer setting for page/post
+	 *
+	 * @param string $id
+	 * @param mixed $default
+	 * @return mixed Setting value
+	 */
+	public function get_pc_value( $post_id, $id, $default = null ){
+		//Getting post id if not set
+		if ( ! $post_id ) {
+			global $post;
+			if ( is_object( $post ) ) {
+				$post_id = $post->ID;
+			} else {
+				return '';
+			}
+		}
+
+		$post_meta = get_post_meta( $post_id, 'pootle-page-customizer', true );
+		if ( ! empty( $post_meta[ $id ] ) ) {
+			$return = $post_meta[ $id ];
+		} else {
+			$return = $default;
+		}
+
+		return apply_filters( "post_meta_customize_setting_pootle-page-customizer[$id]", $return, $id );
+	}
+
+	/**
 	 * Gets the theme mod for customizer fields
 	 *
 	 * @param string $value Font style option value

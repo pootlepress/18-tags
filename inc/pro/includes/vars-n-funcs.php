@@ -1383,3 +1383,18 @@ function eighteen_tags_skins() {
 
 	return apply_filters( 'eighteen_tags_skins', $skins );
 }
+
+
+add_filter( 'storefront_page_customizer', 'eighteen_tags_page_customizer' );
+
+function eighteen_tags_page_customizer ( $fields ) {
+	$fields['flush-content-to-header'] = array(
+		'id'      => 'flush-content-to-header',
+		'section' => 'Content',
+		'label'   => 'Flush content to header',
+		'type'    => 'checkbox',
+		'default' => '',
+	);
+
+	return $fields;
+}
