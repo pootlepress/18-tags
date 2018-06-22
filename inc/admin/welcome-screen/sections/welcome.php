@@ -4,9 +4,13 @@ wp_enqueue_script( 'flexslider', PRO18_URL . 'assets/js/flexslider.min.js', arra
 ?>
 
 <div class="updated notice is-dismissible" id="eighteen-tags-welcome">
-	<h1>Thanks for installing 18 Tags!
+	<h1><?php _e( 'Thanks for installing 18 Tags!', 'eighteen-tags' ); ?>
 	</h1>
-	<h3>Choose a skin or <a href="<?php echo admin_url( 'customize.php' ) ?>">Start from scratch</a>.</h3>
+	<h3>
+		<?php printf(
+			__( 'Choose a skin or %sStart from scratch%s.', 'eighteen-tags' ),
+			'<a href="' . admin_url( 'customize.php' ) . '">', '</a>' ); ?>
+	</h3>
 	<?php /*
 	<div class="col3-set">
 		<div class="col">
@@ -54,15 +58,15 @@ wp_enqueue_script( 'flexslider', PRO18_URL . 'assets/js/flexslider.min.js', arra
 							echo "<a href='$skin_url=$name' class='skin-anchor'>";
 
 							if ( isset( $skin['pro'] ) ) {
-								echo '<div class="pro-badge">PRO</div>';
+								echo '<div class="pro-badge">' . __( 'PRO', 'eighteen-tags' ) . '</div>';
 							}
 
-							echo '<div class="tooltip-btn">Preview skin</div>';
+							echo '<div class="tooltip-btn">' . __( 'Preview skin', 'eighteen-tags' ) . '</div>';
 
 						} else {
 							echo "<a href='https://www.pootlepress.com/18-tags-pro/' class='skin-anchor'>";
-							echo '<div class="pro-badge"><i class="dashicons dashicons-lock"></i> PRO</div>';
-							echo '<div class="unlock-with-pro"><div class="unlock-with-pro-icon"></div>Unlock with PRO</div>';
+							echo '<div class="pro-badge"><i class="dashicons dashicons-lock"></i> ' . __( 'PRO', 'eighteen-tags' ) . '</div>';
+							echo '<div class="unlock-with-pro"><div class="unlock-with-pro-icon"></div>' . __( 'Unlock with PRO', 'eighteen-tags' ) . '</div>';
 						}
 
 						echo "<img src='$skin[img]'>";

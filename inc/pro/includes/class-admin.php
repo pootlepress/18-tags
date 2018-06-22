@@ -264,9 +264,10 @@ final class Eighteen_Tags_Admin extends Eighteen_Tags_Abstract {
 			'label'			=> __( 'Post page Layout', 'eighteen-tags' ),
 			'priority'		=> 7,
 			'choices'		=> array(
-				''      => PRO18_URL . '/assets/img/admin/layout-full-image.png',
-				'title-top'      => PRO18_URL . '/assets/img/admin/layout-full-image-title-top.png',
-				'fancy' => PRO18_URL . '/assets/img/admin/layout-title-in-image.png',
+				''          => PRO18_URL . '/assets/img/admin/layout-full-image.png',
+				'no-image'  => PRO18_URL . '/assets/img/admin/layout-no-image.png',
+				'title-top' => PRO18_URL . '/assets/img/admin/layout-full-image-title-top.png',
+				'fancy'     => PRO18_URL . '/assets/img/admin/layout-title-in-image.png',
 			)
 		) ) );
 
