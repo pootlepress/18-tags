@@ -6,21 +6,6 @@
  */
 class Eighteen_Tags_Welcome {
 
-	static function get_skins() {
-
-		$skins     = get_transient( 'eighteen_tags_skins' );
-
-		if ( ! $skins || isset( $_GET['force_get_skins'] ) ) {
-			$response = wp_remote_retrieve_body( wp_remote_get( 'https://tags-c585f.firebaseio.com/comm.json' ) );
-			if ( $response ) {
-				$skins = json_decode( $response, 'assoc' );
-				set_transient( 'eighteen_tags_skins', $skins, DAY_IN_SECONDS * 2.5 );
-			}
-		}
-
-		return $skins;
-	}
-
 	/**
 	 * Constructor
 	 * Sets up the welcome screen

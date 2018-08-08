@@ -27,12 +27,13 @@ if ( ! function_exists( 'eighteen_tags_customize_skins_js' ) ) {
 		wp_enqueue_script( 'eighteen_tags_skins', get_template_directory_uri() . '/inc/customizer/js/skins.min.js', array( 'jquery' ), EIGHTEENTAGS_VERSION );
 
 		if ( isset( $_GET['apply_skin'] ) ) {
-			$skin  = $_GET['apply_skin'];
+			$apply = $_GET['apply_skin'];
 			$skins = eighteen_tags_skins();
-			if ( ! empty( $skins[ $skin ] ) ) {
-				$skins[ $skin ]['name'] = $skin;
-				$skins[ $skin ]['data'] = json_decode( $skins[ $skin ]['data'], 'array' );
-				wp_localize_script( 'eighteen_tags_skins', 'etpApplySkin', $skins[ $skin ] );
+
+			foreach ( $skins as $skin ) {
+				if ( $skin['name'] === $apply ) {
+					return wp_localize_script( 'eighteen_tags_skins', 'etpApplySkin', $skin );
+				}
 			}
 		}
 	}

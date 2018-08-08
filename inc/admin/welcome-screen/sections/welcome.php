@@ -39,7 +39,7 @@ wp_enqueue_script( 'flexslider', PRO18_URL . 'assets/js/flexslider.min.js', arra
 			<div class="dashicons carousel-left dashicons-arrow-left-alt2"></div>
 			<div class="skins-carousel">
 				<?php
-				$skins = Eighteen_Tags_Welcome::get_skins();
+				$skins = eighteen_tags_skins();
 				$i = 0;
 				foreach ( $skins as $id => $skin ) {
 					if ( $i++ > 16 ) break;
