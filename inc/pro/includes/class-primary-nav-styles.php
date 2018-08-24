@@ -92,9 +92,11 @@ class Eighteen_Tags_Primary_Navigation extends Eighteen_Tags_Abstract {
 		        'color:' . $t->get( 'pri-nav-text-color', '#353535' ) . ';' .
 		        $t->font_style( $t->get( 'pri-nav-font-style' ) ) .
 		        '}';
-		$css .= '#site-navigation.main-navigation ul li.current-menu-item a {' .
-		        'color:' . $t->get( 'pri-nav-active-link-color' ) . ';' .
-		        '}';
+		$css .=
+			'#site-navigation.main-navigation ul li.current-menu-parent a,' .
+			'#site-navigation.main-navigation ul li.current-menu-item a {' .
+			'color:' . $t->get( 'pri-nav-active-link-color' ) . ';' .
+			'}';
 		$css .= '#site-navigation.main-navigation .primary-navigation ul ul li a, #site-navigation.main-navigation .site-header-cart .widget_shopping_cart {' .
 		        'color:' . $t->get( 'pri-nav-dd-text-color', '#ffffff' ) . ';' .
 		        '}';
