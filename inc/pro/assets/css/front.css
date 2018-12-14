@@ -740,6 +740,25 @@ body.eighteen-tags-pro-active .site-header-cart li a {
 	width: 21.8%;
 }
 
+.posts-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	justify-content: space-between;
+}
+
+.posts-wrap-2 > * {
+	width: 48.5%
+}
+
+.posts-wrap-3 > * {
+	width: 31.33%
+}
+
+.posts-wrap-4 > * {
+	width: 22.75%
+}
+
 @media only screen and (max-width: 480px) {
 
 	.site-header .site-logo-anchor img, .site-header .custom-logo-link img {
@@ -970,5 +989,9 @@ body.eighteen-tags-pro-active .site-header-cart li a {
 
 	.woocommerce-active .site-header .site-header-cart {
 		width: 7%;
+	}
+
+	.posts-wrap > * {
+		width: 100%;
 	}
 }

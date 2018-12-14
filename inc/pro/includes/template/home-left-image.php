@@ -45,54 +45,47 @@ $posts_array = array();
 
 		do_action( 'eighteen_tags_loop_before' );
 
-		if ( have_posts() ) :
+		if ( have_posts() ) {
+			echo "<div class='posts-wrap posts-wrap-$etp_blog_across'>";
 			while ( have_posts() ) : the_post();
-				$i++;
-				ob_start();
-			?>
+				?>
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="" itemtype="http://schema.org/BlogPosting">
-			<header class="entry-header">
-				<?php
-				echo sprintf( '<a href="%s" rel="bookmark">', get_permalink() );
-				eighteen_tags_post_thumbnail( $etp_thumb_size, $etp_thumb_args );
-				the_title( '<h1 class="entry-title" itemprop="name headline">', '</h1>' );
-				echo '</a>';
-				if ( ! get_theme_mod( 'eighteen-tags-pro-remove-archive-post-meta' ) ) {
-					?>
-					<div class="post-meta-container">
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope=""
+								 itemtype="http://schema.org/BlogPosting">
+					<header class="entry-header">
 						<?php
-						eighteen_tags_posted_on();
-						eighteen_tags_post_meta();
+						echo sprintf( '<a href="%s" rel="bookmark">', get_permalink() );
+						eighteen_tags_post_thumbnail( $etp_thumb_size, $etp_thumb_args );
+						the_title( '<h1 class="entry-title" itemprop="name headline">', '</h1>' );
+						echo '</a>';
+						if ( ! get_theme_mod( 'eighteen-tags-pro-remove-archive-post-meta' ) ) {
+							?>
+							<div class="post-meta-container">
+								<?php
+								eighteen_tags_posted_on();
+								eighteen_tags_post_meta();
+								?>
+							</div>
+							<?php
+						}
 						?>
-					</div>
-					<?php
-				}
-				?>
-			</header><!-- .entry-header -->
-			<div class="entry-content" itemprop="articleBody">
-				<?php
-				echo sprintf( '<a href="%s" rel="bookmark" style="color:inherit;text-decoration:none;">', get_permalink() );
-				Eighteen_Tags::instance()->public->content_styles->blog_content();
-				echo '</a>';
-				?>
-			</div><!-- .entry-content -->
+					</header><!-- .entry-header -->
+					<div class="entry-content" itemprop="articleBody">
+						<?php
+						echo sprintf( '<a href="%s" rel="bookmark" style="color:inherit;text-decoration:none;">', get_permalink() );
+						Eighteen_Tags::instance()->public->content_styles->blog_content();
+						echo '</a>';
+						?>
+					</div><!-- .entry-content -->
 
-		</article><!-- #post-## -->
+				</article><!-- #post-## -->
 
 			<?php
-				$posts_array[ $i % $etp_blog_across ][] = ob_get_clean();
 			endwhile;
-		foreach ( $posts_array as $posts ) {
-			echo "<div class='col col-1-$etp_blog_across'>";
-			foreach ( $posts as $post ) {
-				echo $post;
-			}
 			echo '</div>';
-		}
-		else :
+		} else {
 			get_template_part( 'content', 'none' );
-		endif;
+		}
 
 		/**
 		 * @hooked eighteen_tags_paging_nav - 10
