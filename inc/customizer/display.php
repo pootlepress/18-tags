@@ -35,6 +35,10 @@ if ( ! function_exists( 'eighteen_tags_add_customizer_css' ) ) {
 		$box_color 						= eighteen_tags_sanitize_hex_color( get_theme_mod( 'eighteen_tags_boxed_layout_color', apply_filters( 'eighteen_tags_default_box_layout_color', '' ) ) );
 		$box_padding 					= get_theme_mod( 'eighteen_tags_boxed_layout_padding', apply_filters( 'eighteen_tags_default_box_layout_padding', '' ) );
 
+		$header_bg = esc_url( get_header_image() );
+
+		$header_bg_css = $header_bg ? 'background-image: url(' . esc_url( get_header_image() ) . ');' : '';
+
 		$style 							= '
 		.main-navigation ul li a,
 		.site-title a,
@@ -49,7 +53,7 @@ if ( ! function_exists( 'eighteen_tags_add_customizer_css' ) ) {
 		}
 
 		.site-header {
-			background-image: url(' . esc_url( get_header_image() ) . ');
+			' . $header_bg_css . '
 		}
 
 		.site-header,
