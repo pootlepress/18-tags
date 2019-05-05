@@ -286,7 +286,7 @@ final class Eighteen_Tags_Header_Bar {
 			$shb_style = '
 				.shb-header-bar {
 					background-color: ' . $footer_bar_bg . ';
-					background-image: url(' . $footer_bar_bg_image . ');
+					' . ( $footer_bar_bg_image ? 'background-image: url(' . $footer_bar_bg_image . ');' : '' ) . '
 				}
 
 				.shb-header-bar .widget {

@@ -288,7 +288,7 @@ final class Eighteen_Tags_Footer_Bar {
 			$etfb_style = '
 				.sfb-footer-bar {
 					background-color: ' . $footer_bar_bg . ';
-					background-image: url(' . $footer_bar_bg_image . ');
+					' . ( $footer_bar_bg_image ? 'background-image: url(' . $footer_bar_bg_image . ');' : '' ) . '
 				}
 
 				.sfb-footer-bar .widget {
