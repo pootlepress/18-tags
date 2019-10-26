@@ -75,7 +75,9 @@ jQuery( document ).ready( function ( $ ) {
 	} );
 
 //Mobile menu
-	$('.menu-toggle' ).click( function(){
+	$('.menu-toggle' ).on( 'click touchend', function( e ){
+		e.stopPropagation();
+		e.preventDefault();
 		var $t = $( this ),
 			$handheld = $t.siblings( '.handheld-navigation' );
 		if ( 0 == $handheld.length ) {
