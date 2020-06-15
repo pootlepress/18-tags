@@ -34,6 +34,8 @@ if ( ! function_exists( 'eighteen_tags_setup' ) ) :
 		 * Note: the first-loaded translation file overrides any following ones if the same translation is present.
 		 */
 
+		add_theme_support( 'align-wide' );
+
 		// wp-content/languages/themes/eighteen-tags-it_IT.mo
 		load_theme_textdomain( 'eighteen-tags', trailingslashit( WP_LANG_DIR ) . 'themes/' );
 
@@ -177,3 +179,25 @@ add_action('after_switch_theme', 'eighteen_tags_activated');
 function eighteen_tags_activated() {
 	update_option( 'eighteen_tags_version', EIGHTEENTAGS_VERSION );
 }
+
+function eighteen_tags_block_editor_styles() {
+	?><style>
+		.editor-styles-wrapper .wp-block {
+			max-width: 66.4989378333em;
+		}
+
+		.editor-styles-wrapper .storefront-has-sidebar .wp-block {
+			max-width: calc(66.4989378333em * 0.7391304348);
+		}
+
+		.editor-styles-wrapper .wp-block[data-align='wide'] {
+			max-width: 75.9987860952em;
+		}
+
+		.editor-styles-wrapper .wp-block[data-align='full'] {
+			max-width: none;
+		}
+
+	</style><?php
+}
+add_action( 'enqueue_block_editor_assets', 'eighteen_tags_block_editor_styles' );

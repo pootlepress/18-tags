@@ -2434,6 +2434,24 @@ video {
 }
 
 /**
+ * Blocks editor
+ */
+
+.alignfull, .alignwide {
+	width: 100vw;
+	margin-left: calc( -50vw + 50% ) !important;
+	margin-right: calc( -50vw + 50% ) !important;
+	padding-left: calc( 25vw - 25% ) !important;
+	padding-right: calc( 25vw - 25% ) !important;
+	max-width: none !important;
+}
+.alignwide {
+	width: calc( 100% + 50vw - 50% );
+	margin-left: calc( -25vw + 25% ) !important;
+	margin-right: calc( -25vw + 25% ) !important;
+}
+
+/**
  * Infinite Scroll
  */
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
