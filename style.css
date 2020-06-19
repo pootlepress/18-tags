@@ -2519,3 +2519,14 @@ video {
 	padding: 1.618em;
 	background-color: rgba(0, 0, 0, 0.025);
 }
+
+/**
+ * Force FA 4 on top bar icons
+ */
+nav.secondary-navigation .fa {
+	font: normal normal normal 14px/1 FontAwesome;
+}
+
+nav.secondary-navigation .fa-google-plus:before {
+	content: "\f0d5";
+}
