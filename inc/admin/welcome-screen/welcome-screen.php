@@ -14,7 +14,6 @@ class Eighteen_Tags_Welcome {
 		global $pagenow;
 
 		add_action( 'admin_menu', array( $this, 'welcome_register_menu' ) );
-		add_action( 'load-themes.php', array( $this, 'activation_admin_notice' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'welcome_style' ) );
 
 		add_action( 'eighteen_tags_welcome', array( $this, 'welcome_intro' ), 			10 );
@@ -33,6 +32,7 @@ class Eighteen_Tags_Welcome {
 	 */
 	public function welcome_style( $hook_suffix ) {
 		global $pagenow;
+		global $eighteen_tags_version;
 
 		if ( 'themes.php' == $pagenow ) {
 			wp_enqueue_style( 'eighteen-tags-welcome-screen', get_template_directory_uri() . '/inc/admin/welcome-screen/css/welcome.css', $eighteen_tags_version );

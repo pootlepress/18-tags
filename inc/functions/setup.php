@@ -5,6 +5,8 @@
  * @package eighteen-tags
  */
 
+global $eighteen_tags_version;
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
