@@ -150,7 +150,7 @@ function eighteen_tags_widgets_init() {
 function eighteen_tags_scripts() {
 	global $eighteen_tags_version;
 
-	wp_enqueue_style( 'eighteen-tags-theme-style', get_stylesheet_uri(), '', $eighteen_tags_version );
+	wp_enqueue_style( 'eighteen-tags-style', get_stylesheet_uri(), '', $eighteen_tags_version );
 
 	wp_style_add_data( 'eighteen-tags-style', 'rtl', 'replace' );
 
@@ -161,17 +161,6 @@ function eighteen_tags_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-}
-
-/**
- * Enqueue child theme stylesheet.
- * A separate function is required as the child theme css needs to be enqueued _after_ the parent theme
- * primary css and the separate WooCommerce css.
- * @since  1.0.0
- */
-function eighteen_tags_child_scripts() {
-	global $eighteen_tags_version;
-	wp_enqueue_style( 'eighteen-tags-style', get_template_directory_uri() . '/style.css', '', $eighteen_tags_version );
 }
 
 add_action('after_switch_theme', 'eighteen_tags_activated');
