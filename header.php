@@ -19,6 +19,7 @@
 
 <body <?php body_class(); ?>>
 <?php
+wp_body_open();
 if ( get_theme_mod( 'eighteen_tags_boxed_layout' ) ) {
 	echo '<div class="col-full">';
 }
