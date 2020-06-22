@@ -6,7 +6,7 @@
  * @developer shramee <shramee.srivastav@gmail.com>
  */
 
-define( 'EIGHTEENTAGS_VERSION', '2.7.1' );
+define( 'EIGHTEENTAGS_VERSION', '3.0.0' );
 
 function eighteen_tags_fs() {
 	global $eighteen_tags_fs;

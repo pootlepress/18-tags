@@ -8,7 +8,7 @@ Donate link:
 
 Requires at least: 4.0
 Tested up to: 4.5.2
-Stable tag: 2.7.1
+Stable tag: 3.0.0
 
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -102,6 +102,23 @@ We've added support for our free Pootle page builder, Divi page builder and Site
 You are free to download 18 tags for free and use on as many websites as you like. However if you'd like to get support, please select the premium support level option below. You'll be required to quote your order number when submitting any support questions through our website. By taking out Premium support you'll also be contributing to 18 tags so that we can continue to improve it and make it the best theme possible – so a big thank you if you select the premium support option :)
 
 == Changelog ==
+
+=== 3.0.0 ===
+* 2020-06-22
+* New - On-boarding for new installs
+* New - Prebuilt skins with click to preview
+* New - Flush content to header option
+* New - No image post layout
+* New - Gutenberg wide/full layouts support
+* New - Gutenberg blocks width increased
+* Fix - Navbar height on resize
+* Fix - Keep sidebar not working for posts
+* Fix - Social icons in header breaking with FA5 added
+* Tweak - Freemius integration
+* Tweak - Optimisation - Header bar and footer bar rendering
+* Tweak - Optimisation - Cleaned code
+* Tweak - Remove empty `url()` styles
+* Tweak - Enqueue theme styles only ones
 
 === 2.7.0 ===
 * 2018-03-12
