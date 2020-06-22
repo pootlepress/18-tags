@@ -6,7 +6,7 @@ Author URI: http://www.pootlepress.com
 Author: PootlePress
 Donate link:
 
-Requires at least: 4.0
+Requires at least: 5.2.0
 Tested up to: 4.5.2
 Stable tag: 3.0.0
 
