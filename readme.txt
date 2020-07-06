@@ -8,7 +8,7 @@ Donate link:
 
 Requires at least: 5.2.0
 Tested up to: 4.5.2
-Stable tag: 3.0.0
+Stable tag: 3.0.1
 
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -102,6 +102,11 @@ We've added support for our free Pootle page builder, Divi page builder and Site
 You are free to download 18 tags for free and use on as many websites as you like. However if you'd like to get support, please select the premium support level option below. You'll be required to quote your order number when submitting any support questions through our website. By taking out Premium support you'll also be contributing to 18 tags so that we can continue to improve it and make it the best theme possible – so a big thank you if you select the premium support option :)
 
 == Changelog ==
+
+===  3.0.1 ===
+* 2020-07-06
+* Fix - Posts slider issue breaks layout
+
 
 === 3.0.0 ===
 * 2020-06-22
