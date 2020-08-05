@@ -103,10 +103,9 @@ You are free to download 18 tags for free and use on as many websites as you lik
 
 == Changelog ==
 
-===  3.0.1 ===
+=== 3.0.1 ===
 * 2020-07-06
 * Fix - Posts slider issue breaks layout
-
 
 === 3.0.0 ===
 * 2020-06-22

@@ -252,13 +252,13 @@ HTML;
 	 */
 	function blog_layout( $template ) {
 		$layout = $this->get( 'blog-layout', 'full-image' );
-		$dir = dirname( __FILE__ );
-
-		if ( ! empty( $layout ) && file_exists( "$dir/template/home-{$layout}.php" ) ) {
+		$layout = get_18tags_mod( 'blog-layout', 'full-image' );
+		$tpl = locate_template( [ "inc/pro/includes/template/home-{$layout}.php" ] );
+		if ( $tpl ) {
 			global $etp_blog_grid, $etp_blog_across, $etp_blog_down;
 			$etp_blog_across = $etp_blog_grid[0];
 			$etp_blog_down   = $etp_blog_grid[1];
-			return  "$dir/template/home-{$layout}.php";
+			return  $tpl;
 		} else {
 			return $template;
 		}

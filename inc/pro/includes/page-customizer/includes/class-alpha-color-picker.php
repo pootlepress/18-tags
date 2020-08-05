@@ -14,6 +14,13 @@ if ( ! class_exists( 'Lib_Customize_Alpha_Color_Control' ) ) {
 		}
 
 		public function enqueue() {
+			wp_localize_script('wp-color-picker', 'wpColorPickerL10n', array(
+				'clear'			=> __('Clear', 'acf' ),
+				'defaultString'	=> __('Default', 'acf' ),
+				'pick'			=> __('Select Color', 'acf' ),
+				'current'		=> __('Current Color', 'acf' )
+			));
+
 			wp_enqueue_script(
 				'lib-alpha-color-picker',
 				str_replace( get_template_directory(), get_template_directory_uri(), dirname( __FILE__ ) ) . '/../assets/alpha-color-picker.js',
