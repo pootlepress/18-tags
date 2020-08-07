@@ -15,10 +15,10 @@ if ( ! class_exists( 'Lib_Customize_Alpha_Color_Control' ) ) {
 
 		public function enqueue() {
 			wp_localize_script('wp-color-picker', 'wpColorPickerL10n', array(
-				'clear'			=> __('Clear', 'acf' ),
-				'defaultString'	=> __('Default', 'acf' ),
-				'pick'			=> __('Select Color', 'acf' ),
-				'current'		=> __('Current Color', 'acf' )
+				'clear'			=> __('Clear' ),
+				'defaultString'	=> __('Default' ),
+				'pick'			=> __('Select Color' ),
+				'current'		=> __('Current Color' )
 			));
 
 			wp_enqueue_script(

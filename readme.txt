@@ -103,6 +103,10 @@ You are free to download 18 tags for free and use on as many websites as you lik
 
 == Changelog ==
 
+=== 3.1.0 ===
+* 2020-08-07
+* Fix - WP v5.5 compatibility
+
 === 3.0.1 ===
 * 2020-07-06
 * Fix - Posts slider issue breaks layout
