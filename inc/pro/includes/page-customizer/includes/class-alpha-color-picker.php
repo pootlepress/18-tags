@@ -15,10 +15,10 @@ if ( ! class_exists( 'Lib_Customize_Alpha_Color_Control' ) ) {
 
 		public function enqueue() {
 			wp_localize_script('wp-color-picker', 'wpColorPickerL10n', array(
-				'clear'			=> __('Clear' ),
-				'defaultString'	=> __('Default' ),
-				'pick'			=> __('Select Color' ),
-				'current'		=> __('Current Color' )
+				'clear'			=> __('Clear', 'eighteen-tags' ),
+				'defaultString'	=> __('Default', 'eighteen-tags' ),
+				'pick'			=> __('Select Color', 'eighteen-tags' ),
+				'current'		=> __('Current Color', 'eighteen-tags' )
 			));
 
 			wp_enqueue_script(
