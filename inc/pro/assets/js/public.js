@@ -91,6 +91,16 @@ jQuery( document ).ready( function ( $ ) {
 		}
 		$handheld.slideToggle();
 	} );
+
+
+	$( ".main-navigation .handheld-navigation .menu-item.menu-item-has-children > a" ).click( function ( e ) {
+		console.log( e.offsetX + ' ' + e.currentTarget.clientWidth, e.offsetX > e.currentTarget.clientWidth );
+		if ( e.offsetX > e.currentTarget.clientWidth ) {
+			e.preventDefault();
+			jQuery( this ).closest( 'li' ).toggleClass( 'submenu-toggle' );
+		}
+	} );
+
 } );
 
 /**
