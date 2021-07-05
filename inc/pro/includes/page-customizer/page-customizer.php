@@ -7,7 +7,7 @@
  * Author:      PootlePress
  * Author URI:  http://pootlepress.com/
  * Requires at least: 4.0.0
- * Tested up to: 4.1.1
+ * Tested up to: 5.7.0
  *
  * Text Domain: pootle-page-customizer
  * Domain Path: /languages/
