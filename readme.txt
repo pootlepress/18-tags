@@ -7,7 +7,7 @@ Author: PootlePress
 Donate link:
 
 Requires at least: 5.2.0
-Tested up to: 6.0.0
+Tested up to: 6.3.0
 Stable tag: 3.1.1
 
 License: GPLv2 or later
