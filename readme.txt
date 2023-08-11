@@ -7,7 +7,7 @@ Author: PootlePress
 Donate link:
 
 Requires at least: 5.2.0
-Tested up to: 6.3.0
+Tested up to: 6.3
 Stable tag: 3.1.1
 
 License: GPLv2 or later
@@ -104,8 +104,8 @@ You are free to download 18 tags for free and use on as many websites as you lik
 == Changelog ==
 
 === 3.1.1 ===
-* 2023-07-07
-* Dev - Update freemius SDK
+* 2023-08-11
+* Dev - Remove freemius SDK
 
 === 3.1.0 ===
 * 2020-08-07

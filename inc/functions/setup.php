@@ -172,6 +172,23 @@ function eighteen_tags_activated() {
 }
 
 function eighteen_tags_block_editor_styles() {
-	wp_enqueue_style( 'eighteen-tags-block-editor', get_template_directory_uri() . '/css/block-editor.css' );
+	?><style>
+		.editor-styles-wrapper .wp-block {
+			max-width: 66.4989378333em;
+		}
+
+		.editor-styles-wrapper .storefront-has-sidebar .wp-block {
+			max-width: calc(66.4989378333em * 0.7391304348);
+		}
+
+		.editor-styles-wrapper .wp-block[data-align='wide'] {
+			max-width: 75.9987860952em;
+		}
+
+		.editor-styles-wrapper .wp-block[data-align='full'] {
+			max-width: none;
+		}
+
+	</style><?php
 }
 add_action( 'enqueue_block_editor_assets', 'eighteen_tags_block_editor_styles' );
