@@ -203,7 +203,7 @@ final class Eighteen_Tags_Customizer_Fields extends Eighteen_Tags_Abstract {
 	public function get_fonts(){
 		global $google_18t_fonts;
 
-		return $google_18t_fonts;
+		return is_array( $google_18t_fonts ) ? $google_18t_fonts : array();
 	}
 
 	private function find_control_class( $type, &$field_class, &$args ) {

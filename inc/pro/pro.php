@@ -140,14 +140,19 @@ final class Eighteen_Tags {
 	 */
 	public function include_ext_plugins() {
 
-		if ( ! class_exists( 'Pootle_Page_Customizer' ) ) {
-			require 'includes/page-customizer/page-customizer.php';
-		}
-		if ( ! class_exists( 'Eighteen_Tags_Footer_Bar' ) ) {
-			require 'includes/ext/footer-bar/footer-bar.php';
-		}
-		if ( ! class_exists( 'Eighteen_Tags_Header_Bar' ) ) {
-			require 'includes/ext/header-bar/header-bar.php';
+		// Load bundled extensions by absolute path, and only when the file is
+		// actually present, so a missing extension can't fatal the whole theme.
+		$extensions = array(
+			'Pootle_Page_Customizer'   => 'includes/page-customizer/page-customizer.php',
+			'Eighteen_Tags_Footer_Bar' => 'includes/ext/footer-bar/footer-bar.php',
+			'Eighteen_Tags_Header_Bar' => 'includes/ext/header-bar/header-bar.php',
+		);
+
+		foreach ( $extensions as $ext_class => $ext_rel ) {
+			$ext_file = PRO18_PATH . $ext_rel;
+			if ( ! class_exists( $ext_class ) && file_exists( $ext_file ) ) {
+				require_once $ext_file;
+			}
 		}
 	}
 

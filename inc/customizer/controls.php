@@ -12,20 +12,33 @@
  */
 if ( ! function_exists( 'eighteen_tags_customize_register' ) ) {
 	function eighteen_tags_customize_register( $wp_customize ) {
-		$wp_customize->get_setting( 'blogname' )->transport         	= 'postMessage';
-		$wp_customize->get_setting( 'header_textcolor' )->transport 	= 'postMessage';
+		// Guard each lookup: get_setting()/get_control()/get_section() return null
+		// when the item isn't registered, and assigning a property on null is a
+		// fatal error on PHP 8+.
+		if ( $setting = $wp_customize->get_setting( 'blogname' ) ) {
+			$setting->transport = 'postMessage';
+		}
+		if ( $setting = $wp_customize->get_setting( 'header_textcolor' ) ) {
+			$setting->transport = 'postMessage';
+		}
 
 		// Move background color setting alongside background image
-		$wp_customize->get_control( 'background_color' )->section 	= 'background_image';
-		$wp_customize->get_control( 'background_color' )->priority 	= 20;
+		if ( $control = $wp_customize->get_control( 'background_color' ) ) {
+			$control->section  = 'background_image';
+			$control->priority = 20;
+		}
 
 		// Change background image section title & priority
-		$wp_customize->get_section( 'background_image' )->title 	= __( 'Background', 'eighteen-tags' );
-		$wp_customize->get_section( 'background_image' )->priority 	= 30;
+		if ( $section = $wp_customize->get_section( 'background_image' ) ) {
+			$section->title    = __( 'Background', 'eighteen-tags' );
+			$section->priority = 30;
+		}
 
 		// Change header image section title & priority
-		$wp_customize->get_section( 'header_image' )->title 		= __( 'Header', 'eighteen-tags' );
-		$wp_customize->get_section( 'header_image' )->priority 		= 35;
+		if ( $section = $wp_customize->get_section( 'header_image' ) ) {
+			$section->title    = __( 'Header', 'eighteen-tags' );
+			$section->priority = 35;
+		}
 
 		/**
 		 * Custom controls

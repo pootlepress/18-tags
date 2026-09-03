@@ -1,17 +1,17 @@
 === 18 Tags ===
 
 Contributors: pootlepress, jamiemarsland, shramee
-Tags: Theme Options, Google Fonts, Accessibility Ready, Light, White, Custom Background, Custom Colors, Custom Header, Custom Menu, Featured Images, Full Width, Page Builder, Page Builder Ready, Left Sidebar, Light, Responsive Layout, Right Sidebar, Left Sidebar, RTL Language Support, Threaded Comments, Responsive Layout, Fluid Layout, One Column, Two Columns
+Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options
 Author URI: http://www.pootlepress.com
 Author: PootlePress
 Donate link:
 
-Requires at least: 5.2.0
-Tested up to: 6.3.0
+Requires at least: 5.2
+Tested up to: 7.0
 Stable tag: 3.1.1
 
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 FontAwesome: by @davegandy - http://fontawesome.io - @fontawesome - License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 Skrollr: by Alexander Prinzhorn - https://github.com/Prinzhorn/skrollr | Free to use under terms of MIT license
 The Kirki Framework: Copyright Aristeides Stathopoulos (@aristath), licensed under the terms of the GNU GPL, Version 2 (or later).

@@ -93,7 +93,7 @@ final class Eighteen_Tags_Admin extends Eighteen_Tags_Abstract {
 			if ( $this->is_selective_refresh_field( $f ) ) {
 				$id = "$this->token-$id";
 				$sel_ref_options[] = $id;
-				$wp_customize->get_setting( $id )->transport = 'postMessage';
+				if ( $s = $wp_customize->get_setting( $id ) ) { $s->transport = 'postMessage'; }
 			}
 		}
 
@@ -107,7 +107,7 @@ final class Eighteen_Tags_Admin extends Eighteen_Tags_Abstract {
 			'container_inclusive' => false,
 		) );
 
-		$wp_customize->get_setting( 'eighteen-tags-pro-footer-custom-text' )->transport = 'postMessage';
+		if ( $s = $wp_customize->get_setting( 'eighteen-tags-pro-footer-custom-text' ) ) { $s->transport = 'postMessage'; }
 		$wp_customize->selective_refresh->add_partial( 'eighteen-tags-pro-footer-custom-text', array(
 			'selector' => '#colophon > .col-full',
 			'settings' => array( 'eighteen-tags-pro-footer-custom-text' ),
@@ -295,15 +295,18 @@ final class Eighteen_Tags_Admin extends Eighteen_Tags_Abstract {
 			'priority' => 7,
 		) );
 
-		$man->get_section( 'header_image' )->title = 'Header';
-		$man->get_section( 'header_image' )->panel = 'etp-header';
-		$man->get_section( 'header_image' )->priority = 7;
-
-		$man->get_section( 'background_image' )->priority = 7;
-		$man->get_section( 'background_image' )->panel = 'etp-content';
-		$man->get_section( 'eighteen_tags_typography' )->panel = 'etp-content';
-		$man->get_section( 'eighteen_tags_buttons' )->panel = 'etp-content';
-		$man->get_section( 'eighteen_tags_layout' )->panel = 'etp-content';
+		if ( $sec = $man->get_section( 'header_image' ) ) {
+			$sec->title    = 'Header';
+			$sec->panel    = 'etp-header';
+			$sec->priority = 7;
+		}
+		if ( $sec = $man->get_section( 'background_image' ) ) {
+			$sec->priority = 7;
+			$sec->panel    = 'etp-content';
+		}
+		if ( $sec = $man->get_section( 'eighteen_tags_typography' ) ) { $sec->panel = 'etp-content'; }
+		if ( $sec = $man->get_section( 'eighteen_tags_buttons' ) ) { $sec->panel = 'etp-content'; }
+		if ( $sec = $man->get_section( 'eighteen_tags_layout' ) ) { $sec->panel = 'etp-content'; }
 
 		$man->add_panel( 'etp-header', array(
 			'title' => 'Header and Navigation',

@@ -64,7 +64,7 @@ if ( ! function_exists( 'eighteen_tags_primary_navigation' ) ) {
 		}
 		?>
 		<div id="site-navigation" class="main-navigation" role="navigation"
-				 aria-label="<?php esc_html_e( 'Primary Navigation', 'eighteen-tags' ); ?>">
+				 aria-label="<?php esc_attr_e( 'Primary Navigation', 'eighteen-tags' ); ?>">
 			<div class="etp-nav-search" style="display: none;">
 				<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 					<label class="screen-reader-text" for="s"><?php _e( 'Search for:', 'eighteen-tags' ); ?></label>
@@ -79,7 +79,7 @@ if ( ! function_exists( 'eighteen_tags_primary_navigation' ) ) {
 			</div><!-- .etp-nav-search -->
 
 			<a class="menu-toggle" aria-controls="primary-navigation"
-				 aria-expanded="false"><?php echo esc_attr( apply_filters( 'eighteen_tags_menu_toggle_text', 'Navigation' ) ); ?></a>
+				 aria-expanded="false"><?php echo esc_html( apply_filters( 'eighteen_tags_menu_toggle_text', 'Navigation' ) ); ?></a>
 			<?php
 			wp_nav_menu(
 				array(
